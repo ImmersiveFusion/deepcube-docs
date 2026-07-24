@@ -2,6 +2,25 @@
 
 ## Version History
 
+### 1.18.0 <small>July 22, 2026</small> { id="1.18.0" }
+
+**Introduction:**
+
+Everything since 1.17.0 arrives in one Steam update (1.17.1 was a build re-tag with no changes; 1.17.2 was a performance update not released separately on Steam). The headline is a dedicated in-world chat window for Tessa, with proper formatting and streaming replies. The service graph also renders its visual effects more efficiently in busy scenes.
+
+**New Features:**
+
+- **In-World Chat Window for Tessa**: Tessa now answers in a dedicated in-world chat panel. Open it from the chat icon, ask your question, and the reply streams back with formatted text, code syntax highlighting, and cards for the tools Tessa runs. The companion menu options now open here as well. The panel centers when it opens, dims while you are not using it, and can be hidden or closed; while you type, your input stays in the chat instead of driving the game. Tessa's identity follows your current workspace and persona.
+
+**Improvements:**
+
+- **Steadier Service Graph**: Service pulses and falling blocks now spawn only when they are on screen and are paced to your frame rate, cutting overdraw and keeping the framerate steadier in busy fleets.
+
+**Known Issues:**
+
+- The chat window handles one conversation at a time, and there is no saved transcript yet, so closing the panel starts a fresh conversation.
+- macOS support is experimental and may lack full feature parity with Windows builds.
+
 ### 1.17.0 <small>June 30, 2026</small> { id="1.17.0" }
 
 **Introduction:**

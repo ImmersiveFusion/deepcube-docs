@@ -2,6 +2,23 @@
 
 ## Version History
 
+### 3.172.3 <small>July 22, 2026</small> { id="3.172.3" }
+
+**Introduction:**
+
+This release rolls up everything since 3.169.0. Most of the work is behind the scenes (grid tier-policy redesign, secret management, health checks, and job-scheduler hardening), with a handful of visible changes around billing accuracy, onboarding, and a much faster grid list.
+
+**Improvements:**
+
+- **Faster Grid List**: The grid list could take 8 to 13 seconds to load; it is now indexed and loads quickly.
+- **Grids Re-Tier on Plan Change**: Changing your plan now re-tiers your grids to match, regardless of who owns the grid.
+
+**Bug Fixes:**
+
+- Fixed onboarding so it is idempotent: interrupting or retrying quick-start signup no longer creates duplicate Stripe subscriptions, and the ZIP entry step is smoother.
+- Fixed expired assistant seats being billed: seats past their valid-until date are no longer counted toward your assistant seat charge.
+- Fixed the self-serve data-boundary picker so it only lists boundaries that are in rotation.
+
 ### 3.169.0 <small>June 29, 2026</small> { id="3.169.0" }
 
 **Introduction:**

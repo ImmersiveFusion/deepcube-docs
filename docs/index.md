@@ -9,14 +9,14 @@ social:
 
 <div class="grid cards" markdown>
 
--   :material-cube-outline:{ .lg .middle } **IAPM 3D**
+-   :material-cube-outline:{ .lg .middle } **IAPM**
 
     ---
 
     Immersive 3D observability. Explore traces, metrics, and logs
     in a spatial environment on the Grid.
 
-    [:octicons-arrow-right-24: Explore IAPM 3D](DC/3D/index.md)
+    [:octicons-arrow-right-24: Explore IAPM](DC/3D/index.md)
 
 -   :material-web:{ .lg .middle } **IAPM Web**
 

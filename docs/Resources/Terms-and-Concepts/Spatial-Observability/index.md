@@ -20,7 +20,7 @@ APM remains valid as the predecessor discipline for flat-surface monitoring. Spa
 
 IAPM is the product family that implements spatial observability. Three surfaces:
 
-- **[IAPM 3D](../../../DC/3D/index.md)** renders the full spatial environment on the Grid. Services are objects in a navigable world; their traffic is light moving between them; their stress is heat; their dependencies are gravity. Available as a desktop application and on Steam.
+- **[IAPM](../../../DC/3D/index.md)** renders the full spatial environment on the Grid. Services are objects in a navigable world; their traffic is light moving between them; their stress is heat; their dependencies are gravity. Available as a desktop application and on Steam.
 - **[IAPM Web](../../../DC/Web/index.md)** provides browser-based access to the same spatial telemetry for account management, alerts, and quick investigation without the full immersive client.
 - **[IAPM Studio](../../../DC/Studio/index.md)** is the lightweight native client for AI Assistant chat, voice, and workspaces with Tessa, currently in early access.
 

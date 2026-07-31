@@ -11,17 +11,13 @@ This guide takes you from first look to your own telemetry rendered in the Grid:
 
 You can explore IAPM with demo data before creating an account. Demo grids carry sample telemetry from simulated services, so you can move through a real system in IAPM without instrumenting anything of your own.
 
-The fastest way in is the **Chaos Simulator**, a demo grid you drive yourself:
+The fastest way in is the **Chaos Simulator**, a demo grid you drive yourself at [demo.iapm.app](https://demo.iapm.app){ target="_blank" }: generate traffic, inject failures, and watch the telemetry appear live. See [Sandbox](Sandbox/index.md) for the full walkthrough.
 
-1. Go to [demo.iapm.app](https://demo.iapm.app){ target="_blank" }. A sandbox is created for you automatically.
-2. Click the controls to generate traffic and inject failures (latency, errors, timeouts, cascades).
-3. Open it in IAPM to watch the telemetry appear live.
+To see it, you need the IAPM client. We recommend **IAPM**, where the demo grid renders as a space you move through:
 
-To see it, you need the IAPM client. We recommend **IAPM 3D**, where the demo grid renders as a space you move through:
+[Download IAPM :material-download:](../DC/3D/Guides/Installation/index.md){ .md-button .md-button--primary }
 
-[Download IAPM 3D :material-download:](../DC/3D/Guides/Installation/index.md){ .md-button .md-button--primary }
-
-The same demo grids are also viewable in [IAPM Web](../DC/Web/index.md) from the browser. For the full sandbox walkthrough, including the built-in Demo grid, see [Sandbox](Sandbox/index.md). No subscription is needed to explore any demo grid, and in IAPM 3D you can also try light AI usage on them.
+The same demo grids are also viewable in [IAPM Web](../DC/Web/index.md) from the browser. For the full sandbox walkthrough, including the built-in Demo grid, see [Sandbox](Sandbox/index.md). No subscription is needed to explore any demo grid, and in IAPM you can also try light AI usage on them.
 
 When you are ready to bring in your **own** telemetry, subscribe and provision a grid below.
 
@@ -70,11 +66,7 @@ This uses a ready-made trace generator, a single command-line tool you run local
 
 ## Instrument your own application
 
-When you are ready for your real system, add OpenTelemetry to it and point it at IAPM:
-
-1. In the web app, go to **Administration → Grids** and click **Instrument** on your grid to copy its API key.
-2. Configure your OTLP exporter to send to `otlp.iapm.app:443` with your key.
-3. Deploy. Once your app is sending, services appear in the Grid within a couple of minutes.
+When you are ready for your real system, add OpenTelemetry to it and point it at IAPM. Grab your grid's API key from **Administration → Grids** in the web app, point your OTLP exporter at IAPM, and deploy; services appear in the Grid within a couple of minutes. The [instrumentation guide](../Instrument/index.md) has the per-language setup and the exact endpoint.
 
 [Instrument your application :material-code-tags:](../Instrument/index.md){ .md-button .md-button--primary }
 

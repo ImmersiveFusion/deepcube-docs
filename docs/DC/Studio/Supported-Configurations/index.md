@@ -57,7 +57,7 @@ Ensure your firewall allows outbound connections to:
 
 ## What Studio Does Not Require
 
-Unlike IAPM 3D, Studio does not need:
+Unlike the 3D client, Studio does not need:
 
 - A dedicated GPU or graphics card
 - Steam or any game platform

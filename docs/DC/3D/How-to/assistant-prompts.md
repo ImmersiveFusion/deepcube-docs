@@ -75,7 +75,7 @@ Learn about your system architecture and data flows.
 
 ## Contextual Questions (3D)
 
-These work best in IAPM 3D, where Tessa uses your position and view as context.
+These work best in IAPM, where Tessa uses your position and view as context.
 
 | Prompt | What Tessa Does |
 |--------|-----------------|

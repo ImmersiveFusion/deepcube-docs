@@ -28,7 +28,7 @@ A subscription is required to use IAPM Studio.
 
 During early access, updates are released frequently. IAPM Studio checks for updates on launch and prompts you to install new versions when available.
 
-## Differences from IAPM 3D
+## Differences from IAPM
 
 IAPM Studio is a separate application from IAPM. Key differences:
 

@@ -18,7 +18,7 @@ graph TD
     A[Application Code] -->|Instrumentation| B[Telemetry Generation]
     B -->|Collection| C[Data Aggregation]
     C -->|Processing| D[Analysis & Storage]
-    D -->|Visualization| E[IAPM 3D / Web / Studio]
+    D -->|Visualization| E[IAPM / Web / Studio]
 ```
 
 1. **[Instrumentation](../Instrumentation/index.md)** - Your code emits traces, metrics, and logs via OpenTelemetry

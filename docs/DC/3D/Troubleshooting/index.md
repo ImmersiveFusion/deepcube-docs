@@ -1,6 +1,6 @@
 # Troubleshooting
 
-This page covers common issues you may encounter with IAPM 3D and how to resolve them.
+This page covers common issues you may encounter with IAPM and how to resolve them.
 
 ---
 
@@ -11,7 +11,7 @@ This page covers common issues you may encounter with IAPM 3D and how to resolve
 | App won't install via Steam | Insufficient disk space or Steam client out of date | Ensure at least 4 GB of free disk space. Update Steam to the latest version via **Steam > Check for Steam Client Updates**. |
 | App crashes on launch | Missing or outdated GPU drivers | Update your GPU drivers to the latest version from [NVIDIA](https://www.nvidia.com/drivers){target="_blank"}, [AMD](https://www.amd.com/en/support){target="_blank"}, or [Intel](https://www.intel.com/content/www/us/en/download-center){target="_blank"}. |
 | "Unsupported GPU" error | GPU does not meet minimum requirements (DirectX 11 / Vulkan 1.1) | Check [Supported Configurations](../Supported-Configurations/index.md) for minimum GPU requirements. Integrated graphics are not supported. |
-| Antivirus blocking installation | Security software flagging the Unity runtime or installer | Add the IAPM 3D installation directory to your antivirus exclusion list. The default Steam path is `C:\Program Files (x86)\Steam\steamapps\common\IAPM`. |
+| Antivirus blocking installation | Security software flagging the Unity runtime or installer | Add the IAPM installation directory to your antivirus exclusion list. The default Steam path is `C:\Program Files (x86)\Steam\steamapps\common\IAPM`. |
 | Offline installer fails | Corrupted or incomplete download | Re-download the installer and verify the file hash, then run it again. |
 | App crashes immediately after splash screen | Corrupted local settings or cache | Delete the settings folder at `%APPDATA%\..\LocalLow\Immersive Fusion\IAPM` and relaunch the application. |
 
@@ -45,7 +45,7 @@ This page covers common issues you may encounter with IAPM 3D and how to resolve
 |---------|-------|------------|
 | Tessa not responding | No active internet connection or backend service temporarily unavailable | Verify connectivity to `api-azure.iapm.app` on port 443. Check the connection status indicator in the Tessa chat panel. |
 | Voice commands not recognized | Microphone not configured or browser permissions not granted | Ensure your microphone is set as the default input device in your OS audio settings. Grant microphone access when prompted by the application. Check **Settings > Audio > Input Device**. |
-| Energy depleted message | AI usage quota has been consumed for the current period | Energy replenishes automatically over time. You can continue using IAPM 3D without AI features while energy recharges. Check your current energy level in the Tessa panel. |
+| Energy depleted message | AI usage quota has been consumed for the current period | Energy replenishes automatically over time. You can continue using IAPM without AI features while energy recharges. Check your current energy level in the Tessa panel. |
 | Chat history lost | Session ended or application was closed without saving | Chat history is tied to the active session. Starting a new session begins a fresh conversation. This is expected behavior - Tessa maintains context only within a single session. |
 
 ---
@@ -56,9 +56,9 @@ VR is not actively maintained right now. If you already run a headset, the issue
 
 | Symptom | Cause | Resolution |
 |---------|-------|------------|
-| VR headset not detected | SteamVR not installed or headset not properly connected | Install [SteamVR](https://store.steampowered.com/app/250820/SteamVR/){target="_blank"} and verify your headset appears in the SteamVR dashboard before launching IAPM 3D. Check USB and DisplayPort/HDMI connections. |
+| VR headset not detected | SteamVR not installed or headset not properly connected | Install [SteamVR](https://store.steampowered.com/app/250820/SteamVR/){target="_blank"} and verify your headset appears in the SteamVR dashboard before launching IAPM. Check USB and DisplayPort/HDMI connections. |
 | Motion sickness / discomfort | Sensitivity to smooth locomotion or low framerate in VR | Enable **Comfort Mode** in **Settings > VR** to use teleportation-only movement. Ensure your system maintains 90 FPS in VR - lower the graphics quality if needed. Take regular breaks. |
-| Controllers not mapping correctly | Non-default controller bindings or unsupported controller model | Reset controller bindings to defaults in **SteamVR > Settings > Controllers > Manage Controller Bindings**. IAPM 3D currently supports Meta Quest (via Quest Link) and HTC Vive controllers. |
+| Controllers not mapping correctly | Non-default controller bindings or unsupported controller model | Reset controller bindings to defaults in **SteamVR > Settings > Controllers > Manage Controller Bindings**. IAPM currently supports Meta Quest (via Quest Link) and HTC Vive controllers. |
 | Blurry or distorted display in VR | Headset IPD not adjusted or render resolution too low | Adjust the IPD (inter-pupillary distance) on your headset. Increase the render resolution in **SteamVR > Settings > Video > Render Resolution**. |
 
 ---
@@ -75,7 +75,7 @@ VR is not actively maintained right now. If you already run a headset, the issue
 
 ## Network Requirements
 
-IAPM 3D requires outbound HTTPS access to the following endpoints. Ensure these are permitted through your firewall and proxy configuration.
+IAPM requires outbound HTTPS access to the following endpoints. Ensure these are permitted through your firewall and proxy configuration.
 
 | Endpoint | Port | Protocol | Purpose |
 |----------|------|----------|---------|

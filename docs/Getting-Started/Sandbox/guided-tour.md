@@ -6,14 +6,14 @@ Walk through everything IAPM can do - without touching a single line of code. Th
 
 ## Part 1 - Explore the Demo Grid
 
-The Demo Grid is the fastest way to see IAPM 3D in action. It generates a realistic service topology with live telemetry data, all running locally on your machine.
+The Demo Grid is the fastest way to see IAPM in action. It generates a realistic service topology with live telemetry data, all running locally on your machine.
 
-### Step 1: Launch IAPM 3D
+### Step 1: Launch IAPM
 
-Open IAPM 3D. If you haven't installed it yet, see the [installation guide](../../DC/3D/Guides/Installation/index.md).
+Open IAPM. If you haven't installed it yet, see the [installation guide](../../DC/3D/Guides/Installation/index.md).
 
 !!! note "Version requirement"
-    The Demo Grid requires IAPM 3D **v1.10 or later**. Check your version in the app settings.
+    The Demo Grid requires IAPM **v1.10 or later**. Check your version in the app settings.
 
 ### Step 2: Select the Demo Grid
 
@@ -31,7 +31,7 @@ Use your mouse or controller to move around. Zoom in on a service to see more de
 
 ### Step 4: Switch Between Views
 
-IAPM 3D offers multiple ways to visualize the same data:
+IAPM offers multiple ways to visualize the same data:
 
 | View | Shortcut | What it shows |
 | --- | --- | --- |
@@ -62,7 +62,7 @@ Inside the Diagnostics cube:
 - **Error indicators** highlight where things went wrong (if any)
 
 !!! success "Checkpoint"
-    You've now seen the three core views of IAPM 3D: the Grid, the Graph, and the Diagnostics cube. Every feature you just used works identically with real production data.
+    You've now seen the three core views of IAPM: the Grid, the Graph, and the Diagnostics cube. Every feature you just used works identically with real production data.
 
 ---
 

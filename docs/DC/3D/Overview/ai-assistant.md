@@ -16,7 +16,7 @@ Tessa lives inside the spatial world with you. She can navigate your 3D environm
 
 Tessa is available in the immersive surfaces:
 
-- **[IAPM 3D](../index.md)** (v1.9+) - Chat panel or voice, speak directly to Tessa
+- **[IAPM](../index.md)** (v1.9+) - Chat panel or voice, speak directly to Tessa
 - **[IAPM Studio](../../Studio/index.md)** (v0.1+) - Integrated chat with multi-tab and split pane
 
 Tessa is not part of [IAPM Web](../../Web/index.md) today. The web portal is for account management and quick monitoring; the assistant lives in the immersive surfaces, where being inside your system is what makes her spatial context work.
@@ -43,7 +43,7 @@ You don't have to specify a hat; Tessa picks based on context. But you can put a
 
 A **skill** is a specialist team Tessa can route to. Where hats change *how* Tessa thinks, skills change *who* she calls in. The Problem-Solving skill has agents for research, analysis, architecture decisions, validation, synthesis, and reviews. The Engineering Team skill has agents for backend, frontend, DevSecOps, QA, and security. Other skills cover offensive security, adversarial quality review, systems engineering, and prompt engineering.
 
-You don't invoke skills by name. Describe what you need ("review this code for security issues") and Tessa routes to the right skill and the right agents automatically. Skills are available in IAPM 3D and Studio; Web integration is not yet shipped. For the full catalog, see [Tessa skills](../Reference/assistant-skills.md).
+You don't invoke skills by name. Describe what you need ("review this code for security issues") and Tessa routes to the right skill and the right agents automatically. Skills are available in the 3D client and Studio; Web integration is not yet shipped. For the full catalog, see [Tessa skills](../Reference/assistant-skills.md).
 
 ### Memory
 

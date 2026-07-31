@@ -8,7 +8,7 @@ tags: [how-to, tessa, vision, multimodal]
 
 This guide shows how to paste screenshots, dashboards, or photos into the chat so Tessa can analyze the image alongside your question.
 
-> *Available since IAPM 3D v1.12, Web v3.131, and Studio v0.7*
+> *Available since IAPM v1.12, Web v3.131, and Studio v0.7*
 
 Paste a screenshot into the chat and Tessa will analyze it. No need to describe what you see - just show her.
 

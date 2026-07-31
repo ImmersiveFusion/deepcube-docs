@@ -9,7 +9,7 @@ The AI Assistant API provides programmatic access to Tessa - IAPM's purpose-buil
 
 ## Instance Identifiers
 
-The Chat and Speech endpoints use an `instanceSecondaryId` rather than a `gridSecondaryId`. An AI Assistant instance represents a Tessa session within a specific Grid. When a user starts a Tessa session (via IAPM 3D, Web, or Studio), an instance is created and its ID is returned. Use this ID for all chat and speech requests within that session. Usage and Limits endpoints continue to use `gridSecondaryId`.
+The Chat and Speech endpoints use an `instanceSecondaryId` rather than a `gridSecondaryId`. An AI Assistant instance represents a Tessa session within a specific Grid. When a user starts a Tessa session (via IAPM, Web, or Studio), an instance is created and its ID is returned. Use this ID for all chat and speech requests within that session. Usage and Limits endpoints continue to use `gridSecondaryId`.
 
 ---
 

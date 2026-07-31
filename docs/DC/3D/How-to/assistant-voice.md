@@ -52,7 +52,7 @@ Tessa can speak in different voices. You choose her voice in [IAPM Web](../../We
 Your selection is saved to your account and applies to Tessa wherever she speaks, including the 3D client.
 
 !!! note
-    You cannot change the voice from inside IAPM 3D. Voice selection is available only in IAPM Web account preferences. Once you set it there, the 3D client uses your chosen voice.
+    You cannot change the voice from inside the 3D client. Voice selection is available only in IAPM Web account preferences. Once you set it there, the 3D client uses your chosen voice.
 
 ## Interrupting Tessa
 

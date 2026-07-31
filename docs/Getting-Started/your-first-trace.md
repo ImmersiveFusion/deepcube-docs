@@ -18,7 +18,7 @@ You are not instrumenting your own application yet. That comes next, and it is e
 
 ## Prerequisites
 
-- **A subscription and your own grid.** Sending your own telemetry requires an active subscription (the free Start plan works) with a provisioned grid. Provisioning a grid requires a valid credit card, even on Start. If you have not done this yet, complete [Getting Started](index.md) first. (Just want to look around? The [demo grids](../Setup/Sandbox/index.md) need no subscription.)
+- **A subscription and your own grid.** Sending your own telemetry requires an active subscription (the free Start plan works) with a provisioned grid. Provisioning a grid requires a valid credit card, even on Start. If you have not done this yet, complete [Getting Started](index.md) first. (Just want to look around? The [demo grids](Sandbox/index.md) need no subscription.)
 - The grid's API key. You will copy this in Step 1.
 - [Go](https://go.dev/dl/){ target="_blank" } 1.21 or later installed, so you can run the generator with a single command. (No Go knowledge is needed; you are only running a tool written in it.)
 
@@ -32,7 +32,7 @@ Your API key authenticates your telemetry with IAPM. Each grid has its own key.
 
 Keep the key somewhere safe for the next step. Treat it like a password: do not commit it to source control.
 
-For more detail, see the [API Keys reference](../Setup/Api-Key/index.md).
+For more detail, see the [API Keys reference](Api-Key/index.md).
 
 ## Step 2: Install the trace generator
 
@@ -89,6 +89,6 @@ In about five minutes you:
 
 ## Related
 
-- **To explore without installing anything:** open the [Chaos Simulator](../Setup/Sandbox/index.md), a demo grid you drive from your browser at [demo.iapm.app](https://demo.iapm.app){ target="_blank" } and view in IAPM.
-- **For lookup of API key properties and rotation:** see the [API Keys reference](../Setup/Api-Key/index.md).
+- **To explore without installing anything:** open the [Chaos Simulator](Sandbox/index.md), a demo grid you drive from your browser at [demo.iapm.app](https://demo.iapm.app){ target="_blank" } and view in IAPM.
+- **For lookup of API key properties and rotation:** see the [API Keys reference](Api-Key/index.md).
 - **For background on traces and spans:** see [Concepts](../Resources/Terms-and-Concepts/index.md).

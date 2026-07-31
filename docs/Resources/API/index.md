@@ -103,7 +103,7 @@ Content-Type: application/problem+json
 
 ## Quick Start
 
-1. [Get your API key](../Setup/Api-Key/index.md) or [set up OAuth 2.0](authentication.md)
+1. [Get your API key](../../Getting-Started/Api-Key/index.md) or [set up OAuth 2.0](authentication.md)
 2. Pick an endpoint group from the table above
 3. Make your first request:
 

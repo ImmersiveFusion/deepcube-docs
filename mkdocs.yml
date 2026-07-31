@@ -252,12 +252,12 @@ plugins:
         'Products/IAPM-Web/release-notes.md': 'DC/Web/release-notes.md'
 
         # Configuration-and-Management → Setup
-        'configuration-and-management/index.md': 'Setup/index.md'
-        'configuration-and-management/sandbox/index.md': 'Setup/Sandbox/index.md'
-        'configuration-and-management/login/index.md': 'Setup/Login/index.md'
-        'configuration-and-management/account/index.md': 'Setup/Account/index.md'
-        'configuration-and-management/api-key/index.md': 'Setup/Api-Key/index.md'
-        'configuration-and-management/custom-application/index.md': 'Setup/Custom-application/index.md'
+        'configuration-and-management/index.md': 'Getting-Started/index.md'
+        'configuration-and-management/sandbox/index.md': 'Getting-Started/Sandbox/index.md'
+        'configuration-and-management/login/index.md': 'Getting-Started/Login/index.md'
+        'configuration-and-management/account/index.md': 'Getting-Started/Account/index.md'
+        'configuration-and-management/api-key/index.md': 'Getting-Started/Api-Key/index.md'
+        'configuration-and-management/custom-application/index.md': 'Getting-Started/Custom-application/index.md'
 
         # Setup/Custom-application/Instrument → Instrument (promoted to top-level)
         # Old page replaced with redirect notice pointing to new Instrument/ section
@@ -272,7 +272,7 @@ plugins:
         'ai/index.md': 'DC/3D/Overview/ai-assistant.md'
         'copilot/index.md': 'DC/3D/Overview/ai-assistant.md'
         'ai-assistant/index.md': 'DC/3D/Overview/ai-assistant.md'
-        'config/index.md': 'Setup/index.md'
+        'config/index.md': 'Getting-Started/index.md'
         # 'api/index.md' redirect removed - now a real page at API/index.md (case-insensitive collision)
         'sdk/index.md': 'Instrument/index.md'
 
@@ -304,6 +304,26 @@ plugins:
         'DC/3D/Features/Tessa/voice.md': 'DC/3D/How-to/assistant-voice.md'
         'DC/3D/Features/Tessa/vision.md': 'DC/3D/How-to/assistant-vision.md'
         'DC/3D/Features/Tessa/prompts.md': 'DC/3D/How-to/assistant-prompts.md'
+        # PBI 2801 (SP-2801) nav restructure (2026-07-31): Setup->Getting-Started, API+Integrations->Resources, What's New->top-level, 3D glossary->spatial-vocabulary
+        'API/index.md': 'Resources/API/index.md'
+        'API/authentication.md': 'Resources/API/authentication.md'
+        'API/traces.md': 'Resources/API/traces.md'
+        'API/logs.md': 'Resources/API/logs.md'
+        'API/diagnostics.md': 'Resources/API/diagnostics.md'
+        'API/charts.md': 'Resources/API/charts.md'
+        'API/assistant.md': 'Resources/API/assistant.md'
+        'Integrations/MCP/index.md': 'Resources/Integrations/MCP/index.md'
+        'Resources/whats-new.md': 'whats-new.md'
+        'Setup/index.md': 'Getting-Started/index.md'
+        'Setup/Account/index.md': 'Getting-Started/Account/index.md'
+        'Setup/Api-Key/index.md': 'Getting-Started/Api-Key/index.md'
+        'Setup/Best-Practices/index.md': 'Getting-Started/Best-Practices/index.md'
+        'Setup/Custom-application/index.md': 'Getting-Started/Custom-application/index.md'
+        'Setup/Login/index.md': 'Getting-Started/Login/index.md'
+        'Setup/Plans/index.md': 'Getting-Started/Plans/index.md'
+        'Setup/Sandbox/index.md': 'Getting-Started/Sandbox/index.md'
+        'Setup/Sandbox/guided-tour.md': 'Getting-Started/Sandbox/guided-tour.md'
+        'DC/3D/Reference/glossary.md': 'DC/3D/Reference/spatial-vocabulary.md'
 
 # Hooks
 # hooks:

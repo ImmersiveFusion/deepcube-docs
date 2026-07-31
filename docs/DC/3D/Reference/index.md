@@ -12,7 +12,7 @@ This page documents the lookup material for IAPM.
 
 | Page | Documents |
 |---|---|
-| [Glossary](glossary.md) | The canonical names for objects (service node, Trace Aggregate Block, Log Aggregate Block, Span Block, Log Block), places (the Grid, the service graph, the Core, the Diagnostics cube), and behaviors (photons, time stop, time travel). |
+| [Spatial Vocabulary](spatial-vocabulary.md) | The canonical names for objects (service node, Trace Aggregate Block, Log Aggregate Block, Span Block, Log Block), places (the Grid, the service graph, the Core, the Diagnostics cube), and behaviors (photons, time stop, time travel). |
 | [Color legend](color-legend.md) | What green, red, black, grey, and white mean on the service graph, the grid, and inside a trace. |
 | [Navigation model](navigation-model.md) | How you move through and view a grid: travel, camera, portals, and the controls. |
 | [Readouts and boards](readouts-and-boards.md) | The header readouts and summary boards at the header, graph root, and service platform. |

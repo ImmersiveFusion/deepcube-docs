@@ -16,7 +16,7 @@ Both hosts are the same application on the same backend; the address differs onl
 
 [Sign in to IAPM :material-rocket-launch:](https://portal.iapm.app){ .md-button .md-button--primary target="_blank" }
 
-The link opens **portal.iapm.app**, the sign-in chooser. Pick a method, and it forwards you into the web app. A short Quick Start wizard then names your account, has you choose a plan, and provisions your first grid. Sending your own telemetry requires an active subscription and a provisioned grid: the **Start** plan is free, but provisioning a grid requires a valid credit card even on Start. (Exploring the [demo grids](../../Setup/Sandbox/index.md) needs none of this, no subscription and no payment.)
+The link opens **portal.iapm.app**, the sign-in chooser. Pick a method, and it forwards you into the web app. A short Quick Start wizard then names your account, has you choose a plan, and provisions your first grid. Sending your own telemetry requires an active subscription and a provisioned grid: the **Start** plan is free, but provisioning a grid requires a valid credit card even on Start. (Exploring the [demo grids](../Sandbox/index.md) needs none of this, no subscription and no payment.)
 
 ## Step 2: Get your API key
 

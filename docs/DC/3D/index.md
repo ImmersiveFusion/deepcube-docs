@@ -34,7 +34,7 @@ Enter the World of Your Application®. IAPM transforms [Application Performance 
 | 1 | Verify system requirements | [Requirements](Supported-Configurations/index.md) |
 | 2 | Download and install | [Installation Guide](Guides/Installation/index.md) |
 | 3 | Learn navigation controls | [Navigation Guide](Guides/Navigation/index.md) |
-| 4 | Connect your telemetry data | [Instrumentation](../../Setup/Custom-application/index.md) |
+| 4 | Connect your telemetry data | [Instrumentation](../../Getting-Started/Custom-application/index.md) |
 
 ## VR headsets
 

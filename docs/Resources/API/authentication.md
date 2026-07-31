@@ -120,7 +120,7 @@ API Keys provide a simpler authentication method for server-to-server integratio
 3. Click the **Instrument** button (:material-cog:) on your Grid
 4. Copy the API key from the configuration wizard
 
-See [API Keys](../Setup/Api-Key/index.md) for detailed instructions.
+See [API Keys](../../Getting-Started/Api-Key/index.md) for detailed instructions.
 
 ### Using Your API Key
 

@@ -2,6 +2,8 @@
 
 Understanding the terminology and concepts behind application performance monitoring is essential for getting the most out of IAPM. This guide covers everything from foundational APM concepts to advanced observability techniques.
 
+For quick, one-line definitions of the shared terms used across IAPM, see the [Glossary](../Glossary/index.md). This section goes deeper into the concepts behind them.
+
 ## Core Concepts
 
 Build your foundation with these essential concepts:

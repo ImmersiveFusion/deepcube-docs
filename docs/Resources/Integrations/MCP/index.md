@@ -27,7 +27,7 @@ All results are returned as structured data the agent reads in the conversation.
 
 ## Prerequisites
 
-- An IAPM subscription and a **Grid API key** (create one in your account; see [API keys](../../Setup/Api-Key/index.md)).
+- An IAPM subscription and a **Grid API key** (create one in your account; see [API keys](../../../Getting-Started/Api-Key/index.md)).
 - [.NET 10 SDK](https://dotnet.microsoft.com/download) to build and run the server.
 - An MCP-capable client. The instructions below use **VS Code with GitHub Copilot agent mode**.
 
@@ -89,6 +89,6 @@ The transport is **stdio**: the client launches the server as a subprocess and e
 
 ## Related
 
-- **For sending telemetry to IAPM:** see [Instrument your application](../../Instrument/index.md).
+- **For sending telemetry to IAPM:** see [Instrument your application](../../../Instrument/index.md).
 - **For the direct HTTP API:** see [API Reference](../../API/index.md).
-- **For managing API keys:** see [API keys](../../Setup/Api-Key/index.md).
+- **For managing API keys:** see [API keys](../../../Getting-Started/Api-Key/index.md).

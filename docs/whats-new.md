@@ -1,6 +1,6 @@
 # What's New
 
-Recent updates and features across IAPM. For complete version history, see the release notes for [IAPM](../DC/3D/release-notes.md), [IAPM Web](../DC/Web/release-notes.md), and [IAPM Studio](../DC/Studio/release-notes.md).
+Recent updates and features across IAPM. For complete version history, see the release notes for [IAPM](DC/3D/release-notes.md), [IAPM Web](DC/Web/release-notes.md), and [IAPM Studio](DC/Studio/release-notes.md).
 
 ---
 
@@ -133,8 +133,8 @@ Have an idea for IAPM? We'd love to hear from you:
 
 | Channel | Link |
 |---------|------|
-| Release notes (3D) | [View releases](../DC/3D/release-notes.md) |
-| Release notes (Web) | [View releases](../DC/Web/release-notes.md) |
-| Release notes (Studio) | [View releases](../DC/Studio/release-notes.md) |
+| Release notes (3D) | [View releases](DC/3D/release-notes.md) |
+| Release notes (Web) | [View releases](DC/Web/release-notes.md) |
+| Release notes (Studio) | [View releases](DC/Studio/release-notes.md) |
 | YouTube | [Tutorials & demos](https://www.youtube.com/@immersivefusion){ target="_blank" } |
 | LinkedIn | [Company updates](https://www.linkedin.com/company/immersivefusion){ target="_blank" } |

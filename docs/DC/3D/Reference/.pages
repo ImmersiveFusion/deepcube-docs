@@ -1,7 +1,7 @@
 title: Reference
 arrange:
     - index.md
-    - glossary.md
+    - spatial-vocabulary.md
     - color-legend.md
     - navigation-model.md
     - readouts-and-boards.md

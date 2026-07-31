@@ -58,7 +58,7 @@ The platform neon reflects the health of the service you are standing on.
 
 ### Grid aggregate blocks
 
-On the grid, a trace occupies one position as two adjacent aggregate blocks (see [Glossary](glossary.md)): a **Trace Aggregate Block** holding all spans that share the trace ID, and a **Log Aggregate Block** holding all logs with that trace ID. Their color is independent: the Trace Aggregate Block reflects its spans, the Log Aggregate Block reflects its logs.
+On the grid, a trace occupies one position as two adjacent aggregate blocks (see [Spatial Vocabulary](spatial-vocabulary.md)): a **Trace Aggregate Block** holding all spans that share the trace ID, and a **Log Aggregate Block** holding all logs with that trace ID. Their color is independent: the Trace Aggregate Block reflects its spans, the Log Aggregate Block reflects its logs.
 
 **Each block takes the color of the highest-severity status it contains.** A single error span turns the whole Trace Aggregate Block red. A single warning log turns the Log Aggregate Block orange. If a Log Aggregate Block contains both a warning and an error, it is red, because error outranks warning.
 

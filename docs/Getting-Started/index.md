@@ -21,7 +21,7 @@ To see it, you need the IAPM client. We recommend **IAPM 3D**, where the demo gr
 
 [Download IAPM 3D :material-download:](../DC/3D/Guides/Installation/index.md){ .md-button .md-button--primary }
 
-The same demo grids are also viewable in [IAPM Web](../DC/Web/index.md) from the browser. For the full sandbox walkthrough, including the built-in Demo grid, see [Sandbox](../Setup/Sandbox/index.md). No subscription is needed to explore any demo grid, and in IAPM 3D you can also try light AI usage on them.
+The same demo grids are also viewable in [IAPM Web](../DC/Web/index.md) from the browser. For the full sandbox walkthrough, including the built-in Demo grid, see [Sandbox](Sandbox/index.md). No subscription is needed to explore any demo grid, and in IAPM 3D you can also try light AI usage on them.
 
 When you are ready to bring in your **own** telemetry, subscribe and provision a grid below.
 

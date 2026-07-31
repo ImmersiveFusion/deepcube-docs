@@ -37,7 +37,7 @@ Common issues and resolutions for IAPM Web at [portal.iapm.app](https://portal.i
 
 | Symptom | Cause | Resolution |
 |---------|-------|------------|
-| No traces visible after deploying instrumentation | API key misconfigured | Verify the API key in your instrumentation matches an active key for the target grid. See [API Key setup](../../../Setup/Api-Key/index.md). |
+| No traces visible after deploying instrumentation | API key misconfigured | Verify the API key in your instrumentation matches an active key for the target grid. See [API Key setup](../../../Getting-Started/Api-Key/index.md). |
 | Traces were visible but stopped appearing | API key expired or rotated | Check the API key status in the portal. Generate a new key if the current one was revoked. |
 | Traces appear in one grid but not another | Instrumentation pointing to wrong grid | Confirm the grid ID in your exporter configuration matches the grid you are viewing. |
 | Partial traces - some spans missing | Sampling or network issues | Check your sampling configuration. Ensure all services can reach the IAPM ingestion endpoint. |

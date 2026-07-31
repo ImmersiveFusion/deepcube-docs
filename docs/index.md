@@ -67,7 +67,7 @@ social:
     Configure API keys, sandbox environments, and connect your
     applications.
 
-    [:octicons-arrow-right-24: Setup](Setup/index.md)
+    [:octicons-arrow-right-24: API keys](Getting-Started/Api-Key/index.md)
 
 -   :material-file-document-outline:{ .lg .middle } **Release Notes**
 
@@ -87,7 +87,7 @@ social:
     - **OTel Data Model (3D v1.11)** - Full adoption of the OpenTelemetry data model for traces, metrics, and logs - bringing standards-based observability to the Grid.
     - **Live Service Graph (3D v1.10)** - Real-time animated service dependency graph rendered directly on the Grid, showing live traffic flow between services.
 
-    [:octicons-arrow-right-24: See all updates](Resources/whats-new.md)
+    [:octicons-arrow-right-24: See all updates](whats-new.md)
 
 ## Compare & Learn
 

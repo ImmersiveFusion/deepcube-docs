@@ -81,7 +81,7 @@ Not every request needs to be traced. OTel supports:
 - **Head sampling** - Decide at request start (ParentBased, TraceIdRatio)
 - **Tail sampling** - Decide after the trace completes (via Collector)
 
-For IAPM throughput limits by plan, see [Plans & Pricing](../../../../../Setup/Plans/index.md).
+For IAPM throughput limits by plan, see [Plans & Pricing](../../../../../Getting-Started/Plans/index.md).
 
 ## Further Reading
 

@@ -2,11 +2,29 @@
 
 Welcome to the IAPM Resources hub. Here you'll find essential reference materials to help you understand application performance monitoring concepts, review our legal agreements, access helpful tools, and explore partnership opportunities.
 
+## :material-api: API Reference
+
+The IAPM HTTP API: authentication, traces, logs, diagnostics, charts, and the assistant endpoints.
+
+[Browse the API Reference :material-arrow-right:](API/index.md){ .md-button }
+
+## :material-puzzle: Integrations
+
+Connect IAPM to other tools, including the Model Context Protocol (MCP) server.
+
+[Explore Integrations :material-arrow-right:](Integrations/MCP/index.md){ .md-button }
+
 ## :material-book-open-variant: Terms and Concepts
 
-Master the fundamentals of application performance monitoring with our comprehensive glossary and concept guides.
+Master the fundamentals of application performance monitoring with our comprehensive concept guides.
 
 [Explore Terms and Concepts :material-arrow-right:](Terms-and-Concepts/index.md){ .md-button }
+
+## :material-book-alphabet: Glossary
+
+Quick, one-line definitions of the shared terms used across 3D, Web, and Studio.
+
+[Open the Glossary :material-arrow-right:](Glossary/index.md){ .md-button }
 
 ## :material-compare-horizontal: Compare IAPM
 

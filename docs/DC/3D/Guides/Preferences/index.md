@@ -79,7 +79,9 @@ Access preferences by pressing `F10` → **Main Menu** → **Preferences**. Cust
 
 To reset all preferences to defaults, delete the preferences file:
 
-<!-- TODO: Update folder paths from ImmersiveFusion/DeepCube to ImmersiveFusion/DeepCube after January 15 -->
+<!-- TODO (SP-074, fire-day gated): the on-disk folder is still
+     "Immersive Fusion/Immersive APM". Update these three paths to the
+     DeepCube folder name only once the shipped app actually creates it. -->
 
 - **Windows:** `%USERPROFILE%\AppData\LocalLow\Immersive Fusion\Immersive APM\preferences.json`
 - **macOS:** `~/Library/Application Support/Immersive Fusion/Immersive APM/preferences.json`

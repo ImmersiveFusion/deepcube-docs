@@ -21,7 +21,7 @@ curl -L -o opentelemetry-javaagent.jar \
 
 ```bash
 java -javaagent:opentelemetry-javaagent.jar \
-  -Dotel.exporter.otlp.endpoint=https://otlp.iapm.app \
+  -Dotel.exporter.otlp.endpoint=https://otlp.deepcube.ai \
   -Dotel.exporter.otlp.headers=api-key=YOUR-API-KEY \
   -Dotel.service.name=my-java-app \
   -jar your-application.jar
@@ -80,7 +80,7 @@ Configure in `application.yml`:
 otel:
   exporter:
     otlp:
-      endpoint: https://otlp.iapm.app
+      endpoint: https://otlp.deepcube.ai
       headers:
         api-key: YOUR-API-KEY
   service:
@@ -90,7 +90,7 @@ otel:
 Or in `application.properties`:
 
 ```properties
-otel.exporter.otlp.endpoint=https://otlp.iapm.app
+otel.exporter.otlp.endpoint=https://otlp.deepcube.ai
 otel.exporter.otlp.headers.api-key=YOUR-API-KEY
 otel.service.name=my-spring-boot-app
 ```
@@ -170,7 +170,7 @@ public class OtelConfig {
 
         // Trace exporter
         OtlpGrpcSpanExporter spanExporter = OtlpGrpcSpanExporter.builder()
-            .setEndpoint("https://otlp.iapm.app")
+            .setEndpoint("https://otlp.deepcube.ai")
             .addHeader("api-key", "YOUR-API-KEY")
             .build();
 
@@ -181,7 +181,7 @@ public class OtelConfig {
 
         // Metric exporter
         OtlpGrpcMetricExporter metricExporter = OtlpGrpcMetricExporter.builder()
-            .setEndpoint("https://otlp.iapm.app")
+            .setEndpoint("https://otlp.deepcube.ai")
             .addHeader("api-key", "YOUR-API-KEY")
             .build();
 
@@ -250,7 +250,7 @@ The Java agent and SDK autoconfigure module read these variables:
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.iapm.app` | OTLP collector endpoint |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
 | `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in DeepCube |
 | `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (grpc or http/protobuf) |
@@ -262,7 +262,7 @@ You can also use JVM system properties (prefix with `-D` and replace underscores
 
 ```bash
 java -javaagent:opentelemetry-javaagent.jar \
-  -Dotel.exporter.otlp.endpoint=https://otlp.iapm.app \
+  -Dotel.exporter.otlp.endpoint=https://otlp.deepcube.ai \
   -Dotel.exporter.otlp.headers=api-key=YOUR-API-KEY \
   -Dotel.service.name=my-java-app \
   -jar your-app.jar
@@ -289,7 +289,7 @@ java -javaagent:opentelemetry-javaagent.jar \
 ### No data appearing in DeepCube
 
 - Verify the API key by copying a fresh one from [portal.iapm.app](https://portal.iapm.app){ target="_blank" } under **Administration > Grids > Instrument**.
-- Check network connectivity: `curl -v https://otlp.iapm.app`.
+- Check network connectivity: `curl -v https://otlp.deepcube.ai`.
 - Look for OpenTelemetry warnings in your application logs.
 
 ### Spring Boot starter conflicts

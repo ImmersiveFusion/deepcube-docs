@@ -1,6 +1,6 @@
 # DeepCube
 
-Enter the World of Your Application®. DeepCube transforms [Application Performance Management](../../Resources/Terms-and-Concepts/APM/index.md) into an immersive 3D experience with AI-powered assistance.
+Enter the World of Your Application®. DeepCube™ transforms [Application Performance Management](../../Resources/Terms-and-Concepts/APM/index.md) into an immersive 3D experience with AI-powered assistance.
 
 <iframe width="1024" height="576" src="https://www.youtube.com/embed/SkCkcELKFzg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

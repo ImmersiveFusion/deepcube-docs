@@ -48,16 +48,16 @@ This puts a `tracegen` command on your system.
 
 ## Step 3: Send traces to DeepCube
 
-Now point the generator at DeepCube. Replace `YOUR_IAPM_KEY` with the key you copied in Step 1:
+Now point the generator at DeepCube. Replace `YOUR_API_KEY` with the key you copied in Step 1:
 
 ```bash
-tracegen -endpoint otlp.iapm.app:443 -headers "api-key=YOUR_IAPM_KEY" -complexity light
+tracegen -endpoint otlp.deepcube.ai:443 -headers "api-key=YOUR_API_KEY" -complexity light
 ```
 
 A note on each part:
 
-- `-endpoint otlp.iapm.app:443` sends to DeepCube's OTLP endpoint over gRPC.
-- `-headers "api-key=YOUR_IAPM_KEY"` authenticates with your grid key. The header name is `api-key`, lowercase, exactly.
+- `-endpoint otlp.deepcube.ai:443` sends to DeepCube's OTLP endpoint over gRPC.
+- `-headers "api-key=YOUR_API_KEY"` authenticates with your grid key. The header name is `api-key`, lowercase, exactly.
 - `-complexity light` generates a clean, ten-service topology: enough to be interesting, small enough to read at a glance. (You can rerun later with `normal` or `heavy` for a larger graph.)
 
 **What you should see:** the generator starts emitting traces and logs to your terminal as it simulates an e-commerce platform: a web frontend, an API gateway, an order service, a payment service, and a handful of others, exercising flows like *Create Order* and *User Login*.

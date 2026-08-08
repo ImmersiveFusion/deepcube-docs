@@ -11,6 +11,11 @@ This page covers common issues you may encounter with DeepCube and how to resolv
 | App won't install via Steam | Insufficient disk space or Steam client out of date | Ensure at least 4 GB of free disk space. Update Steam to the latest version via **Steam > Check for Steam Client Updates**. |
 | App crashes on launch | Missing or outdated GPU drivers | Update your GPU drivers to the latest version from [NVIDIA](https://www.nvidia.com/drivers){target="_blank"}, [AMD](https://www.amd.com/en/support){target="_blank"}, or [Intel](https://www.intel.com/content/www/us/en/download-center){target="_blank"}. |
 | "Unsupported GPU" error | GPU does not meet minimum requirements (DirectX 11 / Vulkan 1.1) | Check [Supported Configurations](../Supported-Configurations/index.md) for minimum GPU requirements. Integrated graphics are not supported. |
+<!-- SP-074: the Steam path, settings folder, and Player.log paths on this page still say the currently-shipping name.
+     Per R-DOCS-005, docs that quote a shipping string stay on the old
+     string until the code ships the new one. Do not "fix" these to
+     DeepCube ahead of the build. -->
+
 | Antivirus blocking installation | Security software flagging the Unity runtime or installer | Add the DeepCube installation directory to your antivirus exclusion list. The default Steam path is `C:\Program Files (x86)\Steam\steamapps\common\IAPM`. |
 | Offline installer fails | Corrupted or incomplete download | Re-download the installer and verify the file hash, then run it again. |
 | App crashes immediately after splash screen | Corrupted local settings or cache | Delete the settings folder at `%APPDATA%\..\LocalLow\Immersive Fusion\IAPM` and relaunch the application. |
@@ -21,7 +26,7 @@ This page covers common issues you may encounter with DeepCube and how to resolv
 
 | Symptom | Cause | Resolution |
 |---------|-------|------------|
-| No telemetry data appearing | Application not connected to the DeepCube backend, or no instrumented services sending data | Verify your connection to `otlp.iapm.app` on port 443. Confirm your instrumented applications are configured to send OpenTelemetry data to the correct endpoint. See [Network Requirements](#network-requirements) below. |
+| No telemetry data appearing | Application not connected to the DeepCube backend, or no instrumented services sending data | Verify your connection to `otlp.deepcube.ai` on port 443. Confirm your instrumented applications are configured to send OpenTelemetry data to the correct endpoint. See [Network Requirements](#network-requirements) below. |
 | "Connection failed" error | Firewall or proxy blocking outbound HTTPS traffic | Ensure ports 443/TCP are open for all endpoints listed in [Network Requirements](#network-requirements). If behind a corporate proxy, configure the proxy settings in your system environment variables. |
 | Data stops updating after a while | Network interruption or session timeout | Check your network connection. The application will automatically reconnect when connectivity is restored. If the issue persists, restart the application. |
 | Demo telemetry not loading | Demo mode not enabled or backend unreachable | Open **Settings > Data Source** and confirm Demo Telemetry is selected. Verify you have an active internet connection to `api-azure.iapm.app`. |
@@ -79,7 +84,7 @@ DeepCube requires outbound HTTPS access to the following endpoints. Ensure these
 
 | Endpoint | Port | Protocol | Purpose |
 |----------|------|----------|---------|
-| `otlp.iapm.app` | 443 | TCP (HTTPS) | Telemetry ingestion - receives OpenTelemetry data from your instrumented applications |
+| `otlp.deepcube.ai` | 443 | TCP (HTTPS) | Telemetry ingestion - receives OpenTelemetry data from your instrumented applications |
 | `api-azure.iapm.app` | 443 | TCP (HTTPS) | API backend - powers Tessa, authentication, and application data |
 | `portal.iapm.app` | 443 | TCP (HTTPS) | Web portal - browser-based authentication and account management |
 | `*.steamcontent.com` | 443 | TCP (HTTPS) | Steam CDN - application downloads and updates (Steam installs only) |

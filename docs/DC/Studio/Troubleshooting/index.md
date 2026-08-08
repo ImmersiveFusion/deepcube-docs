@@ -11,7 +11,7 @@
 |-------|---------------|------------|
 | **App won't start** | Unsupported OS version or missing system libraries | Verify your system meets the [minimum requirements](../Supported-Configurations/index.md). On macOS, ensure you are running macOS 12+ on Apple Silicon. |
 | **App blocked on macOS** | macOS Gatekeeper blocks unidentified apps | Go to **System Settings** - **Privacy & Security** and allow the application to run. |
-| **Can't connect to grid** | Network issue or incorrect credentials | Check your internet connection. Verify your DeepCube account credentials. Ensure your firewall allows outbound HTTPS on port 443 to `*.iapm.app` and `*.immersivefusion.com`. |
+| **Can't connect to grid** | Network issue or incorrect credentials | Check your internet connection. Verify your DeepCube account credentials. Ensure your firewall allows outbound HTTPS on port 443 to `*.deepcube.ai`, `*.iapm.app`, and `*.immersivefusion.com`. |
 | **Voice not working** | Microphone not connected or permissions denied | Ensure a microphone is connected and that DeepCube Studio has microphone permissions in your OS settings. On macOS, check **System Settings** - **Privacy & Security** - **Microphone**. |
 | **Workspace not loading** | Connectivity issue or session expired | Check your network connection. Try signing out and signing back in. If the issue persists, restart the application. |
 | **Chat history lost** | Application data was cleared or corrupted | Session persistence stores data locally. If local data was deleted or corrupted, previous sessions cannot be recovered. Ensure antivirus or cleanup tools are not removing application data. |

@@ -6,6 +6,12 @@ Recent updates and features across DeepCube. For complete version history, see t
 
 ## Latest Highlights
 
+### Immersive APM is now DeepCube
+
+The product you know as Immersive APM, or IAPM, is now **DeepCube™**, the spatial observability platform. The three surfaces are DeepCube, DeepCube Web, and DeepCube Studio.
+
+This is a name change only. Your account, grids, API keys, and telemetry are unchanged, and existing links to these docs keep working. Release notes for versions that shipped earlier keep the name they shipped under.
+
 ### Mosey & Personal Subscription (3D v1.15, Web 3.140)
 
 Mosey graduates from preview in 3D, with voice and console workspace switching, a three-bucket radial menu, and gamepad cursor support. The Web Portal rolls out the Personal Product License model end to end.

@@ -21,7 +21,7 @@ API keys authenticate your application's telemetry data with DeepCube. Each grid
 | **Scope** | One API key per grid |
 | **Format** | UUID string |
 | **Header** | `api-key` |
-| **Endpoint** | `https://otlp.iapm.app` |
+| **Endpoint** | `https://otlp.deepcube.ai` |
 
 !!! warning "One API Key Per Application"
     Each application grid must have its own unique API key. Using the same key for multiple applications will mix telemetry data together, making it difficult to analyze.
@@ -32,7 +32,7 @@ Configure your OpenTelemetry exporter with your API key:
 
 | Setting | Value |
 |---------|-------|
-| **Endpoint** | `https://otlp.iapm.app` |
+| **Endpoint** | `https://otlp.deepcube.ai` |
 | **Header** | `api-key: YOUR-API-KEY` |
 
 See [Instrument Your Application](../../Instrument/index.md) for language-specific examples.

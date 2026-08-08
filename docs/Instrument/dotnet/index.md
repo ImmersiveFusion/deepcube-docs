@@ -58,7 +58,7 @@ builder.Services.AddOpenTelemetry()
         .AddEntityFrameworkCoreInstrumentation()
         .AddOtlpExporter(options =>
         {
-            options.Endpoint = new Uri("https://otlp.iapm.app");
+            options.Endpoint = new Uri("https://otlp.deepcube.ai");
             options.Headers = "api-key=YOUR-API-KEY";
         }))
     .WithMetrics(metrics => metrics
@@ -67,7 +67,7 @@ builder.Services.AddOpenTelemetry()
         .AddRuntimeInstrumentation()
         .AddOtlpExporter(options =>
         {
-            options.Endpoint = new Uri("https://otlp.iapm.app");
+            options.Endpoint = new Uri("https://otlp.deepcube.ai");
             options.Headers = "api-key=YOUR-API-KEY";
         }));
 
@@ -78,7 +78,7 @@ builder.Logging.AddOpenTelemetry(logging =>
     logging.IncludeScopes = true;
     logging.AddOtlpExporter(options =>
     {
-        options.Endpoint = new Uri("https://otlp.iapm.app");
+        options.Endpoint = new Uri("https://otlp.deepcube.ai");
         options.Headers = "api-key=YOUR-API-KEY";
     });
 });
@@ -104,7 +104,7 @@ using var tracerProvider = Sdk.CreateTracerProviderBuilder()
     .AddHttpClientInstrumentation()
     .AddOtlpExporter(options =>
     {
-        options.Endpoint = new Uri("https://otlp.iapm.app");
+        options.Endpoint = new Uri("https://otlp.deepcube.ai");
         options.Headers = "api-key=YOUR-API-KEY";
     })
     .Build();
@@ -115,7 +115,7 @@ using var meterProvider = Sdk.CreateMeterProviderBuilder()
         .AddService("my-console-app"))
     .AddOtlpExporter(options =>
     {
-        options.Endpoint = new Uri("https://otlp.iapm.app");
+        options.Endpoint = new Uri("https://otlp.deepcube.ai");
         options.Headers = "api-key=YOUR-API-KEY";
     })
     .Build();
@@ -148,14 +148,14 @@ builder.Services.AddOpenTelemetry()
         .AddHttpClientInstrumentation()
         .AddOtlpExporter(options =>
         {
-            options.Endpoint = new Uri("https://otlp.iapm.app");
+            options.Endpoint = new Uri("https://otlp.deepcube.ai");
             options.Headers = "api-key=YOUR-API-KEY";
         }))
     .WithMetrics(metrics => metrics
         .AddRuntimeInstrumentation()
         .AddOtlpExporter(options =>
         {
-            options.Endpoint = new Uri("https://otlp.iapm.app");
+            options.Endpoint = new Uri("https://otlp.deepcube.ai");
             options.Headers = "api-key=YOUR-API-KEY";
         }));
 
@@ -171,7 +171,7 @@ Instead of hardcoding values, use environment variables. The OpenTelemetry .NET 
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.iapm.app` | OTLP collector endpoint |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
 | `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in DeepCube |
 | `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (grpc or http/protobuf) |
@@ -198,7 +198,7 @@ Set the variables in your launch profile, Docker configuration, or deployment en
       "profiles": {
         "MyApp": {
           "environmentVariables": {
-            "OTEL_EXPORTER_OTLP_ENDPOINT": "https://otlp.iapm.app",
+            "OTEL_EXPORTER_OTLP_ENDPOINT": "https://otlp.deepcube.ai",
             "OTEL_EXPORTER_OTLP_HEADERS": "api-key=YOUR-API-KEY",
             "OTEL_SERVICE_NAME": "my-app"
           }
@@ -210,7 +210,7 @@ Set the variables in your launch profile, Docker configuration, or deployment en
 === "Dockerfile"
 
     ```dockerfile
-    ENV OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.iapm.app
+    ENV OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai
     ENV OTEL_EXPORTER_OTLP_HEADERS=api-key=YOUR-API-KEY
     ENV OTEL_SERVICE_NAME=my-app
     ```
@@ -221,7 +221,7 @@ Set the variables in your launch profile, Docker configuration, or deployment en
     {
       "Otel": {
         "ServiceName": "my-app",
-        "Endpoint": "https://otlp.iapm.app",
+        "Endpoint": "https://otlp.deepcube.ai",
         "ApiKey": "YOUR-API-KEY"
       }
     }
@@ -388,7 +388,7 @@ public class OrderController : ControllerBase
 
 ### No data appearing in DeepCube
 
-- **Check the endpoint**: Ensure `https://otlp.iapm.app` is reachable from your application. Test with `curl https://otlp.iapm.app`.
+- **Check the endpoint**: Ensure `https://otlp.deepcube.ai` is reachable from your application. Test with `curl https://otlp.deepcube.ai`.
 - **Verify the API key**: Copy a fresh key from [portal.iapm.app](https://portal.iapm.app){ target="_blank" } under **Administration > Grids > Instrument**.
 - **Check for package version conflicts**: Ensure all `OpenTelemetry.*` packages are the same version.
 

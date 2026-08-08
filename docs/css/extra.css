@@ -1006,7 +1006,7 @@ h5 {
 
    Set in JetBrains Mono per the grammar's typography rules (the IF product-docs
    code face, already imported above). Never placed in <title>/og:title (those
-   stay plain-English — see the grammar doc's accessibility section). */
+   stay plain-English, see the grammar doc's accessibility section). */
 .md-header__topic:first-child .md-ellipsis {
   font-size: 0;
   letter-spacing: 0;

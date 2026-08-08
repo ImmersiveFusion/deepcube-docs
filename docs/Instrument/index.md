@@ -10,7 +10,7 @@ All you need is your **OTLP endpoint** and **API key**:
 
 | Setting | Value |
 |---------|-------|
-| **Endpoint** | `https://otlp.iapm.app` |
+| **Endpoint** | `https://otlp.deepcube.ai` |
 | **Protocol** | `grpc` (default) or `http/protobuf` |
 | **API Key Header** | `api-key: YOUR-API-KEY` |
 
@@ -22,7 +22,7 @@ The fastest way to configure any OpenTelemetry SDK is with environment variables
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.iapm.app` | OTLP collector endpoint |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
 | `OTEL_SERVICE_NAME` | `your-service-name` | Identifies your service in DeepCube |
 
@@ -40,14 +40,14 @@ Choose your language to see the minimal configuration needed to start sending te
             .AddHttpClientInstrumentation()
             .AddOtlpExporter(options =>
             {
-                options.Endpoint = new Uri("https://otlp.iapm.app");
+                options.Endpoint = new Uri("https://otlp.deepcube.ai");
                 options.Headers = "api-key=YOUR-API-KEY";
             }))
         .WithMetrics(metrics => metrics
             .AddAspNetCoreInstrumentation()
             .AddOtlpExporter(options =>
             {
-                options.Endpoint = new Uri("https://otlp.iapm.app");
+                options.Endpoint = new Uri("https://otlp.deepcube.ai");
                 options.Headers = "api-key=YOUR-API-KEY";
             }));
     ```
@@ -63,7 +63,7 @@ Choose your language to see the minimal configuration needed to start sending te
 
     # Run your application with auto-instrumentation
     java -javaagent:opentelemetry-javaagent.jar \
-      -Dotel.exporter.otlp.endpoint=https://otlp.iapm.app \
+      -Dotel.exporter.otlp.endpoint=https://otlp.deepcube.ai \
       -Dotel.exporter.otlp.headers=api-key=YOUR-API-KEY \
       -Dotel.service.name=your-service-name \
       -jar your-app.jar
@@ -77,7 +77,7 @@ Choose your language to see the minimal configuration needed to start sending te
     pip install opentelemetry-distro opentelemetry-exporter-otlp
 
     # Auto-instrument and run
-    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.iapm.app \
+    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai \
     OTEL_EXPORTER_OTLP_HEADERS="api-key=YOUR-API-KEY" \
     OTEL_SERVICE_NAME=your-service-name \
     opentelemetry-instrument python your_app.py
@@ -102,7 +102,7 @@ Choose your language to see the minimal configuration needed to start sending te
 
     const sdk = new NodeSDK({
       traceExporter: new OTLPTraceExporter({
-        url: 'https://otlp.iapm.app',
+        url: 'https://otlp.deepcube.ai',
         headers: { 'api-key': 'YOUR-API-KEY' },
       }),
       instrumentations: [getNodeAutoInstrumentations()],
@@ -122,7 +122,7 @@ Choose your language to see the minimal configuration needed to start sending te
     )
 
     exporter, err := otlptracegrpc.New(ctx,
-        otlptracegrpc.WithEndpoint("otlp.iapm.app:443"),
+        otlptracegrpc.WithEndpoint("otlp.deepcube.ai:443"),
         otlptracegrpc.WithHeaders(map[string]string{
             "api-key": "YOUR-API-KEY",
         }),
@@ -155,7 +155,7 @@ After deploying your instrumented application:
 
 !!! tip "Not seeing data?"
     - Verify your API key is correct (copy it fresh from **Administration > Grids > Instrument**)
-    - Check that your application can reach `https://otlp.iapm.app` on port 443
+    - Check that your application can reach `https://otlp.deepcube.ai` on port 443
     - Ensure the `OTEL_SERVICE_NAME` is set so your service is identifiable
     - Look for OpenTelemetry errors in your application logs
     - Try the troubleshooting section in your language-specific guide

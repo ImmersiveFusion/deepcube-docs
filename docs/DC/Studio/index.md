@@ -7,7 +7,7 @@ title: DeepCube Studio
 !!! warning "Early Access"
     DeepCube Studio is in early access. Features and availability may change.
 
-DeepCube Studio is a lightweight native client built with Avalonia, providing AI-powered chat, voice interaction, workspaces, artifacts, and organizational knowledge - without the full 3D environment.
+DeepCube™ Studio is a lightweight native client built with Avalonia, providing AI-powered chat, voice interaction, workspaces, artifacts, and organizational knowledge - without the full 3D environment.
 
 ## Capabilities
 

@@ -5,6 +5,14 @@
 
 ## Version History
 
+### Renamed to DeepCube <small>August 7, 2026</small> { id="renamed-to-deepcube" }
+
+**Introduction:**
+
+IAPM Studio is now **DeepCube™ Studio**. This is a name change only. Your account, your grids, your API keys, and your telemetry are unchanged, and no action is needed on your part.
+
+Entries below this one keep the name they shipped under, so the record stays accurate.
+
 ### 1.3.0 <small>June 30, 2026</small> { id="1.3.0" }
 
 **Introduction:**

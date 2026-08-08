@@ -46,8 +46,8 @@ processors:
     send_batch_size: 1024
 
 exporters:
-  otlp/iapm:
-    endpoint: otlp.iapm.app:443
+  otlp/deepcube:
+    endpoint: otlp.deepcube.ai:443
     headers:
       api-key: YOUR-API-KEY
 
@@ -56,15 +56,15 @@ service:
     traces:
       receivers: [otlp]
       processors: [batch]
-      exporters: [otlp/iapm]
+      exporters: [otlp/deepcube]
     metrics:
       receivers: [otlp]
       processors: [batch]
-      exporters: [otlp/iapm]
+      exporters: [otlp/deepcube]
     logs:
       receivers: [otlp]
       processors: [batch]
-      exporters: [otlp/iapm]
+      exporters: [otlp/deepcube]
 ```
 
 ### Production Configuration
@@ -109,10 +109,10 @@ processors:
         - 'attributes["http.route"] == "/ready"'
 
 exporters:
-  otlp/iapm:
-    endpoint: otlp.iapm.app:443
+  otlp/deepcube:
+    endpoint: otlp.deepcube.ai:443
     headers:
-      api-key: ${env:IAPM_API_KEY}
+      api-key: ${env:DEEPCUBE_API_KEY}
     retry_on_failure:
       enabled: true
       initial_interval: 5s
@@ -135,15 +135,15 @@ service:
     traces:
       receivers: [otlp]
       processors: [memory_limiter, filter/health, resource, batch]
-      exporters: [otlp/iapm]
+      exporters: [otlp/deepcube]
     metrics:
       receivers: [otlp]
       processors: [memory_limiter, resource, batch]
-      exporters: [otlp/iapm]
+      exporters: [otlp/deepcube]
     logs:
       receivers: [otlp]
       processors: [memory_limiter, resource, batch]
-      exporters: [otlp/iapm]
+      exporters: [otlp/deepcube]
 ```
 
 ### Configuration Reference
@@ -195,7 +195,7 @@ services:
       - "4318:4318"   # OTLP HTTP
       - "13133:13133" # Health check
     environment:
-      - IAPM_API_KEY=YOUR-API-KEY
+      - DEEPCUBE_API_KEY=YOUR-API-KEY
     restart: unless-stopped
 
   my-app:
@@ -259,7 +259,7 @@ spec:
               mountPath: /etc/otel
           envFrom:
             - secretRef:
-                name: iapm-api-key
+                name: deepcube-api-key
           resources:
             requests:
               memory: 256Mi
@@ -319,10 +319,10 @@ data:
         limit_mib: 400
 
     exporters:
-      otlp/iapm:
-        endpoint: otlp.iapm.app:443
+      otlp/deepcube:
+        endpoint: otlp.deepcube.ai:443
         headers:
-          api-key: ${env:IAPM_API_KEY}
+          api-key: ${env:DEEPCUBE_API_KEY}
 
     extensions:
       health_check:
@@ -334,15 +334,15 @@ data:
         traces:
           receivers: [otlp]
           processors: [memory_limiter, batch]
-          exporters: [otlp/iapm]
+          exporters: [otlp/deepcube]
         metrics:
           receivers: [otlp]
           processors: [memory_limiter, batch]
-          exporters: [otlp/iapm]
+          exporters: [otlp/deepcube]
         logs:
           receivers: [otlp]
           processors: [memory_limiter, batch]
-          exporters: [otlp/iapm]
+          exporters: [otlp/deepcube]
 ```
 
 ## Verify It's Working
@@ -383,10 +383,10 @@ data:
 ### Data not reaching DeepCube
 
 - Verify the API key by copying a fresh one from [portal.iapm.app](https://portal.iapm.app){ target="_blank" } under **Administration > Grids > Instrument**.
-- Check that the Collector can reach `otlp.iapm.app:443`. Test from within the container:
+- Check that the Collector can reach `otlp.deepcube.ai:443`. Test from within the container:
 
     ```bash
-    docker exec <container> wget -q -O- https://otlp.iapm.app
+    docker exec <container> wget -q -O- https://otlp.deepcube.ai
     ```
 
 - Enable the `debug` exporter to see what the Collector is receiving:
@@ -399,7 +399,7 @@ data:
     service:
       pipelines:
         traces:
-          exporters: [debug, otlp/iapm]
+          exporters: [debug, otlp/deepcube]
     ```
 
 ### High memory usage
@@ -415,7 +415,7 @@ data:
 - In Kubernetes, use the Service DNS: `http://otel-collector.otel-system.svc.cluster.local:4317`.
 
 !!! note "Plain HTTP is acceptable for cluster-internal traffic"
-    The `http://` endpoints above are for application-to-Collector traffic within the same Docker network or Kubernetes cluster. The Collector's outbound connection to `otlp.iapm.app` always uses TLS. For multi-tenant clusters or strict security requirements, configure TLS between applications and the Collector as well.
+    The `http://` endpoints above are for application-to-Collector traffic within the same Docker network or Kubernetes cluster. The Collector's outbound connection to `otlp.deepcube.ai` always uses TLS. For multi-tenant clusters or strict security requirements, configure TLS between applications and the Collector as well.
 
 ## Further Reading
 

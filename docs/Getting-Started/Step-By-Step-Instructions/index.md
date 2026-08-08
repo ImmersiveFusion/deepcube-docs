@@ -30,12 +30,12 @@ Treat the key like a password: do not commit it to source control.
 
 ## Step 3: Instrument your application
 
-Point your OpenTelemetry OTLP exporter at DeepCube. The endpoint is `otlp.iapm.app:443` (gRPC over TLS), and your API key travels in the `api-key` header:
+Point your OpenTelemetry OTLP exporter at DeepCube. The endpoint is `otlp.deepcube.ai:443` (gRPC over TLS), and your API key travels in the `api-key` header:
 
     # OTLP exporter configuration
     exporters:
       otlp:
-        endpoint: "otlp.iapm.app:443"
+        endpoint: "otlp.deepcube.ai:443"
         headers:
           "api-key": "your-api-key-here"
 
@@ -48,7 +48,7 @@ Point your OpenTelemetry OTLP exporter at DeepCube. The endpoint is `otlp.iapm.a
     The official [Language APIs and SDKs](https://opentelemetry.io/docs/languages/){ target="_blank" } cover instrumentation for your programming language.
 
 !!! warning "Nothing showing up?"
-    If you sent telemetry but no services appear after a couple of minutes, the cause is almost always the key or the endpoint. Check that the endpoint is exactly `otlp.iapm.app:443`, that the `api-key` header holds the key for the same grid you are viewing, and that your exporter uses gRPC over TLS. Still stuck? Reach [support](../../contact.md).
+    If you sent telemetry but no services appear after a couple of minutes, the cause is almost always the key or the endpoint. Check that the endpoint is exactly `otlp.deepcube.ai:443`, that the `api-key` header holds the key for the same grid you are viewing, and that your exporter uses gRPC over TLS. Still stuck? Reach [support](../../contact.md).
 
 ## Step 4: Explore your system
 

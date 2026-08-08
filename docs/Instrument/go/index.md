@@ -306,7 +306,7 @@ The OpenTelemetry Go SDK reads these variables when using the autoconfigure opti
 
 1. Run your instrumented application
 2. Send a few HTTP requests to generate traces
-3. Open [portal.iapm.app](https://portal.iapm.app){ target="_blank" } and select your Grid
+3. Open [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } and select your Grid
 4. Click **Enter** - you should see your service and traces within a few minutes
 
 !!! tip "Quick verification with stdout exporter"
@@ -322,7 +322,7 @@ The OpenTelemetry Go SDK reads these variables when using the autoconfigure opti
 
 ### No data appearing in DeepCube
 
-- Verify the API key by copying a fresh one from [portal.iapm.app](https://portal.iapm.app){ target="_blank" } under **Administration > Grids > Instrument**.
+- Verify the API key by copying a fresh one from [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } under **Administration > Grids > Instrument**.
 - Ensure `cleanup()` (or `tracerProvider.Shutdown()`) is called before the process exits - without it, buffered spans may be lost.
 - Check that TLS credentials are configured: `otlptracegrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, ""))`.
 

@@ -272,7 +272,7 @@ java -javaagent:opentelemetry-javaagent.jar \
 
 1. Run your instrumented application
 2. Send a few HTTP requests to generate traces
-3. Open [portal.iapm.app](https://portal.iapm.app){ target="_blank" } and select your Grid
+3. Open [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } and select your Grid
 4. Click **Enter** - you should see your service and traces within a few minutes
 
 !!! tip "Quick verification with logging exporter"
@@ -288,7 +288,7 @@ java -javaagent:opentelemetry-javaagent.jar \
 
 ### No data appearing in DeepCube
 
-- Verify the API key by copying a fresh one from [portal.iapm.app](https://portal.iapm.app){ target="_blank" } under **Administration > Grids > Instrument**.
+- Verify the API key by copying a fresh one from [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } under **Administration > Grids > Instrument**.
 - Check network connectivity: `curl -v https://otlp.deepcube.ai`.
 - Look for OpenTelemetry warnings in your application logs.
 

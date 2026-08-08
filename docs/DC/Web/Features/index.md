@@ -2,7 +2,7 @@
 
 {!template/subscription-required.mdp!}
 
-DeepCube Web provides browser-based access to your application telemetry at [portal.iapm.app](https://portal.iapm.app){ target="_blank" }. The following features are available across all supported browsers.
+DeepCube Web provides browser-based access to your application telemetry at [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" }. The following features are available across all supported browsers.
 
 ## Observability
 

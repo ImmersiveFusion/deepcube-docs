@@ -2,7 +2,7 @@
 
 DeepCube supports multiple authentication methods. Choose the option that best fits your organization.
 
-[Start Free :material-rocket-launch:](https://portal.iapm.app){ .md-button .md-button--primary target="_blank" }
+[Start Free :material-rocket-launch:](https://portal.deepcube.ai){ .md-button .md-button--primary target="_blank" }
 
 !!! tip "Same Features, Same Pricing"
     All login methods provide identical features and pricing. Choose based on convenience and your organization's existing authentication infrastructure.

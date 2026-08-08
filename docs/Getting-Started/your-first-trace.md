@@ -26,7 +26,7 @@ You are not instrumenting your own application yet. That comes next, and it is e
 
 Your API key authenticates your telemetry with DeepCube. Each grid has its own key.
 
-1. Sign in at [portal.iapm.app](https://portal.iapm.app){ target="_blank" } (the sign-in chooser). After you choose a method you land in the web app: `my.iapm.app` if you signed in with Email or GitHub, `azure.iapm.app` if you signed in with Microsoft. Go to **Administration → Grids**.
+1. Sign in at [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } (the sign-in chooser). After you choose a method you land in the web app: `my.iapm.app` if you signed in with Email or GitHub, `azure.deepcube.ai` if you signed in with Microsoft. Go to **Administration → Grids**.
 2. Click the **Instrument** button on the grid you want to send traces to.
 3. Copy the API key from the wizard.
 
@@ -48,16 +48,16 @@ This puts a `tracegen` command on your system.
 
 ## Step 3: Send traces to DeepCube
 
-Now point the generator at DeepCube. Replace `YOUR_API_KEY` with the key you copied in Step 1:
+Now point the generator at DeepCube. Replace `YOUR-API-KEY` with the key you copied in Step 1:
 
 ```bash
-tracegen -endpoint otlp.deepcube.ai:443 -headers "api-key=YOUR_API_KEY" -complexity light
+tracegen -endpoint otlp.deepcube.ai:443 -headers "api-key=YOUR-API-KEY" -complexity light
 ```
 
 A note on each part:
 
 - `-endpoint otlp.deepcube.ai:443` sends to DeepCube's OTLP endpoint over gRPC.
-- `-headers "api-key=YOUR_API_KEY"` authenticates with your grid key. The header name is `api-key`, lowercase, exactly.
+- `-headers "api-key=YOUR-API-KEY"` authenticates with your grid key. The header name is `api-key`, lowercase, exactly.
 - `-complexity light` generates a clean, ten-service topology: enough to be interesting, small enough to read at a glance. (You can rerun later with `normal` or `heavy` for a larger graph.)
 
 **What you should see:** the generator starts emitting traces and logs to your terminal as it simulates an e-commerce platform: a web frontend, an API gateway, an order service, a payment service, and a handful of others, exercising flows like *Create Order* and *User Login*.

@@ -115,7 +115,7 @@ API Keys provide a simpler authentication method for server-to-server integratio
 
 ### Getting Your API Key
 
-1. Log in at [portal.iapm.app](https://portal.iapm.app){ target="_blank" }
+1. Log in at [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" }
 2. Navigate to **Administration - Grids**
 3. Click the **Instrument** button (:material-cog:) on your Grid
 4. Copy the API key from the configuration wizard

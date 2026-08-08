@@ -280,7 +280,7 @@ The OpenTelemetry Python SDK reads these variables automatically:
 
 1. Run your instrumented application
 2. Send a few HTTP requests to generate traces
-3. Open [portal.iapm.app](https://portal.iapm.app){ target="_blank" } and select your Grid
+3. Open [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } and select your Grid
 4. Click **Enter** - you should see your service and traces within a few minutes
 
 !!! tip "Quick verification with console exporter"
@@ -300,7 +300,7 @@ The OpenTelemetry Python SDK reads these variables automatically:
 
 ### No data appearing in DeepCube
 
-- Verify the API key by copying a fresh one from [portal.iapm.app](https://portal.iapm.app){ target="_blank" } under **Administration > Grids > Instrument**.
+- Verify the API key by copying a fresh one from [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } under **Administration > Grids > Instrument**.
 - Check network connectivity: `python -c "import urllib.request; urllib.request.urlopen('https://otlp.deepcube.ai')"`.
 - Ensure `grpcio` is installed: `pip install grpcio`. The gRPC exporter requires it.
 

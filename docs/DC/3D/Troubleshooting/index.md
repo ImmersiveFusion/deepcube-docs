@@ -72,9 +72,9 @@ VR is not actively maintained right now. If you already run a headset, the issue
 
 | Symptom | Cause | Resolution |
 |---------|-------|------------|
-| Login loop / can't authenticate | Browser cookie or cache issue preventing OAuth completion | Clear your browser cache and cookies for `portal.iapm.app`. Try using a different default browser. Ensure pop-ups are not blocked for the authentication domain. |
+| Login loop / can't authenticate | Browser cookie or cache issue preventing OAuth completion | Clear your browser cache and cookies for `portal.deepcube.ai`. Try using a different default browser. Ensure pop-ups are not blocked for the authentication domain. |
 | Session expired frequently | System clock out of sync or unstable network connection | Verify your system clock is accurate and set to auto-sync. Check that your network connection is stable - frequent disconnects will invalidate sessions. |
-| Browser-based auth not opening | Default browser not configured or blocked by security policy | Set a default browser in your OS settings. If in a corporate environment, confirm that `portal.iapm.app` is not blocked by your organization's web filter. Try launching the auth URL manually from the login screen. |
+| Browser-based auth not opening | Default browser not configured or blocked by security policy | Set a default browser in your OS settings. If in a corporate environment, confirm that `portal.deepcube.ai` is not blocked by your organization's web filter. Try launching the auth URL manually from the login screen. |
 
 ---
 
@@ -86,7 +86,7 @@ DeepCube requires outbound HTTPS access to the following endpoints. Ensure these
 |----------|------|----------|---------|
 | `otlp.deepcube.ai` | 443 | TCP (HTTPS) | Telemetry ingestion - receives OpenTelemetry data from your instrumented applications |
 | `api-azure.iapm.app` | 443 | TCP (HTTPS) | API backend - powers Tessa, authentication, and application data |
-| `portal.iapm.app` | 443 | TCP (HTTPS) | Web portal - browser-based authentication and account management |
+| `portal.deepcube.ai` | 443 | TCP (HTTPS) | Web portal - browser-based authentication and account management |
 | `*.steamcontent.com` | 443 | TCP (HTTPS) | Steam CDN - application downloads and updates (Steam installs only) |
 | `*.steampowered.com` | 443 | TCP (HTTPS) | Steam platform - license validation and update checks (Steam installs only) |
 

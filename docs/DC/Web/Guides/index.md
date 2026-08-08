@@ -6,7 +6,7 @@ Learn how to use DeepCube Web effectively for monitoring, analysis, and account 
 
 ## Quick Start
 
-1. **Log in** at [portal.iapm.app](https://portal.iapm.app){ target="_blank" }
+1. **Log in** at [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" }
 2. **Select a grid** from your dashboard
 3. **Click Enter** to view your application telemetry
 

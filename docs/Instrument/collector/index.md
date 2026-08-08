@@ -369,7 +369,7 @@ data:
       traces --otlp-endpoint localhost:4317 --otlp-insecure --traces 5
     ```
 
-3. Open [portal.iapm.app](https://portal.iapm.app){ target="_blank" } and select your Grid
+3. Open [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } and select your Grid
 4. Click **Enter** - you should see the test traces within a few minutes
 
 ## Troubleshooting
@@ -382,7 +382,7 @@ data:
 
 ### Data not reaching DeepCube
 
-- Verify the API key by copying a fresh one from [portal.iapm.app](https://portal.iapm.app){ target="_blank" } under **Administration > Grids > Instrument**.
+- Verify the API key by copying a fresh one from [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } under **Administration > Grids > Instrument**.
 - Check that the Collector can reach `otlp.deepcube.ai:443`. Test from within the container:
 
     ```bash

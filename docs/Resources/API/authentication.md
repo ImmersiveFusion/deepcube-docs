@@ -71,7 +71,7 @@ curl -X POST "https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token" \
 Include the access token in the `Authorization` header:
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/diagnostics/{gridSecondaryId}/health?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/diagnostics/{gridSecondaryId}/health?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -127,7 +127,7 @@ See [API Keys](../../Getting-Started/Api-Key/index.md) for detailed instructions
 Include the API key in the `api-key` header:
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/diagnostics/{gridSecondaryId}/health?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/diagnostics/{gridSecondaryId}/health?api-version=2.0" \
   -H "api-key: a1b2c3d4-e5f6-7890-abcd-ef1234567890"
 ```
 

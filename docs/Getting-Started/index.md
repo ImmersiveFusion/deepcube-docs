@@ -11,7 +11,7 @@ This guide takes you from first look to your own telemetry rendered in the Grid:
 
 You can explore DeepCube with demo data before creating an account. Demo grids carry sample telemetry from simulated services, so you can move through a real system in DeepCube without instrumenting anything of your own.
 
-The fastest way in is the **Chaos Simulator**, a demo grid you drive yourself at [demo.iapm.app](https://demo.iapm.app){ target="_blank" }: generate traffic, inject failures, and watch the telemetry appear live. See [Sandbox](Sandbox/index.md) for the full walkthrough.
+The fastest way in is the **Chaos Simulator**, a demo grid you drive yourself at [chaos.deepcube.ai](https://chaos.deepcube.ai){ target="_blank" }: generate traffic, inject failures, and watch the telemetry appear live. See [Sandbox](Sandbox/index.md) for the full walkthrough.
 
 To see it, you need the DeepCube client. We recommend **DeepCube**, where the demo grid renders as a space you move through:
 
@@ -40,7 +40,7 @@ You can sign in three ways. All of them reach the same product; the only differe
 
 [Sign in to DeepCube :material-rocket-launch:](https://portal.deepcube.ai){ .md-button .md-button--primary target="_blank" }
 
-Email and GitHub accounts land you in the web app at **my.iapm.app**; Microsoft accounts land you at **azure.deepcube.ai**. Both are the same application behind the same backend; the address differs only by how you signed in, so bookmark whichever one you land on.
+Email and GitHub accounts land you in the web app at **my.deepcube.ai**; Microsoft accounts land you at **azure.deepcube.ai**. Both are the same application behind the same backend; the address differs only by how you signed in, so bookmark whichever one you land on.
 
 For the full step-by-step, see [Sign up and instrument](Step-By-Step-Instructions/index.md).
 

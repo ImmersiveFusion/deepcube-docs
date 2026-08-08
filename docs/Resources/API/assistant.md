@@ -40,7 +40,7 @@ POST /assistant/chat/{instanceSecondaryId}
 #### Example Request
 
 ```bash
-curl -X POST "https://api-azure.iapm.app/assistant/chat/a1b2c3d4-e5f6-7890-abcd-ef1234567890?api-version=2.0" \
+curl -X POST "https://api-azure.deepcube.ai/assistant/chat/a1b2c3d4-e5f6-7890-abcd-ef1234567890?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -106,7 +106,7 @@ POST /assistant/speech/{instanceSecondaryId}/synthesize
 #### Example Request
 
 ```bash
-curl -X POST "https://api-azure.iapm.app/assistant/speech/a1b2c3d4-e5f6-7890-abcd-ef1234567890/synthesize?api-version=2.0" \
+curl -X POST "https://api-azure.deepcube.ai/assistant/speech/a1b2c3d4-e5f6-7890-abcd-ef1234567890/synthesize?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -155,7 +155,7 @@ Multipart form data with an audio file.
 #### Example Request
 
 ```bash
-curl -X POST "https://api-azure.iapm.app/assistant/speech/a1b2c3d4-e5f6-7890-abcd-ef1234567890/recognize?api-version=2.0" \
+curl -X POST "https://api-azure.deepcube.ai/assistant/speech/a1b2c3d4-e5f6-7890-abcd-ef1234567890/recognize?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -F "audio=@recording.wav"
 ```
@@ -191,7 +191,7 @@ GET /assistant/usage/energy
 #### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/assistant/usage/energy?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/assistant/usage/energy?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -227,7 +227,7 @@ GET /assistant/usage/{gridSecondaryId}/status
 #### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/assistant/usage/3fa85f64-5717-4562-b3fc-2c963f66afa6/status?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/assistant/usage/3fa85f64-5717-4562-b3fc-2c963f66afa6/status?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -265,7 +265,7 @@ GET /assistant/usage/{gridSecondaryId}/summary
 #### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/assistant/usage/3fa85f64-5717-4562-b3fc-2c963f66afa6/summary?from=2026-03-01T00:00:00Z&to=2026-04-01T00:00:00Z&api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/assistant/usage/3fa85f64-5717-4562-b3fc-2c963f66afa6/summary?from=2026-03-01T00:00:00Z&to=2026-04-01T00:00:00Z&api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -306,7 +306,7 @@ GET /assistant/usage/me
 #### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/assistant/usage/me?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/assistant/usage/me?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -355,7 +355,7 @@ GET /assistant/limits/{gridSecondaryId}
 #### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/assistant/limits/3fa85f64-5717-4562-b3fc-2c963f66afa6?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/assistant/limits/3fa85f64-5717-4562-b3fc-2c963f66afa6?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -404,7 +404,7 @@ PUT /assistant/limits/{gridSecondaryId}
 #### Example Request
 
 ```bash
-curl -X PUT "https://api-azure.iapm.app/assistant/limits/3fa85f64-5717-4562-b3fc-2c963f66afa6?api-version=2.0" \
+curl -X PUT "https://api-azure.deepcube.ai/assistant/limits/3fa85f64-5717-4562-b3fc-2c963f66afa6?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{

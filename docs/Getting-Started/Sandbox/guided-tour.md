@@ -72,7 +72,7 @@ Now that you know how to navigate DeepCube, it's time to break things on purpose
 
 ### Step 1: Open the Chaos Simulator
 
-Go to [demo.iapm.app](https://demo.iapm.app){ target="_blank" } in your browser. A unique sandbox is created for you automatically - no signup required.
+Go to [chaos.deepcube.ai](https://chaos.deepcube.ai){ target="_blank" } in your browser. A unique sandbox is created for you automatically - no signup required.
 
 ### Step 2: Generate Normal Traffic
 

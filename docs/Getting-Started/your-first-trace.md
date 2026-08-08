@@ -26,7 +26,7 @@ You are not instrumenting your own application yet. That comes next, and it is e
 
 Your API key authenticates your telemetry with DeepCube. Each grid has its own key.
 
-1. Sign in at [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } (the sign-in chooser). After you choose a method you land in the web app: `my.iapm.app` if you signed in with Email or GitHub, `azure.deepcube.ai` if you signed in with Microsoft. Go to **Administration → Grids**.
+1. Sign in at [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } (the sign-in chooser). After you choose a method you land in the web app: `my.deepcube.ai` if you signed in with Email or GitHub, `azure.deepcube.ai` if you signed in with Microsoft. Go to **Administration → Grids**.
 2. Click the **Instrument** button on the grid you want to send traces to.
 3. Copy the API key from the wizard.
 
@@ -89,6 +89,6 @@ In about five minutes you:
 
 ## Related
 
-- **To explore without installing anything:** open the [Chaos Simulator](Sandbox/index.md), a demo grid you drive from your browser at [demo.iapm.app](https://demo.iapm.app){ target="_blank" } and view in DeepCube.
+- **To explore without installing anything:** open the [Chaos Simulator](Sandbox/index.md), a demo grid you drive from your browser at [chaos.deepcube.ai](https://chaos.deepcube.ai){ target="_blank" } and view in DeepCube.
 - **For lookup of API key properties and rotation:** see the [API Keys reference](Api-Key/index.md).
 - **For background on traces and spans:** see [Concepts](../Resources/Terms-and-Concepts/index.md).

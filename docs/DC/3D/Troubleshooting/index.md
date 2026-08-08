@@ -29,7 +29,7 @@ This page covers common issues you may encounter with DeepCube and how to resolv
 | No telemetry data appearing | Application not connected to the DeepCube backend, or no instrumented services sending data | Verify your connection to `otlp.deepcube.ai` on port 443. Confirm your instrumented applications are configured to send OpenTelemetry data to the correct endpoint. See [Network Requirements](#network-requirements) below. |
 | "Connection failed" error | Firewall or proxy blocking outbound HTTPS traffic | Ensure ports 443/TCP are open for all endpoints listed in [Network Requirements](#network-requirements). If behind a corporate proxy, configure the proxy settings in your system environment variables. |
 | Data stops updating after a while | Network interruption or session timeout | Check your network connection. The application will automatically reconnect when connectivity is restored. If the issue persists, restart the application. |
-| Demo telemetry not loading | Demo mode not enabled or backend unreachable | Open **Settings > Data Source** and confirm Demo Telemetry is selected. Verify you have an active internet connection to `api-azure.iapm.app`. |
+| Demo telemetry not loading | Demo mode not enabled or backend unreachable | Open **Settings > Data Source** and confirm Demo Telemetry is selected. Verify you have an active internet connection to `api-azure.deepcube.ai`. |
 
 ---
 
@@ -48,7 +48,7 @@ This page covers common issues you may encounter with DeepCube and how to resolv
 
 | Symptom | Cause | Resolution |
 |---------|-------|------------|
-| Tessa not responding | No active internet connection or backend service temporarily unavailable | Verify connectivity to `api-azure.iapm.app` on port 443. Check the connection status indicator in the Tessa chat panel. |
+| Tessa not responding | No active internet connection or backend service temporarily unavailable | Verify connectivity to `api-azure.deepcube.ai` on port 443. Check the connection status indicator in the Tessa chat panel. |
 | Voice commands not recognized | Microphone not configured or browser permissions not granted | Ensure your microphone is set as the default input device in your OS audio settings. Grant microphone access when prompted by the application. Check **Settings > Audio > Input Device**. |
 | Energy depleted message | AI usage quota has been consumed for the current period | Energy replenishes automatically over time. You can continue using DeepCube without AI features while energy recharges. Check your current energy level in the Tessa panel. |
 | Chat history lost | Session ended or application was closed without saving | Chat history is tied to the active session. Starting a new session begins a fresh conversation. This is expected behavior - Tessa maintains context only within a single session. |
@@ -85,7 +85,7 @@ DeepCube requires outbound HTTPS access to the following endpoints. Ensure these
 | Endpoint | Port | Protocol | Purpose |
 |----------|------|----------|---------|
 | `otlp.deepcube.ai` | 443 | TCP (HTTPS) | Telemetry ingestion - receives OpenTelemetry data from your instrumented applications |
-| `api-azure.iapm.app` | 443 | TCP (HTTPS) | API backend - powers Tessa, authentication, and application data |
+| `api-azure.deepcube.ai` | 443 | TCP (HTTPS) | API backend - powers Tessa, authentication, and application data |
 | `portal.deepcube.ai` | 443 | TCP (HTTPS) | Web portal - browser-based authentication and account management |
 | `*.steamcontent.com` | 443 | TCP (HTTPS) | Steam CDN - application downloads and updates (Steam installs only) |
 | `*.steampowered.com` | 443 | TCP (HTTPS) | Steam platform - license validation and update checks (Steam installs only) |

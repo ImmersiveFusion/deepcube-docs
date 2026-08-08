@@ -9,7 +9,7 @@ The DeepCube REST API provides programmatic access to your observability data - 
 All API requests are made to:
 
 ```
-https://api-azure.iapm.app
+https://api-azure.deepcube.ai
 ```
 
 ## API Versioning
@@ -108,6 +108,6 @@ Content-Type: application/problem+json
 3. Make your first request:
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/diagnostics/{gridSecondaryId}/health?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/diagnostics/{gridSecondaryId}/health?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```

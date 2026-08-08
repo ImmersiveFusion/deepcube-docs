@@ -44,7 +44,7 @@ POST /apm/traces/{gridSecondaryId}
 ### Example Request
 
 ```bash
-curl -X POST "https://api-azure.iapm.app/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6?api-version=2.0" \
+curl -X POST "https://api-azure.deepcube.ai/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -99,7 +99,7 @@ GET /apm/traces/{gridSecondaryId}/details/{spanId}
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/details/span-001?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/details/span-001?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -147,7 +147,7 @@ GET /apm/traces/{gridSecondaryId}/filters
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/filters?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/filters?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -195,7 +195,7 @@ GET /apm/traces/{gridSecondaryId}/correlations/{traceId}/spans
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/correlations/abc123def456789012345678/spans?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/correlations/abc123def456789012345678/spans?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -260,7 +260,7 @@ GET /apm/traces/{gridSecondaryId}/correlations/{traceId}/logs
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/correlations/abc123def456789012345678/logs?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/correlations/abc123def456789012345678/logs?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -306,7 +306,7 @@ GET /apm/traces/{gridSecondaryId}/correlations/{traceId}/errors
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/correlations/abc123def456789012345678/errors?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/correlations/abc123def456789012345678/errors?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -352,7 +352,7 @@ GET /apm/traces/{gridSecondaryId}/spans/{spanId}/tags
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/spans/span-001/tags?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/spans/span-001/tags?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -395,7 +395,7 @@ GET /apm/traces/{gridSecondaryId}/spans/{spanId}/events
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/spans/span-001/events?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/spans/span-001/events?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 

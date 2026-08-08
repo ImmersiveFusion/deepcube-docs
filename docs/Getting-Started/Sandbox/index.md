@@ -12,7 +12,7 @@ Both are demo grids; they differ in where the data comes from and whether you ca
 
 | Feature | Demo grid | Chaos Simulator |
 | --- | --- | --- |
-| **What is it?** | Built-in demo grid inside DeepCube | A demo grid you drive from the open-source web app at [demo.iapm.app](https://demo.iapm.app){ target="_blank" } |
+| **What is it?** | Built-in demo grid inside DeepCube | A demo grid you drive from the open-source web app at [chaos.deepcube.ai](https://chaos.deepcube.ai){ target="_blank" } |
 | **Setup** | None, just select "Demo" in the grid picker | None, opens in your browser and creates a sandbox for you |
 | **Best for** | Learning the 3D interface, navigation, and Tessa | Testing failure scenarios, seeing how DeepCube handles chaos |
 | **Data source** | A prepared telemetry stream for a healthy service topology | Live OpenTelemetry data from a simulated microservice app you control |
@@ -56,7 +56,7 @@ The [OpenTelemetry Chaos Simulator](https://github.com/ImmersiveFusion/opentelem
 
 ### How to Use It
 
-1. Go to [demo.iapm.app](https://demo.iapm.app){ target="_blank" }
+1. Go to [chaos.deepcube.ai](https://chaos.deepcube.ai){ target="_blank" }
 2. A unique sandbox is created automatically for you
 3. Click buttons to generate traffic and inject chaos
 4. Open the grid in [DeepCube](../../DC/3D/index.md) to watch the telemetry appear live (or in [DeepCube Web](../../DC/Web/index.md) from the browser)
@@ -87,5 +87,5 @@ Each session is completely independent:
 ## Next Steps
 
 [Follow the Guided Tour :material-compass:](guided-tour.md){ .md-button .md-button--primary }
-[Launch Chaos Simulator :material-flask:](https://demo.iapm.app){ .md-button target="_blank" }
+[Launch Chaos Simulator :material-flask:](https://chaos.deepcube.ai){ .md-button target="_blank" }
 [Instrument Your Own App :material-arrow-right:](../../Instrument/index.md){ .md-button }

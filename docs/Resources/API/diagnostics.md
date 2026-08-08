@@ -27,7 +27,7 @@ GET /apm/diagnostics/{gridSecondaryId}/health
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/health?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/health?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -89,7 +89,7 @@ GET /apm/diagnostics/{gridSecondaryId}/alerts
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/alerts?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/alerts?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -142,7 +142,7 @@ GET /apm/diagnostics/{gridSecondaryId}/diagnosis
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/diagnosis?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/diagnosis?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -203,7 +203,7 @@ GET /apm/diagnostics/{gridSecondaryId}/pressure
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/pressure?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/pressure?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -256,7 +256,7 @@ GET /apm/diagnostics/{gridSecondaryId}/trends
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/trends?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/trends?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -313,7 +313,7 @@ GET /apm/diagnostics/{gridSecondaryId}/services
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/services?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/services?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -390,7 +390,7 @@ GET /apm/diagnostics/{gridSecondaryId}/timeline
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/timeline?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/timeline?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -452,7 +452,7 @@ GET /apm/diagnostics/{gridSecondaryId}/service/{serviceName}
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/service/payment-service?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/service/payment-service?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -526,7 +526,7 @@ GET /apm/diagnostics/{gridSecondaryId}/slowest-endpoints
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/slowest-endpoints?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/slowest-endpoints?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -592,7 +592,7 @@ GET /apm/diagnostics/{gridSecondaryId}/changes
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/changes?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/changes?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -655,7 +655,7 @@ GET /apm/diagnostics/{gridSecondaryId}/compare
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/compare?currentStart=2026-04-03T09:30:00Z&currentEnd=2026-04-03T10:30:00Z&baselineStart=2026-04-02T09:30:00Z&baselineEnd=2026-04-02T10:30:00Z&api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c963f66afa6/compare?currentStart=2026-04-03T09:30:00Z&currentEnd=2026-04-03T10:30:00Z&baselineStart=2026-04-02T09:30:00Z&baselineEnd=2026-04-02T10:30:00Z&api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 

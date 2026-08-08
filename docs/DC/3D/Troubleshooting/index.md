@@ -16,7 +16,7 @@ This page covers common issues you may encounter with DeepCube and how to resolv
      string until the code ships the new one. Do not "fix" these to
      DeepCube ahead of the build. -->
 
-| Antivirus blocking installation | Security software flagging the Unity runtime or installer | Add the DeepCube installation directory to your antivirus exclusion list. The default Steam path is `C:\Program Files (x86)\Steam\steamapps\common\IAPM`. |
+| Antivirus blocking installation | Security software flagging the Unity runtime or installer | Add the DeepCube installation directory to your antivirus exclusion list. The default Steam path is `C:\Program Files (x86)\Steam\steamapps\common\IAPM`, which still carries the old folder name until the Steam depot is renamed, so use it exactly as written. |
 | Offline installer fails | Corrupted or incomplete download | Re-download the installer and verify the file hash, then run it again. |
 | App crashes immediately after splash screen | Corrupted local settings or cache | Delete the settings folder at `%APPDATA%\..\LocalLow\Immersive Fusion\IAPM` and relaunch the application. |
 

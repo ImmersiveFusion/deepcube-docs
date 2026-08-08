@@ -1,6 +1,6 @@
-# DeepCube™
+# DeepCube
 
-DeepCube is available in three surfaces that work together to provide complete observability coverage. One product, three ways to access it - all backed by the same platform, same workspaces, same Tessa.
+DeepCube™ is available in three surfaces that work together to provide complete observability coverage. One product, three ways to access it - all backed by the same platform, same workspaces, same Tessa.
 
 ## Surface Comparison
 

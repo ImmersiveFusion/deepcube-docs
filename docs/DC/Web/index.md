@@ -1,6 +1,6 @@
 # DeepCube Web
 
-Browser-based access to your application telemetry. No installation required - access from any device with a modern browser.
+DeepCube™ Web gives you browser-based access to your application telemetry. No installation required - access from any device with a modern browser.
 
 [Launch DeepCube Web :material-web:](https://portal.iapm.app){ .md-button .md-button--primary target="_blank" }
 

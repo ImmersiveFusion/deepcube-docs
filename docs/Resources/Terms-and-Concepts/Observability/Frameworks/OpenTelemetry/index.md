@@ -27,7 +27,7 @@ graph TD
 
     A --> B
     C --> B
-    B -->|Direct| E[DeepCube - otlp.iapm.app]
+    B -->|Direct| E[DeepCube - otlp.deepcube.ai]
     B -->|Via Collector| D
     D --> E
     E --> F[3D / Web / Studio]
@@ -41,13 +41,13 @@ All you need is the OTLP endpoint and your API key:
 
 | Setting | Value |
 |---------|-------|
-| **Endpoint** | `https://otlp.iapm.app` |
+| **Endpoint** | `https://otlp.deepcube.ai` |
 | **Protocol** | OTLP/gRPC (port 443) or OTLP/HTTP |
 | **Auth Header** | `api-key: YOUR-API-KEY` |
 
 ```bash
 # Environment variables - works with any OTel SDK
-export OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.iapm.app
+export OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai
 export OTEL_EXPORTER_OTLP_HEADERS="api-key=YOUR-API-KEY"
 ```
 

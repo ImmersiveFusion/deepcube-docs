@@ -46,7 +46,7 @@ Then install auto-instrumentation libraries for your framework:
 The `opentelemetry-instrument` command wraps your application and automatically instruments supported libraries:
 
 ```bash
-OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.iapm.app \
+OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai \
 OTEL_EXPORTER_OTLP_HEADERS="api-key=YOUR-API-KEY" \
 OTEL_SERVICE_NAME=my-python-app \
 opentelemetry-instrument python your_app.py
@@ -57,7 +57,7 @@ For framework-specific entry points:
 === "Django"
 
     ```bash
-    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.iapm.app \
+    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai \
     OTEL_EXPORTER_OTLP_HEADERS="api-key=YOUR-API-KEY" \
     OTEL_SERVICE_NAME=my-django-app \
     opentelemetry-instrument python manage.py runserver
@@ -66,7 +66,7 @@ For framework-specific entry points:
 === "Flask"
 
     ```bash
-    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.iapm.app \
+    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai \
     OTEL_EXPORTER_OTLP_HEADERS="api-key=YOUR-API-KEY" \
     OTEL_SERVICE_NAME=my-flask-app \
     opentelemetry-instrument flask run
@@ -75,7 +75,7 @@ For framework-specific entry points:
 === "FastAPI"
 
     ```bash
-    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.iapm.app \
+    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai \
     OTEL_EXPORTER_OTLP_HEADERS="api-key=YOUR-API-KEY" \
     OTEL_SERVICE_NAME=my-fastapi-app \
     opentelemetry-instrument uvicorn main:app
@@ -84,7 +84,7 @@ For framework-specific entry points:
 === "Gunicorn"
 
     ```bash
-    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.iapm.app \
+    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai \
     OTEL_EXPORTER_OTLP_HEADERS="api-key=YOUR-API-KEY" \
     OTEL_SERVICE_NAME=my-app \
     opentelemetry-instrument gunicorn myapp.wsgi:application
@@ -111,7 +111,7 @@ def configure_opentelemetry():
     provider = TracerProvider(resource=resource)
 
     exporter = OTLPSpanExporter(
-        endpoint="https://otlp.iapm.app",
+        endpoint="https://otlp.deepcube.ai",
         headers={"api-key": "YOUR-API-KEY"},
     )
     provider.add_span_processor(BatchSpanProcessor(exporter))
@@ -152,7 +152,7 @@ from opentelemetry.instrumentation.flask import FlaskInstrumentor
 resource = Resource.create({SERVICE_NAME: "my-flask-app"})
 provider = TracerProvider(resource=resource)
 exporter = OTLPSpanExporter(
-    endpoint="https://otlp.iapm.app",
+    endpoint="https://otlp.deepcube.ai",
     headers={"api-key": "YOUR-API-KEY"},
 )
 provider.add_span_processor(BatchSpanProcessor(exporter))
@@ -185,7 +185,7 @@ from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
 resource = Resource.create({SERVICE_NAME: "my-fastapi-app"})
 provider = TracerProvider(resource=resource)
 exporter = OTLPSpanExporter(
-    endpoint="https://otlp.iapm.app",
+    endpoint="https://otlp.deepcube.ai",
     headers={"api-key": "YOUR-API-KEY"},
 )
 provider.add_span_processor(BatchSpanProcessor(exporter))
@@ -267,7 +267,7 @@ The OpenTelemetry Python SDK reads these variables automatically:
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.iapm.app` | OTLP collector endpoint |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
 | `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in DeepCube |
 | `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (grpc or http/protobuf) |
@@ -301,7 +301,7 @@ The OpenTelemetry Python SDK reads these variables automatically:
 ### No data appearing in DeepCube
 
 - Verify the API key by copying a fresh one from [portal.iapm.app](https://portal.iapm.app){ target="_blank" } under **Administration > Grids > Instrument**.
-- Check network connectivity: `python -c "import urllib.request; urllib.request.urlopen('https://otlp.iapm.app')"`.
+- Check network connectivity: `python -c "import urllib.request; urllib.request.urlopen('https://otlp.deepcube.ai')"`.
 - Ensure `grpcio` is installed: `pip install grpcio`. The gRPC exporter requires it.
 
 ### Auto-instrumentation not working

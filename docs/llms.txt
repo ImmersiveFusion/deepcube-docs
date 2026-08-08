@@ -4,14 +4,14 @@
 # Site Information
 name: Immersive Fusion Docs
 url: https://docs.immersivefusion.com
-description: Documentation for DeepCube - Application Performance Management with 3D visualization
+description: Documentation for DeepCube, the spatial observability platform
 
 # Contact
 contact: https://docs.immersivefusion.com/contact/
 
 # Products
 products:
-  - DeepCube: 3D application performance monitoring client
+  - DeepCube: The spatial observability platform, 3D client
   - DeepCube Web: Web-based APM dashboard
   - DeepCube Studio: Lightweight native client for AI chat, voice, and workspaces
 

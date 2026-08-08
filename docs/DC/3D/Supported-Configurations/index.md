@@ -65,6 +65,7 @@ DeepCube requires network connectivity to function:
 
 Ensure your firewall allows outbound connections to:
 
+- `*.deepcube.ai`
 - `*.iapm.app`
 - `*.immersivefusion.com`
 - Customer-specific message broker URLs (provided during onboarding)

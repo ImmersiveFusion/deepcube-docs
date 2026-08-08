@@ -15,7 +15,7 @@ graph LR
 ```
 
 1. **Add the SDK** - Include OpenTelemetry packages for your language
-2. **Configure the exporter** - Point to `https://otlp.iapm.app` with your API key
+2. **Configure the exporter** - Point to `https://otlp.deepcube.ai` with your API key
 3. **Deploy** - Run your instrumented application
 4. **Observe** - View telemetry in DeepCube within minutes
 

@@ -2,6 +2,14 @@
 
 ## Version History
 
+### Renamed to DeepCube <small>August 7, 2026</small> { id="renamed-to-deepcube" }
+
+**Introduction:**
+
+IAPM Web is now **DeepCube™ Web**. This is a name change only. Your account, your grids, your API keys, and your telemetry are unchanged, and no action is needed on your part.
+
+Entries below this one keep the name they shipped under, so the record stays accurate.
+
 ### 3.172.3 <small>July 22, 2026</small> { id="3.172.3" }
 
 **Introduction:**

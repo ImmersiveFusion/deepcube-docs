@@ -61,7 +61,7 @@ func InitProvider(ctx context.Context, serviceName string) (func(), error) {
 
 	// Trace exporter
 	traceExporter, err := otlptracegrpc.New(ctx,
-		otlptracegrpc.WithEndpoint("otlp.iapm.app:443"),
+		otlptracegrpc.WithEndpoint("otlp.deepcube.ai:443"),
 		otlptracegrpc.WithHeaders(map[string]string{
 			"api-key": "YOUR-API-KEY",
 		}),
@@ -83,7 +83,7 @@ func InitProvider(ctx context.Context, serviceName string) (func(), error) {
 
 	// Metric exporter
 	metricExporter, err := otlpmetricgrpc.New(ctx,
-		otlpmetricgrpc.WithEndpoint("otlp.iapm.app:443"),
+		otlpmetricgrpc.WithEndpoint("otlp.deepcube.ai:443"),
 		otlpmetricgrpc.WithHeaders(map[string]string{
 			"api-key": "YOUR-API-KEY",
 		}),
@@ -290,7 +290,7 @@ The OpenTelemetry Go SDK reads these variables when using the autoconfigure opti
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.iapm.app` | OTLP collector endpoint |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
 | `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in DeepCube |
 | `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (grpc or http/protobuf) |

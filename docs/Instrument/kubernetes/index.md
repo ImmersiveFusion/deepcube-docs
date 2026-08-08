@@ -43,11 +43,11 @@ Define an `Instrumentation` custom resource that tells the Operator how to confi
 apiVersion: opentelemetry.io/v1alpha1
 kind: Instrumentation
 metadata:
-  name: iapm-instrumentation
+  name: deepcube-instrumentation
   namespace: default
 spec:
   exporter:
-    endpoint: https://otlp.iapm.app
+    endpoint: https://otlp.deepcube.ai
   propagators:
     - tracecontext
     - baggage
@@ -55,7 +55,7 @@ spec:
     - name: OTEL_EXPORTER_OTLP_HEADERS
       valueFrom:
         secretKeyRef:
-          name: iapm-api-key
+          name: deepcube-api-key
           key: api-key
   dotnet:
     image: ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:latest
@@ -75,7 +75,7 @@ spec:
 ### Create the API Key Secret
 
 ```bash
-kubectl create secret generic iapm-api-key \
+kubectl create secret generic deepcube-api-key \
   --from-literal=api-key="api-key=YOUR-API-KEY"
 ```
 
@@ -167,15 +167,15 @@ Deploy a Collector DaemonSet so every node has a local Collector instance. Your 
 apiVersion: opentelemetry.io/v1beta1
 kind: OpenTelemetryCollector
 metadata:
-  name: iapm-collector
+  name: deepcube-collector
   namespace: otel-system
 spec:
   mode: daemonset
   env:
-    - name: IAPM_API_KEY
+    - name: DEEPCUBE_API_KEY
       valueFrom:
         secretKeyRef:
-          name: iapm-api-key
+          name: deepcube-api-key
           key: api-key
   config:
     receivers:
@@ -203,25 +203,25 @@ spec:
             - k8s.node.name
 
     exporters:
-      otlp/iapm:
-        endpoint: otlp.iapm.app:443
+      otlp/deepcube:
+        endpoint: otlp.deepcube.ai:443
         headers:
-          api-key: ${env:IAPM_API_KEY}
+          api-key: ${env:DEEPCUBE_API_KEY}
 
     service:
       pipelines:
         traces:
           receivers: [otlp]
           processors: [memory_limiter, k8sattributes, batch]
-          exporters: [otlp/iapm]
+          exporters: [otlp/deepcube]
         metrics:
           receivers: [otlp]
           processors: [memory_limiter, k8sattributes, batch]
-          exporters: [otlp/iapm]
+          exporters: [otlp/deepcube]
         logs:
           receivers: [otlp]
           processors: [memory_limiter, k8sattributes, batch]
-          exporters: [otlp/iapm]
+          exporters: [otlp/deepcube]
 ```
 
 ### Point Applications to the Local Collector
@@ -248,14 +248,14 @@ For workloads that need a dedicated Collector instance per pod:
 apiVersion: opentelemetry.io/v1beta1
 kind: OpenTelemetryCollector
 metadata:
-  name: iapm-sidecar
+  name: deepcube-sidecar
 spec:
   mode: sidecar
   env:
-    - name: IAPM_API_KEY
+    - name: DEEPCUBE_API_KEY
       valueFrom:
         secretKeyRef:
-          name: iapm-api-key
+          name: deepcube-api-key
           key: api-key
   config:
     receivers:
@@ -269,21 +269,21 @@ spec:
         timeout: 5s
 
     exporters:
-      otlp/iapm:
-        endpoint: otlp.iapm.app:443
+      otlp/deepcube:
+        endpoint: otlp.deepcube.ai:443
         headers:
-          api-key: ${env:IAPM_API_KEY}
+          api-key: ${env:DEEPCUBE_API_KEY}
 
     service:
       pipelines:
         traces:
           receivers: [otlp]
           processors: [batch]
-          exporters: [otlp/iapm]
+          exporters: [otlp/deepcube]
         metrics:
           receivers: [otlp]
           processors: [batch]
-          exporters: [otlp/iapm]
+          exporters: [otlp/deepcube]
 ```
 
 Annotate your pod to inject the sidecar:
@@ -337,8 +337,8 @@ config:
       limit_mib: 512
 
   exporters:
-    otlp/iapm:
-      endpoint: otlp.iapm.app:443
+    otlp/deepcube:
+      endpoint: otlp.deepcube.ai:443
       headers:
         api-key: YOUR-API-KEY
 
@@ -347,15 +347,15 @@ config:
       traces:
         receivers: [otlp]
         processors: [memory_limiter, batch]
-        exporters: [otlp/iapm]
+        exporters: [otlp/deepcube]
       metrics:
         receivers: [otlp]
         processors: [memory_limiter, batch]
-        exporters: [otlp/iapm]
+        exporters: [otlp/deepcube]
       logs:
         receivers: [otlp]
         processors: [memory_limiter, batch]
-        exporters: [otlp/iapm]
+        exporters: [otlp/deepcube]
 ```
 
 !!! warning "Protect your API key"
@@ -381,7 +381,7 @@ metadata:
   name: otel-config
   namespace: default
 data:
-  OTEL_EXPORTER_OTLP_ENDPOINT: "http://iapm-collector-opentelemetry-collector.otel-system.svc.cluster.local:4317"
+  OTEL_EXPORTER_OTLP_ENDPOINT: "http://deepcube-collector-opentelemetry-collector.otel-system.svc.cluster.local:4317"
   OTEL_EXPORTER_OTLP_PROTOCOL: "grpc"
 ```
 
@@ -400,7 +400,7 @@ spec:
         - name: OTEL_EXPORTER_OTLP_HEADERS
           valueFrom:
             secretKeyRef:
-              name: iapm-api-key
+              name: deepcube-api-key
               key: api-key
 ```
 
@@ -423,7 +423,7 @@ spec:
 
 - Check pod events: `kubectl describe pod <pod-name> -n otel-system`.
 - Ensure the memory limits in the Collector config do not exceed the pod resource limits.
-- Verify the `iapm-api-key` secret exists in the correct namespace.
+- Verify the `deepcube-api-key` secret exists in the correct namespace.
 
 ### No data from auto-instrumented pods
 

@@ -52,6 +52,7 @@ DeepCube Studio requires network connectivity to communicate with the DeepCube b
 
 Ensure your firewall allows outbound connections to:
 
+- `*.deepcube.ai`
 - `*.iapm.app`
 - `*.immersivefusion.com`
 

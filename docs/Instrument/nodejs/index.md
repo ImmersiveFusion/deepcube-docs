@@ -54,12 +54,12 @@ const sdk = new NodeSDK({
     [ATTR_SERVICE_VERSION]: '1.0.0',
   }),
   traceExporter: new OTLPTraceExporter({
-    url: 'https://otlp.iapm.app',
+    url: 'https://otlp.deepcube.ai',
     headers: { 'api-key': 'YOUR-API-KEY' },
   }),
   metricReader: new PeriodicExportingMetricReader({
     exporter: new OTLPMetricExporter({
-      url: 'https://otlp.iapm.app',
+      url: 'https://otlp.deepcube.ai',
       headers: { 'api-key': 'YOUR-API-KEY' },
     }),
   }),
@@ -148,7 +148,7 @@ const sdk = new NodeSDK({
     [ATTR_SERVICE_NAME]: 'my-nestjs-app',
   }),
   traceExporter: new OTLPTraceExporter({
-    url: 'https://otlp.iapm.app',
+    url: 'https://otlp.deepcube.ai',
     headers: { 'api-key': 'YOUR-API-KEY' },
   }),
   instrumentations: [getNodeAutoInstrumentations()],
@@ -243,7 +243,7 @@ The OpenTelemetry Node.js SDK reads these variables automatically:
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.iapm.app` | OTLP collector endpoint |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
 | `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in DeepCube |
 | `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (grpc or http/protobuf) |
@@ -290,7 +290,7 @@ const sdk = new NodeSDK({
 
 - Verify that `tracing.js` is loaded **before** your application code. Use `node -r ./tracing.js` or `NODE_OPTIONS="--require ./tracing.js"`.
 - Verify the API key by copying a fresh one from [portal.iapm.app](https://portal.iapm.app){ target="_blank" } under **Administration > Grids > Instrument**.
-- Check network connectivity: `curl -v https://otlp.iapm.app`.
+- Check network connectivity: `curl -v https://otlp.deepcube.ai`.
 
 ### gRPC connection errors
 

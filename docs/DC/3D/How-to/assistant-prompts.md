@@ -12,7 +12,7 @@ This guide shows how to phrase questions so Tessa gives you the most useful answ
 
 ## Health and Status
 
-Start here when you open IAPM and want a quick picture of your system.
+Start here when you open DeepCube and want a quick picture of your system.
 
 | Prompt | What Tessa Does |
 |--------|-----------------|
@@ -75,7 +75,7 @@ Learn about your system architecture and data flows.
 
 ## Contextual Questions (3D)
 
-These work best in IAPM, where Tessa uses your position and view as context.
+These work best in DeepCube, where Tessa uses your position and view as context.
 
 | Prompt | What Tessa Does |
 |--------|-----------------|

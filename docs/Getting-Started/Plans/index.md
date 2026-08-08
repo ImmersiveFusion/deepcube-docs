@@ -1,10 +1,10 @@
 # Plans & Pricing
 
-Compare IAPM subscription plans to find the right fit for your team.
+Compare DeepCube subscription plans to find the right fit for your team.
 
 ## Pricing Model
 
-IAPM uses **per-node pricing**. A node is any monitored application instance sending telemetry.
+DeepCube uses **per-node pricing**. A node is any monitored application instance sending telemetry.
 
 ## Plan Comparison
 
@@ -14,8 +14,8 @@ IAPM uses **per-node pricing**. A node is any monitored application instance sen
 | **Node Minimum** | - | 1 | 25 | 50 |
 | **Infrastructure** | Shared | Shared | Dedicated | Dedicated |
 | **Visualization** | | | | |
-| IAPM Web | :material-check: | :material-check: | :material-check: | :material-check: |
-| IAPM | :material-check: | :material-check: | :material-check: | :material-check: |
+| DeepCube Web | :material-check: | :material-check: | :material-check: | :material-check: |
+| DeepCube | :material-check: | :material-check: | :material-check: | :material-check: |
 | **Throughput** | 50/sec | 200/sec | 1,000/sec | 2,000/sec |
 | **Data Retention** | 7 days | 30 days | 90 days | 365 days |
 | **AI (Tessa)** | 7 queries/day | 35 queries/day | Large daily budget + Code Fix | Large daily budget + Code Fix + Infra |
@@ -108,7 +108,7 @@ Save approximately 17% with annual prepayment.
 
 | Scenario | Recommended Plan |
 |----------|------------------|
-| Evaluating IAPM, POC | Start |
+| Evaluating DeepCube, POC | Start |
 | Small team, 1-5 nodes | Visualize |
 | Need historical data, 25+ nodes | Analyze |
 | Enterprise SLA, 50+ nodes | Fuse |

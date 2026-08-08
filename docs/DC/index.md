@@ -1,6 +1,6 @@
-# IAPM
+# DeepCube™
 
-IAPM is available in three surfaces that work together to provide complete observability coverage. One product, three ways to access it - all backed by the same platform, same workspaces, same Tessa.
+DeepCube is available in three surfaces that work together to provide complete observability coverage. One product, three ways to access it - all backed by the same platform, same workspaces, same Tessa.
 
 ## Surface Comparison
 
@@ -20,7 +20,7 @@ IAPM is available in three surfaces that work together to provide complete obser
 | Account Management | :material-close: | :material-check: | :material-close: |
 | Mobile Access | :material-close: | :material-check: | :material-close: |
 
-## IAPM
+## DeepCube
 
 The full immersive experience. A native application with 3D visualization and AI Assistant.
 
@@ -32,7 +32,7 @@ The full immersive experience. A native application with 3D visualization and AI
 | Architecture reviews | Visualize service dependencies spatially |
 | AI-assisted analysis | Natural chat with Tessa |
 
-## IAPM Web
+## DeepCube Web
 
 Browser-based access to your telemetry data. Manage your account, configure alerts, and view traces from any device.
 
@@ -45,10 +45,10 @@ Browser-based access to your telemetry data. Manage your account, configure aler
 | Alert configuration | Set up and manage notifications |
 | Mobile monitoring | Access from phone or tablet |
 
-## IAPM Studio
+## DeepCube Studio
 
 !!! warning "Early Access"
-    IAPM Studio is in early access. Features and availability may change.
+    DeepCube Studio is in early access. Features and availability may change.
 
 Lightweight native client for AI-powered chat, voice interaction, workspaces, and organizational knowledge - without the full 3D environment.
 
@@ -64,13 +64,13 @@ Lightweight native client for AI-powered chat, voice interaction, workspaces, an
 
 ```mermaid
 graph LR
-    A[Your Application] -->|OpenTelemetry| B[IAPM Platform]
-    B --> C[IAPM]
-    B --> D[IAPM Web]
-    B --> G[IAPM Studio]
+    A[Your Application] -->|OpenTelemetry| B[DeepCube Platform]
+    B --> C[DeepCube]
+    B --> D[DeepCube Web]
+    B --> G[DeepCube Studio]
     C -->|3D Analysis| E[Deep Investigation]
     D -->|Browser Access| F[Quick Checks & Admin]
     G -->|AI Chat & Voice| H[Workspaces & Knowledge]
 ```
 
-Most teams use multiple surfaces: IAPM Web for account management and quick status checks, IAPM for detailed troubleshooting and immersive analysis, and IAPM Studio for AI-powered workflows and organizational knowledge.
+Most teams use multiple surfaces: DeepCube Web for account management and quick status checks, DeepCube for detailed troubleshooting and immersive analysis, and DeepCube Studio for AI-powered workflows and organizational knowledge.

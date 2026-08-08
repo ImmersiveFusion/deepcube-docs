@@ -1,9 +1,9 @@
 # Sign up and instrument
 
-This walkthrough takes you from signing in to seeing your own application's telemetry in IAPM. All three sign-in methods (Email, GitHub, Microsoft) follow the same path; where Microsoft differs, it is called out.
+This walkthrough takes you from signing in to seeing your own application's telemetry in DeepCube. All three sign-in methods (Email, GitHub, Microsoft) follow the same path; where Microsoft differs, it is called out.
 
 !!! info "New to the ideas?"
-    IAPM renders your telemetry as a space you move through rather than a set of dashboards. If you want the background first, read [Spatial Observability](../../Resources/Terms-and-Concepts/Spatial-Observability/index.md), then come back.
+    DeepCube renders your telemetry as a space you move through rather than a set of dashboards. If you want the background first, read [Spatial Observability](../../Resources/Terms-and-Concepts/Spatial-Observability/index.md), then come back.
 
 ## Step 1: Sign in
 
@@ -14,13 +14,13 @@ Choose how you want to sign in. All three reach the same product; the difference
 
 Both hosts are the same application on the same backend; the address differs only by how you signed in, so bookmark whichever one you land on.
 
-[Sign in to IAPM :material-rocket-launch:](https://portal.iapm.app){ .md-button .md-button--primary target="_blank" }
+[Sign in to DeepCube :material-rocket-launch:](https://portal.iapm.app){ .md-button .md-button--primary target="_blank" }
 
 The link opens **portal.iapm.app**, the sign-in chooser. Pick a method, and it forwards you into the web app. A short Quick Start wizard then names your account, has you choose a plan, and provisions your first grid. Sending your own telemetry requires an active subscription and a provisioned grid: the **Start** plan is free, but provisioning a grid requires a valid credit card even on Start. (Exploring the [demo grids](../Sandbox/index.md) needs none of this, no subscription and no payment.)
 
 ## Step 2: Get your API key
 
-Your API key authenticates telemetry with IAPM. Each grid has its own key.
+Your API key authenticates telemetry with DeepCube. Each grid has its own key.
 
 1. In the web app, open **Administration → Grids**.
 2. Click the **Instrument** button on the grid you want to send data to.
@@ -30,7 +30,7 @@ Treat the key like a password: do not commit it to source control.
 
 ## Step 3: Instrument your application
 
-Point your OpenTelemetry OTLP exporter at IAPM. The endpoint is `otlp.iapm.app:443` (gRPC over TLS), and your API key travels in the `api-key` header:
+Point your OpenTelemetry OTLP exporter at DeepCube. The endpoint is `otlp.iapm.app:443` (gRPC over TLS), and your API key travels in the `api-key` header:
 
     # OTLP exporter configuration
     exporters:
@@ -54,16 +54,16 @@ Point your OpenTelemetry OTLP exporter at IAPM. The endpoint is `otlp.iapm.app:4
 
 Once telemetry is flowing, choose how to look at it.
 
-### IAPM
+### DeepCube
 
 Enter the World of Your Application® with mouse and keyboard. Your services stand as towers, traffic flows between them, and a service that has gone dark shows up as a gap you can see.
 
-[Install IAPM :material-download:](../../DC/3D/Guides/Installation/index.md){ .md-button .md-button--primary }
+[Install DeepCube :material-download:](../../DC/3D/Guides/Installation/index.md){ .md-button .md-button--primary }
 [3D documentation :material-book-open:](../../DC/3D/index.md){ .md-button }
 
-### IAPM Web
+### DeepCube Web
 
 Access traces, metrics, logs, alerts, and account management from any browser. Sign in through [portal.iapm.app](https://portal.iapm.app){ target="_blank" }; you land in the web app at my.iapm.app or azure.iapm.app depending on how you signed in.
 
-[Sign in to IAPM Web :material-web:](https://portal.iapm.app){ .md-button .md-button--primary target="_blank" }
+[Sign in to DeepCube Web :material-web:](https://portal.iapm.app){ .md-button .md-button--primary target="_blank" }
 [Web documentation :material-book-open:](../../DC/Web/index.md){ .md-button }

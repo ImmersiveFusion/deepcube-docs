@@ -1,7 +1,7 @@
-# IAPM Studio Release Notes
+# DeepCube Studio Release Notes
 
 !!! warning "Early Access"
-    IAPM Studio is in early access. Features and interfaces may change between releases.
+    DeepCube Studio is in early access. Features and interfaces may change between releases.
 
 ## Version History
 

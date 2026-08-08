@@ -6,7 +6,7 @@ tags: [how-to]
 
 # How-to guides
 
-This section shows how to complete specific tasks with IAPM.
+This section shows how to complete specific tasks with DeepCube.
 
 ## Working in the grid
 

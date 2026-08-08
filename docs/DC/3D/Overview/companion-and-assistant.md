@@ -34,5 +34,5 @@ The reason there are two of them rather than one is that they solve two differen
 
 - **What Tessa can do and how she reasons:** see [Tessa - Your AI Assistant](ai-assistant.md).
 - **How the grid is laid out as one space:** see [The Spatial Model](the-spatial-model.md).
-- **Why IAPM draws what is missing:** see [Rendering Absence](rendering-absence.md).
+- **Why DeepCube draws what is missing:** see [Rendering Absence](rendering-absence.md).
 - **The section overview:** see [Overview](index.md).

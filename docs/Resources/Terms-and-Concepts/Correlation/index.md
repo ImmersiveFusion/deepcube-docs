@@ -44,7 +44,7 @@ All telemetry generated during that request includes the same trace ID, making i
 
 ### Linking Telemetry Types
 
-IAPM automatically correlates:
+DeepCube automatically correlates:
 
 | From | To | How |
 |------|----|-----|
@@ -119,9 +119,9 @@ logger.LogInformation("Processing order {OrderId}", orderId);
 - **Over-relying on timestamps** - Time-based correlation is fragile; use trace IDs
 - **Ignoring sampling** - Ensure correlated data has matching sampling decisions
 
-## IAPM Correlation Features
+## DeepCube Correlation Features
 
-IAPM enhances correlation with:
+DeepCube enhances correlation with:
 
 - **Automatic log-trace linking** - View logs inline with trace spans
 - **Metric exemplars** - Jump from metrics to representative traces

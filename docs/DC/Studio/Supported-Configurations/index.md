@@ -1,9 +1,9 @@
 # System Requirements
 
 !!! warning "Early Access"
-    IAPM Studio is in early access. System requirements may change as the application evolves.
+    DeepCube Studio is in early access. System requirements may change as the application evolves.
 
-IAPM Studio is a lightweight native desktop application. It does not require a web browser, GPU acceleration, or VR hardware.
+DeepCube Studio is a lightweight native desktop application. It does not require a web browser, GPU acceleration, or VR hardware.
 
 ## Platform Support
 
@@ -38,11 +38,11 @@ IAPM Studio is a lightweight native desktop application. It does not require a w
 
 ## Runtime Dependencies
 
-IAPM Studio bundles its required runtime components. No separate installation of .NET or other frameworks is necessary.
+DeepCube Studio bundles its required runtime components. No separate installation of .NET or other frameworks is necessary.
 
 ## Network Requirements
 
-IAPM Studio requires network connectivity to communicate with the IAPM backend.
+DeepCube Studio requires network connectivity to communicate with the DeepCube backend.
 
 | Traffic | Port | Protocol | Purpose |
 |---------|------|----------|---------|

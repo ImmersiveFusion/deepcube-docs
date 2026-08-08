@@ -1,8 +1,8 @@
-# Your First IAPM Session
+# Your First DeepCube Session
 
 **Difficulty:** :material-star: Beginner | **Time:** ~10 minutes
 
-Your first time inside IAPM. This walkthrough takes you from launch to confidently navigating your application's 3D environment, reading visual indicators, and having your first conversation with Tessa.
+Your first time inside DeepCube. This walkthrough takes you from launch to confidently navigating your application's 3D environment, reading visual indicators, and having your first conversation with Tessa.
 
 ## What You'll Learn
 
@@ -15,8 +15,8 @@ Your first time inside IAPM. This walkthrough takes you from launch to confident
 
 ## Step 1: Launch and Enter Your Grid
 
-1. **Open IAPM** from Steam or your desktop shortcut.
-2. **Sign in** with your IAPM account credentials.
+1. **Open DeepCube** from Steam or your desktop shortcut.
+2. **Sign in** with your DeepCube account credentials.
 3. **Select a grid** from the grid selector. If you don't have a production grid yet, choose the demo grid.
 4. **Click Enter** to load into the 3D environment.
 
@@ -128,7 +128,7 @@ For the full color law across every surface, see the [Color legend](../Reference
 2. **Click the rhombus on a Trace Aggregate Block** to zoom deeper into that trace. You descend into the Diagnostics cube.
 
 !!! info "What you see"
-    The environment shifts. You're no longer looking at the grid from outside, you are inside a single trace in the Diagnostics cube. The trace un-flattens onto two walls: the span waterfall on the north wall (each bar a span, its length the span's duration) and the logs wall on the west wall (the trace's logs, colored by level, text readable). Tessa's context is now focused on this trace. It's the deepest level of detail IAPM offers.
+    The environment shifts. You're no longer looking at the grid from outside, you are inside a single trace in the Diagnostics cube. The trace un-flattens onto two walls: the span waterfall on the north wall (each bar a span, its length the span's duration) and the logs wall on the west wall (the trace's logs, colored by level, text readable). Tessa's context is now focused on this trace. It's the deepest level of detail DeepCube offers.
 
 ---
 

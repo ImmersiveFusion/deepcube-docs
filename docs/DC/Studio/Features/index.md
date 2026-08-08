@@ -1,11 +1,11 @@
-# IAPM Studio Features
+# DeepCube Studio Features
 
 !!! warning "Early Access"
-    IAPM Studio is in early access. Features and interfaces may change between releases.
+    DeepCube Studio is in early access. Features and interfaces may change between releases.
 
 {!template/subscription-required.mdp!}
 
-IAPM Studio provides AI-powered telemetry analysis through a lightweight native desktop client. These features give you fast access to Tessa, workspaces, and organizational knowledge - without the full 3D environment.
+DeepCube Studio provides AI-powered telemetry analysis through a lightweight native desktop client. These features give you fast access to Tessa, workspaces, and organizational knowledge - without the full 3D environment.
 
 ## Feature Overview
 
@@ -66,7 +66,7 @@ Browse and manage your workspace files and artifacts from within Studio. The wor
 
 Your conversations are saved automatically and restored when you restart Studio. Tessa also retains context and memory across sessions, so you can pick up where you left off without re-explaining your environment.
 
-## Comparison with Other IAPM Surfaces
+## Comparison with Other DeepCube Surfaces
 
 | Capability | Studio | 3D | Web |
 |------------|--------|----|-----|

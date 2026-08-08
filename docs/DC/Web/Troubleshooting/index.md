@@ -1,8 +1,8 @@
-# Troubleshooting IAPM Web
+# Troubleshooting DeepCube Web
 
 {!template/subscription-required.mdp!}
 
-Common issues and resolutions for IAPM Web at [portal.iapm.app](https://portal.iapm.app){ target="_blank" }.
+Common issues and resolutions for DeepCube Web at [portal.iapm.app](https://portal.iapm.app){ target="_blank" }.
 
 ## Quick Reference
 
@@ -24,9 +24,9 @@ Common issues and resolutions for IAPM Web at [portal.iapm.app](https://portal.i
 |---------|-------|------------|
 | "Invalid credentials" error | Incorrect email or password | Reset your password from the login page. If using Entra ID, verify your directory credentials with your IT administrator. |
 | Login page does not load | Browser cache or extension conflict | Clear browser cache and cookies, then retry. Disable ad blockers or privacy extensions temporarily. |
-| GitHub login fails | GitHub account not linked | Ensure your GitHub email matches your IAPM account email. If you registered with a different method, link GitHub from your account settings. |
+| GitHub login fails | GitHub account not linked | Ensure your GitHub email matches your DeepCube account email. If you registered with a different method, link GitHub from your account settings. |
 | Redirected back to login after authenticating | Session cookie blocked | Ensure third-party cookies are allowed for `portal.iapm.app`. Check that your browser is not in a restrictive privacy mode. |
-| "Account not found" after Entra ID login | Tenant not provisioned | Your organization may not have an active IAPM subscription. Contact your account administrator or [support](https://immersivefusion.com/support). |
+| "Account not found" after Entra ID login | Tenant not provisioned | Your organization may not have an active DeepCube subscription. Contact your account administrator or [support](https://immersivefusion.com/support). |
 
 !!! tip "Entra ID users"
     If your organization enforces conditional access policies, ensure that `portal.iapm.app` is an allowed application in your Entra ID configuration.
@@ -40,7 +40,7 @@ Common issues and resolutions for IAPM Web at [portal.iapm.app](https://portal.i
 | No traces visible after deploying instrumentation | API key misconfigured | Verify the API key in your instrumentation matches an active key for the target grid. See [API Key setup](../../../Getting-Started/Api-Key/index.md). |
 | Traces were visible but stopped appearing | API key expired or rotated | Check the API key status in the portal. Generate a new key if the current one was revoked. |
 | Traces appear in one grid but not another | Instrumentation pointing to wrong grid | Confirm the grid ID in your exporter configuration matches the grid you are viewing. |
-| Partial traces - some spans missing | Sampling or network issues | Check your sampling configuration. Ensure all services can reach the IAPM ingestion endpoint. |
+| Partial traces - some spans missing | Sampling or network issues | Check your sampling configuration. Ensure all services can reach the DeepCube ingestion endpoint. |
 | Traces appear with significant delay | Ingestion backlog | During high-volume periods, traces may take a few minutes to become searchable. If delays persist beyond 10 minutes, check your network connectivity. |
 
 ```mermaid
@@ -62,7 +62,7 @@ graph TD
 |---------|-------|------------|
 | Dashboard takes over 10 seconds to load | Large time range selected | Narrow the time range filter. Start with the last 15 or 30 minutes. |
 | Metrics charts render slowly | High cardinality data | Reduce the number of series by applying service or operation filters. |
-| Browser becomes unresponsive on dashboard | Insufficient client resources | Close other tabs and applications. IAPM Web performs client-side rendering that benefits from available memory. |
+| Browser becomes unresponsive on dashboard | Insufficient client resources | Close other tabs and applications. DeepCube Web performs client-side rendering that benefits from available memory. |
 | Dashboard loads but shows stale data | Browser cache serving old responses | Hard-refresh the page (Ctrl+Shift+R / Cmd+Shift+R) to bypass cache. |
 
 !!! note "Recommended approach"
@@ -85,13 +85,13 @@ graph TD
 
 | Symptom | Cause | Resolution |
 |---------|-------|------------|
-| Invitee never received the email | Email filtered to spam/junk | Ask the invitee to check spam and junk folders for an email from IAPM. |
+| Invitee never received the email | Email filtered to spam/junk | Ask the invitee to check spam and junk folders for an email from DeepCube. |
 | Email bounced | Invalid email address | Verify the email address and resend the invitation from the team management page. |
 | Invitee received the email but the link expired | Magic link has a time limit | Resend the invitation to generate a fresh magic link. |
 | Invitation link shows "invalid or expired" | Link already used or revoked | Each magic link is single-use. If the invitee already clicked it, they should try logging in directly. If the invitation was revoked, resend it. |
 
 !!! tip "Email deliverability"
-    If your organization uses strict email filtering, add the IAPM sending domain to your allowlist. Contact your email administrator for details.
+    If your organization uses strict email filtering, add the DeepCube sending domain to your allowlist. Contact your email administrator for details.
 
 ---
 
@@ -99,7 +99,7 @@ graph TD
 
 | Symptom | Cause | Resolution |
 |---------|-------|------------|
-| Blank white page after login | Unsupported browser version | IAPM Web requires a modern browser. See [Supported Configurations](../Supported-Configurations/index.md) for minimum versions. |
+| Blank white page after login | Unsupported browser version | DeepCube Web requires a modern browser. See [Supported Configurations](../Supported-Configurations/index.md) for minimum versions. |
 | UI elements misaligned or overlapping | Outdated CSS support | Update your browser to the latest version. |
 | Charts or graphs do not render | WebGL or JavaScript disabled | Ensure JavaScript is enabled. Some visualizations require WebGL - verify it is enabled in your browser settings. |
 | Features work in Chrome but not Safari | Browser-specific rendering differences | Update Safari to the latest version. If the issue persists, try Chrome or Edge as a workaround and report the issue. |
@@ -112,17 +112,17 @@ CORS (Cross-Origin Resource Sharing) errors occur when your instrumented applica
 
 | Symptom | Cause | Resolution |
 |---------|-------|------------|
-| `Access-Control-Allow-Origin` error in browser console | Browser-based exporter sending directly to IAPM endpoint | Browser-based (front-end) applications should route telemetry through a backend collector or proxy rather than sending directly to the IAPM endpoint. |
+| `Access-Control-Allow-Origin` error in browser console | Browser-based exporter sending directly to DeepCube endpoint | Browser-based (front-end) applications should route telemetry through a backend collector or proxy rather than sending directly to the DeepCube endpoint. |
 | CORS error only in production | Different origin in production vs development | Verify that your production domain is configured correctly in your collector setup. |
-| Preflight (OPTIONS) request fails | Firewall or proxy blocking OPTIONS requests | Ensure your network infrastructure allows HTTP OPTIONS requests to the IAPM ingestion endpoint. |
+| Preflight (OPTIONS) request fails | Firewall or proxy blocking OPTIONS requests | Ensure your network infrastructure allows HTTP OPTIONS requests to the DeepCube ingestion endpoint. |
 
 !!! warning "Browser instrumentation"
-    Sending telemetry directly from browser JavaScript to the IAPM endpoint will trigger CORS errors. Use a backend OpenTelemetry Collector as a relay to avoid this issue.
+    Sending telemetry directly from browser JavaScript to the DeepCube endpoint will trigger CORS errors. Use a backend OpenTelemetry Collector as a relay to avoid this issue.
 
 ```mermaid
 graph LR
     A[Browser App] -->|Telemetry| B[Backend Collector]
-    B -->|Forwarded| C[IAPM Endpoint]
+    B -->|Forwarded| C[DeepCube Endpoint]
     A -.->|Blocked by CORS| C
 ```
 

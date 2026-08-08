@@ -1,6 +1,6 @@
 # Data Collection
 
-Data collection is the process of gathering telemetry from your instrumented applications and transmitting it to IAPM for analysis and visualization. Understanding how collection works helps you optimize performance and ensure reliable telemetry delivery.
+Data collection is the process of gathering telemetry from your instrumented applications and transmitting it to DeepCube for analysis and visualization. Understanding how collection works helps you optimize performance and ensure reliable telemetry delivery.
 
 ## The Collection Pipeline
 
@@ -10,14 +10,14 @@ graph LR
         A[Application] -->|SDK| B[Local Buffer]
         B -->|Batch| C[Exporter]
     end
-    C -->|HTTPS| D[IAPM Collector]
+    C -->|HTTPS| D[DeepCube Collector]
     D --> E[Processing]
     E --> F[Storage]
 ```
 
 ## What Gets Collected
 
-IAPM collects three types of telemetry data:
+DeepCube collects three types of telemetry data:
 
 | Data Type | Description | Examples |
 |-----------|-------------|----------|
@@ -29,10 +29,10 @@ IAPM collects three types of telemetry data:
 
 ### Direct Export
 
-Your application sends telemetry directly to IAPM:
+Your application sends telemetry directly to DeepCube:
 
 ```text
-Application → SDK → IAPM Endpoint
+Application → SDK → DeepCube Endpoint
 ```
 
 **Best for:** Simple deployments, single applications, development environments
@@ -42,7 +42,7 @@ Application → SDK → IAPM Endpoint
 A local collector receives, processes, and forwards telemetry:
 
 ```text
-Application → SDK → OTel Collector → IAPM Endpoint
+Application → SDK → OTel Collector → DeepCube Endpoint
 ```
 
 **Best for:** Production environments, multiple applications, advanced processing needs
@@ -69,7 +69,7 @@ For high-volume applications, sampling reduces data volume while maintaining vis
 
 ### Retry and Reliability
 
-IAPM collection handles transient failures gracefully:
+DeepCube collection handles transient failures gracefully:
 
 - **Automatic retries** - Failed transmissions are retried with exponential backoff
 - **Persistent queuing** - Data is buffered during outages
@@ -77,7 +77,7 @@ IAPM collection handles transient failures gracefully:
 
 ## Data Security
 
-Telemetry data often contains sensitive information. IAPM ensures security through:
+Telemetry data often contains sensitive information. DeepCube ensures security through:
 
 - **Encryption in transit** - All data transmitted over HTTPS/TLS
 - **Attribute filtering** - Remove or mask sensitive fields before export

@@ -2,7 +2,7 @@
 
 {!template/subscription-required.mdp!}
 
-The IAPM REST API provides programmatic access to your observability data - traces, logs, diagnostics, charts, and AI Assistant capabilities. Use it to integrate IAPM into your workflows, build custom dashboards, or automate incident response.
+The DeepCube REST API provides programmatic access to your observability data - traces, logs, diagnostics, charts, and AI Assistant capabilities. Use it to integrate DeepCube into your workflows, build custom dashboards, or automate incident response.
 
 ## Base URL
 

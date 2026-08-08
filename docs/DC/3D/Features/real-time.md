@@ -40,7 +40,7 @@ Real-time clarity enables teams to deploy changes or respond to incidents with g
 
 ## How It Works
 
-1. **Data Ingestion** - OpenTelemetry data streams into Immersive APM in real-time
+1. **Data Ingestion** - OpenTelemetry data streams into DeepCube in real-time
 2. **3D Rendering** - Data is immediately visualized as flowing elements in your application topology
 3. **Visual Feedback** - Anomalies, errors, and performance issues appear as visual indicators
 4. **Interaction** - Navigate to any point of interest and dive deeper into the data

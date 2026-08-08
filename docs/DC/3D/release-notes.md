@@ -1,4 +1,4 @@
-# IAPM Release Notes
+# DeepCube Release Notes
 
 ## Version History
 
@@ -29,11 +29,11 @@ A large release for Steam players: everything since 1.15.0 arrives in one update
 
 **New Features:**
 
-- **Companion Idle Autopilot**: After about 10 minutes of inactivity, the camera follows Tessa's companion on an autonomous tour of your most interesting facilities — prioritizing failing and anomalous services, with a scenic overview when the fleet is healthy. The companion eases between points of interest, faces each one, and re-targets live as the graph reflows. Any input ends the tour and returns the companion to your avatar; pin it on to keep it running continuously instead.
-- **Phantom Nodes**: The service graph now renders holographic placeholder facilities for services that are referenced but never observed — a producer publishing to a queue no one consumes, or a client calling an API with no instrumented server. Phantoms appear with persistent edges back to the callers that referenced them, and are promoted to solid facilities automatically once real telemetry arrives.
+- **Companion Idle Autopilot**: After about 10 minutes of inactivity, the camera follows Tessa's companion on an autonomous tour of your most interesting facilities, prioritizing failing and anomalous services, with a scenic overview when the fleet is healthy. The companion eases between points of interest, faces each one, and re-targets live as the graph reflows. Any input ends the tour and returns the companion to your avatar; pin it on to keep it running continuously instead.
+- **Phantom Nodes**: The service graph now renders holographic placeholder facilities for services that are referenced but never observed: a producer publishing to a queue no one consumes, or a client calling an API with no instrumented server. Phantoms appear with persistent edges back to the callers that referenced them, and are promoted to solid facilities automatically once real telemetry arrives.
 - **Spatial Observatory**: The Hall of Supporters is renamed the Spatial Observatory, a community space inside the world of your application. It is open to anyone, and it is where the people behind the work are seen: the supporters who helped the company grow, and the operators who keep systems running. The Buzludzha monument environment is retained.
 - **Choose Your Sign-In Browser**: A new option on the Login screen lets you sign in with your native OS browser (default) or an embedded in-world browser. Your choice is remembered.
-- **Workspace Persona for Tessa**: Point the app at a workspace and Tessa can adopt that workspace's persona. Before it does, a consent prompt asks your approval — Tessa never adopts a workspace's guidance without it.
+- **Workspace Persona for Tessa**: Point the app at a workspace and Tessa can adopt that workspace's persona. Before it does, a consent prompt asks your approval, and Tessa never adopts a workspace's guidance without it.
 
 **Improvements:**
 

@@ -4,7 +4,7 @@
 
 {!template/subscription-required.mdp!}
 
-API keys authenticate your application's telemetry data with IAPM. Each grid has its own unique API key.
+API keys authenticate your application's telemetry data with DeepCube. Each grid has its own unique API key.
 
 ## Getting Your API Key
 

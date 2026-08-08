@@ -6,15 +6,15 @@ tags: [tutorial, getting-started, instrumentation, opentelemetry]
 
 # Send your first trace
 
-In about five minutes you will send real telemetry into IAPM and watch a system take shape in the Grid: services appearing as you feed them, connected by the calls between them. You will use a ready-made trace generator, so there is no application to write and nothing to deploy. This is the known-good baseline: one command, real OTLP traces, your data in IAPM.
+In about five minutes you will send real telemetry into DeepCube and watch a system take shape in the Grid: services appearing as you feed them, connected by the calls between them. You will use a ready-made trace generator, so there is no application to write and nothing to deploy. This is the known-good baseline: one command, real OTLP traces, your data in DeepCube.
 
 You are not instrumenting your own application yet. That comes next, and it is easier once you have seen what "working" looks like.
 
 ## What you will learn
 
-- How to point an OpenTelemetry exporter at IAPM using your grid's API key
+- How to point an OpenTelemetry exporter at DeepCube using your grid's API key
 - What a healthy stream of traces looks like when it arrives
-- Where your services and traces show up in IAPM
+- Where your services and traces show up in DeepCube
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ You are not instrumenting your own application yet. That comes next, and it is e
 
 ## Step 1: Get your grid API key
 
-Your API key authenticates your telemetry with IAPM. Each grid has its own key.
+Your API key authenticates your telemetry with DeepCube. Each grid has its own key.
 
 1. Sign in at [portal.iapm.app](https://portal.iapm.app){ target="_blank" } (the sign-in chooser). After you choose a method you land in the web app: `my.iapm.app` if you signed in with Email or GitHub, `azure.iapm.app` if you signed in with Microsoft. Go to **Administration → Grids**.
 2. Click the **Instrument** button on the grid you want to send traces to.
@@ -36,19 +36,19 @@ For more detail, see the [API Keys reference](Api-Key/index.md).
 
 ## Step 2: Install the trace generator
 
-The [OpenTelemetry Trace Generator](https://github.com/ImmersiveFusion/if-opentelemetry-tracegen){ target="_blank" } is a single binary that simulates a realistic, multi-service application and sends its traces over OTLP. Install it with:
+The [OpenTelemetry Trace Generator](https://github.com/ImmersiveFusion/opentelemetry-tracegen){ target="_blank" } is a single binary that simulates a realistic, multi-service application and sends its traces over OTLP. Install it with:
 
 ```bash
-go install github.com/ImmersiveFusion/if-opentelemetry-tracegen/cmd/tracegen@latest
+go install github.com/ImmersiveFusion/opentelemetry-tracegen/cmd/tracegen@latest
 ```
 
 This puts a `tracegen` command on your system.
 
 **What you should see:** the command completes with no output. Run `tracegen -help` to confirm it is installed; you will see the list of available flags.
 
-## Step 3: Send traces to IAPM
+## Step 3: Send traces to DeepCube
 
-Now point the generator at IAPM. Replace `YOUR_IAPM_KEY` with the key you copied in Step 1:
+Now point the generator at DeepCube. Replace `YOUR_IAPM_KEY` with the key you copied in Step 1:
 
 ```bash
 tracegen -endpoint otlp.iapm.app:443 -headers "api-key=YOUR_IAPM_KEY" -complexity light
@@ -56,28 +56,28 @@ tracegen -endpoint otlp.iapm.app:443 -headers "api-key=YOUR_IAPM_KEY" -complexit
 
 A note on each part:
 
-- `-endpoint otlp.iapm.app:443` sends to IAPM's OTLP endpoint over gRPC.
+- `-endpoint otlp.iapm.app:443` sends to DeepCube's OTLP endpoint over gRPC.
 - `-headers "api-key=YOUR_IAPM_KEY"` authenticates with your grid key. The header name is `api-key`, lowercase, exactly.
 - `-complexity light` generates a clean, ten-service topology: enough to be interesting, small enough to read at a glance. (You can rerun later with `normal` or `heavy` for a larger graph.)
 
 **What you should see:** the generator starts emitting traces and logs to your terminal as it simulates an e-commerce platform: a web frontend, an API gateway, an order service, a payment service, and a handful of others, exercising flows like *Create Order* and *User Login*.
 
 !!! tip "Sending to a local collector first?"
-    To try the generator against a local Jaeger, Tempo, or Collector before involving IAPM, drop the headers and use `tracegen -insecure` (defaults to `localhost:4317`). Then come back and run the IAPM command above.
+    To try the generator against a local Jaeger, Tempo, or Collector before involving DeepCube, drop the headers and use `tracegen -insecure` (defaults to `localhost:4317`). Then come back and run the DeepCube command above.
 
-## Step 4: See your trace in IAPM
+## Step 4: See your trace in DeepCube
 
-Switch to IAPM and open the grid you used in Step 1.
+Switch to DeepCube and open the grid you used in Step 1.
 
 **What you should see:** within a couple of minutes, services begin appearing in the Grid: nodes for `web-frontend`, `api-gateway`, `order-service`, and the rest, connected by the calls between them. Open a service and drill into a trace to see its span waterfall: the ordered timeline of every operation in a single request.
 
-You have now sent your first trace into IAPM and watched it arrive. That is the whole loop: telemetry leaves your machine, IAPM receives it, and the Grid shows you the shape of the system.
+You have now sent your first trace into DeepCube and watched it arrive. That is the whole loop: telemetry leaves your machine, DeepCube receives it, and the Grid shows you the shape of the system.
 
 ## What you did
 
 In about five minutes you:
 
-- Authenticated a telemetry source to IAPM with a grid API key
+- Authenticated a telemetry source to DeepCube with a grid API key
 - Sent real OTLP traces using a ready-made generator
 - Watched services and traces appear in the Grid
 
@@ -85,10 +85,10 @@ In about five minutes you:
 
 - **Instrument your own application.** Swap the generator for your real service: see [Instrument Your Application](../Instrument/index.md) for language-specific guides (.NET, Java, Python, Go, Node.js).
 - **Explore failures.** Rerun the generator with `-errors 5` to inject failures and watch how they propagate through the Grid.
-- **Ask Tessa about it.** With data flowing, open the AI Assistant and ask "How is my system doing right now?" to see IAPM's diagnostics in action. Tessa is in ALPHA.
+- **Ask Tessa about it.** With data flowing, open the AI Assistant and ask "How is my system doing right now?" to see DeepCube's diagnostics in action. Tessa is in ALPHA.
 
 ## Related
 
-- **To explore without installing anything:** open the [Chaos Simulator](Sandbox/index.md), a demo grid you drive from your browser at [demo.iapm.app](https://demo.iapm.app){ target="_blank" } and view in IAPM.
+- **To explore without installing anything:** open the [Chaos Simulator](Sandbox/index.md), a demo grid you drive from your browser at [demo.iapm.app](https://demo.iapm.app){ target="_blank" } and view in DeepCube.
 - **For lookup of API key properties and rotation:** see the [API Keys reference](Api-Key/index.md).
 - **For background on traces and spans:** see [Concepts](../Resources/Terms-and-Concepts/index.md).

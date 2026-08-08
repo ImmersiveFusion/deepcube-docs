@@ -2,7 +2,7 @@
 
 {!template/subscription-required.mdp!}
 
-Send traces, metrics, and logs from your application to IAPM using standard [OpenTelemetry](https://opentelemetry.io/){ target="_blank" }. No proprietary SDKs required - use the same open-source libraries the industry relies on.
+Send traces, metrics, and logs from your application to DeepCube using standard [OpenTelemetry](https://opentelemetry.io/){ target="_blank" }. No proprietary SDKs required - use the same open-source libraries the industry relies on.
 
 ## Quick Configuration
 
@@ -24,7 +24,7 @@ The fastest way to configure any OpenTelemetry SDK is with environment variables
 |----------|-------|-------------|
 | `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.iapm.app` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
-| `OTEL_SERVICE_NAME` | `your-service-name` | Identifies your service in IAPM |
+| `OTEL_SERVICE_NAME` | `your-service-name` | Identifies your service in DeepCube |
 
 ## Quick Start by Language
 
@@ -142,7 +142,7 @@ Once configured, OpenTelemetry captures three types of telemetry:
 | **Metrics** | Performance measurements over time | Request latency, CPU usage, error rates, queue depth |
 | **Logs** | Application log events | Errors, warnings, structured log entries |
 
-All three signal types are sent to the same OTLP endpoint. IAPM correlates them automatically so you can navigate from a metric spike to the traces and logs that explain it.
+All three signal types are sent to the same OTLP endpoint. DeepCube correlates them automatically so you can navigate from a metric spike to the traces and logs that explain it.
 
 ## Verify It's Working
 
@@ -150,7 +150,7 @@ After deploying your instrumented application:
 
 1. Generate some traffic by making a few requests to your application
 2. Open [portal.iapm.app](https://portal.iapm.app){ target="_blank" } and select your Grid
-3. Click **Enter** to open the IAPM experience
+3. Click **Enter** to open the DeepCube experience
 4. You should see your service and its telemetry data within a few minutes
 
 !!! tip "Not seeing data?"

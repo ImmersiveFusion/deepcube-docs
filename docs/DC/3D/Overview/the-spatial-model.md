@@ -6,9 +6,9 @@ tags: [explanation, spatial-model, navigation, grid, core]
 
 # The Spatial Model
 
-This page explains how IAPM organizes your whole system as one navigable, vertical space you move through by changing altitude.
+This page explains how DeepCube organizes your whole system as one navigable, vertical space you move through by changing altitude.
 
-Most observability tools ask you to tab between disconnected views: a service map in one tab, a trace list in another, logs in a third. IAPM makes a different choice. Instead of separate screens, it gives you a single continuous place with your system laid out in it, and you investigate by moving your position rather than by switching context. Understanding that one idea, that everything is a location in one space, is the key to understanding why the rest of the product is shaped the way it is.
+Most observability tools ask you to tab between disconnected views: a service map in one tab, a trace list in another, logs in a third. DeepCube makes a different choice. Instead of separate screens, it gives you a single continuous place with your system laid out in it, and you investigate by moving your position rather than by switching context. Understanding that one idea, that everything is a location in one space, is the key to understanding why the rest of the product is shaped the way it is.
 
 ## Where you begin: the lobby
 
@@ -58,7 +58,7 @@ The point of the whole arrangement is that you **change altitude in one space in
 
 ## Where to next
 
-- **Why IAPM draws what is missing:** see [Rendering Absence](rendering-absence.md).
+- **Why DeepCube draws what is missing:** see [Rendering Absence](rendering-absence.md).
 - **Mosey the companion and Tessa the assistant:** see [Mosey and Tessa](companion-and-assistant.md).
 - **What Tessa is and how she reasons:** see [Tessa - Your AI Assistant](ai-assistant.md).
 - **The section overview:** see [Overview](index.md).

@@ -1,6 +1,6 @@
 # Login Options
 
-IAPM supports multiple authentication methods. Choose the option that best fits your organization.
+DeepCube supports multiple authentication methods. Choose the option that best fits your organization.
 
 [Start Free :material-rocket-launch:](https://portal.iapm.app){ .md-button .md-button--primary target="_blank" }
 
@@ -35,7 +35,7 @@ Use your existing Microsoft work or school account for single sign-on.
 
 ## Local & Social Accounts
 
-Create a dedicated IAPM account or sign in with a social provider.
+Create a dedicated DeepCube account or sign in with a social provider.
 
 ### Available Providers
 

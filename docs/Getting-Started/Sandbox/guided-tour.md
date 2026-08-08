@@ -1,19 +1,19 @@
 # Guided Tour
 
-Walk through everything IAPM can do - without touching a single line of code. This tour takes about 15 minutes and covers both the Demo Grid and the Chaos Simulator.
+Walk through everything DeepCube can do - without touching a single line of code. This tour takes about 15 minutes and covers both the Demo Grid and the Chaos Simulator.
 
 ---
 
 ## Part 1 - Explore the Demo Grid
 
-The Demo Grid is the fastest way to see IAPM in action. It generates a realistic service topology with live telemetry data, all running locally on your machine.
+The Demo Grid is the fastest way to see DeepCube in action. It generates a realistic service topology with live telemetry data, all running locally on your machine.
 
-### Step 1: Launch IAPM
+### Step 1: Launch DeepCube
 
-Open IAPM. If you haven't installed it yet, see the [installation guide](../../DC/3D/Guides/Installation/index.md).
+Open DeepCube. If you haven't installed it yet, see the [installation guide](../../DC/3D/Guides/Installation/index.md).
 
 !!! note "Version requirement"
-    The Demo Grid requires IAPM **v1.10 or later**. Check your version in the app settings.
+    The Demo Grid requires DeepCube **v1.10 or later**. Check your version in the app settings.
 
 ### Step 2: Select the Demo Grid
 
@@ -31,7 +31,7 @@ Use your mouse or controller to move around. Zoom in on a service to see more de
 
 ### Step 4: Switch Between Views
 
-IAPM offers multiple ways to visualize the same data:
+DeepCube offers multiple ways to visualize the same data:
 
 | View | Shortcut | What it shows |
 | --- | --- | --- |
@@ -42,7 +42,7 @@ Press ++n++ to switch to the **service graph**. Notice how the same services are
 
 ### Step 5: Talk to Tessa
 
-Tessa is IAPM's AI Assistant. Open the Tessa panel and try asking questions about the demo data:
+Tessa is DeepCube's AI Assistant. Open the Tessa panel and try asking questions about the demo data:
 
 - *"What services are running?"*
 - *"Show me the slowest endpoints"*
@@ -62,13 +62,13 @@ Inside the Diagnostics cube:
 - **Error indicators** highlight where things went wrong (if any)
 
 !!! success "Checkpoint"
-    You've now seen the three core views of IAPM: the Grid, the Graph, and the Diagnostics cube. Every feature you just used works identically with real production data.
+    You've now seen the three core views of DeepCube: the Grid, the Graph, and the Diagnostics cube. Every feature you just used works identically with real production data.
 
 ---
 
 ## Part 2 - Inject Chaos
 
-Now that you know how to navigate IAPM, it's time to break things on purpose. The Chaos Simulator lets you inject failures into a live microservice environment and watch IAPM detect and visualize them.
+Now that you know how to navigate DeepCube, it's time to break things on purpose. The Chaos Simulator lets you inject failures into a live microservice environment and watch DeepCube detect and visualize them.
 
 ### Step 1: Open the Chaos Simulator
 
@@ -78,13 +78,13 @@ Go to [demo.iapm.app](https://demo.iapm.app){ target="_blank" } in your browser.
 
 Click the buttons to generate normal, healthy traffic. This creates baseline telemetry - requests flowing between services without errors.
 
-Switch to IAPM and watch the services come alive. You should see activity indicators and healthy request traces appearing.
+Switch to DeepCube and watch the services come alive. You should see activity indicators and healthy request traces appearing.
 
 ### Step 3: Inject a Latency Spike
 
 Back in the Chaos Simulator, trigger a **latency** scenario. This introduces artificial delays into service responses.
 
-In IAPM, look for:
+In DeepCube, look for:
 
 - **Slower response times** on affected services
 - **Trace waterfalls** that show elongated spans
@@ -94,7 +94,7 @@ In IAPM, look for:
 
 Trigger an **error** scenario. This generates HTTP 500 responses and exception traces.
 
-In IAPM, watch for:
+In DeepCube, watch for:
 
 - **Red indicators** appearing on affected services
 - **Error traces** in the Diagnostics cube with full stack information
@@ -104,7 +104,7 @@ In IAPM, watch for:
 
 This is where it gets interesting. Trigger a **cascading failure** and watch as a problem in one service propagates to its dependents.
 
-In IAPM, you'll see:
+In DeepCube, you'll see:
 
 - **The failure origin** - the first service to fail
 - **The propagation path** - downstream services turning red as failures cascade
@@ -121,7 +121,7 @@ With failures still active, open Tessa and ask:
 Tessa analyzes the telemetry in real time and can help you trace problems back to their source - exactly how you'd use her during a real incident.
 
 !!! success "Checkpoint"
-    You've now seen IAPM handle healthy traffic, latency spikes, errors, and cascading failures. Everything you just experienced works the same way with your own instrumented applications.
+    You've now seen DeepCube handle healthy traffic, latency spikes, errors, and cascading failures. Everything you just experienced works the same way with your own instrumented applications.
 
 ---
 
@@ -141,5 +141,5 @@ You've covered the basics. Here are some ideas to go deeper before connecting yo
 When you're ready to move beyond the sandbox:
 
 [Instrument Your Application :material-arrow-right:](../../Instrument/index.md){ .md-button .md-button--primary }
-[Explore IAPM Features :material-cube-outline:](../../DC/3D/index.md){ .md-button }
+[Explore DeepCube Features :material-cube-outline:](../../DC/3D/index.md){ .md-button }
 [Browse Tutorials :material-map:](../../DC/3D/Tutorials/index.md){ .md-button }

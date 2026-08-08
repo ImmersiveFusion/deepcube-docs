@@ -1,6 +1,6 @@
 # Browser Requirements
 
-IAPM Web runs in any modern browser. No plugins or extensions required.
+DeepCube Web runs in any modern browser. No plugins or extensions required.
 
 ## Supported Browsers
 

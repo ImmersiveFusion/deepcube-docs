@@ -1,6 +1,6 @@
 # Preferences
 
-Access preferences by pressing `F10` → **Main Menu** → **Preferences**. Customize IAPM to match your workflow and comfort.
+Access preferences by pressing `F10` → **Main Menu** → **Preferences**. Customize DeepCube to match your workflow and comfort.
 
 | Icon | Meaning |
 |------|---------|
@@ -79,7 +79,7 @@ Access preferences by pressing `F10` → **Main Menu** → **Preferences**. Cust
 
 To reset all preferences to defaults, delete the preferences file:
 
-<!-- TODO: Update folder paths from ImmersiveFusion/Immersive APM to ImmersiveFusion/IAPM after January 15 -->
+<!-- TODO: Update folder paths from ImmersiveFusion/DeepCube to ImmersiveFusion/DeepCube after January 15 -->
 
 - **Windows:** `%USERPROFILE%\AppData\LocalLow\Immersive Fusion\Immersive APM\preferences.json`
 - **macOS:** `~/Library/Application Support/Immersive Fusion/Immersive APM/preferences.json`

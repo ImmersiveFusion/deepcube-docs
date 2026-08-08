@@ -2,7 +2,7 @@
 
 {!template/subscription-required.mdp!}
 
-Instrument your Python applications with OpenTelemetry to send traces, metrics, and logs to IAPM. This guide covers Django, Flask, FastAPI, auto-instrumentation, and manual SDK usage.
+Instrument your Python applications with OpenTelemetry to send traces, metrics, and logs to DeepCube. This guide covers Django, Flask, FastAPI, auto-instrumentation, and manual SDK usage.
 
 [:octicons-arrow-left-24: Back to Instrument Overview](../index.md)
 
@@ -269,7 +269,7 @@ The OpenTelemetry Python SDK reads these variables automatically:
 |----------|-------|-------------|
 | `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.iapm.app` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
-| `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in IAPM |
+| `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in DeepCube |
 | `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (grpc or http/protobuf) |
 | `OTEL_TRACES_EXPORTER` | `otlp` | Trace exporter type |
 | `OTEL_METRICS_EXPORTER` | `otlp` | Metrics exporter type |
@@ -298,7 +298,7 @@ The OpenTelemetry Python SDK reads these variables automatically:
 
 ## Troubleshooting
 
-### No data appearing in IAPM
+### No data appearing in DeepCube
 
 - Verify the API key by copying a fresh one from [portal.iapm.app](https://portal.iapm.app){ target="_blank" } under **Administration > Grids > Instrument**.
 - Check network connectivity: `python -c "import urllib.request; urllib.request.urlopen('https://otlp.iapm.app')"`.

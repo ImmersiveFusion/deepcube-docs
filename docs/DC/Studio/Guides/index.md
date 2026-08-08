@@ -1,23 +1,23 @@
 # Guides
 
 !!! warning "Early Access"
-    IAPM Studio is in early access. Features and interfaces may change between releases.
+    DeepCube Studio is in early access. Features and interfaces may change between releases.
 
 {!template/subscription-required.mdp!}
 
-Learn how to install, configure, and use IAPM Studio. These guides cover setup through daily workflows.
+Learn how to install, configure, and use DeepCube Studio. These guides cover setup through daily workflows.
 
 ## Available Guides
 
 | Guide | Description |
 |-------|-------------|
-| [Installation](Installation/index.md) | Download and install IAPM Studio on Windows or macOS |
+| [Installation](Installation/index.md) | Download and install DeepCube Studio on Windows or macOS |
 
 ## Getting Started
 
-1. **Install** - [Download IAPM Studio](Installation/index.md) for your operating system
-2. **Launch** - Open IAPM Studio from your applications
-3. **Sign in** - Authenticate with your IAPM account
+1. **Install** - [Download DeepCube Studio](Installation/index.md) for your operating system
+2. **Launch** - Open DeepCube Studio from your applications
+3. **Sign in** - Authenticate with your DeepCube account
 4. **Connect** - Select a grid to begin querying telemetry data
 5. **Chat** - Start a conversation with Tessa
 

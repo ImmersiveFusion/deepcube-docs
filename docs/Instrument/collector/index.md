@@ -2,13 +2,13 @@
 
 {!template/subscription-required.mdp!}
 
-The OpenTelemetry Collector is a vendor-agnostic proxy that receives, processes, and exports telemetry data. This guide covers when to use a Collector, how to configure it for IAPM, and deployment options for Docker and Kubernetes.
+The OpenTelemetry Collector is a vendor-agnostic proxy that receives, processes, and exports telemetry data. This guide covers when to use a Collector, how to configure it for DeepCube, and deployment options for Docker and Kubernetes.
 
 [:octicons-arrow-left-24: Back to Instrument Overview](../index.md)
 
 ## When to Use a Collector
 
-You can export telemetry directly from your application to IAPM, or route it through a Collector first. Here is when each approach makes sense:
+You can export telemetry directly from your application to DeepCube, or route it through a Collector first. Here is when each approach makes sense:
 
 | Approach | Best For |
 |----------|----------|
@@ -21,7 +21,7 @@ Benefits of using a Collector:
 - **Batching and retry** - The Collector handles buffering and retries, reducing load on your applications
 - **Enrichment** - Add Kubernetes metadata, environment tags, or other attributes
 - **Sampling** - Apply tail-based or probabilistic sampling before export
-- **Multiple destinations** - Fan out telemetry to IAPM and other backends simultaneously
+- **Multiple destinations** - Fan out telemetry to DeepCube and other backends simultaneously
 - **Protocol translation** - Accept telemetry over gRPC, HTTP, Zipkin, Jaeger, and export as OTLP
 
 ## Collector Configuration
@@ -380,7 +380,7 @@ data:
 - Ensure the ports (4317, 4318) are not already in use.
 - Check container logs: `docker logs <container>` or `kubectl logs <pod>`.
 
-### Data not reaching IAPM
+### Data not reaching DeepCube
 
 - Verify the API key by copying a fresh one from [portal.iapm.app](https://portal.iapm.app){ target="_blank" } under **Administration > Grids > Instrument**.
 - Check that the Collector can reach `otlp.iapm.app:443`. Test from within the container:

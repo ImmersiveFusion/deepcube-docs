@@ -7,7 +7,7 @@
 
 {!template/store-steam.mdp!}
 
-Free to install. A subscription is required to use IAPM. Learn more about [Steam](https://store.steampowered.com/about/){ target="_blank" } on their website.
+Free to install. A subscription is required to use DeepCube. Learn more about [Steam](https://store.steampowered.com/about/){ target="_blank" } on their website.
 
 ## Offline Installer (MSI)
 
@@ -15,7 +15,7 @@ Free to install. A subscription is required to use IAPM. Learn more about [Steam
 [Latest Beta Build :material-download:](https://downloads.immersivefusion.com/release/beta/DC.latest.msi){ .md-button }
 [Latest Alpha Build :material-download:](https://downloads.immersivefusion.com/release/alpha/DC.latest.msi){ .md-button }
 
-1. Click on the button above to download the installer for IAPM for Windows from the cloud. The file size is around `1.5GB`
+1. Click on the button above to download the installer for DeepCube for Windows from the cloud. The file size is around `1.5GB`
     ![Download](img/1.download.png)
 
 1. Run the installer
@@ -24,13 +24,13 @@ Free to install. A subscription is required to use IAPM. Learn more about [Steam
 
     ![Download](img/2.open.png)
 
-    The installer for IAPM for Windows uses standard technology from Microsoft (MSI) and performs the installation silently without any unnecessary prompts.
+    The installer for DeepCube for Windows uses standard technology from Microsoft (MSI) and performs the installation silently without any unnecessary prompts.
 
     ![Download](img/4.install.a.png)
 
 1. Allow Installation (if User Account Control is enabled)
 
-    The installer file needs to make minimal modifications to your computer as part of the installation process as well as store IAPM for Windows files.
+    The installer file needs to make minimal modifications to your computer as part of the installation process as well as store DeepCube for Windows files.
 
     If you have User Account Control enabled on your computer, ensure that the prompt displays `Verified publisher: Immersive Fusion LLC`. Click `Yes` once you have done so to allow the installer to make modifications to your computer. Click `No`, if you don't see such a message on the prompt and contact us for assistance. 
 

@@ -1,6 +1,6 @@
 # Custom Application
 
-Instrument any application with OpenTelemetry to visualize and analyze it in IAPM.
+Instrument any application with OpenTelemetry to visualize and analyze it in DeepCube.
 
 ## What You Can Instrument
 
@@ -15,7 +15,7 @@ Instrument any application with OpenTelemetry to visualize and analyze it in IAP
 ```mermaid
 graph LR
     A[Your Application] -->|OpenTelemetry SDK| B[Telemetry Data]
-    B -->|OTLP Export| C[IAPM Platform]
+    B -->|OTLP Export| C[DeepCube Platform]
     C --> D[3D Visualization]
 ```
 
@@ -23,7 +23,7 @@ graph LR
 
 ## Showcase: .NET Aspire Integration
 
-See IAPM in action with a .NET Aspire application:
+See DeepCube in action with a .NET Aspire application:
 
 <iframe width="1024" height="576" src="https://www.youtube.com/embed/v5I3ljT8zgU?start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

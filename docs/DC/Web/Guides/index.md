@@ -1,8 +1,8 @@
-# IAPM Web Guides
+# DeepCube Web Guides
 
 {!template/subscription-required.mdp!}
 
-Learn how to use IAPM Web effectively for monitoring, analysis, and account management.
+Learn how to use DeepCube Web effectively for monitoring, analysis, and account management.
 
 ## Quick Start
 
@@ -34,7 +34,7 @@ The dashboard provides a real-time view of your application:
 
 ## Trace Analysis
 
-IAPM Web offers multiple ways to analyze traces:
+DeepCube Web offers multiple ways to analyze traces:
 
 | View | Best For |
 |------|----------|
@@ -58,5 +58,5 @@ IAPM Web offers multiple ways to analyze traces:
 | Action | Link |
 |--------|------|
 | Instrument your application | [Instrumentation Guide](../../../Instrument/index.md) |
-| Try 3D visualization | [IAPM](../../3D/index.md) |
+| Try 3D visualization | [DeepCube](../../3D/index.md) |
 | Check browser support | [Supported Browsers](../Supported-Configurations/index.md) |

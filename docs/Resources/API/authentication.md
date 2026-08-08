@@ -2,15 +2,15 @@
 
 {!template/subscription-required.mdp!}
 
-The IAPM API supports two authentication methods: OAuth 2.0 via Azure AD for user-context access, and API Keys for server-to-server integration.
+The DeepCube API supports two authentication methods: OAuth 2.0 via Azure AD for user-context access, and API Keys for server-to-server integration.
 
 ## OAuth 2.0 (Azure AD)
 
-OAuth 2.0 is the recommended authentication method for applications acting on behalf of a user. IAPM uses Azure Active Directory as the identity provider.
+OAuth 2.0 is the recommended authentication method for applications acting on behalf of a user. DeepCube uses Azure Active Directory as the identity provider.
 
 ### Authorization Flow
 
-IAPM uses the **Authorization Code flow with PKCE** for interactive applications and the **Client Credentials flow** for service-to-service communication.
+DeepCube uses the **Authorization Code flow with PKCE** for interactive applications and the **Client Credentials flow** for service-to-service communication.
 
 #### Authorization Code Flow (Interactive)
 
@@ -18,7 +18,7 @@ IAPM uses the **Authorization Code flow with PKCE** for interactive applications
 sequenceDiagram
     participant App as Your Application
     participant Azure as Azure AD
-    participant API as IAPM API
+    participant API as DeepCube API
 
     App->>Azure: 1. Redirect to /authorize
     Azure->>App: 2. Authorization code

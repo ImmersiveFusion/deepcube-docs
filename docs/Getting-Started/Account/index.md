@@ -2,7 +2,7 @@
 
 {!template/subscription-management.mdp!}
 
-Configure your IAPM account structure to organize telemetry data and manage billing.
+Configure your DeepCube account structure to organize telemetry data and manage billing.
 
 ## Account Hierarchy
 
@@ -40,7 +40,7 @@ graph TD
 
 ### Account
 
-Your organization's identity in IAPM. Contains all tenants, subscriptions, and data.
+Your organization's identity in DeepCube. Contains all tenants, subscriptions, and data.
 
 ### Tenant
 
@@ -60,7 +60,7 @@ Payment configuration for a tenant:
 
 ### Subscription
 
-Your IAPM plan. Determines:
+Your DeepCube plan. Determines:
 
 | Aspect | Description |
 |--------|-------------|

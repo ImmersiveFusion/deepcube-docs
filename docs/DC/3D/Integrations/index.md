@@ -3,7 +3,7 @@
 !!! warning "VR support is not actively maintained"
     VR is not a supported surface right now. These pages are kept for anyone already running a headset: the steps may still work, but VR is not currently a maintained part of the product.
 
-IAPM runs on keyboard and mouse. It can also connect to a supported VR headset, documented here for existing headset users.
+DeepCube runs on keyboard and mouse. It can also connect to a supported VR headset, documented here for existing headset users.
 
 ## Supported Headsets
 
@@ -25,15 +25,15 @@ IAPM runs on keyboard and mouse. It can also connect to a supported VR headset, 
 
 ```mermaid
 graph LR
-    A[Install IAPM] --> B[Setup VR Headset]
-    B --> C[Launch IAPM]
+    A[Install DeepCube] --> B[Setup VR Headset]
+    B --> C[Launch DeepCube]
     C --> D[Auto-detect Headset]
     D --> E[Enter VR]
 ```
 
-1. **Install IAPM** on your PC
+1. **Install DeepCube** on your PC
 2. **Set up your VR headset** following manufacturer instructions
-3. **Launch IAPM** - it automatically detects connected headsets
+3. **Launch DeepCube** - it automatically detects connected headsets
 4. **Put on your headset** and enter the immersive environment
 
 ## VR vs Desktop Experience
@@ -50,7 +50,7 @@ graph LR
 
 | Issue | Solution |
 |-------|----------|
-| Headset not detected | Restart IAPM after connecting headset |
+| Headset not detected | Restart DeepCube after connecting headset |
 | Poor performance | Lower graphics quality in Preferences |
 | Tracking issues | Check room lighting and base stations |
 | Wireless lag | Use 5 GHz WiFi, reduce distance to router |

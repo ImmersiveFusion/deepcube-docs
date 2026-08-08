@@ -1,8 +1,8 @@
-# IAPM Web Features
+# DeepCube Web Features
 
 {!template/subscription-required.mdp!}
 
-IAPM Web provides browser-based access to your application telemetry at [portal.iapm.app](https://portal.iapm.app){ target="_blank" }. The following features are available across all supported browsers.
+DeepCube Web provides browser-based access to your application telemetry at [portal.iapm.app](https://portal.iapm.app){ target="_blank" }. The following features are available across all supported browsers.
 
 ## Observability
 
@@ -88,7 +88,7 @@ Search and filter logs with support for:
 
 ### Tessa
 
-Tessa is the AI Assistant built into IAPM Web, providing intelligent diagnostics through natural conversation.
+Tessa is the AI Assistant built into DeepCube Web, providing intelligent diagnostics through natural conversation.
 
 - **Streaming Chat** - Real-time responses with live-streamed output
 - **Voice Input** - Speak your questions for hands-free troubleshooting
@@ -108,7 +108,7 @@ Grids are telemetry data containers that organize your observability data. From 
 
 ### API Keys
 
-API keys authenticate your instrumentation endpoints against IAPM. Manage keys from the portal:
+API keys authenticate your instrumentation endpoints against DeepCube. Manage keys from the portal:
 
 - Create keys scoped to specific grids
 - Rotate keys without downtime
@@ -124,7 +124,7 @@ Personal Access Tokens (PATs) provide scoped API access for automation and integ
 
 ### Account Management
 
-Manage your organization's IAPM subscription:
+Manage your organization's DeepCube subscription:
 
 - **Tenants** - Isolated environments for different teams or customers
 - **Billing Profiles** - Payment methods and invoicing
@@ -173,7 +173,7 @@ Earn badges as you reach platform milestones - from creating your first grid to 
 
 ### Authentication
 
-IAPM Web supports multiple sign-in methods:
+DeepCube Web supports multiple sign-in methods:
 
 - **Entra ID** (Azure AD) - Enterprise single sign-on
 - **GitHub** - Sign in with your GitHub account
@@ -183,6 +183,6 @@ IAPM Web supports multiple sign-in methods:
 
 | Action | Link |
 |--------|------|
-| Get started with IAPM Web | [Guides](../Guides/index.md) |
+| Get started with DeepCube Web | [Guides](../Guides/index.md) |
 | Check browser support | [Supported Configurations](../Supported-Configurations/index.md) |
 | View version history | [Release Notes](../release-notes.md) |

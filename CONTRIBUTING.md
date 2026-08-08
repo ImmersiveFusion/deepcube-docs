@@ -1,4 +1,4 @@
-# Contributing to the IAPM Documentation Site
+# Contributing to the DeepCube Documentation Site
 
 Welcome. This guide is how a contributor (engineer, technical writer, product
 manager, or AI agent acting on behalf of any of those) lands a useful change
@@ -15,7 +15,7 @@ work on the other.
 ## What this site is
 
 `docs.immersivefusion.com`. The external, public product documentation for
-IAPM (3D, Web, Studio) and Tessa. Built with MkDocs + Material, navigated by
+DeepCube (3D, Web, Studio) and Tessa. Built with MkDocs + Material, navigated by
 the `awesome-pages` plugin, hosted on Azure Static Web Apps.
 
 The information architecture follows the **Diataxis framework**: four
@@ -37,7 +37,7 @@ The four quadrants answer four different reader questions:
 
 A page that tries to do two of these jobs at once does both badly. If you
 catch yourself writing "first you do X, but here's why we built it this way,
-and the full option set is..." — that's three pages.
+and the full option set is...": that's three pages.
 
 ### The two discipline rules every page MUST satisfy
 
@@ -46,7 +46,7 @@ and the full option set is..." — that's three pages.
 
    ```yaml
    ---
-   title: Installing IAPM on Windows
+   title: Installing DeepCube on Windows
    diataxis: how-to
    tags: [how-to, installation, windows]
    ---
@@ -86,12 +86,12 @@ recommended heading structure, and inline comments explaining what goes in
 each section.
 
 The templates live in `templates/` (not under `docs/`) so they aren't built
-as published pages or indexed by search — they exist only for contributors
+as published pages or indexed by search. They exist only for contributors
 copying them as starting points for new content.
 
 The templates themselves are byte-identical across the docs site and the
 Knowledge Nexus. Product-specific examples live here in `CONTRIBUTING.md`,
-not in the templates — that's how the templates stay shareable while each
+not in the templates. That's how the templates stay shareable while each
 site keeps domain-appropriate guidance.
 
 > **Note for the Knowledge Nexus session:** the Nexus convention is to
@@ -201,7 +201,7 @@ when a case-only variant appears (e.g. adding `dc/` redirects when `DC/`
 exists on disk).
 
 Human labels are controlled by the `title:` key in `.pages`, not by the
-folder name. You can show "IAPM 3D" in the nav while the folder stays
+folder name. You can show "DeepCube" in the nav while the folder stays
 `DC/3D/` and the URL stays `/DC/3D/`. Use `title:` to relabel; never `git mv`
 a directory to change capitalization.
 
@@ -219,7 +219,7 @@ appends a redirect entry** so inbound links don't break:
 
 The plugin emits a static client-side redirect (meta-refresh + JS); it does
 **not** follow chains. If `A → B` and you later move `B → C`, the
-`A → B` entry now serves a 404 — you must retarget `A → C` in place.
+`A → B` entry now serves a 404, so you must retarget `A → C` in place.
 
 Before every directory-moving change, grep for existing redirect targets
 inside the tree you're about to move:
@@ -240,7 +240,7 @@ python -m mkdocs build --strict
 `--strict` fails on broken internal links and nav warnings. A PR is not
 mergeable until `--strict` passes cleanly. If the build complains about a
 file under `docs/decisions/` or another scratch-space directory, that
-content shouldn't be in `docs/` at all — either delete it or move it
+content shouldn't be in `docs/` at all: either delete it or move it
 outside the mkdocs source tree.
 
 ---

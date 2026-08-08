@@ -8,7 +8,7 @@ tags: [reference, tessa, skills]
 
 This page documents Tessa's six specialized skill domains, the kinds of agents in each, and how Tessa routes between them.
 
-> *Available since IAPM v1.12 and Studio v0.7. Web integration not yet shipped.*
+> *Available since DeepCube v1.12 and Studio v0.7. Web integration not yet shipped.*
 
 Skills are specialized domains that extend Tessa beyond diagnostics. Each skill contains multiple specialized agents that Tessa routes to automatically based on your request.
 

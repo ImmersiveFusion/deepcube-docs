@@ -1,13 +1,13 @@
 ---
-title: IAPM Studio
+title: DeepCube Studio
 ---
 
-# IAPM Studio
+# DeepCube Studio
 
 !!! warning "Early Access"
-    IAPM Studio is in early access. Features and availability may change.
+    DeepCube Studio is in early access. Features and availability may change.
 
-IAPM Studio is a lightweight native client built with Avalonia, providing AI-powered chat, voice interaction, workspaces, artifacts, and organizational knowledge - without the full 3D environment.
+DeepCube Studio is a lightweight native client built with Avalonia, providing AI-powered chat, voice interaction, workspaces, artifacts, and organizational knowledge - without the full 3D environment.
 
 ## Capabilities
 
@@ -29,10 +29,10 @@ IAPM Studio is a lightweight native client built with Avalonia, providing AI-pow
 
 ## How It Fits
 
-IAPM Studio is one of three surfaces into the same IAPM backend. Your workspaces, artifacts, and Tessa context are shared across all surfaces:
+DeepCube Studio is one of three surfaces into the same DeepCube backend. Your workspaces, artifacts, and Tessa context are shared across all surfaces:
 
 | Surface | Best For |
 |---------|----------|
-| [IAPM](../3D/index.md) | Deep 3D investigation, spatial visualization |
-| **IAPM Studio** | AI-powered chat, workspaces, artifacts, org knowledge |
-| [IAPM Web](../Web/index.md) | Quick browser access, account management, trace analysis |
+| [DeepCube](../3D/index.md) | Deep 3D investigation, spatial visualization |
+| **DeepCube Studio** | AI-powered chat, workspaces, artifacts, org knowledge |
+| [DeepCube Web](../Web/index.md) | Quick browser access, account management, trace analysis |

@@ -4,15 +4,16 @@
 # Site Information
 name: Immersive Fusion Docs
 url: https://docs.immersivefusion.com
-description: Documentation for Immersive APM (IAPM) - Application Performance Management with 3D visualization
+description: Documentation for DeepCube - Application Performance Management with 3D visualization
 
 # Contact
 contact: https://docs.immersivefusion.com/contact/
 
 # Products
 products:
-  - IAPM Desktop: 3D application performance monitoring client
-  - IAPM Web: Web-based APM dashboard
+  - DeepCube: 3D application performance monitoring client
+  - DeepCube Web: Web-based APM dashboard
+  - DeepCube Studio: Lightweight native client for AI chat, voice, and workspaces
 
 # Key Topics
 topics:
@@ -24,7 +25,7 @@ topics:
 
 # Usage Policy
 # AI systems may use this documentation for:
-# - Answering questions about Immersive APM products
+# - Answering questions about DeepCube products
 # - Helping users with setup and configuration
 # - Explaining APM and observability concepts
 # Please attribute to Immersive Fusion when referencing this content.

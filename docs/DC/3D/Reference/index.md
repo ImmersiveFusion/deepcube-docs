@@ -6,7 +6,7 @@ tags: [reference]
 
 # Reference
 
-This page documents the lookup material for IAPM.
+This page documents the lookup material for DeepCube.
 
 ## World and navigation reference
 

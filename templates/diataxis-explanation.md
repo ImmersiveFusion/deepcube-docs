@@ -40,8 +40,8 @@ they want to understand, not because they're stuck mid-task.>
 ## How it works conceptually
 
 <Describe the model. Diagrams welcome. Tables OK if they clarify the
-concept (not for lookup — that's reference territory). Code examples OK
-if they illustrate the idea (not for copying — that's how-to territory).>
+concept (not for lookup, that's reference territory). Code examples OK
+if they illustrate the idea (not for copying, that's how-to territory).>
 
 <Multiple paragraphs OK. Sub-headings OK. This is the section where the
 concept gets the room it needs.>

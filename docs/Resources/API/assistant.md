@@ -2,14 +2,14 @@
 
 {!template/subscription-required.mdp!}
 
-The AI Assistant API provides programmatic access to Tessa - IAPM's purpose-built AI for application diagnostics. Send chat prompts, convert text to speech, recognize spoken audio, track usage, and manage Grid-level limits.
+The AI Assistant API provides programmatic access to Tessa - DeepCube's purpose-built AI for application diagnostics. Send chat prompts, convert text to speech, recognize spoken audio, track usage, and manage Grid-level limits.
 
 !!! info "Authentication Required"
     All endpoints require a valid `Authorization: Bearer {token}` or `api-key: {key}` header. See [Authentication](authentication.md).
 
 ## Instance Identifiers
 
-The Chat and Speech endpoints use an `instanceSecondaryId` rather than a `gridSecondaryId`. An AI Assistant instance represents a Tessa session within a specific Grid. When a user starts a Tessa session (via IAPM, Web, or Studio), an instance is created and its ID is returned. Use this ID for all chat and speech requests within that session. Usage and Limits endpoints continue to use `gridSecondaryId`.
+The Chat and Speech endpoints use an `instanceSecondaryId` rather than a `gridSecondaryId`. An AI Assistant instance represents a Tessa session within a specific Grid. When a user starts a Tessa session (via DeepCube, Web, or Studio), an instance is created and its ID is returned. Use this ID for all chat and speech requests within that session. Usage and Limits endpoints continue to use `gridSecondaryId`.
 
 ---
 

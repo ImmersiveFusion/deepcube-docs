@@ -198,7 +198,7 @@ These tools surface the broader Grid context that informs Tessa's answers but ar
 
 ## Context Awareness in 3D
 
-In IAPM, Tessa knows where you are. She tracks your current room and what you're looking at, which means you can ask contextual questions without specifying the target.
+In DeepCube, Tessa knows where you are. She tracks your current room and what you're looking at, which means you can ask contextual questions without specifying the target.
 
 | Where You Are | What Tessa Knows |
 |---------------|------------------|

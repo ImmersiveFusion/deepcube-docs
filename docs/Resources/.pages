@@ -1,7 +1,7 @@
 # Order per PBI 2801 (approved on coordination bus #1874): developer reference
 # (API, Integrations) first, then terminology (Terms-and-Concepts, Glossary),
 # Legal last. Keep the Resources/index.md hub section order aligned with this list.
-# The hub page also carries Compare IAPM and Blog & Press sections; those are
+# The hub page also carries Compare DeepCube and Blog & Press sections; those are
 # external links (immersivefusion.com), intentionally hub-only and not nav entries.
 title: Resources
 arrange:

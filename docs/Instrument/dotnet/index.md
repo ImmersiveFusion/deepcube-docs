@@ -368,7 +368,7 @@ public class OrderController : ControllerBase
 
 1. Run your instrumented application
 2. Make a few HTTP requests to generate trace data
-3. Open [portal.iapm.app](https://portal.iapm.app){ target="_blank" } and select your Grid
+3. Open [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } and select your Grid
 4. Click **Enter** - you should see your service and traces within a few minutes
 
 !!! tip "Quick verification with console exporter"
@@ -389,7 +389,7 @@ public class OrderController : ControllerBase
 ### No data appearing in DeepCube
 
 - **Check the endpoint**: Ensure `https://otlp.deepcube.ai` is reachable from your application. Test with `curl https://otlp.deepcube.ai`.
-- **Verify the API key**: Copy a fresh key from [portal.iapm.app](https://portal.iapm.app){ target="_blank" } under **Administration > Grids > Instrument**.
+- **Verify the API key**: Copy a fresh key from [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } under **Administration > Grids > Instrument**.
 - **Check for package version conflicts**: Ensure all `OpenTelemetry.*` packages are the same version.
 
 ### Spans are created but not exported

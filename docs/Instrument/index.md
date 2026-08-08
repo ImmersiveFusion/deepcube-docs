@@ -14,7 +14,7 @@ All you need is your **OTLP endpoint** and **API key**:
 | **Protocol** | `grpc` (default) or `http/protobuf` |
 | **API Key Header** | `api-key: YOUR-API-KEY` |
 
-Get your API key by logging in at [portal.iapm.app](https://portal.iapm.app){ target="_blank" }, then go to **Administration > Grids** and click **Instrument** on your Grid.
+Get your API key by logging in at [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" }, then go to **Administration > Grids** and click **Instrument** on your Grid.
 
 ### Environment Variables
 
@@ -149,7 +149,7 @@ All three signal types are sent to the same OTLP endpoint. DeepCube correlates t
 After deploying your instrumented application:
 
 1. Generate some traffic by making a few requests to your application
-2. Open [portal.iapm.app](https://portal.iapm.app){ target="_blank" } and select your Grid
+2. Open [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } and select your Grid
 3. Click **Enter** to open the DeepCube experience
 4. You should see your service and its telemetry data within a few minutes
 

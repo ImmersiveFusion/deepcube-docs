@@ -2,7 +2,7 @@
 
 {!template/subscription-required.mdp!}
 
-Common issues and resolutions for DeepCube Web at [portal.iapm.app](https://portal.iapm.app){ target="_blank" }.
+Common issues and resolutions for DeepCube Web at [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" }.
 
 ## Quick Reference
 
@@ -25,11 +25,11 @@ Common issues and resolutions for DeepCube Web at [portal.iapm.app](https://port
 | "Invalid credentials" error | Incorrect email or password | Reset your password from the login page. If using Entra ID, verify your directory credentials with your IT administrator. |
 | Login page does not load | Browser cache or extension conflict | Clear browser cache and cookies, then retry. Disable ad blockers or privacy extensions temporarily. |
 | GitHub login fails | GitHub account not linked | Ensure your GitHub email matches your DeepCube account email. If you registered with a different method, link GitHub from your account settings. |
-| Redirected back to login after authenticating | Session cookie blocked | Ensure third-party cookies are allowed for `portal.iapm.app`. Check that your browser is not in a restrictive privacy mode. |
+| Redirected back to login after authenticating | Session cookie blocked | Ensure third-party cookies are allowed for `portal.deepcube.ai`. Check that your browser is not in a restrictive privacy mode. |
 | "Account not found" after Entra ID login | Tenant not provisioned | Your organization may not have an active DeepCube subscription. Contact your account administrator or [support](https://immersivefusion.com/support). |
 
 !!! tip "Entra ID users"
-    If your organization enforces conditional access policies, ensure that `portal.iapm.app` is an allowed application in your Entra ID configuration.
+    If your organization enforces conditional access policies, ensure that `portal.deepcube.ai` is an allowed application in your Entra ID configuration.
 
 ---
 

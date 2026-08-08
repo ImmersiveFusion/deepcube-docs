@@ -8,7 +8,7 @@ API keys authenticate your application's telemetry data with DeepCube. Each grid
 
 ## Getting Your API Key
 
-1. Log in at [portal.iapm.app](https://portal.iapm.app){ target="_blank" }, then go to **Administration → Grids**
+1. Log in at [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" }, then go to **Administration → Grids**
 2. Click the **Instrument** button (:material-cog:) on your grid
 3. Copy your API key from the wizard
 

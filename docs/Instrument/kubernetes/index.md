@@ -409,7 +409,7 @@ spec:
 1. Deploy your instrumented workloads
 2. Check that the Collector pods are running: `kubectl get pods -n otel-system`
 3. Generate some traffic to your application
-4. Open [portal.iapm.app](https://portal.iapm.app){ target="_blank" } and select your Grid
+4. Open [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } and select your Grid
 5. Click **Enter** - you should see your services and traces within a few minutes
 
 !!! tip "Check Collector logs"

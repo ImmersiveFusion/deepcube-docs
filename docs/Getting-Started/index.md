@@ -38,9 +38,9 @@ You can sign in three ways. All of them reach the same product; the only differe
 | **GitHub** | Developers who would rather use their GitHub identity |
 | **Microsoft** | Organizations on Microsoft 365 or Entra ID, with work or school accounts and SSO |
 
-[Sign in to DeepCube :material-rocket-launch:](https://portal.iapm.app){ .md-button .md-button--primary target="_blank" }
+[Sign in to DeepCube :material-rocket-launch:](https://portal.deepcube.ai){ .md-button .md-button--primary target="_blank" }
 
-Email and GitHub accounts land you in the web app at **my.iapm.app**; Microsoft accounts land you at **azure.iapm.app**. Both are the same application behind the same backend; the address differs only by how you signed in, so bookmark whichever one you land on.
+Email and GitHub accounts land you in the web app at **my.iapm.app**; Microsoft accounts land you at **azure.deepcube.ai**. Both are the same application behind the same backend; the address differs only by how you signed in, so bookmark whichever one you land on.
 
 For the full step-by-step, see [Sign up and instrument](Step-By-Step-Instructions/index.md).
 

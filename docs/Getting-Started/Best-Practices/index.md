@@ -1,10 +1,10 @@
 # OpenTelemetry Best Practices
 
-Guidelines for effective instrumentation and observability with Immersive APM.
+Guidelines for effective instrumentation and observability with DeepCube.
 
 ## Resource Attributes
 
-Set resource attributes to identify your services clearly in Immersive APM:
+Set resource attributes to identify your services clearly in DeepCube:
 
 ```
 OTEL_SERVICE_NAME=my-service
@@ -56,7 +56,7 @@ messaging.system=rabbitmq
 messaging.operation.type=publish
 ```
 
-Using standard conventions helps Immersive APM display richer context automatically.
+Using standard conventions helps DeepCube display richer context automatically.
 
 ## Sampling Strategies
 
@@ -103,7 +103,7 @@ Ensure telemetry export doesn't block your application's critical path. Most Ope
 
 !!! warning "Avoid These Mistakes"
 
-    **Missing service.name** - Services appear as "unknown" in Immersive APM
+    **Missing service.name** - Services appear as "unknown" in DeepCube
 
     **Over-instrumentation** - Every function call doesn't need a span; focus on meaningful operations
 
@@ -120,7 +120,7 @@ Before going to production:
 - [ ] Auto-instrumentation is configured for frameworks in use
 - [ ] Sampling is appropriate for traffic volume
 - [ ] No sensitive data in attributes
-- [ ] Telemetry export is working (verify in Immersive APM)
+- [ ] Telemetry export is working (verify in DeepCube)
 
 ## Related
 

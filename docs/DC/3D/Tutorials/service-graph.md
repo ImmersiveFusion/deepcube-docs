@@ -2,7 +2,7 @@
 
 **Difficulty:** :material-star: Beginner | **Time:** ~15 minutes
 
-Before you troubleshoot, you need to understand your system. This walkthrough shows you how to use IAPM's service graph and Tessa to explore your service architecture - identifying traffic patterns, critical dependencies, and potential single points of failure.
+Before you troubleshoot, you need to understand your system. This walkthrough shows you how to use DeepCube's service graph and Tessa to explore your service architecture - identifying traffic patterns, critical dependencies, and potential single points of failure.
 
 ## What You'll Learn
 

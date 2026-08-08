@@ -1,6 +1,6 @@
-# IAPM
+# DeepCube
 
-Enter the World of Your Application®. IAPM transforms [Application Performance Management](../../Resources/Terms-and-Concepts/APM/index.md) into an immersive 3D experience with AI-powered assistance.
+Enter the World of Your Application®. DeepCube transforms [Application Performance Management](../../Resources/Terms-and-Concepts/APM/index.md) into an immersive 3D experience with AI-powered assistance.
 
 <iframe width="1024" height="576" src="https://www.youtube.com/embed/SkCkcELKFzg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -17,9 +17,9 @@ Enter the World of Your Application®. IAPM transforms [Application Performance 
 
 [Explore All Features :material-arrow-right:](Features/index.md){ .md-button .md-button--primary }
 
-## IAPM vs Traditional APM
+## DeepCube vs Traditional APM
 
-| Aspect | Traditional APM | IAPM |
+| Aspect | Traditional APM | DeepCube |
 |--------|-----------------|--------------|
 | Interface | Multiple dashboards | Unified 3D environment |
 | Root cause analysis | Manual log correlation | AI-guided diagnostics |
@@ -38,7 +38,7 @@ Enter the World of Your Application®. IAPM transforms [Application Performance 
 
 ## VR headsets
 
-IAPM runs on mouse and keyboard. It can also connect to a VR headset, though VR is not actively maintained right now. If you already run a headset, see the [VR integrations](Integrations/index.md) pages.
+DeepCube runs on mouse and keyboard. It can also connect to a VR headset, though VR is not actively maintained right now. If you already run a headset, see the [VR integrations](Integrations/index.md) pages.
 
 ## Video Resources
 
@@ -46,9 +46,9 @@ IAPM runs on mouse and keyboard. It can also connect to a VR headset, though VR 
 [Explainers :material-school:](https://www.youtube.com/playlist?list=PLRCpHPtJkLZLM4h_4T6DMG99_SsIGyiYi){ .md-button target="_blank" }
 [Testimonials :material-account-voice:](https://www.youtube.com/playlist?list=PLRCpHPtJkLZJNMSlq8gd1ayCsOk_X-myO){ .md-button target="_blank" }
 
-## How IAPM Compares
+## How DeepCube Compares
 
-See how IAPM stacks up against other observability platforms:
+See how DeepCube stacks up against other observability platforms:
 
 [vs Datadog](https://www.immersivefusion.com/compare/datadog){ .md-button target="_blank" }
 [vs Dynatrace](https://www.immersivefusion.com/compare/dynatrace){ .md-button target="_blank" }
@@ -57,4 +57,4 @@ See how IAPM stacks up against other observability platforms:
 [All Comparisons :material-arrow-right:](https://www.immersivefusion.com/compare){ .md-button target="_blank" }
 
 !!! tip "Looking for browser-based access?"
-    [IAPM Web](../Web/index.md) provides quick access without installation for account management and basic monitoring.
+    [DeepCube Web](../Web/index.md) provides quick access without installation for account management and basic monitoring.

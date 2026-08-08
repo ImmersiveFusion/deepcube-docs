@@ -1,8 +1,8 @@
-# IAPM Web
+# DeepCube Web
 
 Browser-based access to your application telemetry. No installation required - access from any device with a modern browser.
 
-[Launch IAPM Web :material-web:](https://portal.iapm.app){ .md-button .md-button--primary target="_blank" }
+[Launch DeepCube Web :material-web:](https://portal.iapm.app){ .md-button .md-button--primary target="_blank" }
 
 ## Key Capabilities
 
@@ -15,9 +15,9 @@ Browser-based access to your application telemetry. No installation required - a
 | **Account Management** | Subscriptions, billing, team members, and settings |
 <!-- | **Alerts** | Configure notifications for performance thresholds | -->
 
-## IAPM Web vs 3D
+## DeepCube Web vs 3D
 
-| Use Case | IAPM Web | IAPM |
+| Use Case | DeepCube Web | DeepCube |
 |----------|:--------:|:------------:|
 | Quick status check | :material-check: | |
 | Account management | :material-check: | |
@@ -56,7 +56,7 @@ See [Release Notes](release-notes.md) for complete version history.
 
 | Action | Link |
 |--------|------|
-| View detailed guides | [IAPM Web Guides](Guides/index.md) |
+| View detailed guides | [DeepCube Web Guides](Guides/index.md) |
 | Check browser support | [Supported Browsers](Supported-Configurations/index.md) |
 | Instrument your app | [Instrumentation Guide](../../Instrument/index.md) |
-| Try 3D visualization | [IAPM](../3D/index.md) |
+| Try 3D visualization | [DeepCube](../3D/index.md) |

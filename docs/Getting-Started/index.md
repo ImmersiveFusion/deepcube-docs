@@ -1,23 +1,23 @@
 # Getting Started
 
-Most monitoring tools hand you dashboards and charts and leave you to reconstruct what your system is doing. IAPM takes your OpenTelemetry traces, metrics, and logs and renders them as a place you can move through: services stand as towers, calls flow between them as traffic, and a service that has gone missing shows up as a gap you can see. This is spatial observability, and IAPM is the product that does it.
+Most monitoring tools hand you dashboards and charts and leave you to reconstruct what your system is doing. DeepCube takes your OpenTelemetry traces, metrics, and logs and renders them as a place you can move through: services stand as towers, calls flow between them as traffic, and a service that has gone missing shows up as a gap you can see. This is spatial observability, and DeepCube is the product that does it.
 
 This guide takes you from first look to your own telemetry rendered in the Grid: explore a demo grid with no signup, then subscribe and send your own data.
 
 !!! tip "Meet Tessa"
-    Tessa is your AI Assistant inside IAPM. Once your data is flowing, you can ask her about your system in plain language and she answers from what is actually in your telemetry. Tessa is in ALPHA.
+    Tessa is your AI Assistant inside DeepCube. Once your data is flowing, you can ask her about your system in plain language and she answers from what is actually in your telemetry. Tessa is in ALPHA.
 
 ## Try it before you sign up
 
-You can explore IAPM with demo data before creating an account. Demo grids carry sample telemetry from simulated services, so you can move through a real system in IAPM without instrumenting anything of your own.
+You can explore DeepCube with demo data before creating an account. Demo grids carry sample telemetry from simulated services, so you can move through a real system in DeepCube without instrumenting anything of your own.
 
 The fastest way in is the **Chaos Simulator**, a demo grid you drive yourself at [demo.iapm.app](https://demo.iapm.app){ target="_blank" }: generate traffic, inject failures, and watch the telemetry appear live. See [Sandbox](Sandbox/index.md) for the full walkthrough.
 
-To see it, you need the IAPM client. We recommend **IAPM**, where the demo grid renders as a space you move through:
+To see it, you need the DeepCube client. We recommend **DeepCube**, where the demo grid renders as a space you move through:
 
-[Download IAPM :material-download:](../DC/3D/Guides/Installation/index.md){ .md-button .md-button--primary }
+[Download DeepCube :material-download:](../DC/3D/Guides/Installation/index.md){ .md-button .md-button--primary }
 
-The same demo grids are also viewable in [IAPM Web](../DC/Web/index.md) from the browser. For the full sandbox walkthrough, including the built-in Demo grid, see [Sandbox](Sandbox/index.md). No subscription is needed to explore any demo grid, and in IAPM you can also try light AI usage on them.
+The same demo grids are also viewable in [DeepCube Web](../DC/Web/index.md) from the browser. For the full sandbox walkthrough, including the built-in Demo grid, see [Sandbox](Sandbox/index.md). No subscription is needed to explore any demo grid, and in DeepCube you can also try light AI usage on them.
 
 When you are ready to bring in your **own** telemetry, subscribe and provision a grid below.
 
@@ -38,7 +38,7 @@ You can sign in three ways. All of them reach the same product; the only differe
 | **GitHub** | Developers who would rather use their GitHub identity |
 | **Microsoft** | Organizations on Microsoft 365 or Entra ID, with work or school accounts and SSO |
 
-[Sign in to IAPM :material-rocket-launch:](https://portal.iapm.app){ .md-button .md-button--primary target="_blank" }
+[Sign in to DeepCube :material-rocket-launch:](https://portal.iapm.app){ .md-button .md-button--primary target="_blank" }
 
 Email and GitHub accounts land you in the web app at **my.iapm.app**; Microsoft accounts land you at **azure.iapm.app**. Both are the same application behind the same backend; the address differs only by how you signed in, so bookmark whichever one you land on.
 
@@ -66,7 +66,7 @@ This uses a ready-made trace generator, a single command-line tool you run local
 
 ## Instrument your own application
 
-When you are ready for your real system, add OpenTelemetry to it and point it at IAPM. Grab your grid's API key from **Administration → Grids** in the web app, point your OTLP exporter at IAPM, and deploy; services appear in the Grid within a couple of minutes. The [instrumentation guide](../Instrument/index.md) has the per-language setup and the exact endpoint.
+When you are ready for your real system, add OpenTelemetry to it and point it at DeepCube. Grab your grid's API key from **Administration → Grids** in the web app, point your OTLP exporter at DeepCube, and deploy; services appear in the Grid within a couple of minutes. The [instrumentation guide](../Instrument/index.md) has the per-language setup and the exact endpoint.
 
 [Instrument your application :material-code-tags:](../Instrument/index.md){ .md-button .md-button--primary }
 
@@ -76,8 +76,8 @@ With telemetry flowing, choose how you want to look at it:
 
 | Surface | What it is | Learn more |
 |---------|------------|------------|
-| **IAPM** | The full spatial experience: walk your system, read it by shape and color, investigate a trace by moving into it | [3D docs](../DC/3D/index.md) |
-| **IAPM Web** | Browser-based traces, metrics, logs, and account management | [Web docs](../DC/Web/index.md) |
+| **DeepCube** | The full spatial experience: walk your system, read it by shape and color, investigate a trace by moving into it | [3D docs](../DC/3D/index.md) |
+| **DeepCube Web** | Browser-based traces, metrics, logs, and account management | [Web docs](../DC/Web/index.md) |
 
 ## Need help?
 

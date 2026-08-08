@@ -1,6 +1,6 @@
 # Application Performance Management (APM)
 
-Application Performance Management (APM) is the practice of monitoring, managing, and optimizing the performance and availability of software applications. IAPM takes APM into a new dimension - literally - by replacing dashboard fatigue with immersive 3D visualization and AI-powered diagnostics.
+Application Performance Management (APM) is the practice of monitoring, managing, and optimizing the performance and availability of software applications. DeepCube takes APM into a new dimension - literally - by replacing dashboard fatigue with immersive 3D visualization and AI-powered diagnostics.
 
 ## Why APM Matters
 
@@ -18,17 +18,17 @@ graph TD
     A[Application Code] -->|Instrumentation| B[Telemetry Generation]
     B -->|Collection| C[Data Aggregation]
     C -->|Processing| D[Analysis & Storage]
-    D -->|Visualization| E[IAPM / Web / Studio]
+    D -->|Visualization| E[DeepCube / Web / Studio]
 ```
 
 1. **[Instrumentation](../Instrumentation/index.md)** - Your code emits traces, metrics, and logs via OpenTelemetry
-2. **[Collection](../Collection/index.md)** - Telemetry is exported to IAPM (directly or via Collector)
+2. **[Collection](../Collection/index.md)** - Telemetry is exported to DeepCube (directly or via Collector)
 3. **[Correlation](../Correlation/index.md)** - Related data points are connected across services
 4. **Visualization** - Insights surfaced in 3D, browser, or AI chat
 
-## How IAPM Is Different
+## How DeepCube Is Different
 
-| Aspect | Traditional APM | IAPM |
+| Aspect | Traditional APM | DeepCube |
 |--------|----------------|------|
 | **Interface** | Dashboards and query languages | 3D spatial environment |
 | **Root cause analysis** | Manual log correlation | Tessa AI diagnoses and suggests fixes |
@@ -37,7 +37,7 @@ graph TD
 | **Collaboration** | Siloed dashboard views | Shared immersive space |
 | **Pricing** | Per-host + per-GB + per-feature | Simple per-node pricing (node = instrumented service) |
 
-Traditional APM tools (Datadog, Dynatrace, New Relic) give you dashboards. IAPM lets you step inside your system, teleport between services, and ask Tessa what's wrong.
+Traditional APM tools (Datadog, Dynatrace, New Relic) give you dashboards. DeepCube lets you step inside your system, teleport between services, and ask Tessa what's wrong.
 
 ## APM vs. Observability
 
@@ -46,5 +46,5 @@ APM focuses on application performance. [Observability](../Observability/index.m
 ## Next Steps
 
 - Learn about [Observability](../Observability/index.md) and the three pillars
-- Understand how [IAPM](../DC/index.md) enhances APM with immersive visualization
+- Understand how [DeepCube](../DC/index.md) enhances APM with immersive visualization
 - [Instrument your application](../../../Instrument/index.md) to start collecting telemetry

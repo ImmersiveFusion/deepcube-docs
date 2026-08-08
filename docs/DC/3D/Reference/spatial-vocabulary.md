@@ -6,7 +6,7 @@ tags: [reference, spatial-model, terminology]
 
 # Spatial Vocabulary
 
-This page documents the canonical names for the objects, places, and behaviors in IAPM's 3D client, and where each one sits. Use these terms and positions exactly. This page is the source of record for the 3D spatial vocabulary: when another 3D page describes an object, a direction, or a color, it matches what is written here. For terms shared across 3D, Web, and Studio (trace, span, log, service, grid, and the rest), see the [Glossary](../../../Resources/Glossary/index.md).
+This page documents the canonical names for the objects, places, and behaviors in DeepCube's 3D client, and where each one sits. Use these terms and positions exactly. This page is the source of record for the 3D spatial vocabulary: when another 3D page describes an object, a direction, or a color, it matches what is written here. For terms shared across 3D, Web, and Studio (trace, span, log, service, grid, and the rest), see the [Glossary](../../../Resources/Glossary/index.md).
 
 ## Spatial layout (canon)
 

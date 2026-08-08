@@ -1,6 +1,6 @@
-# IAPM Features
+# DeepCube Features
 
-Immersive APM delivers a revolutionary approach to application performance management through four core capabilities that work together to transform how teams understand and troubleshoot their systems.
+DeepCube delivers a revolutionary approach to application performance management through four core capabilities that work together to transform how teams understand and troubleshoot their systems.
 
 ## Core Features
 
@@ -22,7 +22,7 @@ Complete, real-time perspective of your entire system. See how infrastructure, s
 
 ## Why These Features Matter
 
-| Challenge | Traditional APM | Immersive APM |
+| Challenge | Traditional APM | DeepCube |
 |-----------|-----------------|---------------|
 | Data overload | Multiple dashboards, context switching | Unified 3D environment |
 | Root cause analysis | Manual log correlation | AI-guided diagnostics |

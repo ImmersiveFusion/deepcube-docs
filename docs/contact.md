@@ -1,6 +1,6 @@
 # Contact Us
 
-We're here to help you succeed with IAPM. Reach out through any channel below.
+We're here to help you succeed with DeepCube. Reach out through any channel below.
 
 ## Quick Support
 

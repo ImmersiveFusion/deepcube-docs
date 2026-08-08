@@ -1,12 +1,12 @@
 # Service Level Agreement
 
-This Service Level Agreement (SLA) describes Immersive Fusion's commitments regarding IAPM service availability, performance, and support response times.
+This Service Level Agreement (SLA) describes Immersive Fusion's commitments regarding DeepCube service availability, performance, and support response times.
 
 ## Service Availability
 
 ### Uptime Commitment
 
-IAPM is designed for high availability. Our target uptime varies by subscription tier:
+DeepCube is designed for high availability. Our target uptime varies by subscription tier:
 
 | Plan | Monthly Uptime Target | Maximum Monthly Downtime |
 |------|----------------------|--------------------------|
@@ -16,11 +16,11 @@ IAPM is designed for high availability. Our target uptime varies by subscription
 
 ### What Counts as Downtime
 
-Downtime is measured when the IAPM platform is unavailable for normal use. This includes:
+Downtime is measured when the DeepCube platform is unavailable for normal use. This includes:
 
 - Inability to ingest telemetry data
-- Inability to access the IAPM Web interface
-- Inability to connect via IAPM client
+- Inability to access the DeepCube Web interface
+- Inability to connect via DeepCube client
 
 ### Exclusions
 
@@ -52,7 +52,7 @@ The following are not counted as downtime:
 
 ## Service Credits
 
-If IAPM fails to meet the uptime commitment, eligible customers may request service credits:
+If DeepCube fails to meet the uptime commitment, eligible customers may request service credits:
 
 | Monthly Uptime | Credit Percentage |
 |----------------|-------------------|

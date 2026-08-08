@@ -1,8 +1,8 @@
 # Terms and Concepts
 
-Understanding the terminology and concepts behind application performance monitoring is essential for getting the most out of IAPM. This guide covers everything from foundational APM concepts to advanced observability techniques.
+Understanding the terminology and concepts behind application performance monitoring is essential for getting the most out of DeepCube. This guide covers everything from foundational APM concepts to advanced observability techniques.
 
-For quick, one-line definitions of the shared terms used across IAPM, see the [Glossary](../Glossary/index.md). This section goes deeper into the concepts behind them.
+For quick, one-line definitions of the shared terms used across DeepCube, see the [Glossary](../Glossary/index.md). This section goes deeper into the concepts behind them.
 
 ## Core Concepts
 
@@ -12,7 +12,7 @@ Build your foundation with these essential concepts:
 |---------|-------------|
 | [APM](APM/index.md) | Application Performance Management fundamentals and why they matter |
 | [Observability](Observability/index.md) | The three pillars: logs, metrics, and traces |
-| [IAPM](DC/index.md) | How immersive 3D visualization transforms APM |
+| [DeepCube](DC/index.md) | How immersive 3D visualization transforms APM |
 
 ## Data Pipeline
 
@@ -22,7 +22,7 @@ Understand how telemetry flows from your application to actionable insights:
 graph LR
     A[Your App] -->|Instrumentation| B[Telemetry Data]
     B -->|Collection| C[Processing]
-    C -->|Correlation| D[IAPM Visualization]
+    C -->|Correlation| D[DeepCube Visualization]
 ```
 
 | Stage | Description |
@@ -33,7 +33,7 @@ graph LR
 
 ## Frameworks
 
-IAPM integrates with industry-standard observability frameworks:
+DeepCube integrates with industry-standard observability frameworks:
 
 | Framework | Description |
 |-----------|-------------|

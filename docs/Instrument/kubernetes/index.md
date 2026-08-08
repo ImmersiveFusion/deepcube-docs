@@ -160,7 +160,7 @@ spec:
 
 ## OTel Collector as DaemonSet
 
-Deploy a Collector DaemonSet so every node has a local Collector instance. Your application pods export to the local Collector, which batches and forwards telemetry to IAPM.
+Deploy a Collector DaemonSet so every node has a local Collector instance. Your application pods export to the local Collector, which batches and forwards telemetry to DeepCube.
 
 ```yaml
 # otel-collector-daemonset.yaml

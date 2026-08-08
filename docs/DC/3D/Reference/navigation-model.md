@@ -6,7 +6,7 @@ tags: [reference, navigation, travel, camera, portals, controls]
 
 # Navigation model
 
-This page documents how you move through and view a grid in IAPM.
+This page documents how you move through and view a grid in DeepCube.
 
 ## Two systems
 

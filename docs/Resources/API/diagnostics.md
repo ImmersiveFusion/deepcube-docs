@@ -2,7 +2,7 @@
 
 {!template/subscription-required.mdp!}
 
-The Diagnostics API is the most powerful section of the IAPM API. It provides automated system health analysis, root cause diagnosis, pressure detection, trend analysis, service dependency mapping, incident timelines, and time-window comparison - all computed from your live telemetry data.
+The Diagnostics API is the most powerful section of the DeepCube API. It provides automated system health analysis, root cause diagnosis, pressure detection, trend analysis, service dependency mapping, incident timelines, and time-window comparison - all computed from your live telemetry data.
 
 !!! info "Authentication Required"
     All endpoints require a valid `Authorization: Bearer {token}` or `api-key: {key}` header. See [Authentication](authentication.md).
@@ -368,7 +368,7 @@ curl -X GET "https://api-azure.iapm.app/apm/diagnostics/3fa85f64-5717-4562-b3fc-
 ```
 
 !!! tip "Visualizing the Service Map"
-    The service dependency data maps directly to the 3D service topology rendered in the IAPM Diagnostics cube. Use the `edges` array to reconstruct the call graph in your own tooling.
+    The service dependency data maps directly to the 3D service topology rendered in the DeepCube Diagnostics cube. Use the `edges` array to reconstruct the call graph in your own tooling.
 
 ---
 

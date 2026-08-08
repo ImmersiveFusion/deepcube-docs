@@ -1,6 +1,6 @@
 # System Requirements
 
-IAPM runs on Windows, with experimental support for macOS. Linux support is planned.
+DeepCube runs on Windows, with experimental support for macOS. Linux support is planned.
 
 ## Platform Support
 
@@ -54,7 +54,7 @@ For VR headset support, you'll need additional hardware:
 
 ## Network Requirements
 
-IAPM requires network connectivity to function:
+DeepCube requires network connectivity to function:
 
 | Traffic | Port | Protocol | Purpose |
 |---------|------|----------|---------|
@@ -78,7 +78,7 @@ Not sure if your system meets the requirements?
 
 ## Troubleshooting Performance
 
-If IAPM runs slowly:
+If DeepCube runs slowly:
 
 1. Lower graphics quality in **Preferences** → **General** → **Rendering Quality**
 2. Close other GPU-intensive applications

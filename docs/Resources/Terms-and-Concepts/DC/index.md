@@ -1,6 +1,6 @@
-# IAPM
+# DeepCube
 
-**IAPM** (Immersive APM) is Immersive Fusion's approach to [Application Performance Management](../APM/index.md) that uses 3D visualization to help engineers understand complex distributed systems.
+**DeepCube** is Immersive Fusion's approach to [Application Performance Management](../APM/index.md) that uses 3D visualization to help engineers understand complex distributed systems.
 
 ## The Challenge with Traditional APM
 
@@ -11,13 +11,13 @@ Modern applications are complex. A single user request might touch dozens of ser
 - Tab-switching to compare different views
 - Time-consuming mental model reconstruction
 
-## The IAPM Solution
+## The DeepCube Solution
 
-IAPM transforms how you understand your systems by rendering your application architecture as an interactive 3D environment:
+DeepCube transforms how you understand your systems by rendering your application architecture as an interactive 3D environment:
 
 ```mermaid
 graph LR
-    A[Telemetry Data] --> B[IAPM Platform]
+    A[Telemetry Data] --> B[DeepCube Platform]
     B --> C[3D Spatial Model]
     C --> D[Desktop Client]
     C --> E[Web Interface]
@@ -25,14 +25,14 @@ graph LR
 
 ## Service Types on the Service Map
 
-IAPM automatically discovers and displays two types of services:
+DeepCube automatically discovers and displays two types of services:
 
 | Type | Definition | Billable | How Detected |
 |------|-----------|----------|--------------|
 | **Instrumented Service** | An application instance emitting telemetry via OpenTelemetry SDK | Yes (1 node) | `service.name` in OTel Resource |
 | **Inferred Service** | An entity referenced by span attributes with no direct telemetry | No | `db.system`, `server.address`, `peer.service` in span attributes |
 
-Both appear on the Service Map. When an inferred service becomes instrumented (you add OpenTelemetry to it), IAPM automatically upgrades it in place, preserving its connections and history.
+Both appear on the Service Map. When an inferred service becomes instrumented (you add OpenTelemetry to it), DeepCube automatically upgrades it in place, preserving its connections and history.
 
 ## Key Characteristics
 
@@ -45,7 +45,7 @@ Both appear on the Service Map. When an inferred service becomes instrumented (y
 
 ## How It Differs from Traditional APM
 
-| Aspect | Traditional APM | Immersive APM |
+| Aspect | Traditional APM | DeepCube |
 |--------|-----------------|---------------|
 | **Visualization** | 2D dashboards and graphs | 3D spatial environment |
 | **Context** | Switch between multiple views | Unified visual context |
@@ -74,13 +74,13 @@ Visualize traffic patterns and resource utilization. See where bottlenecks are l
 
 ## From concept to product
 
-IAPM is the idea; the product that realizes it is documented separately. It ships as three surfaces onto the same platform, and the product documentation covers what each one does, how to install or access it, and how to use it.
+DeepCube is the idea; the product that realizes it is documented separately. It ships as three surfaces onto the same platform, and the product documentation covers what each one does, how to install or access it, and how to use it.
 
-See the [IAPM product documentation](../../../DC/index.md) to get started.
+See the [DeepCube product documentation](../../../DC/index.md) to get started.
 
 ## See Also
 
 - [APM](../APM/index.md) - Application Performance Management fundamentals
-- [Spatial Observability](../Spatial-Observability/index.md) - The category IAPM belongs to
+- [Spatial Observability](../Spatial-Observability/index.md) - The category DeepCube belongs to
 - [Observability](../Observability/index.md) - The three pillars of observability
 - [Instrumentation](../Instrumentation/index.md) - How to instrument your applications

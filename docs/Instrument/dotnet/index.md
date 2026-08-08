@@ -2,7 +2,7 @@
 
 {!template/subscription-required.mdp!}
 
-Instrument your .NET applications with OpenTelemetry to send traces, metrics, and logs to IAPM. This guide covers ASP.NET Core, console applications, and worker services.
+Instrument your .NET applications with OpenTelemetry to send traces, metrics, and logs to DeepCube. This guide covers ASP.NET Core, console applications, and worker services.
 
 [:octicons-arrow-left-24: Back to Instrument Overview](../index.md)
 
@@ -173,7 +173,7 @@ Instead of hardcoding values, use environment variables. The OpenTelemetry .NET 
 |----------|-------|-------------|
 | `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.iapm.app` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
-| `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in IAPM |
+| `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in DeepCube |
 | `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (grpc or http/protobuf) |
 
 When using environment variables, your code simplifies to:
@@ -344,7 +344,7 @@ public class OrderController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateOrder(CreateOrderRequest request)
     {
-        // This log entry is automatically exported to IAPM
+        // This log entry is automatically exported to DeepCube
         _logger.LogInformation("Creating order for customer {CustomerId} with {ItemCount} items",
             request.CustomerId, request.Items.Count);
 
@@ -386,7 +386,7 @@ public class OrderController : ControllerBase
 
 ## Troubleshooting
 
-### No data appearing in IAPM
+### No data appearing in DeepCube
 
 - **Check the endpoint**: Ensure `https://otlp.iapm.app` is reachable from your application. Test with `curl https://otlp.iapm.app`.
 - **Verify the API key**: Copy a fresh key from [portal.iapm.app](https://portal.iapm.app){ target="_blank" } under **Administration > Grids > Instrument**.

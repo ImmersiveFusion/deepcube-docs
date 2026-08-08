@@ -8,7 +8,7 @@ tags: [how-to, tessa, vision, multimodal]
 
 This guide shows how to paste screenshots, dashboards, or photos into the chat so Tessa can analyze the image alongside your question.
 
-> *Available since IAPM v1.12, Web v3.131, and Studio v0.7*
+> *Available since DeepCube v1.12, Web v3.131, and Studio v0.7*
 
 Paste a screenshot into the chat and Tessa will analyze it. No need to describe what you see - just show her.
 
@@ -49,7 +49,7 @@ Paste a screenshot of an error dialog, exception, or stack trace. Tessa reads th
 
 ### Dashboard Screenshots
 
-Share a screenshot from any monitoring tool - Grafana, Azure Monitor, or even IAPM itself. Tessa interprets the visual data and provides analysis.
+Share a screenshot from any monitoring tool - Grafana, Azure Monitor, or even DeepCube itself. Tessa interprets the visual data and provides analysis.
 
 !!! example "Try asking"
     - "What do you see in this dashboard?"

@@ -1,16 +1,16 @@
 # Legal
 
-This section contains links to the legal documents, policies, and agreements that govern your use of IAPM services. We encourage you to review these documents to understand your rights and our commitments to you.
+This section contains links to the legal documents, policies, and agreements that govern your use of DeepCube services. We encourage you to review these documents to understand your rights and our commitments to you.
 
 ## Official Legal Documents
 
-The following documents are hosted on our main website and constitute the binding agreements for IAPM services:
+The following documents are hosted on our main website and constitute the binding agreements for DeepCube services:
 
 | Document | Description |
 |----------|-------------|
-| [Subscription Agreement](https://www.immersivefusion.com/legal/subscription-agreement){ target="_blank" } | The master agreement governing your IAPM subscription |
+| [Subscription Agreement](https://www.immersivefusion.com/legal/subscription-agreement){ target="_blank" } | The master agreement governing your DeepCube subscription |
 | [Privacy Policy](https://www.immersivefusion.com/legal/privacy-policy){ target="_blank" } | How we collect, use, and protect your personal information |
-| [Acceptable Use Policy](https://www.immersivefusion.com/legal/acceptable-use-policy){ target="_blank" } | Guidelines for appropriate use of IAPM services |
+| [Acceptable Use Policy](https://www.immersivefusion.com/legal/acceptable-use-policy){ target="_blank" } | Guidelines for appropriate use of DeepCube services |
 | [Cookie Policy](https://www.immersivefusion.com/legal/cookie-policy){ target="_blank" } | How we use cookies and similar technologies |
 
 [View All Legal Documents :material-open-in-new:](https://www.immersivefusion.com/legal){ .md-button target="_blank" }

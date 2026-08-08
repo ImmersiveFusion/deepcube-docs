@@ -1,7 +1,7 @@
 # Installing on macOS
 
 !!! warning "Experimental"
-    The macOS build of IAPM is still considered experimental and not fully supported. Additional manual steps are required.
+    The macOS build of DeepCube is still considered experimental and not fully supported. Additional manual steps are required.
 
 ## Steam
 
@@ -13,11 +13,11 @@ Learn more about [Steam](https://store.steampowered.com/about/){ target="_blank"
 ## Offline Installer (DMG)
 
 !!! info "Alpha channel only on macOS"
-    The macOS build of IAPM is currently published to the **alpha** channel only. Stable and beta DMGs are not yet available. Windows builds on all three channels remain available from the [Windows installation page](../Windows/index.md).
+    The macOS build of DeepCube is currently published to the **alpha** channel only. Stable and beta DMGs are not yet available. Windows builds on all three channels remain available from the [Windows installation page](../Windows/index.md).
 
 [Latest Alpha Build :material-download:](https://downloads.immersivefusion.com/release/alpha/DC.latest.dmg){ .md-button }
 
-1. Click on the button above to download the installer for IAPM for macOS from the cloud. The file size is around `1.5GB`
+1. Click on the button above to download the installer for DeepCube for macOS from the cloud. The file size is around `1.5GB`
 
 1. Open the Disk Image file (DMG) and drag `DC.app` to your `Applications` folder.
 

@@ -2,7 +2,7 @@
 
 {!template/subscription-required.mdp!}
 
-Instrument your Java applications with OpenTelemetry to send traces, metrics, and logs to IAPM. This guide covers the Java agent for auto-instrumentation, Spring Boot setup, and manual SDK usage.
+Instrument your Java applications with OpenTelemetry to send traces, metrics, and logs to DeepCube. This guide covers the Java agent for auto-instrumentation, Spring Boot setup, and manual SDK usage.
 
 [:octicons-arrow-left-24: Back to Instrument Overview](../index.md)
 
@@ -252,7 +252,7 @@ The Java agent and SDK autoconfigure module read these variables:
 |----------|-------|-------------|
 | `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.iapm.app` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
-| `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in IAPM |
+| `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in DeepCube |
 | `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (grpc or http/protobuf) |
 | `OTEL_TRACES_EXPORTER` | `otlp` | Trace exporter type |
 | `OTEL_METRICS_EXPORTER` | `otlp` | Metrics exporter type |
@@ -286,7 +286,7 @@ java -javaagent:opentelemetry-javaagent.jar \
 - Verify the `opentelemetry-javaagent.jar` file exists at the specified path.
 - Check that the JAR file is not corrupted (re-download it).
 
-### No data appearing in IAPM
+### No data appearing in DeepCube
 
 - Verify the API key by copying a fresh one from [portal.iapm.app](https://portal.iapm.app){ target="_blank" } under **Administration > Grids > Instrument**.
 - Check network connectivity: `curl -v https://otlp.iapm.app`.

@@ -9,32 +9,32 @@ social:
 
 <div class="grid cards" markdown>
 
--   :material-cube-outline:{ .lg .middle } **IAPM**
+-   :material-cube-outline:{ .lg .middle } **DeepCube™**
 
     ---
 
     Immersive 3D observability. Explore traces, metrics, and logs
     in a spatial environment on the Grid.
 
-    [:octicons-arrow-right-24: Explore IAPM](DC/3D/index.md)
+    [:octicons-arrow-right-24: Explore DeepCube](DC/3D/index.md)
 
--   :material-web:{ .lg .middle } **IAPM Web**
+-   :material-web:{ .lg .middle } **DeepCube Web**
 
     ---
 
     Browser-based observability portal. Monitor services, analyze traces,
     and manage your account from any device.
 
-    [:octicons-arrow-right-24: Explore IAPM Web](DC/Web/index.md)
+    [:octicons-arrow-right-24: Explore DeepCube Web](DC/Web/index.md)
 
--   :material-creation-outline:{ .lg .middle } **IAPM Studio**
+-   :material-creation-outline:{ .lg .middle } **DeepCube Studio**
 
     ---
 
     Lightweight native client for AI-powered chat, voice, and
     workspaces with Tessa. Currently in early access.
 
-    [:octicons-arrow-right-24: Explore IAPM Studio](DC/Studio/index.md)
+    [:octicons-arrow-right-24: Explore DeepCube Studio](DC/Studio/index.md)
 
 </div>
 
@@ -56,7 +56,7 @@ social:
     ---
 
     Add OpenTelemetry instrumentation to your application and send
-    telemetry to IAPM.
+    telemetry to DeepCube.
 
     [:octicons-arrow-right-24: Instrumentation guide](Instrument/index.md)
 
@@ -73,7 +73,7 @@ social:
 
     ---
 
-    See what shipped in the latest releases across all IAPM surfaces.
+    See what shipped in the latest releases across all DeepCube surfaces.
 
     [:octicons-arrow-right-24: 3D](DC/3D/release-notes.md) &nbsp; [:octicons-arrow-right-24: Web](DC/Web/release-notes.md) &nbsp; [:octicons-arrow-right-24: Studio](DC/Studio/release-notes.md)
 
@@ -93,11 +93,11 @@ social:
 
 <div class="grid cards" markdown>
 
--   :material-compare-horizontal:{ .lg .middle } **Compare IAPM**
+-   :material-compare-horizontal:{ .lg .middle } **Compare DeepCube**
 
     ---
 
-    See how IAPM stacks up against Datadog, Dynatrace, New Relic,
+    See how DeepCube stacks up against Datadog, Dynatrace, New Relic,
     Grafana, and more.
 
     [:octicons-arrow-right-24: All comparisons](https://www.immersivefusion.com/compare){ target="_blank" }

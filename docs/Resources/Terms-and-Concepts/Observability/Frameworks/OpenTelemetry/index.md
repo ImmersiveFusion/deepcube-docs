@@ -1,17 +1,17 @@
 # OpenTelemetry
 
-[OpenTelemetry](https://opentelemetry.io/){ target="_blank" } (OTel) is the vendor-neutral observability framework that IAPM is built on. IAPM is **OpenTelemetry-exclusive** - no proprietary agents, no vendor lock-in. Your instrumentation works with any OTel-compatible backend.
+[OpenTelemetry](https://opentelemetry.io/){ target="_blank" } (OTel) is the vendor-neutral observability framework that DeepCube is built on. DeepCube is **OpenTelemetry-exclusive** - no proprietary agents, no vendor lock-in. Your instrumentation works with any OTel-compatible backend.
 
-## Why IAPM Chose OpenTelemetry
+## Why DeepCube Chose OpenTelemetry
 
 | Reason | What It Means for You |
 |--------|----------------------|
 | **No proprietary agent** | Nothing to install beyond standard OTel SDKs |
-| **No lock-in** | Switch backends or run IAPM alongside other tools |
+| **No lock-in** | Switch backends or run DeepCube alongside other tools |
 | **Industry standard** | CNCF project backed by every major cloud provider |
 | **One framework** | Traces, metrics, and logs through a single SDK |
 
-## IAPM + OpenTelemetry Architecture
+## DeepCube + OpenTelemetry Architecture
 
 ```mermaid
 graph TD
@@ -27,15 +27,15 @@ graph TD
 
     A --> B
     C --> B
-    B -->|Direct| E[IAPM - otlp.iapm.app]
+    B -->|Direct| E[DeepCube - otlp.iapm.app]
     B -->|Via Collector| D
     D --> E
     E --> F[3D / Web / Studio]
 ```
 
-You can export directly to IAPM or route through an [OpenTelemetry Collector](../../../../../Instrument/collector/index.md) for batching, filtering, or multi-backend fan-out.
+You can export directly to DeepCube or route through an [OpenTelemetry Collector](../../../../../Instrument/collector/index.md) for batching, filtering, or multi-backend fan-out.
 
-## IAPM Configuration
+## DeepCube Configuration
 
 All you need is the OTLP endpoint and your API key:
 
@@ -67,12 +67,12 @@ For per-language setup, see the [Instrumentation Guides](../../../../../Instrume
 
 ### OTLP Protocol
 
-OpenTelemetry Protocol (OTLP) is the wire format IAPM natively supports:
+OpenTelemetry Protocol (OTLP) is the wire format DeepCube natively supports:
 
 - **gRPC** (port 4317) - Best performance, binary encoding
 - **HTTP/protobuf** (port 4318) - Firewall-friendly alternative
 
-IAPM accepts both on port 443 with TLS.
+DeepCube accepts both on port 443 with TLS.
 
 ### Sampling
 
@@ -81,13 +81,13 @@ Not every request needs to be traced. OTel supports:
 - **Head sampling** - Decide at request start (ParentBased, TraceIdRatio)
 - **Tail sampling** - Decide after the trace completes (via Collector)
 
-For IAPM throughput limits by plan, see [Plans & Pricing](../../../../../Getting-Started/Plans/index.md).
+For DeepCube throughput limits by plan, see [Plans & Pricing](../../../../../Getting-Started/Plans/index.md).
 
 ## Further Reading
 
 - [OpenTelemetry Documentation](https://opentelemetry.io/docs/){ target="_blank" }
 - [OpenTelemetry Registry](https://opentelemetry.io/ecosystem/registry/){ target="_blank" } - Find instrumentation libraries
-- [IAPM Instrumentation Guides](../../../../../Instrument/index.md) - Step-by-step setup
+- [DeepCube Instrumentation Guides](../../../../../Instrument/index.md) - Step-by-step setup
 
 ## Next Steps
 

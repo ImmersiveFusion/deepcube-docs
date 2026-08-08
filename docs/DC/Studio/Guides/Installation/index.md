@@ -3,22 +3,22 @@
 {!template/subscription-required.mdp!}
 
 !!! warning "Alpha channel, Windows only"
-    IAPM Studio is currently in alpha. Only the **alpha** channel is published, and only **Windows** builds are available. Beta, stable, and macOS builds will follow.
+    DeepCube Studio is currently in alpha. Only the **alpha** channel is published, and only **Windows** builds are available. Beta, stable, and macOS builds will follow.
 
-IAPM Studio is a native desktop application distributed as a standalone installer. It does not require Steam or any game platform - it is downloaded directly from Immersive Fusion.
+DeepCube Studio is a native desktop application distributed as a standalone installer. It does not require Steam or any game platform - it is downloaded directly from Immersive Fusion.
 
 ## Download
 
 [Latest Alpha Build :material-microsoft-windows:](https://downloads.immersivefusion.com/release/alpha/DCS.latest.msi){ .md-button .md-button--primary }
 
-A subscription is required to use IAPM Studio.
+A subscription is required to use DeepCube Studio.
 
 ## Windows
 
-1. Download the IAPM Studio installer from the link above
+1. Download the DeepCube Studio installer from the link above
 2. Run the installer and follow the on-screen prompts
-3. Launch IAPM Studio from the Start menu or desktop shortcut
-4. Sign in with your IAPM account credentials
+3. Launch DeepCube Studio from the Start menu or desktop shortcut
+4. Sign in with your DeepCube account credentials
 5. Select a grid to connect to
 
 !!! note "Requirements"
@@ -26,11 +26,11 @@ A subscription is required to use IAPM Studio.
 
 ## Updates
 
-During early access, updates are released frequently. IAPM Studio checks for updates on launch and prompts you to install new versions when available.
+During early access, updates are released frequently. DeepCube Studio checks for updates on launch and prompts you to install new versions when available.
 
-## Differences from IAPM
+## Differences from DeepCube
 
-IAPM Studio is a separate application from IAPM. Key differences:
+DeepCube Studio is a separate application from DeepCube. Key differences:
 
 | | Studio | 3D |
 |-|--------|----|

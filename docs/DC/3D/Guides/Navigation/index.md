@@ -1,6 +1,6 @@
 # Navigation & Controls
 
-<!-- TODO: Verify all keyboard shortcuts are accurate for current IAPM version -->
+<!-- TODO: Verify all keyboard shortcuts are accurate for current DeepCube version -->
 
 Master the controls to move through your application's 3D environment efficiently. Desktop (keyboard and mouse) is the actively maintained navigation mode; VR controls are documented below for existing headset users but are not actively maintained.
 

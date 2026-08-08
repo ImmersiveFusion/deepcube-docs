@@ -3,7 +3,7 @@
 !!! warning "VR support is not actively maintained"
     VR is not a supported surface right now. This page is kept for anyone already running a headset: the steps may still work, but VR is not currently a maintained part of the product.
 
-Connect your HTC Vive headset to experience IAPM in full VR.
+Connect your HTC Vive headset to experience DeepCube in full VR.
 
 ## Supported Models
 
@@ -31,16 +31,16 @@ Connect your HTC Vive headset to experience IAPM in full VR.
 3. Complete SteamVR room setup
 4. Test that your Vive is working in SteamVR Home
 
-### Step 2: Launch IAPM
+### Step 2: Launch DeepCube
 
 1. Start SteamVR (if not already running)
-2. Launch IAPM on your PC
-3. IAPM automatically detects your Vive headset
+2. Launch DeepCube on your PC
+3. DeepCube automatically detects your Vive headset
 4. Put on your headset to enter the environment
 
 ### Step 3: Enter the Environment
 
-Once connected, you'll enter your IAPM grid in full VR. Use your Vive controllers to navigate and interact.
+Once connected, you'll enter your DeepCube grid in full VR. Use your Vive controllers to navigate and interact.
 
 ## Controls
 
@@ -61,7 +61,7 @@ See [Navigation & Controls](../../Guides/Navigation/index.md#htc-vive) for compl
 | Headset not detected | Restart SteamVR, check cable connections |
 | Tracking lost | Ensure base stations have clear line of sight |
 | Controllers not tracking | Check battery levels, re-pair controllers |
-| Poor performance | Lower graphics quality in IAPM Preferences |
+| Poor performance | Lower graphics quality in DeepCube Preferences |
 | Gray screen | Check HDMI/DisplayPort connection |
 
 ## Tips for Best Experience

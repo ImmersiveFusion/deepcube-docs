@@ -10,7 +10,7 @@ This page documents the built-in tools Tessa uses autonomously during conversati
 
 ## Core tools
 
-These tools are available in every Tessa conversation, on every IAPM surface, regardless of Grid connection.
+These tools are available in every Tessa conversation, on every DeepCube surface, regardless of Grid connection.
 
 | Tool | What It Does |
 |------|--------------|

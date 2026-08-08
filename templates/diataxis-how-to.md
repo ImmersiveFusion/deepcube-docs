@@ -19,7 +19,7 @@ helps someone who already knows what they want.
 Reference: https://diataxis.fr/how-to-guides/
 -->
 ---
-title: <Replace with the task (e.g. "Install IAPM Studio on macOS")>
+title: <Replace with the task (e.g. "Install DeepCube Studio on macOS")>
 diataxis: how-to
 tags: [how-to, <topic-tag>]
 ---

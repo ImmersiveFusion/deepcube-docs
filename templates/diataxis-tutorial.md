@@ -35,8 +35,8 @@ observed>.
 
 Make sure you have:
 
-- <Software version, e.g. "IAPM Studio 0.8 or later, on Windows or macOS">
-- <Account or access requirement, e.g. "An IAPM Web account">
+- <Software version, e.g. "DeepCube Studio 0.8 or later, on Windows or macOS">
+- <Account or access requirement, e.g. "A DeepCube Web account">
 - <Any prior reading, e.g. "Read [What is Tessa](../Overview/ai-assistant.md) first if you've never used an AI assistant">
 
 This tutorial takes about <N> minutes.

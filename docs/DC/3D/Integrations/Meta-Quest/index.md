@@ -18,7 +18,7 @@ Connect your Meta Quest headset for a fully immersive APM experience.
 | Requirement | Details |
 |-------------|---------|
 | Quest Link | Wired (USB 3.0) or wireless (Air Link) |
-| IAPM | Installed on your PC |
+| DeepCube | Installed on your PC |
 | Controllers | Quest Touch controllers |
 | PC | Meets [VR requirements](../index.md#system-requirements) |
 
@@ -40,16 +40,16 @@ Set up [Meta Quest Link](https://www.meta.com/help/quest/articles/headsets-and-a
 2. Enable Air Link in Quest settings
 3. Connect to your PC from the Air Link menu
 
-### Step 2: Launch IAPM
+### Step 2: Launch DeepCube
 
-1. Start IAPM on your PC
-2. IAPM automatically detects your Quest headset
+1. Start DeepCube on your PC
+2. DeepCube automatically detects your Quest headset
 3. Put on your headset
-4. Select IAPM from your Quest Link apps
+4. Select DeepCube from your Quest Link apps
 
 ### Step 3: Enter the Environment
 
-Once connected, you'll enter your IAPM grid in full VR. Use your Quest controllers to navigate and interact.
+Once connected, you'll enter your DeepCube grid in full VR. Use your Quest controllers to navigate and interact.
 
 ## Controls
 
@@ -61,7 +61,7 @@ Once connected, you'll enter your IAPM grid in full VR. Use your Quest controlle
 |---------|--------|
 | Thumbstick | Movement |
 | Y button | Pause/Resume time |
-| X button | IAPM Menu |
+| X button | DeepCube Menu |
 
 ### Right Controller
 
@@ -77,7 +77,7 @@ Once connected, you'll enter your IAPM grid in full VR. Use your Quest controlle
 
 The AI Assistant listens by default for natural conversation. Simply speak to ask questions or request assistance while exploring your application.
 
-To mute the AI Assistant, use the mute toggle in the IAPM UI.
+To mute the AI Assistant, use the mute toggle in the DeepCube UI.
 
 ## Troubleshooting
 
@@ -86,7 +86,7 @@ To mute the AI Assistant, use the mute toggle in the IAPM UI.
 | Quest not detected | Restart Quest Link, ensure cable is USB 3.0 |
 | Air Link unstable | Move closer to router, use 5 GHz band |
 | Controllers not tracked | Check battery levels, lighting conditions |
-| Poor performance | Lower graphics quality in IAPM Preferences |
+| Poor performance | Lower graphics quality in DeepCube Preferences |
 | Audio issues | Check Quest audio output settings |
 
 ## Tips for Best Experience

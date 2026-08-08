@@ -6,7 +6,7 @@ Immersive Fusion is committed to protecting your data. This document outlines ou
 
 ### Infrastructure Security
 
-IAPM is hosted on enterprise-grade cloud infrastructure with:
+DeepCube is hosted on enterprise-grade cloud infrastructure with:
 
 - **Multi-region deployment** for redundancy and disaster recovery
 - **Network isolation** using virtual private clouds
@@ -41,7 +41,7 @@ Your application telemetry (traces, metrics, logs) is:
 
 ### Data Residency
 
-IAPM offers data residency options for customers with geographic requirements:
+DeepCube offers data residency options for customers with geographic requirements:
 
 | Region | Availability |
 |--------|--------------|
@@ -110,7 +110,7 @@ Our incident response process includes:
 
 ## Your Responsibilities
 
-As an IAPM customer, you are responsible for:
+As a DeepCube customer, you are responsible for:
 
 - **Account security** - Protecting your login credentials
 - **Access management** - Managing user permissions appropriately

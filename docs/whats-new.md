@@ -1,6 +1,6 @@
 # What's New
 
-Recent updates and features across IAPM. For complete version history, see the release notes for [IAPM](DC/3D/release-notes.md), [IAPM Web](DC/Web/release-notes.md), and [IAPM Studio](DC/Studio/release-notes.md).
+Recent updates and features across DeepCube. For complete version history, see the release notes for [DeepCube](DC/3D/release-notes.md), [DeepCube Web](DC/Web/release-notes.md), and [DeepCube Studio](DC/Studio/release-notes.md).
 
 ---
 
@@ -122,7 +122,7 @@ Full adoption of the OpenTelemetry-native data model across all trace and log vi
 
 ## Feature Requests
 
-Have an idea for IAPM? We'd love to hear from you:
+Have an idea for DeepCube? We'd love to hear from you:
 
 - [Discord community](https://discord.gg/zevywnQp6K){ target="_blank" } - Share ideas and vote on features
 - [Email feedback](mailto:feedback@immersivefusion.com) - Direct feedback to our team

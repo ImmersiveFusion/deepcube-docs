@@ -51,7 +51,7 @@ This page documents <the thing>.
 
 - <Behavioral fact a user needs to look up.>
 - <Caveat or boundary condition.>
-- <Version note: e.g. "Available in IAPM Studio 0.8+">
+- <Version note: e.g. "Available in DeepCube Studio 0.8+">
 
 ## Related
 

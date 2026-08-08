@@ -16,10 +16,10 @@ Tessa lives inside the spatial world with you. She can navigate your 3D environm
 
 Tessa is available in the immersive surfaces:
 
-- **[IAPM](../index.md)** (v1.9+) - Chat panel or voice, speak directly to Tessa
-- **[IAPM Studio](../../Studio/index.md)** (v0.1+) - Integrated chat with multi-tab and split pane
+- **[DeepCube](../index.md)** (v1.9+) - Chat panel or voice, speak directly to Tessa
+- **[DeepCube Studio](../../Studio/index.md)** (v0.1+) - Integrated chat with multi-tab and split pane
 
-Tessa is not part of [IAPM Web](../../Web/index.md) today. The web portal is for account management and quick monitoring; the assistant lives in the immersive surfaces, where being inside your system is what makes her spatial context work.
+Tessa is not part of [DeepCube Web](../../Web/index.md) today. The web portal is for account management and quick monitoring; the assistant lives in the immersive surfaces, where being inside your system is what makes her spatial context work.
 
 Workspaces, conversation history, and Tessa's memory are stored locally on disk; multiple surfaces on the same machine share access through that storage.
 
@@ -61,7 +61,7 @@ The energy bar is the only thing you see. Token counts, model names, and pool so
 
 When Tessa is connected to a Grid, she's not just answering questions; she's running real diagnostics against live telemetry. Every response is backed by actual data. She queries traces, logs, and metrics through dedicated tools, often chaining several in a single response: check health, identify the unhealthy service, compare it to yesterday, find the slow traces.
 
-The diagnostic capability is what makes IAPM's AI assistant different from a generic chatbot bolted onto a dashboard. For the full diagnostic catalog and the kinds of questions Tessa can answer, see [Tessa diagnostics](../Reference/assistant-diagnostics.md).
+The diagnostic capability is what makes DeepCube's AI assistant different from a generic chatbot bolted onto a dashboard. For the full diagnostic catalog and the kinds of questions Tessa can answer, see [Tessa diagnostics](../Reference/assistant-diagnostics.md).
 
 ## In 3D: how Tessa is grounded (ALPHA)
 
@@ -98,7 +98,7 @@ The through-line is that you do not describe context to Tessa; you **give** it t
 
 ## Getting started
 
-1. Open the chat panel in any IAPM surface.
+1. Open the chat panel in any DeepCube surface.
 2. Type a question, or click the microphone to speak.
 3. Try: *"How is my system doing right now?"*
 4. Follow up naturally. Tessa remembers conversation context.
@@ -110,4 +110,4 @@ The through-line is that you do not describe context to Tessa; you **give** it t
 
 - **For step-by-step tasks** (voice, image input, prompt patterns): see [How-to guides](../How-to/index.md).
 - **For commands, tools, hats, skills, diagnostics tables:** see [Reference](../Reference/index.md).
-- **To learn IAPM hands-on:** see [Tutorials](../Tutorials/index.md).
+- **To learn DeepCube hands-on:** see [Tutorials](../Tutorials/index.md).

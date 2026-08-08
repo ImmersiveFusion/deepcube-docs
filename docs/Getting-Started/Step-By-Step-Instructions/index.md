@@ -9,7 +9,7 @@ This walkthrough takes you from signing in to seeing your own application's tele
 
 Choose how you want to sign in. All three reach the same product; the difference is only which identity you bring.
 
-- **Email** or **GitHub**: for individual developers. You land in the web app at **my.iapm.app**.
+- **Email** or **GitHub**: for individual developers. You land in the web app at **my.deepcube.ai**.
 - **Microsoft**: for organizations on Microsoft 365 or Entra ID, using work or school accounts and SSO. You land at **azure.deepcube.ai**.
 
 Both hosts are the same application on the same backend; the address differs only by how you signed in, so bookmark whichever one you land on.
@@ -63,7 +63,7 @@ Enter the World of Your Application® with mouse and keyboard. Your services sta
 
 ### DeepCube Web
 
-Access traces, metrics, logs, alerts, and account management from any browser. Sign in through [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" }; you land in the web app at my.iapm.app or azure.deepcube.ai depending on how you signed in.
+Access traces, metrics, logs, alerts, and account management from any browser. Sign in through [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" }; you land in the web app at my.deepcube.ai or azure.deepcube.ai depending on how you signed in.
 
 [Sign in to DeepCube Web :material-web:](https://portal.deepcube.ai){ .md-button .md-button--primary target="_blank" }
 [Web documentation :material-book-open:](../../DC/Web/index.md){ .md-button }

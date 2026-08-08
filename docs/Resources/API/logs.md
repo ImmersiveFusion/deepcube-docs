@@ -44,7 +44,7 @@ POST /apm/logs/{gridSecondaryId}
 ### Example Request
 
 ```bash
-curl -X POST "https://api-azure.iapm.app/apm/logs/3fa85f64-5717-4562-b3fc-2c963f66afa6?api-version=2.0" \
+curl -X POST "https://api-azure.deepcube.ai/apm/logs/3fa85f64-5717-4562-b3fc-2c963f66afa6?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -115,7 +115,7 @@ GET /apm/logs/{gridSecondaryId}/details/{spanId}
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/logs/3fa85f64-5717-4562-b3fc-2c963f66afa6/details/span-017?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/logs/3fa85f64-5717-4562-b3fc-2c963f66afa6/details/span-017?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -167,7 +167,7 @@ GET /apm/logs/{gridSecondaryId}/filters
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.iapm.app/apm/logs/3fa85f64-5717-4562-b3fc-2c963f66afa6/filters?api-version=2.0" \
+curl -X GET "https://api-azure.deepcube.ai/apm/logs/3fa85f64-5717-4562-b3fc-2c963f66afa6/filters?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 

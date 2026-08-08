@@ -83,7 +83,7 @@ The server reads its configuration from environment variables prefixed with `IF_
 | Variable | Required | Purpose |
 |----------|----------|---------|
 | `IF_ApiKey` | Yes | Your DeepCube Grid API key. The server exchanges it for an access token and reads the grid it belongs to. |
-| `IF_BaseUrl` | No | The API endpoint. Defaults to `https://api-azure.iapm.app`. |
+| `IF_BaseUrl` | No | The API endpoint. Defaults to `https://api-azure.deepcube.ai`. |
 
 The transport is **stdio**: the client launches the server as a subprocess and exchanges MCP messages over standard input and output. The API key identifies which grid the agent can see, so an agent only ever reads the data that key is authorized for.
 

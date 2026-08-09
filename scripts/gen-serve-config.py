@@ -55,10 +55,25 @@ def build_config() -> dict:
         for d in dirs
     ]
 
-    # NO trailingSlash key. With it enabled serve normalises the slash BEFORE
+    # Security and cache headers are committed SOURCE at src/serve-headers.json,
+    # following the house pattern from spatialobservability.org/dist/serve.json.
+    # Only the routing half of serve.json is generated; the headers are
+    # hand-owned and reviewed, and merged in here so there is still one file at
+    # runtime.
+    headers_path = ROOT / "src" / "serve-headers.json"
+    headers = json.loads(headers_path.read_text(encoding="utf-8")).get("headers", [])
+
+    # NO trailingSlash key, and this is a deliberate divergence from the house
+    # pattern, which sets it. With it enabled serve normalises the slash BEFORE
     # consulting redirects, so /IAPM/3D returned a 301 to /IAPM/3D/ and the real
-    # redirect never fired.
-    return {"cleanUrls": False, "redirects": redirects, "rewrites": rewrites}
+    # redirect never fired. spatialobservability.org can afford it because it has
+    # no redirect map; this site has 182 of them.
+    return {
+        "cleanUrls": False,
+        "headers": headers,
+        "redirects": redirects,
+        "rewrites": rewrites,
+    }
 
 
 def lint(config: dict) -> int:

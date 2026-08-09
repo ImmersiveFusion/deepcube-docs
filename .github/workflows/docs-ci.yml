@@ -1,0 +1,85 @@
+name: docs CI
+
+# The site is published from an Azure DevOps pipeline, but the PRs happen here,
+# so the gates live here. Three things this catches before review, all of which
+# have actually broken during development:
+#
+#   1. the site does not build
+#   2. the two redirect maps disagree with each other
+#   3. routing regresses: a legacy path stops returning a real 301, a
+#      wrong-case URL starts 404ing, or a rule loops
+#
+# The docs site ran on Windows/IIS for years, which is case-INSENSITIVE, so
+# every lowercase inbound link worked by accident. Moving to Linux makes case
+# matter. These tests are what keep that from becoming a silent regression.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: docs-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install docs toolchain
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Guards the two redirect maps against disagreeing. Already caught a real
+      # defect on its first run: 7 legacy redirects still pointing at a removed
+      # path in one map but not the other.
+      - name: Redirect map parity
+        run: python scripts/check-redirect-parity.py
+
+      - name: Build site
+        run: mkdocs build --strict
+
+      # Emits site/serve.json AND site/package.json, so the pinned serve version
+      # lives in one place instead of being duplicated into each CI file.
+      - name: Generate routing config
+        run: python scripts/gen-serve-config.py --out site/serve.json
+
+      # Runs inside site/ deliberately: `npm install --prefix site` still reads
+      # package.json from the CWD, so from the repo root it fails ENOENT.
+      - name: Install the server the site is actually served by
+        working-directory: site
+        run: npm install --omit=dev --no-audit --no-fund
+
+      # Runs the real artifact through the real server and asserts behaviour.
+      # Same script a developer runs locally, so a failure here is reproducible
+      # in one command instead of by reading CI logs.
+      - name: Routing tests
+        run: python scripts/test-routing.py
+
+      - name: Upload built site
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: site
+          retention-days: 7

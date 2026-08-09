@@ -2,3 +2,7 @@
 /docs/.vs
 
 /site/
+
+# Python bytecode from scripts/ (redirect_map is imported by the other scripts)
+__pycache__/
+*.py[cod]

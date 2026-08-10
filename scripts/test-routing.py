@@ -25,6 +25,7 @@ Exits non-zero on the first failing expectation, and prints every result.
 """
 import argparse
 import json
+import re
 import subprocess
 import sys
 import time
@@ -33,7 +34,8 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SITE = ROOT / "site"
+SITE = ROOT / "site"          # deploy root: config + node_modules live here
+PUBLIC = SITE / "public"      # served root: the site, and nothing else
 
 # (path, expected_status, expected_location_substring_or_None)
 REDIRECT_CASES = [
@@ -61,6 +63,23 @@ CONTENT_CASE_CASES = [
 
 # Must terminate. These are the shapes that looped when case canonicalisation
 # was expressed as a redirect instead of a rewrite.
+# A directory listing also returns 200, which is how cleanUrls:false shipped
+# past a suite that only asserted status codes. Check the TITLE.
+TITLE_CASES = [
+    ("/", "Immersive Fusion Docs"),
+    ("/DC/3D/", "Immersive Fusion Docs"),
+    ("/dc/3d/", "Immersive Fusion Docs"),
+]
+
+# Build artifacts must not be downloadable from a public docs site.
+MUST_NOT_SERVE = [
+    "/serve.json",
+    "/package.json",
+    "/package-lock.json",
+    "/oryx-manifest.toml",
+    "/node_modules.tar.gz",
+]
+
 NO_LOOP_CASES = ["/Getting-Started/", "/getting-started/", "/DC/3D/", "/dc/3d/"]
 
 
@@ -86,7 +105,7 @@ def start_server(port: int):
         print(f"[skip] {entry} missing. Run: npm install --prefix site --omit=dev", file=sys.stderr)
         return None
     proc = subprocess.Popen(
-        ["node", str(entry), str(SITE), "-l", str(port)],
+        ["node", str(entry), str(PUBLIC), "-c", str(SITE / "serve.json"), "-l", str(port)],
         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
     )
     for _ in range(40):
@@ -141,6 +160,26 @@ def main() -> int:
             status, loc, _ = fetch(base + path, follow=False)
             ok = status == 200 and not loc
             print(f"  {'ok  ' if ok else 'FAIL'} {path:<38} {status}{' -> ' + loc if loc else ''}")
+            failures += 0 if ok else 1
+
+        print("\npages are pages, not directory listings")
+        for path, want in TITLE_CASES:
+            try:
+                with urllib.request.urlopen(base + path, timeout=15) as r:
+                    body = r.read(4000).decode("utf-8", "replace")
+                m = re.search(r"<title>([^<]*)", body)
+                title = m.group(1) if m else "<no title>"
+            except Exception as e:
+                title = f"<error {e}>"
+            ok = want in title and "Files within" not in title
+            print(f"  {'ok  ' if ok else 'FAIL'} {path:<38} {title}")
+            failures += 0 if ok else 1
+
+        print("\nbuild artifacts are not publicly served")
+        for path in MUST_NOT_SERVE:
+            status, _, _ = fetch(base + path, follow=False)
+            ok = status in (403, 404)
+            print(f"  {'ok  ' if ok else 'FAIL'} {path:<38} {status}")
             failures += 0 if ok else 1
 
         print("\nno redirect loops")

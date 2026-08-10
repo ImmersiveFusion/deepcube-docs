@@ -68,8 +68,13 @@ def build_config() -> dict:
     # consulting redirects, so /IAPM/3D returned a 301 to /IAPM/3D/ and the real
     # redirect never fired. spatialobservability.org can afford it because it has
     # no redirect map; this site has 182 of them.
+    # cleanUrls MUST stay true, which is serve's default. With it false, the
+    # root stops resolving index.html and serve renders a directory listing of
+    # wwwroot instead of the homepage. It does not break /DC/ or any other
+    # directory, only "/", which is exactly the URL no test covered until it
+    # shipped. Verified both ways.
     return {
-        "cleanUrls": False,
+        "cleanUrls": True,
         "headers": headers,
         "redirects": redirects,
         "rewrites": rewrites,

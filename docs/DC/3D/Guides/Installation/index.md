@@ -11,7 +11,7 @@ The easiest way to install DeepCube. Steam handles downloads, updates, and versi
 
 {!template/store-steam.mdp!}
 
-Free to install. A subscription is required to use DeepCube.
+Free to install. Exploring the demo grids needs a free account: no subscription, no payment details, no sales call. Sending your **own** telemetry is different and needs an active subscription and a provisioned grid.
 
 ## Offline Installers
 

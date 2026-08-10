@@ -57,7 +57,7 @@ jobs:
         run: python scripts/check-redirect-parity.py
 
       - name: Build site
-        run: mkdocs build --strict
+        run: mkdocs build --strict -d site/public
 
       # Emits site/serve.json AND site/package.json, so the pinned serve version
       # lives in one place instead of being duplicated into each CI file.

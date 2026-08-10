@@ -1,6 +1,6 @@
 # Sandbox
 
-Explore DeepCube with demo data, no instrumentation and no account required. Both sandbox experiences below are **demo grids**: they carry sample telemetry so you can move through a real system in DeepCube without sending any data of your own. You view a demo grid in the DeepCube client, and we recommend **DeepCube**, where a grid renders as a space you move through.
+Explore DeepCube with demo data and no instrumentation of your own. Viewing a demo grid needs a **free account**: no subscription, no payment details, no sales call. The demo grids are always there, and they are not gated behind a conversation with anyone. Both sandbox experiences below are **demo grids**: they carry sample telemetry so you can move through a real system in DeepCube without sending any data of your own. You view a demo grid in the DeepCube client, and we recommend **DeepCube**, where a grid renders as a space you move through.
 
 [Download DeepCube :material-download:](../../DC/3D/Guides/Installation/index.md){ .md-button .md-button--primary }
 
@@ -35,7 +35,7 @@ The Demo grid is a built-in demo grid with a realistic service topology and tele
 3. Select **"Demo"**
 4. Demo services appear on the Grid, start exploring
 
-That's it. No accounts, no API keys, no instrumentation of your own.
+That's it. A free account is all you need, and no API keys or instrumentation of your own.
 
 ### What You Get
 

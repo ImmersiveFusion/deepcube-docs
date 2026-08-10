@@ -2,7 +2,7 @@
 
 Most monitoring tools hand you dashboards and charts and leave you to reconstruct what your system is doing. DeepCube takes your OpenTelemetry traces, metrics, and logs and renders them as a place you can move through: services stand as towers, calls flow between them as traffic, and a service that has gone missing shows up as a gap you can see. This is spatial observability, and DeepCube is the product that does it.
 
-This guide takes you from first look to your own telemetry rendered in the Grid: explore a demo grid with no signup, then subscribe and send your own data.
+This guide takes you from first look to your own telemetry rendered in the Grid: explore a demo grid with a free account, then subscribe and send your own data.
 
 !!! tip "Meet Tessa"
     Tessa is your AI Assistant inside DeepCube. Once your data is flowing, you can ask her about your system in plain language and she answers from what is actually in your telemetry. Tessa is in ALPHA.
@@ -26,7 +26,7 @@ When you are ready to bring in your **own** telemetry, subscribe and provision a
 Signing up is self-serve end to end: you choose how to sign in, name your account, pick a plan, and land in the product. New accounts start on the free **Start** plan.
 
 !!! info "Free to start, but sending your own data needs a subscription"
-    Exploring the demo grids needs no account, no subscription, and no payment details. Sending your **own** telemetry is different: it requires an active subscription and a provisioned grid. The **Start** plan is free, but provisioning a grid requires a valid credit card even on Start. See [Plans & Pricing](https://immersivefusion.com/pricing){ target="_blank" } for all options.
+    Exploring the demo grids needs a free account. No subscription, no payment details, no sales call. Sending your **own** telemetry is different: it requires an active subscription and a provisioned grid. The **Start** plan is free, but provisioning a grid requires a valid credit card even on Start. See [Plans & Pricing](https://immersivefusion.com/pricing){ target="_blank" } for all options.
 
 ### Choose how you sign in
 

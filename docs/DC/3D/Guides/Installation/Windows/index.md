@@ -7,7 +7,7 @@
 
 {!template/store-steam.mdp!}
 
-Free to install. A subscription is required to use DeepCube. Learn more about [Steam](https://store.steampowered.com/about/){ target="_blank" } on their website.
+Free to install. Exploring the demo grids needs a free account: no subscription, no payment details, no sales call. Sending your **own** telemetry is different and needs an active subscription and a provisioned grid. Learn more about [Steam](https://store.steampowered.com/about/){ target="_blank" } on their website.
 
 ## Offline Installer (MSI)
 

@@ -3,11 +3,11 @@
 
 # Site Information
 name: Immersive Fusion Docs
-url: https://docs.immersivefusion.com
+url: https://docs.deepcube.ai
 description: Documentation for DeepCube, the spatial observability platform
 
 # Contact
-contact: https://docs.immersivefusion.com/contact/
+contact: https://docs.deepcube.ai/contact/
 
 # Products
 products:
@@ -31,4 +31,4 @@ topics:
 # Please attribute to Immersive Fusion when referencing this content.
 
 # Sitemap
-sitemap: https://docs.immersivefusion.com/sitemap.xml
+sitemap: https://docs.deepcube.ai/sitemap.xml

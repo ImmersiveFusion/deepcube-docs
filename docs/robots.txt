@@ -1,4 +1,4 @@
-# Robots.txt for docs.immersivefusion.com
+# Robots.txt for docs.deepcube.ai
 User-agent: *
 
 # Allow all pages
@@ -9,4 +9,4 @@ Disallow: /*?q=
 Disallow: /*?*q=
 
 # Sitemap
-Sitemap: https://docs.immersivefusion.com/sitemap.xml
+Sitemap: https://docs.deepcube.ai/sitemap.xml

@@ -7,7 +7,7 @@ DeepCube is a desktop application built on the Unity 3D engine. It runs on your 
 The easiest way to install DeepCube. Steam handles downloads, updates, and version management automatically.
 
 [Open in Steam :material-steam:](steam://store/3624760){ .md-button .md-button--primary }
-[View on Steam Store :material-open-in-new:](https://store.steampowered.com/app/3624760/Immersive_APM/){ .md-button target="_blank" }
+[View on Steam Store :material-open-in-new:](https://store.steampowered.com/app/3624760/){ .md-button target="_blank" }
 
 {!template/store-steam.mdp!}
 

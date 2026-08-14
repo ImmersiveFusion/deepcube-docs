@@ -3,7 +3,7 @@
 ## Steam
 
 [Open in Steam :material-steam:](steam://store/3624760){ .md-button .md-button--primary }
-[View on Steam Store :material-open-in-new:](https://store.steampowered.com/app/3624760/Immersive_APM/){ .md-button target="_blank" }
+[View on Steam Store :material-open-in-new:](https://store.steampowered.com/app/3624760/){ .md-button target="_blank" }
 
 {!template/store-steam.mdp!}
 

@@ -11,7 +11,7 @@ This guide takes you from first look to your own telemetry rendered in the Grid:
 
 You can explore DeepCube with demo data before creating an account. Demo grids carry sample telemetry from simulated services, so you can move through a real system in DeepCube without instrumenting anything of your own.
 
-The fastest way in is the **Chaos Simulator**, a demo grid you drive yourself at [chaos.deepcube.ai](https://chaos.deepcube.ai){ target="_blank" }: generate traffic, inject failures, and watch the telemetry appear live. See [Sandbox](Sandbox/index.md) for the full walkthrough.
+The fastest way in is **Shoebox**, a demo grid you drive yourself at [shoebox.deepcube.ai](https://shoebox.deepcube.ai){ target="_blank" }: generate traffic, inject failures, and watch the telemetry appear live. See [Sandbox](Sandbox/index.md) for the full walkthrough.
 
 To see it, you need the DeepCube client. We recommend **DeepCube**, where the demo grid renders as a space you move through:
 

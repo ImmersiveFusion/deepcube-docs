@@ -34,24 +34,24 @@ Keep the key somewhere safe for the next step. Treat it like a password: do not 
 
 For more detail, see the [API Keys reference](Api-Key/index.md).
 
-## Step 2: Install the trace generator
+## Step 2: Install Snowglobe
 
-The [OpenTelemetry Trace Generator](https://github.com/ImmersiveFusion/opentelemetry-tracegen){ target="_blank" } is a single binary that simulates a realistic, multi-service application and sends its traces over OTLP. Install it with:
+[Snowglobe](https://github.com/ImmersiveFusion/snowglobe){ target="_blank" } is a single binary that simulates a realistic, multi-service application and sends its traces over OTLP. Install it with:
 
 ```bash
-go install github.com/ImmersiveFusion/opentelemetry-tracegen/cmd/tracegen@latest
+go install github.com/ImmersiveFusion/snowglobe/cmd/snowglobe@latest
 ```
 
-This puts a `tracegen` command on your system.
+This puts a `snowglobe` command on your system.
 
-**What you should see:** the command completes with no output. Run `tracegen -help` to confirm it is installed; you will see the list of available flags.
+**What you should see:** the command completes with no output. Run `snowglobe -help` to confirm it is installed; you will see the list of available flags.
 
 ## Step 3: Send traces to DeepCube
 
 Now point the generator at DeepCube. Replace `YOUR-API-KEY` with the key you copied in Step 1:
 
 ```bash
-tracegen -endpoint otlp.deepcube.ai:443 -headers "api-key=YOUR-API-KEY" -complexity light
+snowglobe -endpoint otlp.deepcube.ai:443 -headers "api-key=YOUR-API-KEY" -complexity light
 ```
 
 A note on each part:
@@ -63,7 +63,7 @@ A note on each part:
 **What you should see:** the generator starts emitting traces and logs to your terminal as it simulates an e-commerce platform: a web frontend, an API gateway, an order service, a payment service, and a handful of others, exercising flows like *Create Order* and *User Login*.
 
 !!! tip "Sending to a local collector first?"
-    To try the generator against a local Jaeger, Tempo, or Collector before involving DeepCube, drop the headers and use `tracegen -insecure` (defaults to `localhost:4317`). Then come back and run the DeepCube command above.
+    To try the generator against a local Jaeger, Tempo, or Collector before involving DeepCube, drop the headers and use `snowglobe -insecure` (defaults to `localhost:4317`). Then come back and run the DeepCube command above.
 
 ## Step 4: See your trace in DeepCube
 
@@ -89,6 +89,6 @@ In about five minutes you:
 
 ## Related
 
-- **To explore without installing anything:** open the [Chaos Simulator](Sandbox/index.md), a demo grid you drive from your browser at [chaos.deepcube.ai](https://chaos.deepcube.ai){ target="_blank" } and view in DeepCube.
+- **To explore without installing anything:** open [Shoebox](Sandbox/index.md), a demo grid you drive from your browser at [shoebox.deepcube.ai](https://shoebox.deepcube.ai){ target="_blank" } and view in DeepCube.
 - **For lookup of API key properties and rotation:** see the [API Keys reference](Api-Key/index.md).
 - **For background on traces and spans:** see [Concepts](../Resources/Terms-and-Concepts/index.md).

@@ -1,6 +1,6 @@
 # Guided Tour
 
-Walk through everything DeepCube can do - without touching a single line of code. This tour takes about 15 minutes and covers both the Demo Grid and the Chaos Simulator.
+Walk through everything DeepCube can do - without touching a single line of code. This tour takes about 15 minutes and covers both the Demo Grid and Shoebox.
 
 ---
 
@@ -68,11 +68,11 @@ Inside the Diagnostics cube:
 
 ## Part 2 - Inject Chaos
 
-Now that you know how to navigate DeepCube, it's time to break things on purpose. The Chaos Simulator lets you inject failures into a live microservice environment and watch DeepCube detect and visualize them.
+Now that you know how to navigate DeepCube, it's time to break things on purpose. Shoebox lets you inject failures into a live microservice environment and watch DeepCube detect and visualize them.
 
-### Step 1: Open the Chaos Simulator
+### Step 1: Open Shoebox
 
-Go to [chaos.deepcube.ai](https://chaos.deepcube.ai){ target="_blank" } in your browser. A unique sandbox is created for you automatically - no signup required.
+Go to [shoebox.deepcube.ai](https://shoebox.deepcube.ai){ target="_blank" } in your browser. A unique sandbox is created for you automatically - no signup required.
 
 ### Step 2: Generate Normal Traffic
 
@@ -82,7 +82,7 @@ Switch to DeepCube and watch the services come alive. You should see activity in
 
 ### Step 3: Inject a Latency Spike
 
-Back in the Chaos Simulator, trigger a **latency** scenario. This introduces artificial delays into service responses.
+Back in Shoebox, trigger a **latency** scenario. This introduces artificial delays into service responses.
 
 In DeepCube, look for:
 

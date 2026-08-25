@@ -10,9 +10,9 @@ The same demo grids are also viewable in [DeepCube Web](../../DC/Web/index.md) f
 
 Both are demo grids; they differ in where the data comes from and whether you can drive failures.
 
-| Feature | Demo grid | Chaos Simulator |
+| Feature | Demo grid | Shoebox |
 | --- | --- | --- |
-| **What is it?** | Built-in demo grid inside DeepCube | A demo grid you drive from the open-source web app at [chaos.deepcube.ai](https://chaos.deepcube.ai){ target="_blank" } |
+| **What is it?** | Built-in demo grid inside DeepCube | A demo grid you drive from the open-source web app at [shoebox.deepcube.ai](https://shoebox.deepcube.ai){ target="_blank" } |
 | **Setup** | None, just select "Demo" in the grid picker | None, opens in your browser and creates a sandbox for you |
 | **Best for** | Learning the 3D interface, navigation, and Tessa | Testing failure scenarios, seeing how DeepCube handles chaos |
 | **Data source** | A prepared telemetry stream for a healthy service topology | Live OpenTelemetry data from a simulated microservice app you control |
@@ -20,7 +20,7 @@ Both are demo grids; they differ in where the data comes from and whether you ca
 | **Interactive failures** | No, shows a healthy demo topology | Yes, inject latency, errors, timeouts, cascading failures |
 
 !!! tip "Start here"
-    New to DeepCube? Start with the **Demo grid** to get comfortable with the interface, then move to the **Chaos Simulator** to see how DeepCube handles real-world problems. Follow the [Guided Tour](guided-tour.md) for a step-by-step walkthrough of both.
+    New to DeepCube? Start with the **Demo grid** to get comfortable with the interface, then move to **Shoebox** to see how DeepCube handles real-world problems. Follow the [Guided Tour](guided-tour.md) for a step-by-step walkthrough of both.
 
 ---
 
@@ -48,15 +48,18 @@ That's it. A free account is all you need, and no API keys or instrumentation of
 
 ---
 
-## Chaos Simulator
+## Shoebox
 
-The [OpenTelemetry Chaos Simulator](https://github.com/ImmersiveFusion/opentelemetry-chaos-sim){ target="_blank" } is an open-source web application that lets you inject failures into a simulated microservice environment and watch DeepCube respond in real time.
+[Shoebox](https://github.com/ImmersiveFusion/shoebox){ target="_blank" } is an open-source web application that lets you inject failures into a simulated microservice environment and watch DeepCube respond in real time.
 
-![Chaos Simulator Interface](https://github.com/ImmersiveFusion/opentelemetry-chaos-sim/raw/main/.img/screenshot.png)
+!!! note "Shoebox is being reworked"
+    This page describes the version currently deployed, which you drive by clicking
+    scenario buttons. The rework replaces that with a Mermaid diagram you paste in and
+    break by hand. This page changes when the new build ships, not before.
 
 ### How to Use It
 
-1. Go to [chaos.deepcube.ai](https://chaos.deepcube.ai){ target="_blank" }
+1. Go to [shoebox.deepcube.ai](https://shoebox.deepcube.ai){ target="_blank" }
 2. A unique sandbox is created automatically for you
 3. Click buttons to generate traffic and inject chaos
 4. Open the grid in [DeepCube](../../DC/3D/index.md) to watch the telemetry appear live (or in [DeepCube Web](../../DC/Web/index.md) from the browser)
@@ -80,12 +83,12 @@ Each session is completely independent:
 - **Isolated** - Your chaos doesn't affect other users
 
 !!! info "Real-time only"
-    The Chaos Simulator generates real-time data. Historical data is not retained between sessions.
+    Shoebox generates real-time data. Historical data is not retained between sessions.
 
 ---
 
 ## Next Steps
 
 [Follow the Guided Tour :material-compass:](guided-tour.md){ .md-button .md-button--primary }
-[Launch Chaos Simulator :material-flask:](https://chaos.deepcube.ai){ .md-button target="_blank" }
+[Launch Shoebox :material-flask:](https://shoebox.deepcube.ai){ .md-button target="_blank" }
 [Instrument Your Own App :material-arrow-right:](../../Instrument/index.md){ .md-button }

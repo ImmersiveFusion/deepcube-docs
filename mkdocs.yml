@@ -105,6 +105,39 @@ plugins:
         # 'instrument/index.md' redirect removed - now a real page at Instrument/index.md
         # On case-insensitive filesystems (Windows/Azure), this causes zip duplicate conflicts
 
+        # --- Retired URLs (bus #2052, Trout) ---------------------------------
+        # Twelve live URLs Google still serves returned 404, carrying 20.9% of
+        # docs impressions and 33.3% of docs clicks. These pages were removed or
+        # relocated and the redirect leg was never shipped.
+        #
+        # Where a successor exists it is used. Where none exists the page is
+        # RETIRED DELIBERATELY to the nearest live surface (founder, 2026-08-27)
+        # rather than guessed at: a 301 onto a plausible-but-wrong page launders
+        # a dead link into a live wrong answer, which is worse than the 404.
+        # Every target below was probed and returns 200.
+
+        # Direct successor.
+        'Resources/Terms-and-Concepts/IAPM/index.md': 'Resources/Terms-and-Concepts/DC/index.md'
+
+        # Partner: Affiliates has a direct successor on the storefront. The
+        # storefront has no partner index (both casings 404), and Benefactors and
+        # Hall-of-Supporters have no counterpart anywhere, so those retire to the
+        # Resources index. Spatial-Observatory retires to the property that now
+        # carries that subject.
+        'Resources/Partner/Affiliates/index.md': 'https://immersivefusion.com/partner/Affiliate'
+        'Resources/Partner/Spatial-Observatory/index.md': 'https://spatialobservability.org/'
+        'Resources/Partner/index.md': 'Resources/index.md'
+        'Resources/Partner/Benefactors/index.md': 'Resources/index.md'
+        'Resources/Partner/Hall-of-Supporters/index.md': 'Resources/index.md'
+
+        # Commercial offers and the ROI calculator: no docs successor and no
+        # like-for-like page on the storefront. Retired to pricing, which is the
+        # live surface that now answers what these asked.
+        'Resources/Toolkit/index.md': 'https://immersivefusion.com/pricing/'
+        'Resources/Toolkit/calculator.md': 'https://immersivefusion.com/pricing/'
+        'Setup/Offers/azure-marketplace.md': 'https://immersivefusion.com/pricing/'
+        'Setup/Discounts/early-adopter.md': 'https://immersivefusion.com/pricing/'
+
         # Restructure redirects - preserve old URLs
         # Analysis-and-Visualization → DC/3D / DC/Web
         'analysis-and-visualization/index.md': 'DC/3D/index.md'

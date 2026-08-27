@@ -65,10 +65,27 @@ CONTENT_CASE_CASES = [
 # was expressed as a redirect instead of a rewrite.
 # A directory listing also returns 200, which is how cleanUrls:false shipped
 # past a suite that only asserted status codes. Check the TITLE.
+#
+# site_name is read from mkdocs.yml rather than pinned here. The point of these
+# cases is "this is a rendered page, not a directory listing", not "the brand is
+# spelled thus", and a copy of the brand in a test is one more place a rename has
+# to remember to visit. It did not: renaming the site broke this suite before it
+# broke anything a reader could see. Same one-reader rule the redirect maps
+# follow, for the same reason.
+def _site_name() -> str:
+    text = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
+    m = re.search(r"^site_name:\s*(.+?)\s*$", text, re.MULTILINE)
+    if not m:
+        sys.exit("could not read site_name from mkdocs.yml")
+    return m.group(1).strip().strip("'\"")
+
+
+SITE_NAME = _site_name()
+
 TITLE_CASES = [
-    ("/", "Immersive Fusion Docs"),
-    ("/DC/3D/", "Immersive Fusion Docs"),
-    ("/dc/3d/", "Immersive Fusion Docs"),
+    ("/", SITE_NAME),
+    ("/DC/3D/", SITE_NAME),
+    ("/dc/3d/", SITE_NAME),
 ]
 
 # Build artifacts must not be downloadable from a public docs site.

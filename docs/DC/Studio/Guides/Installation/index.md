@@ -2,14 +2,15 @@
 
 {!template/subscription-required.mdp!}
 
-!!! warning "Alpha channel, Windows only"
-    DeepCube Studio is currently in alpha. Only the **alpha** channel is published, and only **Windows** builds are available. Beta, stable, and macOS builds will follow.
+!!! warning "Alpha channel only"
+    DeepCube Studio is currently in alpha. Only the **alpha** channel is published, on both Windows and macOS. Beta and stable builds will follow.
 
 DeepCube Studio is a native desktop application distributed as a standalone installer. It does not require Steam or any game platform - it is downloaded directly from Immersive Fusion.
 
 ## Download
 
 [Latest Alpha Build :material-microsoft-windows:](https://downloads.immersivefusion.com/release/alpha/DCS.latest.msi){ .md-button .md-button--primary }
+[Latest Alpha Build :material-apple:](https://downloads.immersivefusion.com/release/alpha/DCS.latest.dmg){ .md-button }
 
 A subscription is required to use DeepCube Studio.
 
@@ -23,6 +24,23 @@ A subscription is required to use DeepCube Studio.
 
 !!! note "Requirements"
     Windows 10 or later (64-bit). See [Supported Configurations](../../Supported-Configurations/index.md) for full details.
+
+## macOS
+
+1. Download the DeepCube Studio disk image from the link above
+2. Open the disk image and drag `DCS.app` to your `Applications` folder
+3. Open `Terminal` and remove the app from quarantine:
+
+```bash
+xattr -d com.apple.quarantine /Applications/DCS.app
+```
+
+4. Launch DeepCube Studio from `Applications`
+5. Sign in with your DeepCube account credentials
+6. Select a grid to connect to
+
+!!! note "Requirements"
+    See [Supported Configurations](../../Supported-Configurations/index.md) for full details.
 
 ## Updates
 

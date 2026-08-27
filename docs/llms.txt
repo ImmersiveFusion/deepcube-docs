@@ -1,8 +1,8 @@
-# Immersive Fusion Documentation - LLMs.txt
+# DeepCube Docs - LLMs.txt
 # https://llmstxt.org/
 
 # Site Information
-name: Immersive Fusion Docs
+name: DeepCube Docs
 url: https://docs.deepcube.ai
 description: Documentation for DeepCube, the spatial observability platform
 

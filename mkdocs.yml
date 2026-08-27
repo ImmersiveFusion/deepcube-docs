@@ -1,13 +1,13 @@
 # Source: https://github.com/squidfunk/mkdocs-material/blob/master/mkdocs.yml
 
 # Project information
-site_name: Immersive Fusion Docs
+site_name: DeepCube Docs
 site_url: https://docs.deepcube.ai
 site_description: The next dimension of observability
 site_author: Immersive Fusion LLC
 
 # Repository
-repo_name: Immersive Fusion Docs
+repo_name: deepcube-docs
 repo_url: https://github.com/ImmersiveFusion/deepcube-docs
 edit_uri: edit/main/docs
 

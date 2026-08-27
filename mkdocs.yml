@@ -120,15 +120,17 @@ plugins:
         'Resources/Terms-and-Concepts/IAPM/index.md': 'Resources/Terms-and-Concepts/DC/index.md'
 
         # Partner: Affiliates has a direct successor on the storefront. The
-        # storefront has no partner index (both casings 404), and Benefactors and
-        # Hall-of-Supporters have no counterpart anywhere, so those retire to the
-        # Resources index. Spatial-Observatory retires to the property that now
-        # carries that subject.
+        # storefront has no partner index (both casings 404), and Benefactors has
+        # no counterpart anywhere, so those retire to the Resources index.
+        # Spatial-Observatory retires to the property that now carries that
+        # subject, and Hall-of-Supporters goes to the SAME place rather than
+        # hopping through Spatial-Observatory: src/redirects.conf has chained it
+        # there since 2026, and following that chain now would make it two hops.
         'Resources/Partner/Affiliates/index.md': 'https://immersivefusion.com/partner/Affiliate'
         'Resources/Partner/Spatial-Observatory/index.md': 'https://spatialobservability.org/'
         'Resources/Partner/index.md': 'Resources/index.md'
         'Resources/Partner/Benefactors/index.md': 'Resources/index.md'
-        'Resources/Partner/Hall-of-Supporters/index.md': 'Resources/index.md'
+        'Resources/Partner/Hall-of-Supporters/index.md': 'https://spatialobservability.org/'
 
         # Commercial offers and the ROI calculator: no docs successor and no
         # like-for-like page on the storefront. Retired to pricing, which is the

@@ -3,12 +3,12 @@
 # Note: not using INHERIT because MkDocs 1.x merges plugin lists
 # Keep in sync with: ../IF.Knowledge/src/nexus/IF.Knowledge.Nexus.Spa/mkdocs.dev.yml
 
-site_name: Immersive Fusion Docs
+site_name: DeepCube Docs
 site_url: https://docs.immersivefusion.com
 site_description: The next dimension of observability
 site_author: Immersive Fusion LLC
 
-repo_name: Immersive Fusion Docs
+repo_name: deepcube-docs
 repo_url: https://github.com/ImmersiveFusion/deepcube-docs
 edit_uri: edit/main/docs
 

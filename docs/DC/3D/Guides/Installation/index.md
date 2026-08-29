@@ -1,3 +1,7 @@
+---
+description: Install the DeepCube desktop client, through Steam or an offline installer. Runs locally and connects to the cloud backend; virtual machines are not supported.
+---
+
 # Installation
 
 DeepCube is a desktop application built on the Unity 3D engine. It runs on your local computer and connects to DeepCube's cloud backend for telemetry data. Virtual machines are not supported or recommended.

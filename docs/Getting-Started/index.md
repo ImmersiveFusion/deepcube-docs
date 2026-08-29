@@ -1,3 +1,7 @@
+---
+description: From first look to your own telemetry in the Grid: explore a demo grid with a free account, then subscribe and send your own data.
+---
+
 # Getting Started
 
 Most monitoring tools hand you dashboards and charts and leave you to reconstruct what your system is doing. DeepCube takes your OpenTelemetry traces, metrics, and logs and renders them as a place you can move through: services stand as towers, calls flow between them as traffic, and a service that has gone missing shows up as a gap you can see. This is spatial observability, and DeepCube is the product that does it.

@@ -1,3 +1,7 @@
+---
+description: Version history for DeepCube Web, newest first.
+---
+
 # DeepCube Web Release Notes
 
 ## Version History

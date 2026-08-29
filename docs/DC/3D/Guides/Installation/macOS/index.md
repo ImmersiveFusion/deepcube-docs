@@ -1,3 +1,7 @@
+---
+description: Install DeepCube on macOS from the alpha-channel DMG. The macOS build is experimental and needs extra manual steps.
+---
+
 # Installing on macOS
 
 !!! warning "Experimental"

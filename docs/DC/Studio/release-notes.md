@@ -1,3 +1,7 @@
+---
+description: Version history for DeepCube Studio, which is in early access. Newest first.
+---
+
 # DeepCube Studio Release Notes
 
 !!! warning "Early Access"

@@ -1,3 +1,7 @@
+---
+description: Install DeepCube on Windows, through Steam or the offline MSI on the stable, beta, or alpha channel.
+---
+
 # Installing on Windows
 
 ## Steam

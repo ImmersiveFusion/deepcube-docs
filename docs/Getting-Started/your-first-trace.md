@@ -2,6 +2,7 @@
 title: Send your first trace
 diataxis: tutorial
 tags: [tutorial, getting-started, instrumentation, opentelemetry]
+description: Send real OTLP traces into DeepCube in about five minutes using a ready-made generator, with no application to write. Needs a subscription and a provisioned grid.
 ---
 
 # Send your first trace

@@ -1,3 +1,7 @@
+---
+description: Version history for DeepCube, newest first. Entries keep the product name they shipped under.
+---
+
 # DeepCube Release Notes
 
 ## Version History

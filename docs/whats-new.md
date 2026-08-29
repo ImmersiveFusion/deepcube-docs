@@ -1,3 +1,7 @@
+---
+description: Recent feature highlights across DeepCube, DeepCube Web, and DeepCube Studio, with links to the full release notes for each surface.
+---
+
 # What's New
 
 Recent updates and features across DeepCube. For complete version history, see the release notes for [DeepCube](DC/3D/release-notes.md), [DeepCube Web](DC/Web/release-notes.md), and [DeepCube Studio](DC/Studio/release-notes.md).

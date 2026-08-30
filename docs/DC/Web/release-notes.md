@@ -1,5 +1,5 @@
 ---
-description: Version history for DeepCube Web, newest first.
+description: Version history for DeepCube&trade; Web, newest first.
 ---
 
 # DeepCube Web Release Notes

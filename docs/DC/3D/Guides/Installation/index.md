@@ -1,5 +1,5 @@
 ---
-description: Install the DeepCube desktop client, through Steam or an offline installer. Runs locally and connects to the cloud backend; virtual machines are not supported.
+description: Install the DeepCube&trade; desktop client via Steam or an offline installer. It runs locally against the cloud backend. Virtual machines are not supported.
 ---
 
 # Installation

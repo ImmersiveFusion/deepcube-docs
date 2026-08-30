@@ -1,5 +1,5 @@
 ---
-description: Install DeepCube Studio on Windows or macOS from the alpha installer. No Steam needed, and a subscription is required.
+description: Install DeepCube&trade; Studio on Windows or macOS from the alpha installer. No Steam needed, and a subscription is required.
 ---
 
 # Installation

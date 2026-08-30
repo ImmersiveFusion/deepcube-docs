@@ -1,5 +1,5 @@
 ---
-description: Version history for DeepCube Studio, which is in early access. Newest first.
+description: Version history for DeepCube&trade; Studio, which is in early access. Newest first.
 ---
 
 # DeepCube Studio Release Notes

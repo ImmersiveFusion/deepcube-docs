@@ -1,5 +1,5 @@
 ---
-description: Recent feature highlights across DeepCube, DeepCube Web, and DeepCube Studio, with links to the full release notes for each surface.
+description: Recent feature highlights across DeepCube&trade;, DeepCube Web, and DeepCube Studio, with links to the full release notes for each surface.
 ---
 
 # What's New

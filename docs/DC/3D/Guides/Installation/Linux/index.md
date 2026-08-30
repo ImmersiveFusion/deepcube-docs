@@ -1,5 +1,5 @@
 ---
-description: Linux support for the DeepCube desktop client is not available yet.
+description: Linux support for the DeepCube&trade; desktop client is not available yet.
 ---
 
 # Linux (Coming soon)

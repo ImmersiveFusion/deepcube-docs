@@ -1,5 +1,5 @@
 ---
-description: From first look to your own telemetry in the Grid: explore a demo grid with a free account, then subscribe and send your own data.
+description: "From first look to your own telemetry in the Grid: explore a demo grid with a free account, then subscribe and send your own data."
 ---
 
 # Getting Started

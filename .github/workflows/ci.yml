@@ -1,4 +1,4 @@
-name: docs CI
+name: CI
 
 # The site is published from an Azure DevOps pipeline, but the PRs happen here,
 # so the gates live here. Three things this catches before review, all of which
@@ -24,7 +24,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: docs-ci-${{ github.ref }}
+  group: ci-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -56,8 +56,22 @@ jobs:
       - name: Redirect map parity
         run: python scripts/check-redirect-parity.py
 
+      # A page whose front matter will not parse falls back to site_description
+      # SILENTLY: mkdocs discards the block, --strict says nothing, and the page
+      # ships describing the whole site instead of itself. Getting Started did
+      # exactly that until 2026-08-29, undetected, because its description
+      # contains "Grid: explore" and a colon-space in an unquoted YAML scalar is
+      # a parse error. Runs BEFORE the build so the failure names the cause.
+      - name: Meta description front matter parses
+        run: python scripts/check-meta-descriptions.py
+
       - name: Build site
         run: mkdocs build --strict -d site/public
+
+      # The parse pass proves the source is valid. This proves the page actually
+      # SERVES it, whatever the cause of a divergence.
+      - name: Rendered meta descriptions match their source
+        run: python scripts/check-meta-descriptions.py --site site/public
 
       # Emits site/serve.json AND site/package.json, so the pinned serve version
       # lives in one place instead of being duplicated into each CI file.

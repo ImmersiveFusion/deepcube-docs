@@ -9,6 +9,16 @@ description: Version history for DeepCube&trade; Studio, which is in early acces
 
 ## Version History
 
+### 1.4.3 <small>August 26, 2026</small> { id="1.4.3" }
+
+**Introduction:**
+
+A housekeeping release that carries the new name through Studio. Everything since 1.3.0 is rolled up here, and the visible change is the rename: the product, its sign-in, and its release notifications are all DeepCube Studio now.
+
+**Improvements:**
+
+- **Renamed to DeepCube Studio**: The product name is carried through everywhere it is visible to you. Sign-in and release notifications now use the DeepCube addresses, and release notifications point at the current documentation site. This is a name change only; your account, your workspaces and your settings are unchanged.
+
 ### Renamed to DeepCube <small>August 7, 2026</small> { id="renamed-to-deepcube" }
 
 **Introduction:**

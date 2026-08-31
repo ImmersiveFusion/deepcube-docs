@@ -14,9 +14,14 @@ work on the other.
 
 ## What this site is
 
-`docs.immersivefusion.com`. The external, public product documentation for
+`docs.deepcube.ai`. The external, public product documentation for
 DeepCube (3D, Web, Studio) and Tessa. Built with MkDocs + Material, navigated by
-the `awesome-pages` plugin, hosted on Azure Static Web Apps.
+the `awesome-pages` plugin, and served from Azure App Service on Linux by Node
+`serve`, with all routing in `serve.json`.
+
+`docs.immersivefusion.com` is the retired host. It still resolves and forwards, so
+a link to it is not broken, but it is not where the site lives and should not be
+used in new content (DOC-SP-075).
 
 The information architecture follows the **Diataxis framework**: four
 quadrants (tutorials, how-to guides, reference, explanation). Every published

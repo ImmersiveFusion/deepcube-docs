@@ -70,8 +70,23 @@ jobs:
 
       # The parse pass proves the source is valid. This proves the page actually
       # SERVES it, whatever the cause of a divergence.
+      # Three passes. The third is the one that matters: it fails any page
+      # silently serving site_description, which is the defect that shipped
+      # on 2026-08-29 when every page carried the same slogan.
+      #
+      # ALLOW-LIST, and it is a TRACKED DEFECT, not an exemption:
+      #   index.html  the homepage legitimately carries the descriptor
+      #               (Friday, bus #2223).
+      #   Data-Residency  is an EMPTY PAGE, 16 bytes, a heading and nothing
+      #               else, published in the legal section and linked from
+      #               nowhere. It has no description because it has no
+      #               content. Writing one would describe a page that says
+      #               nothing. Tracked as DOC-SP-079; REMOVE THIS LINE when
+      #               the page gets content or is unpublished.
       - name: Rendered meta descriptions match their source
-        run: python scripts/check-meta-descriptions.py --site site/public
+        run: >
+          python scripts/check-meta-descriptions.py --site site/public
+          --allow-fallback index.html,Resources/Legal/Data-Security/Data-Residency/index.html
 
       # Emits site/serve.json AND site/package.json, so the pinned serve version
       # lives in one place instead of being duplicated into each CI file.

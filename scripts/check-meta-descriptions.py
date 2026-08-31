@@ -68,7 +68,12 @@ def normalise(s):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--docs", default="docs")
-    ap.add_argument("--site", help="built site dir; enables the compare pass")
+    ap.add_argument("--site", help="built site dir; enables the compare and fallback passes")
+    ap.add_argument("--config", default="mkdocs.yml",
+                    help="read site_description from here for the fallback pass")
+    ap.add_argument("--allow-fallback", default="index.html", metavar="REL",
+                    help="comma-separated rendered pages permitted to serve the site "
+                         "fallback (default: the homepage, per the 2026-08-29 ruling)")
     args = ap.parse_args()
 
     descs, parse_errors, seen = sources(args.docs)
@@ -100,6 +105,43 @@ def main():
                 print("        rendered: %s" % normalise(got)[:100])
                 print("        Most likely the page fell back to site_description.")
         print("compared %d rendered pages, %d mismatched" % (len(descs), mismatched))
+
+    if args.site:
+        # THE ACTUAL INVARIANT. The compare pass only checks pages that DECLARE a
+        # description, so it cannot see a page that has none and silently inherits
+        # the site-wide string. That is the defect that shipped: every page served
+        # the same slogan and nothing noticed. Canon (2026-08-29) states it plainly:
+        # a site-level fallback is a smell, not a feature. If it is showing on a
+        # page, that page is missing its own description.
+        fallback = None
+        try:
+            for line in io.open(args.config, encoding="utf-8"):
+                if line.startswith("site_description:"):
+                    fallback = normalise(line.split(":", 1)[1].strip())
+                    break
+        except OSError:
+            pass
+        if fallback:
+            allowed = {a.strip() for a in args.allow_fallback.split(",") if a.strip()}
+            inherited = []
+            for root_dir, _, names in os.walk(args.site):
+                for n in names:
+                    if n != "index.html":
+                        continue
+                    page = os.path.join(root_dir, n)
+                    rel = os.path.relpath(page, args.site).replace(os.sep, "/")
+                    if rel in allowed:
+                        continue
+                    m = META.search(io.open(page, encoding="utf-8").read())
+                    if m and normalise(m.group(1)) == fallback:
+                        inherited.append(rel)
+            for rel in sorted(inherited):
+                print("FAIL  %s serves the site fallback, so it has no description of "
+                      "its own" % rel)
+                failures.append((rel, "inherits fallback"))
+            print("checked %d rendered pages for silent fallback, %d inheriting"
+                  % (sum(1 for _, _, ns in os.walk(args.site) for x in ns
+                         if x == "index.html"), len(inherited)))
 
     if failures:
         print("\n%d problem(s). A page that does not describe itself is served to search "

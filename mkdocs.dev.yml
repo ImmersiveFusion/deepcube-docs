@@ -59,6 +59,11 @@ theme:
   logo: assets/logo.png
 
 # Fast plugins only - no git-revision-date-localized, no minify
+hooks:
+  # Derives a page's meta description from its own opening paragraph when
+  # the page does not declare one. Explicit front matter always wins.
+  - hooks/meta_descriptions.py
+
 plugins:
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'

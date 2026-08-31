@@ -1,3 +1,7 @@
+---
+description: Remove the DeepCube&trade; desktop client from macOS by dragging it from Applications to the Trash.
+---
+
 # Uninstalling on macOS
 
 <!-- SP-074: the Applications-folder entries below still say the currently-shipping name.

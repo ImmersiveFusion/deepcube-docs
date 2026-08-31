@@ -56,6 +56,7 @@ def _first_paragraph(markdown):
     """
     in_fence = False
     in_comment = False
+    in_admonition = False
     for raw in markdown.splitlines():
         line = raw.strip()
         if in_comment:
@@ -75,8 +76,18 @@ def _first_paragraph(markdown):
             if "-->" not in line:
                 in_comment = True
             continue
+        # An admonition's opener is skipped below, but its BODY is INDENTED
+        # continuation, not a new block. Taking it published the same caveat as
+        # the description of three VR pages and five Studio pages, none of which
+        # then described itself. The indent on the RAW line is the only signal.
+        if raw[:1] in (" ", "	") and in_admonition:
+            continue
+        in_admonition = False
         # A list item is never a page summary. Fall back rather than guess.
         if LIST_ITEM.match(line):
+            continue
+        if line.startswith(("!!!", "???")):
+            in_admonition = True
             continue
         if line.startswith(SKIP_PREFIXES):
             continue
@@ -84,10 +95,34 @@ def _first_paragraph(markdown):
     return None
 
 
+# Canon assigns these to hero sections and page titles, and EXPLICITLY not to a
+# meta description: "a tagline is the wrong content for it." Several pages open
+# with one, so a naive derivation republishes the very thing the slot rule exists
+# to remove. Stripped from the FRONT only; a tagline later in a sentence is the
+# page's own prose and is left alone.
+TAGLINES = (
+    "Enter the World of Your Application®.",
+    "Enter the World of Your Application.",
+    "The next dimension of observability.",
+)
+
+
+def _strip_leading_tagline(text):
+    changed = True
+    while changed:
+        changed = False
+        for t in TAGLINES:
+            if text.lower().startswith(t.lower()):
+                text = text[len(t):].lstrip()
+                changed = True
+    return text
+
+
 def _clean(text):
     for pattern, repl in INLINE_PATTERNS:
         text = pattern.sub(repl, text)
-    return re.sub(r"\s+", " ", text).strip()
+    text = re.sub(r"\s+", " ", text).strip()
+    return _strip_leading_tagline(text)
 
 
 def _rendered_len(text):
@@ -100,18 +135,44 @@ def _rendered_len(text):
     return len(html.unescape(text))
 
 
+DANGLING = {
+    "a", "an", "and", "as", "at", "but", "by", "for", "from", "in", "into", "is",
+    "of", "on", "or", "the", "to", "with", "you", "your", "every", "their", "its",
+    "this", "that", "these", "those", "it", "we", "our", "not", "are", "was",
+}
+
+
 def _truncate(text, limit=MAX):
+    """Prefer whole sentences. Never end on a dangling function word.
+
+    Cutting on length alone produced "See how every.", "as they unfold in."
+    and "computer. The." A description ending mid-clause reads as broken text
+    in a search result, which is worse than a shorter complete one.
+    """
     if _rendered_len(text) <= limit:
         return text
-    # Largest prefix whose RENDERED length fits, then back off to a word break.
+
+    # 1. Longest run of COMPLETE sentences that fits.
+    kept = ""
+    for sentence in re.findall(r"[^.!?]*[.!?]", text):
+        if _rendered_len(kept + sentence) > limit:
+            break
+        kept += sentence
+    if _rendered_len(kept) >= 60:
+        return kept.strip()
+
+    # 2. Otherwise cut on a word boundary, then drop trailing function words.
     cut = text
     while cut and _rendered_len(cut) > limit - 1:
         cut = cut[:-1]
     if "&" in cut[-7:]:          # never sever an entity
         cut = cut[: cut.rindex("&")]
-    if " " in cut:
-        cut = cut[: cut.rindex(" ")]
-    return cut.rstrip(" ,;:") + "."
+    words = cut.split(" ")
+    if len(words) > 1:
+        words = words[:-1]
+    while len(words) > 6 and words[-1].strip(",;:").lower() in DANGLING:
+        words.pop()
+    return " ".join(words).rstrip(" ,;:") + "."
 
 
 def _mark(text):

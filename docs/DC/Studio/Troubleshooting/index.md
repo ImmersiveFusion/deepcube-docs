@@ -1,3 +1,7 @@
+---
+description: "Fixes for common DeepCube&trade; Studio problems: the app not starting, macOS Gatekeeper blocking it, grid connection failures, and voice not working."
+---
+
 # Troubleshooting
 
 !!! warning "Early Access"

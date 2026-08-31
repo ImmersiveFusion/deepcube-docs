@@ -78,6 +78,11 @@ theme:
   logo: favicon-96x96.png
 
 # Plugins
+hooks:
+  # Derives a page's meta description from its own opening paragraph when
+  # the page does not declare one. Explicit front matter always wins.
+  - hooks/meta_descriptions.py
+
 plugins:
   #- blog
   - search:

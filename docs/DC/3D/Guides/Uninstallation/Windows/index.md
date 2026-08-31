@@ -1,3 +1,7 @@
+---
+description: Remove the DeepCube&trade; desktop client from Windows using Control Panel, Programs and Features.
+---
+
 # Uninstalling on Windows
 
 <!-- SP-074: the Add/Remove Programs entries below still say the currently-shipping name.

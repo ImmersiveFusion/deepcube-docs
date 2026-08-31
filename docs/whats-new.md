@@ -16,6 +16,19 @@ The product you know as Immersive APM, or IAPM, is now **DeepCube™**, the spat
 
 This is a name change only. Your account, grids, API keys, and telemetry are unchanged, and existing links to these docs keep working. Release notes for versions that shipped earlier keep the name they shipped under.
 
+### Tessa Gets Hands, and Charts That Tell the Truth (3D v1.18.8, Web 3.177.5)
+
+Tessa can now drive the Shoebox sandbox for you, end to end, and answer from what is actually on your grid. On the Web side, every chart on the Insights board was rebuilt so the numbers match the telemetry underneath them.
+
+| Feature | Description |
+|---------|-------------|
+| **Tessa Drives Shoebox** | Ask her to stand up a scenario and break it: she creates the sandbox, sends the scenario, runs it, and hands back a link |
+| **Tessa Reads the Map** | Ask about phantoms and she answers from the phantoms actually on your grid, with the reason each one is there |
+| **Chat Window, Second Pass** | Select and copy the transcript, resize, zoom, image paste, input history, and it reopens where you left it |
+| **Failure Cues on the Service Graph** | Phantoms tear away to the rim on strain lines; error nodes hold their callers at a cleared standoff |
+| **Every Insights Chart Rewritten** | All 32 charts rebuilt against the current telemetry, with readable units and honest empty states |
+| **Faster Grid Picker** | Descriptions inline on the rows, and the list arrives in one pass |
+
 ### Mosey & Personal Subscription (3D v1.15, Web 3.140)
 
 Mosey graduates from preview in 3D, with voice and console workspace switching, a three-bucket radial menu, and gamepad cursor support. The Web Portal rolls out the Personal Product License model end to end.
@@ -63,13 +76,28 @@ Tessa gains extensible capabilities and the ability to analyze images.
 | **Energy Dashboard Redesign** | See energy usage per grid, per tenant, and per tier with breakdown charts |
 | **Vision Support** | Send screenshots and images to Tessa for visual analysis |
 
-### OpenTelemetry Data Model (3D v1.11)
-
-Full adoption of the OpenTelemetry-native data model across all trace and log visualizations, with improved service graph placement and smoother transitions.
-
 ---
 
 ## Recent Updates
+
+### August 2026
+
+- **3D v1.18.8**: Tessa drives the Shoebox sandbox and reads the map, chat window second pass (selection, resize, zoom, image paste, input history, commands), phantom and error cues on the service graph, faster grid picker
+- **Web 3.177.5**: All 32 Insights charts rewritten against the current telemetry, readable chart values, honest empty states, node metering fix for multi-grid accounts
+- **Studio v1.4.3**: Renamed to DeepCube Studio, sign-in and release notifications moved to the new addresses
+- **All surfaces**: Immersive APM is now DeepCube
+
+### July 2026
+
+- **3D v1.18**: In-world chat window for Tessa with streaming replies and tool cards, steadier service graph in busy scenes
+- **Web 3.172.3**: Much faster grid list, grids re-tier on plan change, onboarding and billing accuracy fixes
+- **Studio v1.3.1**: Assistant platform update
+
+### June 2026
+
+- **3D v1.17**: Companion autopilot tours, phantom nodes, the Spatial Observatory, choose your sign-in browser, workspace persona for Tessa
+- **Web 3.169**: Choose Tessa's voice, personal usage view, energy recharge countdown
+- **Studio v1.3**: Single workspace shell, voice conversation mode, workspace persona for Tessa, clearer AI energy limit
 
 ### May 2026
 

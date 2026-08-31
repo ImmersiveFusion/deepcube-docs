@@ -6,6 +6,46 @@ description: Version history for DeepCube&trade;, newest first. Entries keep the
 
 ## Version History
 
+### 1.18.8 <small>August 30, 2026</small> { id="1.18.8" }
+
+**Introduction:**
+
+Everything since 1.18.0 arrives in one Steam update (1.18.1 through 1.18.7 were not released separately on Steam). Tessa gains hands: ask her to build and break a scenario in the Shoebox sandbox and she does it herself, then hands back a link you can open. The chat window becomes a proper window you can select from, resize, zoom and reopen where you left it, and the service graph now makes failure legible from across the fleet.
+
+**New Features:**
+
+- **Tessa Drives the Shoebox Sandbox**: Ask Tessa to stand up a scenario and break it, and she now does the work: she creates the sandbox for you without asking, sends the scenario over, runs it, and hands back a link. She keeps to the sandbox she created rather than borrowing an identifier, and she will tell you that anything you send lands in a public sandbox, so rename anything proprietary first.
+- **Tessa Reads the Map**: Ask "any phantoms here?" and Tessa answers from the phantoms actually on your grid, naming each one the way the map names it and saying why it is a phantom, instead of reciting a definition. When there are none, she says so outright.
+- **Chat Commands**: `/help` lists what Tessa can do and `/clear` clears the conversation. A command she does not recognize now gets an answer instead of silence.
+- **Failure Cues on the Service Graph**: A phantom drifts to the sparse rim and its edges stretch taut into strain lines, tearing the fabric open instead of dragging healthy services out of shape. Error nodes hold their callers at a stepped-back standoff, a stable cleared ring around the fault. One cue per meaning: motion for danger, color for state.
+- **Workspace Instructions**: Tessa picks up a workspace's instruction files as background context, considered but not followed, matching what Studio already does. Nothing changes for a workspace that has none.
+
+**Improvements:**
+
+- **Chat Window, Second Pass**: Select and copy the transcript, drag the edges to resize it, zoom with Ctrl+= and Ctrl+-, and reopen it exactly where and how you left it. Paste an image with Ctrl+V and see it in the composer and in the sent turn, recall what you typed with Up and Down, and open the window with a hotkey. Links in Tessa's answers open in your browser rather than inside the chat.
+- **Faster Grid Picker**: Grid descriptions now show inline on the rows and in a tooltip on hover, and the whole list arrives in one pass instead of one lookup per environment. Two environments that share a display name no longer collapse into a single section.
+- **Steadier Frame Rate in Dense Scenes**: In-world screens are paced and sized to what they actually need, distant text is culled, and detail culling now measures the detail rather than the whole object.
+- **Tessa Speaks the Product's Vocabulary**: The words on screen and the words in her answers are now the same words.
+
+**Bug Fixes:**
+
+- Fixed teleport arrival dropping you through the floor. Arrival now probes for ground, recovers to your last good footing if you fall, and resets cleanly when you teleport out of water.
+- Fixed error nodes jittering instead of settling, and fixed the graph slowly flattening while the companion roamed on its tour.
+- Fixed the app shutting itself down after a brief interruption to its data connection. It now rides out the interruption and reconnects on its own.
+- Fixed the chat losing its transcript when the window was reopened.
+- Fixed a message sent with an image not showing your own turn, so you could not see what you had asked.
+- Fixed Shift+Enter submitting instead of starting a new line. The composer now grows as you type.
+- Fixed the chat panel dimming while you were plainly using it. It now stays bright whenever the pointer is over it, not only when the text box has focus.
+- Fixed tooltips left stranded on screen when the row under the pointer disappeared, and fixed one tooltip erasing another.
+- Fixed the idle HUD toggle doing nothing in the Lobby.
+- Fixed an unreadable chat tab label, and shipped smaller resize cursors.
+- Release notifications now point at the current documentation site.
+
+**Known Issues:**
+
+- The chat handles one conversation at a time. The transcript now survives reopening the window, but it is not saved between sessions, so a fresh run starts a fresh conversation.
+- macOS support is experimental and may lack full feature parity with Windows builds.
+
 ### Renamed to DeepCube <small>August 7, 2026</small> { id="renamed-to-deepcube" }
 
 **Introduction:**

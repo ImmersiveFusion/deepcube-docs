@@ -6,6 +6,28 @@ description: Version history for DeepCube&trade; Web, newest first.
 
 ## Version History
 
+### 3.177.5 <small>August 30, 2026</small> { id="3.177.5" }
+
+**Introduction:**
+
+This release rolls up everything since 3.172.3, and the theme is charts that tell you the truth. Every chart on the Insights board was rewritten against the current telemetry, values now read in units a person can scan, and an empty panel now says which kind of empty it is. A billing fix also corrects node counts for accounts running several grids.
+
+**Improvements:**
+
+- **Every Insights Chart Rewritten**: All 32 charts were rebuilt against the current telemetry. The old queries did not fail, they rendered plausible but wrong numbers: latency percentiles computed over too few samples, per-route breakdowns collapsing into one unlabelled group, and an error rate that missed server errors returned cleanly. Error rate is now the share of failed responses, and rate windows are wide enough to hold enough samples to be meaningful.
+- **Readable Chart Values**: Sub-second latency now reads as `450ms` rather than `0.450s`, axis units and decimal places are honoured everywhere, and the numeral that sat over every point of Request Rate is gone.
+- **Absence No Longer Reads as Zero**: A missing value used to render as `0`, which is indistinguishable from genuinely measuring zero. Only a real zero prints a zero now.
+- **Empty Panels Explain Themselves**: A panel with nothing in it now says whether the query failed or simply had no data, and a table chart with rows loaded no longer paints blank.
+
+**Bug Fixes:**
+
+- Fixed node metering counting same-named nodes across different grids as one node. Accounts running several grids seeded from the same template were under-counted; node usage now matches what the grid list has always shown.
+- Fixed diagnostics time windows being read as wall-clock time rather than being converted, which could have served data from the wrong period for a request sent with a time-zone offset.
+
+**Known Issues:**
+
+- Time travel remains unavailable while replay is being reworked.
+
 ### Renamed to DeepCube <small>August 7, 2026</small> { id="renamed-to-deepcube" }
 
 **Introduction:**

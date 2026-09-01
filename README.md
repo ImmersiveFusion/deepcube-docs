@@ -1,6 +1,6 @@
 # DeepCube Documentation
 
-This repository contains the source for the [DeepCube](https://docs.immersivefusion.com/) (3D, Web, Studio) and Tessa documentation site, built with [MkDocs](https://www.mkdocs.org/) and the Material theme.
+This repository contains the source for the [DeepCube](https://docs.deepcube.ai) (3D, Web, Studio) and Tessa documentation site, built with [MkDocs](https://www.mkdocs.org/) and the Material theme.
 
 📖 **Published site:** https://docs.immersivefusion.com/
 

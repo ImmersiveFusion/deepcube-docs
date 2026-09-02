@@ -19,7 +19,6 @@ The following documents are hosted on our main website and constitute the bindin
 
 | Resource | Description |
 |----------|-------------|
-| [Service Level Agreement](sla.md) | Our uptime commitments and support guarantees |
 | [Data Security](Data-Security/index.md) | Security practices, certifications, and data handling |
 
 ## Questions?

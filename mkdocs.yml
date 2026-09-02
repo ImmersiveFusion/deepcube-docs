@@ -145,6 +145,14 @@ plugins:
         'Setup/Offers/azure-marketplace.md': 'https://immersivefusion.com/pricing/'
         'Setup/Discounts/early-adopter.md': 'https://immersivefusion.com/pricing/'
 
+        # Service Level Agreement: commercial commitments (uptime targets,
+        # service credits, support response times) do not belong in a repo that
+        # accepts outside pull requests, and the page named tiers
+        # (Starter/Professional/Enterprise) that Getting-Started/Plans does not
+        # use. Retired to the legal index, which carries the Subscription
+        # Agreement -- the instrument that actually binds.
+        'Resources/Legal/sla.md': 'https://immersivefusion.com/legal/'
+
         # Restructure redirects - preserve old URLs
         # Analysis-and-Visualization → DC/3D / DC/Web
         'analysis-and-visualization/index.md': 'DC/3D/index.md'

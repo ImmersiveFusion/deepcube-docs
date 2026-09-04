@@ -153,6 +153,12 @@ plugins:
         # Agreement -- the instrument that actually binds.
         'Resources/Legal/sla.md': 'https://immersivefusion.com/legal/'
 
+        # Data Residency was a stub carrying only its own heading, published and
+        # returning 200. The parent Data-Security page already has a Data
+        # Residency section with the region table, so the child was redundant
+        # rather than merely unfinished. Retired to the page that answers it.
+        'Resources/Legal/Data-Security/Data-Residency/index.md': 'Resources/Legal/Data-Security/index.md'
+
         # Restructure redirects - preserve old URLs
         # Analysis-and-Visualization → DC/3D / DC/Web
         'analysis-and-visualization/index.md': 'DC/3D/index.md'

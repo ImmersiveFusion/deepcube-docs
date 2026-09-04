@@ -8,6 +8,8 @@ Immersive Fusion is committed to protecting your data. This document outlines ou
 
 DeepCube is hosted on enterprise-grade cloud infrastructure with:
 
+- **Multi-region capable** - additional regions can be provisioned for redundancy
+  or data residency, subject to service availability and capacity
 - **Network isolation** using virtual private clouds
 - **DDoS protection** at the network edge
 - **Web Application Firewall (WAF)** for application-layer protection

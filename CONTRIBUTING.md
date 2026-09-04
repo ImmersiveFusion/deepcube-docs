@@ -250,6 +250,35 @@ outside the mkdocs source tree.
 
 ---
 
+## Licence and contribution terms
+
+This documentation is published under the **Apache License, Version 2.0**. The
+full text is in [LICENSE](LICENSE), and it covers the documentation content and
+the build tooling alike.
+
+**You do not need to sign anything to contribute.** Apache-2.0 section 5 states
+that any contribution intentionally submitted for inclusion is licensed under
+the same terms, unless you explicitly say otherwise:
+
+> Unless You explicitly state otherwise, any Contribution intentionally
+> submitted for inclusion in the Work by You to the Licensor shall be under the
+> terms and conditions of this License, without any additional terms or
+> conditions.
+
+So opening a pull request licenses that contribution under Apache-2.0. There is
+no contributor licence agreement to sign and no `Signed-off-by` trailer to add.
+This matches the other public Immersive Fusion repositories, which rely on
+section 5 alone.
+
+Two things worth knowing:
+
+- **Submit only work you have the right to license.** Section 5 sets the terms a
+  contribution arrives under; it does not verify you were entitled to grant
+  them. Do not paste in text you do not own or that carries incompatible terms.
+- **Trademarks are not licensed.** Section 6 expressly excludes trademark
+  rights. The licence lets you reuse the documentation; it does not grant any
+  right in the DeepCube or Immersive Fusion marks.
+
 ## What to do before opening a PR
 
 1. **Start from a template.** Don't author from scratch; use one of the four

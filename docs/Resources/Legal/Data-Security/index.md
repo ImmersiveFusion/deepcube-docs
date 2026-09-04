@@ -8,7 +8,6 @@ Immersive Fusion is committed to protecting your data. This document outlines ou
 
 DeepCube is hosted on enterprise-grade cloud infrastructure with:
 
-- **Multi-region deployment** for redundancy and disaster recovery
 - **Network isolation** using virtual private clouds
 - **DDoS protection** at the network edge
 - **Web Application Firewall (WAF)** for application-layer protection
@@ -41,13 +40,17 @@ Your application telemetry (traces, metrics, logs) is:
 
 ### Data Residency
 
-DeepCube offers data residency options for customers with geographic requirements:
+DeepCube telemetry is stored and processed in the United States. AI-assisted
+features are processed in a separate United States region.
 
-| Region | Availability |
-|--------|--------------|
+| Region | Status |
+|--------|--------|
 | United States | Available |
-| European Union | Available (Enterprise) |
-| Other regions | Contact sales |
+| Other regions | On request, subject to service availability and capacity |
+
+Additional regions can be provisioned where the required services and capacity
+are available. [Contact sales](../../../contact.md) to discuss specific
+requirements.
 
 ### Data Processing
 

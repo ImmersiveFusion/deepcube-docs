@@ -294,6 +294,37 @@ Two things worth knowing:
 6. **`mkdocs build --strict`.** Locally, before push. Fix every warning.
 7. **Spot-check.** `mkdocs serve` and click through the changed pages plus
    one redirect from an old URL to confirm it lands correctly.
+8. **Sign every commit.** One unsigned commit blocks the merge; see below.
+
+---
+
+## Commit signing and branch rules
+
+`main` requires a **verified signature on every commit**, so a single unsigned commit
+anywhere in your branch blocks the merge even after the change is approved. Commits made
+in the GitHub web editor are signed automatically; commits pushed from your own machine
+are not, unless you have set that up. If you already push over SSH, reuse that key:
+
+```bash
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519.pub
+git config --global commit.gpgsign true
+```
+
+Then add that same public key to <https://github.com/settings/keys> a second time as a
+**signing** key. `git log --show-signature -1` confirms it locally, and every commit in
+the pull request should show a green **Verified** badge.
+
+Already pushed something unsigned? `git rebase --exec 'git commit --amend --no-edit -S' main`
+re-signs the branch, then force-push it with lease.
+
+The rest of what `main` enforces: linear history (rebase onto `main`, do not merge it
+into your branch), one approving review, all review threads resolved, and squash or
+rebase merges only. A new push dismisses existing approvals, so batch your review fixes
+into one push where you can.
+
+The full version, including the GPG route, is in the
+[organization contribution guide](https://github.com/ImmersiveFusion/.github/blob/main/CONTRIBUTING.md).
 
 ---
 

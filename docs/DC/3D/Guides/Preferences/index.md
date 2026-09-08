@@ -1,5 +1,7 @@
 # Preferences
 
+Press `F9` to open preferences.
+
 Preferences are grouped into categories, each with its own sections. Every setting
 below is saved to your machine and applies immediately unless noted.
 

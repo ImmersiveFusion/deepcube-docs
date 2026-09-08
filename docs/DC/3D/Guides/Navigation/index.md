@@ -57,7 +57,7 @@ Master the controls to move through your application's 3D environment efficientl
 | Action      | Keys  | Description                   | Status |
 |-------------|-------|-------------------------------|--------|
 | Console     | `F12` | Open the developer console    |        |
-| Preferences | `F10` | Open preferences and settings |        |
+| Preferences | `F9`  | Open preferences and settings |        |
 
 ## VR Controls
 

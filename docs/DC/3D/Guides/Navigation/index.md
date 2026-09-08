@@ -56,8 +56,15 @@ Master the controls to move through your application's 3D environment efficientl
 
 | Action      | Keys  | Description                   | Status |
 |-------------|-------|-------------------------------|--------|
-| Console     | `F12` | Open the developer console    |        |
+| Help        | `F1`  | Open the help dialog          |        |
+| Copy        | `F6`  | Copy                          |        |
 | Preferences | `F9`  | Open preferences and settings |        |
+| Main Menu   | `F10` | Open the main menu            |        |
+| Console     | `F12` | Open the developer console    |        |
+
+!!! note "Not available on every screen"
+    `F1` and `F9` work once you are in a grid. The lobby and the login screen do
+    not have them, and neither dialog opens there.
 
 ## VR Controls
 

@@ -1,6 +1,7 @@
 # Preferences
 
-Press `F9` to open preferences.
+Press `F9` to open preferences, once you are in a grid. The lobby and the login
+screen do not have it.
 
 Preferences are grouped into categories, each with its own sections. Every setting
 below is saved to your machine and applies immediately unless noted.

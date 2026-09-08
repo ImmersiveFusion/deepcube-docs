@@ -45,10 +45,6 @@ Master the controls to move through your application's 3D environment efficientl
 
 | Action | Keys | Description | Status |
 |--------|------|-------------|--------|
-| Toggle AI Assistant | `C` | Open/close the AI assistant panel | :material-clock: |
-| Toggle Metrics | - | Show/hide metrics overlay | :material-lock: |
-| Toggle Logs | `L` | Show/hide log panel | :material-clock: |
-| Toggle Traces | `T` | Show/hide trace details | :material-clock: |
 | Traces & Logs Camera View | `M` | Switch to the grid | |
 | Services & Dependencies Camera View | `N` | Switch to the service graph | |
 

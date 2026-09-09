@@ -13,7 +13,6 @@ DeepCube™ Web gives you browser-based access to your application telemetry. No
 | **Grid Management** | Create, configure, and organize telemetry data containers |
 | **API Keys** | Generate and manage credentials for instrumentation |
 | **Account Management** | Subscriptions, billing, team members, and settings |
-<!-- | **Alerts** | Configure notifications for performance thresholds | -->
 
 ## DeepCube Web vs 3D
 
@@ -38,7 +37,6 @@ graph LR
     A[Log In] --> B[Select Grid]
     B --> C[View Dashboard]
     C --> D[Analyze Traces]
-    D --> E[Configure Alerts]
 ```
 
 ## Recent Features

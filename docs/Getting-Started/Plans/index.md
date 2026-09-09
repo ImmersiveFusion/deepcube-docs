@@ -95,6 +95,10 @@ Elevate your application monitoring and management with the stability, scalabili
 
 ## Changing Plans
 
+Moving between tiers carries a one-time fee; adjusting node count within the
+same tier does not. See the [pricing page](https://www.immersivefusion.com/pricing)
+for the current amount.
+
 ### Upgrading
 
 Upgrade at any time:

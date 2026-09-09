@@ -250,6 +250,22 @@ outside the mkdocs source tree.
 
 ---
 
+## How changes reach the site
+
+Merging to `main` does not publish. CI builds the site and verifies it on every
+pull request, but putting the result on <https://docs.deepcube.ai> is a separate
+step that a maintainer runs.
+
+So after your PR merges:
+
+- The change is in `main` and will be in the next publish.
+- The live site keeps serving the previous build until that runs.
+- There is nothing further for you to do, and nothing has gone wrong if the page
+  does not change immediately.
+
+If a merged change needs to be live by a particular time, say so on the pull
+request rather than assuming the merge did it.
+
 ## Licence and contribution terms
 
 This documentation is published under the **Apache License, Version 2.0**. The

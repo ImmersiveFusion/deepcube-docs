@@ -14,7 +14,7 @@ Learn how to use DeepCube Web effectively for monitoring, analysis, and account 
 
 | Feature | Description |
 |---------|-------------|
-| **Dashboard** | View application health, metrics, and alerts at a glance |
+| **Dashboard** | View application health, metrics, and errors at a glance |
 | **Trace Analysis** | Explore request flows with waterfall and flame graph views |
 | **Grid Management** | Create, configure, and organize telemetry containers |
 | **API Keys** | Generate, rotate, and manage instrumentation credentials |

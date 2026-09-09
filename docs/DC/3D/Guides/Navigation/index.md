@@ -45,10 +45,6 @@ Master the controls to move through your application's 3D environment efficientl
 
 | Action | Keys | Description | Status |
 |--------|------|-------------|--------|
-| Toggle AI Assistant | `C` | Open/close the AI assistant panel | :material-clock: |
-| Toggle Metrics | - | Show/hide metrics overlay | :material-lock: |
-| Toggle Logs | `L` | Show/hide log panel | :material-clock: |
-| Toggle Traces | `T` | Show/hide trace details | :material-clock: |
 | Traces & Logs Camera View | `M` | Switch to the grid | |
 | Services & Dependencies Camera View | `N` | Switch to the service graph | |
 
@@ -56,8 +52,15 @@ Master the controls to move through your application's 3D environment efficientl
 
 | Action      | Keys  | Description                   | Status |
 |-------------|-------|-------------------------------|--------|
+| Help        | `F1`  | Open the help dialog          |        |
+| Copy        | `F6`  | Copy                          |        |
+| Preferences | `F9`  | Open preferences and settings |        |
+| Main Menu   | `F10` | Open the main menu            |        |
 | Console     | `F12` | Open the developer console    |        |
-| Preferences | `F10` | Open preferences and settings |        |
+
+!!! note "Not available on every screen"
+    `F1` and `F9` work once you are in a grid. The lobby and the login screen do
+    not have them, and neither dialog opens there.
 
 ## VR Controls
 

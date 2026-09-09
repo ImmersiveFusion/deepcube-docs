@@ -23,6 +23,7 @@ each plan does.
 | **Data Retention** | 7 days | 30 days | 90 days | 365 days |
 | **AI (Tessa)** | 7 queries/day | 35 queries/day | Large daily budget + Code Fix | Large daily budget + Code Fix + Infra |
 | **Support** | Discord | Chat/Email | Chat/Email/Phone | Chat/Email/Phone |
+| **Uptime SLA** | - | 99% | 99.9% | 99.99% |
 | **Dedicated Success Rep** | :material-close: | :material-close: | :material-check: | :material-check: |
 | **Professional Consulting** | :material-close: | :material-close: | :material-check: | :material-check: |
 | **Early Access Features** | :material-close: | :material-close: | :material-close: | :material-check: |
@@ -49,6 +50,7 @@ Experience application immersion with zero risk, allowing you to gain valuable i
 Enhance your application immersion capabilities with expanded availability and comprehensive support.
 
 - Shared infrastructure
+- 99% uptime SLA
 - 200 traces + logs per second
 - 30 days data retention
 - 35 AI Assistant queries per day
@@ -59,6 +61,7 @@ Enhance your application immersion capabilities with expanded availability and c
 Improve your application visualization capabilities by incorporating historical data retention and dedicated resources.
 
 - Dedicated infrastructure
+- 99.9% uptime SLA
 - 1,000 traces + logs per second
 - 90 days data retention
 - Large daily AI Assistant budget + Code Fix
@@ -71,6 +74,7 @@ Improve your application visualization capabilities by incorporating historical 
 Elevate your application monitoring and management with the stability, scalability, and expertise.
 
 - Dedicated infrastructure
+- 99.99% uptime SLA
 - 2,000 traces + logs per second
 - 365 days data retention
 - Large daily AI Assistant budget + Code Fix + Infra

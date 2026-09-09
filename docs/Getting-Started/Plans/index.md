@@ -1,17 +1,20 @@
-# Plans & Pricing
+# Plans
 
 Compare DeepCube subscription plans to find the right fit for your team.
 
-## Pricing Model
+## How plans are priced
 
-DeepCube uses **per-node pricing**. A node is any monitored application instance sending telemetry.
+DeepCube uses **per-node pricing**. A node is any monitored application instance
+sending telemetry.
+
+Current prices, node minimums and volume discounts are on the
+[pricing page](https://www.immersivefusion.com/pricing). This page compares what
+each plan does.
 
 ## Plan Comparison
 
 | Feature | Start | Visualize | Analyze | Fuse |
 |---------|:-----:|:---------:|:-------:|:----:|
-| **Price** | Free | $20/node/mo | $45/node/mo | $60/node/mo |
-| **Node Minimum** | - | 1 | 25 | 50 |
 | **Infrastructure** | Shared | Shared | Dedicated | Dedicated |
 | **Visualization** | | | | |
 | DeepCube Web | :material-check: | :material-check: | :material-check: | :material-check: |
@@ -46,7 +49,6 @@ Experience application immersion with zero risk, allowing you to gain valuable i
 
 Enhance your application immersion capabilities with expanded availability and comprehensive support.
 
-- $20/node/month (1 node minimum)
 - Shared infrastructure
 - 99% uptime SLA
 - 200 traces + logs per second
@@ -58,7 +60,6 @@ Enhance your application immersion capabilities with expanded availability and c
 
 Improve your application visualization capabilities by incorporating historical data retention and dedicated resources.
 
-- $45/node/month (25 node minimum = $1,125/month)
 - Dedicated infrastructure
 - 99.9% uptime SLA
 - 1,000 traces + logs per second
@@ -72,7 +73,6 @@ Improve your application visualization capabilities by incorporating historical 
 
 Elevate your application monitoring and management with the stability, scalability, and expertise.
 
-- $60/node/month (50 node minimum = $3,000/month)
 - Dedicated infrastructure
 - 99.99% uptime SLA
 - 2,000 traces + logs per second
@@ -83,27 +83,6 @@ Elevate your application monitoring and management with the stability, scalabili
 - Professional consulting services
 - Early access to new functionality
 
-## Volume Discounts
-
-Volume pricing rewards larger deployments:
-
-| Plan | Base Price | Volume Price | Threshold | Savings |
-|------|------------|--------------|-----------|---------|
-| **Visualize** | $20/node | $15/node | After 5 nodes | 25% |
-| **Analyze** | $45/node | $30/node | After 25 nodes | 33% |
-| **Fuse** | $60/node | $45/node | After 50 nodes | 25% |
-
-### Example: 40-Node Deployment
-
-| Plan | Calculation | Monthly |
-|------|-------------|---------|
-| Visualize | (5 x $20) + (35 x $15) | $625 |
-| Analyze | (25 x $45) + (15 x $30) | $1,575 |
-
-## Annual Discount
-
-Save approximately 17% with annual prepayment.
-
 ## Choosing the Right Plan
 
 | Scenario | Recommended Plan |
@@ -111,10 +90,14 @@ Save approximately 17% with annual prepayment.
 | Evaluating DeepCube, POC | Start |
 | Small team, 1-5 nodes | Visualize |
 | Need historical data, 25+ nodes | Analyze |
-| Enterprise SLA, 50+ nodes | Fuse |
+| Largest deployments, 50+ nodes | Fuse |
 | High-volume (500+ nodes) | [Contact Sales](mailto:sales@immersivefusion.com) |
 
 ## Changing Plans
+
+Moving between tiers carries a one-time fee; adjusting node count within the
+same tier does not. See the [pricing page](https://www.immersivefusion.com/pricing)
+for the current amount.
 
 ### Upgrading
 

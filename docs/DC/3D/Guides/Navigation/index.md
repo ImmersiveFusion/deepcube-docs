@@ -19,9 +19,10 @@ Master the controls to move through your application's 3D environment efficientl
 | Move Backward | `S` | Move away from where you're looking | |
 | Strafe Left | `A` | Slide left while maintaining view direction | |
 | Strafe Right | `D` | Slide right while maintaining view direction | |
-| Jump | `Space` | Jump for a momentary higher look. Inside a cube, jumping starts you swimming (free vertical movement) | :material-lock: |
-| Descend | `Ctrl` | Move down while swimming inside a cube | :material-lock: |
+| Jump | `Space` | Jump for a momentary higher look | |
 | Sprint | `Shift` + movement | Move faster in any direction | |
+
+The arrow keys move as well, and do the same as `W`, `A`, `S` and `D`.
 
 ### Camera & View
 
@@ -37,7 +38,7 @@ Master the controls to move through your application's 3D environment efficientl
 | Action | Control | Description | Status |
 |--------|---------|-------------|--------|
 | Select | Left-click | Interact with world object | |
-| Context Menu | Right-click | Show available actions | :material-clock: |
+| Context Menu | Right-click | Show available actions | |
 | Deselect | `Escape` | Clear current selection | |
 | Follow Trace | - | Animate along the request path | :material-clock: |
 
@@ -54,6 +55,7 @@ Master the controls to move through your application's 3D environment efficientl
 |-------------|-------|-------------------------------|--------|
 | Help        | `F1`  | Open the help dialog          |        |
 | Copy        | `F6`  | Copy                          |        |
+| Pause       | `P`   | Pause                         |        |
 | Preferences | `F9`  | Open preferences and settings |        |
 | Main Menu   | `F10` | Open the main menu            |        |
 | Console     | `F12` | Open the developer console    |        |

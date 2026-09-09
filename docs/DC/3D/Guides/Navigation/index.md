@@ -1,7 +1,5 @@
 # Navigation & Controls
 
-<!-- TODO: Verify all keyboard shortcuts are accurate for current DeepCube version -->
-
 Master the controls to move through your application's 3D environment efficiently. Desktop (keyboard and mouse) is the actively maintained navigation mode; VR controls are documented below for existing headset users but are not actively maintained.
 
 | Icon | Meaning |
@@ -78,7 +76,6 @@ See [HTC Vive Integration](../../Integrations/HTC-Vive/index.md) for detailed se
 | Select | Trigger | Select service or UI element |
 | Grab | Grip buttons | Grab and manipulate objects |
 | Menu | Menu button | Open radial menu |
-<!-- | AI Assistant | Grip + voice | Activate voice assistant | -->
 
 ### Meta Quest
 
@@ -90,7 +87,6 @@ See [Meta Quest Integration](../../Integrations/Meta-Quest/index.md) for detaile
 | Select | Trigger | Select service or UI element |
 | Grab | Grip | Grab and manipulate objects |
 | Menu | Menu button | Open radial menu |
-<!-- | AI Assistant | Press A + speak | Activate voice assistant | -->
 
 ## Navigation Tips
 
@@ -110,58 +106,9 @@ See [Meta Quest Integration](../../Integrations/Meta-Quest/index.md) for detaile
 
 A structured, organized layout where services are arranged in a grid pattern.
 
-<!--
-**Best for:**
-
-- Large systems with many services
-- Comparing metrics across services
-- Finding specific services quickly
-- Presentations and screenshots
-
-**Features:**
-
-- Services arranged in orderly rows and columns
-- Consistent spacing for easy scanning
-- Sort by name, latency, error rate, or throughput
-- Filter to show only specific service types
-- Clear labels visible at all zoom levels
-
- **Controls:**
-
-| Action | Control | Description |
-|--------|---------|-------------|
-| Sort Services | `S` then select criteria | Reorder grid by metric |
-| Filter | `F` then type | Show matching services |
-| Group By | `G` + `1-4` | Group by namespace/type/status/custom | 
--->
-
 ### The Service Graph
 
 A dynamic, force-directed layout showing actual service relationships and dependencies.
-
-<!-- **Best for:**
-
-- Understanding service dependencies
-- Tracing request flows
-- Identifying architectural patterns
-- Troubleshooting cascading failures
-
-**Features:**
-
-- Services positioned by their connections
-- Connected services cluster together
-- Request flows visualized as animated paths
-- Dependency depth visible at a glance
-- Isolated services stand out visually
-
-**Controls:**
-
-| Action | Control | Description |
-|--------|---------|-------------|
-| Pin Service | `P` on selected | Lock position in space |
-| Unpin All | `Shift` + `P` | Release all pinned services |
-| Expand Cluster | Double-click cluster | Show hidden services |
-| Collapse Cluster | `Shift` + double-click | Group related services | -->
 
 ### Switching Views
 
@@ -169,30 +116,6 @@ A dynamic, force-directed layout showing actual service relationships and depend
 |--------|---------|
 | Traces & Logs Camera View | `M` |
 | Services & Dependencies Camera View | `N` |
-
-<!-- 
-## Camera Modes
-
-### Free Flight (Default)
-
-Move freely in any direction. Best for exploring and getting an overview of your system.
-
-### Orbit Mode
-
-Press `O` to orbit around a selected service. Useful for examining a specific service from all angles.
-
-### Follow Mode
-
-Press `F` after selecting a trace to follow requests through your system. The camera automatically tracks the data flow.
-
-### Top-Down Mode
-
-Press `2` for a birds-eye view of your topology. Good for seeing the overall architecture.
-
-### First-Person Mode
-
-Press `1` to return to standard first-person navigation.
- -->
 
 ## Related
 

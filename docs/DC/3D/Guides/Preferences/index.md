@@ -39,10 +39,13 @@ What the grid draws, and how long it keeps it.
 
 ### Scene
 
-| Setting | What it does | Default |
-|---------|--------------|---------|
-| Grid map | Which grid map variant to load. | First variant |
-| Avatar | Which avatar to wear. | First variant |
+| Setting | What it does | Default | Status |
+|---------|--------------|---------|--------|
+| Grid map | Which grid map variant to load. | First variant | :material-clock: |
+| Avatar | Which avatar to wear. | First variant | :material-clock: |
+
+:material-clock: These two are in the dialog but not finished yet, so the list of
+choices may be empty.
 
 ### Navigation
 

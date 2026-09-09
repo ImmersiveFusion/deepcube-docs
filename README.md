@@ -53,7 +53,12 @@ Look at the serve output for the local URL for the docs.
 ## Use rich elements
 https://squidfunk.github.io/mkdocs-material/
 
-## Publish with from folder where the yaml file is
+## Building the site
+
 ```
 mkdocs build
 ```
+
+This produces the static site in `site/`. It is what CI runs to verify a change,
+and what you can inspect locally. It does **not** publish anything - see
+[How changes reach the site](CONTRIBUTING.md#how-changes-reach-the-site).

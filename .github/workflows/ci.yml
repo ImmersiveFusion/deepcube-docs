@@ -33,7 +33,14 @@ jobs:
     timeout-minutes: 15
 
     steps:
+      # fetch-depth: 0 because git-revision-date-localized reads real history.
+      # On the default shallow clone it cannot date a page whose history is not
+      # present -- a renamed file has none at depth 1 -- and warns per page,
+      # which --strict turns into a failed build. It also means the "last
+      # updated" stamp on every page is only as good as the history fetched.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:

@@ -86,6 +86,13 @@ TITLE_CASES = [
     ("/", SITE_NAME),
     ("/DC/3D/", SITE_NAME),
     ("/dc/3d/", SITE_NAME),
+    # A version directory. Every path segment here contains dots, and serve
+    # resolves a dotted segment as a filename rather than a directory, so these
+    # served a listing in production while returning 200. The suite already knew
+    # that shape (see the comment above) and had no case on the paths where it
+    # was happening.
+    ("/DC/3D/steam/1-9-0/", SITE_NAME),
+    ("/DC/3D/steam/1-18-8/", SITE_NAME),
 ]
 
 # Build artifacts must not be downloadable from a public docs site.

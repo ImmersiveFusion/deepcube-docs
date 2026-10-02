@@ -159,6 +159,23 @@ plugins:
         # rather than merely unfinished. Retired to the page that answers it.
         'Resources/Legal/Data-Security/Data-Residency/index.md': 'Resources/Legal/Data-Security/index.md'
 
+        # Steam notes renamed to dotless. serve resolves a path segment
+        # containing dots as a filename, so /steam/1.9.0/ never reached its
+        # index.html and served a directory listing instead -- on all eleven,
+        # all of which are in the sitemap. Verified against the real server:
+        # the dotless form serves the page, the dotted form lists the folder.
+        'DC/3D/steam/1.9.0.md': 'DC/3D/steam/1-9-0.md'
+        'DC/3D/steam/1.10.0.md': 'DC/3D/steam/1-10-0.md'
+        'DC/3D/steam/1.11.0.md': 'DC/3D/steam/1-11-0.md'
+        'DC/3D/steam/1.12.0.md': 'DC/3D/steam/1-12-0.md'
+        'DC/3D/steam/1.12.1.md': 'DC/3D/steam/1-12-1.md'
+        'DC/3D/steam/1.14.0.md': 'DC/3D/steam/1-14-0.md'
+        'DC/3D/steam/1.14.11.md': 'DC/3D/steam/1-14-11.md'
+        'DC/3D/steam/1.15.0.md': 'DC/3D/steam/1-15-0.md'
+        'DC/3D/steam/1.17.0.md': 'DC/3D/steam/1-17-0.md'
+        'DC/3D/steam/1.18.0.md': 'DC/3D/steam/1-18-0.md'
+        'DC/3D/steam/1.18.8.md': 'DC/3D/steam/1-18-8.md'
+
         # Restructure redirects - preserve old URLs
         # Analysis-and-Visualization → DC/3D / DC/Web
         'analysis-and-visualization/index.md': 'DC/3D/index.md'
@@ -229,14 +246,14 @@ plugins:
         'IAPM/3D/Integrations/Meta-Quest/index.md': 'DC/3D/Integrations/Meta-Quest/index.md'
         'IAPM/3D/Supported-Configurations/index.md': 'DC/3D/Supported-Configurations/index.md'
         'IAPM/3D/Troubleshooting/index.md': 'DC/3D/Troubleshooting/index.md'
-        'IAPM/3D/steam/1.9.0.md': 'DC/3D/steam/1.9.0.md'
-        'IAPM/3D/steam/1.10.0.md': 'DC/3D/steam/1.10.0.md'
-        'IAPM/3D/steam/1.11.0.md': 'DC/3D/steam/1.11.0.md'
-        'IAPM/3D/steam/1.12.0.md': 'DC/3D/steam/1.12.0.md'
-        'IAPM/3D/steam/1.12.1.md': 'DC/3D/steam/1.12.1.md'
-        'IAPM/3D/steam/1.14.0.md': 'DC/3D/steam/1.14.0.md'
-        'IAPM/3D/steam/1.14.11.md': 'DC/3D/steam/1.14.11.md'
-        'IAPM/3D/steam/1.15.0.md': 'DC/3D/steam/1.15.0.md'
+        'IAPM/3D/steam/1.9.0.md': 'DC/3D/steam/1-9-0.md'
+        'IAPM/3D/steam/1.10.0.md': 'DC/3D/steam/1-10-0.md'
+        'IAPM/3D/steam/1.11.0.md': 'DC/3D/steam/1-11-0.md'
+        'IAPM/3D/steam/1.12.0.md': 'DC/3D/steam/1-12-0.md'
+        'IAPM/3D/steam/1.12.1.md': 'DC/3D/steam/1-12-1.md'
+        'IAPM/3D/steam/1.14.0.md': 'DC/3D/steam/1-14-0.md'
+        'IAPM/3D/steam/1.14.11.md': 'DC/3D/steam/1-14-11.md'
+        'IAPM/3D/steam/1.15.0.md': 'DC/3D/steam/1-15-0.md'
         'IAPM/Web/index.md': 'DC/Web/index.md'
         'IAPM/Web/release-notes.md': 'DC/Web/release-notes.md'
         'IAPM/Web/Features/index.md': 'DC/Web/Features/index.md'

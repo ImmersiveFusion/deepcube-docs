@@ -10,7 +10,9 @@ This page documents the built-in tools Tessa uses autonomously during conversati
 
 ## Core tools
 
-These tools are available in every Tessa conversation, on every DeepCube surface, regardless of Grid connection.
+These are the tools Tessa has in the DeepCube 3D client. They are available in
+every conversation there, with or without a Grid connection. Other surfaces
+register their own set, so a tool here is not a promise about Studio or Web.
 
 | Tool | What It Does |
 |------|--------------|
@@ -27,6 +29,26 @@ These tools are available in every Tessa conversation, on every DeepCube surface
 | **WebSearch** | Search the web for information |
 | **WebFetch** | Fetch and analyze web pages |
 | **GetCurrentTime** | Current date and time queries |
+| **Feedback** | Send feedback about a tool, a response, or Tessa herself. Categorised as bug, suggestion, quality, performance, UX or praise. |
+| **WebPost** | Send an HTTP POST to a URL and return the status, notable headers and the body. For driving an API, not for reading a page. |
+| **GetPreferences** | Read your preferences, and which of them she is allowed to change. |
+| **SetPreference** | Change a preference, for the subset marked as hers to change. |
+
+## Shoebox tools
+
+A shoebox is a Mermaid diagram of services calling each other, and a run of it. Ask
+for one in words and Tessa builds it; you never choose a language or a stack.
+
+| Tool | What It Does |
+|------|--------------|
+| **MakeShoebox** | Build a shoebox from a described topology - services, APIs, a call chain - as a diagram and a run. |
+| **RunShoebox** | Fire the diagram already loaded in the conversation, optionally several times with a delay between them. Up to five runs. |
+| **ShareShoebox** | Return a URL that opens the loaded diagram in the Shoebox editor. It does not run anything. |
+
+!!! note "Running several times on purpose"
+    **RunShoebox** taking a repeat count is what lets you watch an intermittent
+    failure happen exactly once - a replica that breaks on the third call, for
+    instance, rather than one that breaks every time.
 
 ## Diagnostic tools
 
@@ -37,6 +59,10 @@ When Tessa is connected to a Grid, she also has access to diagnostic tools via t
 - Tessa selects tools autonomously based on what you ask; you don't invoke them by name.
 - The **Write** and **Edit** tools only run inside Active Workspaces; Reference workspaces are read-only.
 - The **Task** tool spawns sub-agents that run with restricted, read-only permissions (file reads and search only).
+- **WebPost** can only reach hosts on an allowlist the client configures. It is the
+  one tool here that writes to somewhere other than your own machine.
+- **SetPreference** covers only the preferences marked as hers. Redaction, sign-in
+  and the frame budget are deliberately outside it. See [Preferences](../Guides/Preferences/index.md).
 
 ## Related
 

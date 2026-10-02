@@ -75,6 +75,11 @@ def build_config() -> dict:
     # shipped. Verified both ways.
     return {
         "cleanUrls": True,
+        # A docs site has nothing to gain from serving a file index, and it is
+        # how the Steam notes failure presented: a dotted directory that serve
+        # would not resolve to its index.html listed its contents instead, with
+        # a 200, which is invisible to any check that only reads status codes.
+        "directoryListing": False,
         "headers": headers,
         "redirects": redirects,
         "rewrites": rewrites,

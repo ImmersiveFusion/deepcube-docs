@@ -121,6 +121,26 @@ thing to try if the client struggles on a busy grid.
     database names everywhere they appear, so you do not have to remember which panel
     shows what.
 
+### Diagnostics
+
+| Setting | What it does | Default |
+|---------|--------------|---------|
+| Record teleport and fall diagnostics | Records how each arrival lands, and why a fall happened. | Off |
+
+!!! tip "If you fall through the ground after a teleport"
+    Turn this on, do it again, and send the log. It is off by default because it
+    checks the ground every frame.
+
+### Demo
+
+| Setting | What it does | Default |
+|---------|--------------|---------|
+| Show demo screens on platforms | Shows the demo screens on platforms. | Off |
+
+The screens are filled from `demo-screen-1.csv` to `demo-screen-3.csv` in the
+Demo folder of the app's data directory, and **the data in them is made up**.
+Turn the setting off and on again to reload the files.
+
 ### Sign-in
 
 | Setting | What it does | Default |

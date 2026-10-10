@@ -6,6 +6,58 @@ description: Version history for DeepCube&trade;, newest first. Entries keep the
 
 ## Version History
 
+### 1.18.27 <small>September 30, 2026</small> { id="1.18.27" }
+
+**Introduction:**
+
+Everything since 1.18.8 is in this update. Preferences are rebuilt from the ground up, and Tessa can now read them and change some of them for you. When the frame rate gives out, the client says so and offers one click down. In the Shoebox sandbox, Tessa checks a diagram before she runs it and tells you what she assumed and what did not match. Busy grids do less work every frame, and two causes of falling through the ground are fixed.
+
+**New Features:**
+
+- **Preferences, Rebuilt**: Press F9 in a grid to open Preferences, now grouped into World, Display, Effects, Assistant and Advanced. Rendering quality is a dropdown of six levels, from Ray Tracing (Realtime GI) down to Minimum, and a fresh installation starts on Medium (an existing installation keeps the level it had). The level you choose is now saved with the rest of your preferences. The sky overhead is a setting of its own, and **Reset To Defaults** puts everything back in one press, landing rendering quality on Minimum because reset is what you reach for when the client is misbehaving. It does not sign you out.
+- **Tessa Reads and Changes Your Preferences**: Ask Tessa what a setting is set to, or ask her to change it. She can change some preferences, but not rendering settings, sign-in or redaction, which stay yours to set.
+- **One Voice Across Clients**: Tessa's voice is saved to your account, so a voice chosen here is the one you hear in DeepCube Web, and the other way round.
+- **Frame-Rate Prompt**: If the frame rate stays under 30 for ten seconds (after a 15-second warm-up), the client says so and offers to lower rendering quality by one level. After each prompt it stays quiet for five minutes, and at Minimum it suggests using filters to show fewer blocks instead. Choose **Don't Ask Again** to switch it off, or turn it back on under Assistant in Preferences. The new-version prompt has its own **Don't Ask Again** too.
+- **Demo Screens on Platforms**: Turn on **Show demo screens on platforms** (Advanced, off by default) and each service platform shows three demo tables, filled from `demo-screen-1.csv` to `demo-screen-3.csv` in the app's Demo folder. A missing or unreadable file shows an empty screen titled with its file name. The data is whatever you put in the files.
+
+**Improvements:**
+
+- **Shoebox, Checked Before It Runs**: Tessa loads and checks your diagram before anything runs, then runs it as a separate step. She reads out the run's notes alongside the result, tells you what she assumed, and shows you the diagram she drew when she read it from a picture, so you can correct a misreading. Loops in the diagram, and services nothing calls, are reported to you rather than redrawn away. If she reaches a third different diagram without running one, she stops and runs what she has instead. Ask for several runs and she paces them within the turn, saying so if she had to space them closer than you asked. A share link matches the diagram that actually ran, and `/clear` starts a fresh Shoebox.
+- **Tessa Sees What You Send Her**: A message that is only an image now reaches her, and recent images stay in the conversation, so she can refer back to one you sent earlier. On the Shoebox grid, paste a screenshot of an architecture diagram and ask her to run it. Anything you send to the Shoebox lands in a public sandbox, so leave out anything proprietary.
+- **Tessa Clears the Map**: Ask her to clear the service map and she does.
+- **Tessa Says When Her Service Is Waking Up**: When the assistant service is starting, the chat says so once and waits for it. If it never comes up, the chat says the service did not start and that sending your message again should work.
+- **A Quiet Turn Says What Ran**: When Tessa's tools finish their work but she adds no closing sentence, the chat shows a short muted note naming what ran.
+- **Phantoms as Questions**: Tessa now treats a phantom as a question to answer, saying what was inferred and from what evidence, rather than announcing a discovery.
+- **Connections Stay on the Map**: An idle connection now thins but stays on the graph until it has had no traffic for **Keep connections for** (under Advanced in Preferences: 60 to 300 seconds, default 300), instead of disappearing within 20 seconds.
+- **Lighter Busy Grids**: Blocks and the service graph do less work every frame. Tesseracts animate only when they are close and in view, and a platform's portal appears only when you are near it, while the hub keeps its own.
+- **Help, Rewritten**: The Help screen now describes DeepCube, explains what a block is, and says where to go when the frame rate drops.
+- **Teleport Diagnostics on Request**: **Record teleport and fall diagnostics** (Advanced, Diagnostics) is off by default, so the avatar does no extra work each frame. If you fall, turn it on and teleport again: it takes effect from your next teleport, with no restart. Everything it records now goes to the same log file as the rest of the client.
+- **Security Update**: Updated a bundled component to fix a high-severity vulnerability (CVE-2026-26127) that could affect the app's availability.
+
+**Bug Fixes:**
+
+- Fixed teleporting off a moving platform carrying you with it as you left, which could drop you through the ground on arrival.
+- Fixed falling when the platform you were standing on was removed after five minutes without traffic. You are now returned to the hub.
+- Fixed a newly seen service's first traces drawing no queue or dependency nodes, and no connections between its services.
+- Fixed the chat staying blank when two copies of the app ran at once. Each copy now gets a working chat, and if the chat cannot start, it says so.
+- Fixed the chat waiting forever when one sentence of speech failed.
+- Fixed the "Thinking" indicator staying on screen after a turn failed.
+- Fixed the new-version prompt linking to a page that no longer exists.
+- Fixed the Preferences tabs scrolling sideways.
+
+**Known Issues:**
+
+- The chat handles one conversation at a time. The transcript survives reopening the window, but it is not saved between sessions, so a fresh run starts a fresh conversation.
+- An open Preferences screen does not refresh when a setting changes elsewhere, for example when Tessa changes it. Close and reopen Preferences to see the current value.
+- If the preferences file cannot be written, a change still applies for the rest of the session but is gone after a restart, with no warning.
+- On a platform you have already visited, reloading the demo screens refreshes their rows and titles only. A change to a file's columns, or a file deleted or fixed since your visit, needs an app restart to show there.
+- The fix for being carried off a platform as you teleport does not yet apply in VR.
+- Asking Tessa to clear the service map does not remove trace blocks.
+- At the start of a conversation, a request like "a shoebox of 5 microservices calling each other" can get an answer about writing code. Remind Tessa that a Shoebox is the sandbox, and she builds it.
+- After her tools have run, Tessa's written answer can occasionally come back empty. The chat shows what ran, but the answer itself is lost; ask again.
+- Demo mode hides only the grid's name. Hosts, URLs and database names in your telemetry are shown as your services report them, with Demo mode on or off. Check what is visible before you demo or share your screen.
+- macOS support is experimental and may lack full feature parity with Windows builds.
+
 ### 1.18.8 <small>August 30, 2026</small> { id="1.18.8" }
 
 **Introduction:**

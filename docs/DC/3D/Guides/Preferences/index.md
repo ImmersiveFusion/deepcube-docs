@@ -153,12 +153,13 @@ thing to try if the client struggles on a busy grid.
 
 | Setting | What it does | Default |
 |---------|--------------|---------|
-| Demo mode | Redact hosts, URLs and database names from everything shown. | Off |
+| Demo mode | Meant to redact hosts, URLs and database names. In this version it hides only the grid name (see the warning below). | Off |
 
-!!! tip "Before you share a screen"
-    Turn on **Demo mode** before demoing or screen-sharing. It redacts hosts, URLs and
-    database names everywhere they appear, so you do not have to remember which panel
-    shows what.
+!!! warning "Do not rely on Demo mode to hide your infrastructure"
+    In this version, Demo mode hides only the grid's name. Hosts, URLs and database names
+    in your telemetry are shown as your services report them, with Demo mode on or off.
+    Until this is fixed, check what is visible before you demo or share your screen, or
+    use a grid whose data you are happy to show.
 
 ### Diagnostics
 
@@ -195,7 +196,7 @@ you reach for when the client is misbehaving, so it lands on the level most like
 draw. Raise it again once the client is behaving.
 
 It resets everything at once and cannot be undone. That includes **Demo mode**, which
-goes back to Off: if you are sharing your screen, turn it on again before you carry on.
+goes back to Off.
 
 Things that are stored but are not settings are left alone: where you dragged the
 chat window, and which sign-in scheme you are using. Asking for default settings is

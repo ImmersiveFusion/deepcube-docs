@@ -59,13 +59,52 @@ choices may be empty.
 
 | Setting | What it does | Default |
 |---------|--------------|---------|
-| Rendering quality | How much the renderer is asked to do. Lower it if the frame rate drops. | Engine default |
-| Window mode | Whether the app runs full screen, borderless or in a window. | Engine default |
-| Vertical sync | Waits for the display before drawing. Off removes the frame-rate ceiling. | Engine default |
+| Rendering quality | How much the renderer is asked to do. Lower it if the frame rate drops. | Medium |
+| Window mode | Whether the app runs full screen, borderless or in a window. | Borderless |
+| Vertical sync | Waits for the display before drawing. Off removes the frame-rate ceiling. | Every frame |
 | Render resolution | Edge length the screen cameras draw at. | Matches quality level |
 
-Until you choose one, these four follow whatever the engine picks for your hardware.
-Once set, your choice survives a restart.
+Nothing is detected from your hardware. Until you choose, these four keep whatever this
+machine last used, which on a fresh installation is the default shown. Once set, your choice survives a restart.
+
+#### Rendering quality
+
+Rendering quality is a list of six levels, from the most expensive to the cheapest:
+
+1. Ray Tracing (Realtime GI)
+2. Ray Tracing
+3. High
+4. Medium
+5. Low
+6. Minimum
+
+A fresh installation starts on **Medium**. Until you choose a level here, the client
+keeps the one this machine last used, so an installation that ran an earlier version
+can still be on the level it had then.
+
+If the frame rate is low, choose a cheaper level: **Minimum** is the one most likely to
+run on a machine that is struggling, and you can go straight to it rather than stepping
+down one at a time. **Reset To Defaults** also lands on **Minimum** (see
+[Resetting preferences](#resetting-preferences)). If it is still slow at **Minimum**,
+lower [Blocks per frame](#budget) next, or use filters to show fewer blocks.
+
+The client can also offer to lower it for you. With **Tell me when the frame rate
+drops** on (the default, under [Assistant > Prompts](#prompts)), after a 15-second warm-up the
+client watches for a frame rate under 30 for ten seconds and offers to step down one
+level. After each prompt it stays quiet for five minutes. Once you are on **Minimum**
+there is nothing lower to offer, so it suggests using filters to show fewer blocks
+instead.
+
+Rendering quality changes in only two places: this screen (choosing a level, or
+**Reset To Defaults**), and that prompt. If the client is too slow to open Preferences
+and the prompt does not appear, there is no other way to lower it from inside the
+client: [contact support](../../../../contact.md) and say which GPU you have.
+
+!!! info "Minimum requirements"
+    On Windows, the client needs at least a DirectX 12 capable GPU with 3 GB of memory,
+    on 64-bit Windows 10, and 8 GB is recommended. Below the minimum, lowering these
+    settings may not be enough. The full list, including experimental macOS support, is
+    on [Supported Configurations](../../Supported-Configurations/index.md).
 
 ### Interface
 
@@ -149,7 +188,14 @@ Turn the setting off and on again to reload the files.
 
 ## Resetting preferences
 
-Resetting puts every setting above back to what a fresh installation would have.
+**Reset To Defaults** puts every setting above back to what a fresh installation would
+have, including **Borderless** for window mode and **Every frame** for vertical sync, with
+one exception: **Rendering quality** resets to **Minimum**, not Medium. Reset is what
+you reach for when the client is misbehaving, so it lands on the level most likely to
+draw. Raise it again once the client is behaving.
+
+It resets everything at once and cannot be undone. That includes **Demo mode**, which
+goes back to Off: if you are sharing your screen, turn it on again before you carry on.
 
 Things that are stored but are not settings are left alone: where you dragged the
 chat window, and which sign-in scheme you are using. Asking for default settings is
@@ -162,4 +208,6 @@ folder under `Immersive Fusion/DC`:
 - **macOS:** `~/Library/Application Support/Immersive Fusion/DC/preferences.json`
 
 The file is encrypted, so it is not meant to be edited by hand. Deleting it returns
-everything to defaults on the next start.
+the settings it stores to their defaults on the next start, but it is not the same as
+Reset: rendering quality, window mode and vertical sync are left at whatever this
+machine last used. To drop to **Minimum**, use Reset.

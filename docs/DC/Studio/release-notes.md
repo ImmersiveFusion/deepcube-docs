@@ -9,6 +9,17 @@ description: Version history for DeepCube&trade; Studio, which is in early acces
 
 ## Version History
 
+### 1.6.0 <small>September 30, 2026</small> { id="1.6.0" }
+
+**Introduction:**
+
+Two fixes to Tessa in this alpha. An image you attach is now sent with your later messages in the same conversation, and Tessa answers as Tessa when Studio runs on a model configured in its settings file instead of a DeepCube assistant instance. This entry covers the 1.4.4, 1.5.0 and 1.6.0 alpha builds.
+
+**Bug Fixes:**
+
+- Fixed an attached image reaching Tessa only on the turn you sent it and being invisible to her on every turn afterwards (fixed in 1.4.4). It is now included in the conversation history Studio sends with each later message in the same conversation.
+- Fixed the assistant not answering as Tessa when Studio runs with a model configured in its settings file instead of a DeepCube assistant instance (fixed in 1.5.0).
+
 ### 1.4.3 <small>August 26, 2026</small> { id="1.4.3" }
 
 **Introduction:**

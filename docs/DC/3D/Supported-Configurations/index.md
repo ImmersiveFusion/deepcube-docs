@@ -81,7 +81,7 @@ Not sure if your system meets the requirements?
 
 If DeepCube runs slowly:
 
-1. Lower graphics quality in **Preferences** → **General** → **Rendering Quality**
+1. Lower **Rendering quality** in [Preferences](../Guides/Preferences/index.md#rendering-quality) (`F9` in a grid, then **Display** > **Rendering**)
 2. Close other GPU-intensive applications
 3. Ensure your graphics drivers are up to date
 4. Check that you meet minimum requirements

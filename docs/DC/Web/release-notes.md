@@ -6,6 +6,88 @@ description: Version history for DeepCube&trade; Web, newest first.
 
 ## Version History
 
+### 3.189.0 <small>October 13, 2026</small> { id="3.189.0" }
+
+**Introduction:**
+
+This release rolls up everything since 3.183.0, and the theme is seeing the rest of the grid at the moment something happened. A new Snapshot page, and a tab on every trace and log, show which services sent traces at that time, and when that cannot be known they say why instead of showing an empty list. In the API, the grid graph now keeps one node per service through restarts, which changes the shape of its nodes. The node count for a billing cycle is now rounded down.
+
+**New Features:**
+
+- **Snapshot**: A new **Snapshot** page, under Traces and Logs in the menu, shows how a grid was doing over the range selected in the time range picker. It has the same Apdex, request rate, error rate and p90 charts as the trace and log lists, and lists the services that sent traces in the last 5 minutes of the range. It replaces the Moment page and the Grid Summary tab of earlier builds.
+- **Around This Span and Around This Log**: Trace and log details have a new tab listing every service that sent traces in the 5 minutes before the span or log line, with that span's or line's own service first and marked. **See the whole grid at this time** opens the Snapshot page on the 15 minutes ending there.
+- **A Snapshot Says What It Cannot See**: If the data for a time is still arriving, the snapshot shows the newest time whose data is complete, and warns that the time is too recent only if even that is incomplete. If the services at a time cannot be determined, the snapshot gives the reason instead of an empty list, and says that a missing service means there is no information about it, not that it was down. A time whose data has aged out says the data has been removed. If loading fails, the snapshot says so and offers **Try again**.
+- **Moment API**: `GET /apm/grids/{gridSecondaryId}/moment?at=` lists the services that sent traces (spans) in the 5 minutes up to the requested time, or names the reason in `state.withheld` when that could not be measured. `at` is required (a time with no offset is read as UTC), and `window` is an ISO 8601 duration (default `PT15M`, at most `PT1H`) that sets the period for the graph and figures, not the 5-minute services list; a missing `at`, an invalid `window` or an `include` other than `graph` returns `400`, and a grid you have no role on returns `404`. `include=graph` adds the grid graph for the moment's own window, in the same shape as `GET /apm/grids/{gridSecondaryId}/graph`, or `null` when the data cannot support one. `evidence.expiresAt` states when the moment's data is no longer available. The readings that change on every request are returned in the `X-Moment-Watermark` and `X-Moment-Retention-Floor` headers, not the body. Like trace and log queries, the moment and graph endpoints are rate limited and answer `429` when the limit is reached.
+
+**Improvements:**
+
+- **Grid Graph: One Node per Service (Breaking Change)**: In `GET /apm/grids/{gridSecondaryId}/graph`, each service node is now a whole service, with the instances that sent spans in the window listed in `instances` for display, so a restart or a rolling deploy keeps the same node instead of replacing it. Separate per-instance nodes are no longer returned, `identity.instance` is always `null`, `metrics.scope` is always `own`, and the `anchorId` and `level` fields are removed. Clients that keyed on instance nodes or read any of these fields need updating.
+- **Refused Requests Count as Errors in the Graph**: A request refused with `429` now counts toward a node's error rate in the grid graph. It used to count as a success, so a service refusing most of its traffic could look healthy. Dashboards or alerts built on a node's `errorRate` may show higher values from this release.
+- **Log Details Match Trace Details**: Opening a log now shows the log line itself above its trace, and the log view has the same Span View, Network Graph, Log Summary, Error Summary and Events tabs as the trace view. The Events tab used to show a "next release" placeholder.
+- **The Detail Panel Leaves the List in View**: The panel that opens from a trace or log now takes about half the window instead of nearly all of it, so the list you opened it from stays beside it. On windows 1280 pixels wide or narrower it still takes most of the screen.
+- **Plainer Alert Summary**: The diagnostics alert summary no longer reports "active alerts". It now says whether any service exceeded its thresholds in the window checked, and states that nothing is monitoring between checks.
+- **Fewer Third-Party Scripts**: DeepCube Web no longer loads Google Analytics. The affiliate tracking script now loads only for visitors who arrived through an affiliate referral link, or who return carrying its tracking cookie, and pages now send only their origin to other sites as the referrer.
+
+**Bug Fixes:**
+
+- Security fixes to grid access and data isolation.
+- Fixed the node count for a billing cycle being rounded to the nearest whole node. The cycle average is now rounded down instead, so an average of 6.67 nodes is billed as 6, not 7.
+- Fixed editing a subscription resetting its metered node count to 1 until the next nightly usage update. An edit now leaves the items already on the subscription untouched.
+- Fixed `GET /apm/grids/{gridSecondaryId}/moment` failing with `500` on every request in earlier builds.
+- Fixed entering an instance returning a `routingKeyPrefix` that nothing ever published to, so a client that subscribed with it received nothing. The field is now null.
+- Fixed the plan label beside the energy bar, such as "Personal subscription", running under the notification bell in the header.
+
+**Known Issues:**
+
+- The Moment API's figure tiles are not populated yet: every tile names a reason instead of a value. On a very busy grid, with more than 50,000 spans in the 5 minutes, the services list is also withheld, with the reason given.
+- Time travel, replaying a grid over a period, remains unavailable. Snapshot shows the services at a single time.
+- In some cases a new subscription is created without the plan details its grids need, and creating a grid on it is refused until the subscription is corrected.
+- When creating a personal access token is refused, the API returns `403` with no machine-readable reason, or `404` for a grid or hub you cannot see. Do not retry a `403` automatically.
+
+### 3.183.0 <small>October 1, 2026</small> { id="3.183.0" }
+
+**Introduction:**
+
+This release rolls up everything since 3.177.5, and the theme is being charged for what you actually did. Tessa now counts your conversation with her against your energy, not the fixed instructions sent ahead of every turn, so a visitor to a public grid is no longer stopped after one message. An invitation now grants nothing until it is accepted. Several billing fixes make each subscription pay for its own usage, and the API returns real HTTP status codes in place of server errors.
+
+**New Features:**
+
+- **Grid Graph Endpoint**: `GET /apm/grids/{gridSecondaryId}/graph` returns a grid's services and the connections between them as a single graph. If you lack a role on the grid, this route answers `404`, the same as for a grid that does not exist, so it never reveals which grid IDs are real.
+- **Token Exchange Endpoint**: `POST /oauth2/token` follows the standard OAuth token exchange (RFC 8693): send a form-encoded body, and the `subject_token` must be the same credential you present on the request, or the call fails with `invalid_grant`. It swaps your credential for a one-hour credential that records an actor acting on your behalf, designed to identify Tessa when she acts for you. A credential issued this way cannot create a personal access token.
+
+**Improvements:**
+
+- **Tessa Charges for Your Message, Not the Setup**: Every Tessa request carries a large, fixed block of instructions, and of tool definitions when tools are in use, ahead of what you type. It used to be charged to you whenever the provider's short-lived cache had expired, so the same message could cost many times more on a quiet day than on a busy one. That reusable block is now credited back, so you are charged for the conversation itself: your messages, what you attach and Tessa's replies.
+- **Usage Limits Agree with the Energy Bar**: Limits now count usage against whoever actually paid for it, the grid you are visiting or your own subscription, so the check that refuses a request counts usage the way the energy bar does.
+- **Refusals Say Whose Allowance Ran Out**: When a request is refused, the message now names the budget that is used up: the grid's visitor allowance, or your own subscription for the current period.
+- **Chat Without Tools Is Now Counted**: Tessa requests that use no tools used to record no usage. They now count toward your energy like any other request.
+- **Grid Nodes Billed over the Days a Grid Reported**: A grid's node count is now averaged over the days it sent telemetry, rather than over every day of the billing cycle. A day with no telemetry, for example while an API key has expired, no longer pulls your bill down for the rest of the cycle. A grid that is switched off for part of the cycle now bills its average size while it was running, which is more than before. Averages are rounded to the nearest whole node.
+- **Invitations Must Be Accepted**: Every invitation that is created is now pending and sends its link, even when the address already has an account. Access starts only when the invitee signs in and accepts, and an invitation for access the person already has is refused. The "permission granted" email that used to go out before anyone had accepted is no longer sent.
+- **Clearer API Errors**: Requests that used to fail with `500` now return a status you can act on. A malformed or all-zero grid, environment or instance ID returns `404`. Chat and speech return `404` for an unknown user or a caller who is not an active participant, `429` when energy is exhausted (with a `Retry-After` header when the recharge time is known), and `503` when speech is not configured. Entering an instance while a model is briefly unavailable returns `503`. Errors use the standard RFC 9457 problem details format, except on `POST /oauth2/token`, which answers with standard OAuth error codes.
+- **API Limits**: Trace and log queries now reject a range wider than 31 days, which still covers the Last 30 Days, This Month and Last Month presets, and reject a range whose start is after its end, both with `400`. Rate limits now apply to trace and log queries, diagnostics, chat, speech, energy detail, products and subscription changes, and to some endpoints that need no sign-in, which are limited per IP address. A rate-limited request returns `429`, the same status as exhausted energy; only the energy case carries `Retry-After`.
+- **Secrets Are Never Cached**: The responses that carry a password, key or token now always carry `Cache-Control: no-store`, so browsers and proxies do not store them.
+- **Images Without a Caption**: A chat request that sends client tools, including the streaming chat request, can now include an image with no text prompt, so you no longer need a placeholder caption. Clients generated from an earlier version of the API still require a prompt until they are regenerated.
+
+**Bug Fixes:**
+
+- Security fixes to grid access and data isolation.
+- Fixed certain Tessa messages tying up the server for several seconds.
+- Fixed a security advisory in a third-party dependency (CVE-2026-26127, denial of service).
+- Fixed Tessa refusing messages after only a few turns while your budget was still unspent, because the check made before each message counted the fixed instructions that billing credits back.
+- Fixed Tessa refusing every message for the rest of the day once a daily total was passed, even when the current period still had budget and the energy bar showed it.
+- Fixed your personal Tessa use (home space and private grids) being charged to a public grid's visitor allowance.
+- Fixed subscriptions that share one billing profile being billed the same usage figure, so a seat or node count from one subscription could be applied to the other. Each subscription is now billed its own usage.
+- Fixed editing a subscription failing with "Grid quality tier was not resolved for this subscription".
+- Fixed a subscription edit sent through the API without `addOns` silently adding default add-ons. Leaving `addOns` out now means no add-on change.
+- Fixed inviting an email address that is shared by two accounts failing outright.
+- Fixed an invitee with an email address longer than 64 characters failing their first sign-in after being invited.
+
+**Known Issues:**
+
+- Time travel remains unavailable while replay is being reworked.
+- In some cases a new subscription is created without the plan details its grids need, and creating a grid on it is refused until the subscription is corrected.
+- When creating a personal access token is refused, the API returns `403` with no machine-readable reason, or `404` for a grid or hub you cannot see. Do not retry a `403` automatically.
+
 ### 3.177.5 <small>August 30, 2026</small> { id="3.177.5" }
 
 **Introduction:**

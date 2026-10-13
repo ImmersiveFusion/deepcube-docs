@@ -11,6 +11,7 @@ DeepCube Web provides browser-based access to your application telemetry at [por
 | **[Dashboard](#dashboard)** | Health scores, throughput, latency percentiles (P50/P95/P99), and error rates at a glance |
 | **[Trace Analysis](#trace-analysis)** | Waterfall, flame graph, and network graph views with detailed span inspection |
 | **[Log Search](#log-search)** | Full-text log search with structured filtering |
+| **[Snapshot](snapshot.md)** | Which services sent traces at the end of the selected time range, beside the summary charts |
 
 ## AI Assistant
 

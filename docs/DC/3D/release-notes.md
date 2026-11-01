@@ -6,6 +6,84 @@ description: Version history for DeepCube&trade;, newest first. Entries keep the
 
 ## Version History
 
+### 1.23.1 <small>October 29, 2026</small> { id="1.23.1" }
+
+!!! warning "Before you update: link Steam to your DeepCube account"
+    **Go to [id.deepcube.ai/account](https://id.deepcube.ai/account) and link Steam first, before your next launch from Steam.**
+
+    From this version, launching from Steam signs you in with Steam first, before your saved session. If Steam is not linked to your DeepCube account, you are signed in to a separate, new account, without your grids or your subscription.
+
+**Introduction:**
+
+Launching from Steam now signs you in with Steam, with no login screen. Link Steam to your DeepCube account at https://id.deepcube.ai/account before your first Steam launch after this update, so that the Steam sign-in lands on your existing account.
+
+**New Features:**
+
+- **Sign In with Steam**: When you launch from Steam, the client signs you in with your Steam account and goes straight to the Lobby. The Steam sign-in comes first, before a saved session, and a Steam account that is not linked to your DeepCube account signs you in to a separate, new account. If Steam is not running, gives no sign-in ticket within 10 seconds, or the sign-in is refused, the client uses your saved session, and if that fails, shows the Login screen, where **Start** opens the browser sign-in. **Log Out** takes you to the Login screen, and the client does not sign you in again by itself until you press **Start** or restart it; **Start** opens the browser sign-in, and the next Steam launch signs you in with Steam again. Outside Steam, the client never starts Steam and you sign in with your DeepCube account as in 1.23.0; the changes under Improvements apply there too.
+
+**Improvements:**
+
+- **Signed In Where You Are**: Opening a part of the client that needs you signed in now signs you in on the spot, with Steam or your saved session, instead of sending you to the Login screen. If that does not work, Login takes you back to where you were once you sign in. **Start** now takes you to the Lobby.
+- The macOS microphone prompt now says **Talk to the AI Assistant**, and the in-app help calls her the AI Assistant or Tessa.
+
+**Known Issues:**
+
+- The known issues listed for [1.23.0](#1.23.0) still apply.
+
+### 1.23.0 <small>October 29, 2026</small> { id="1.23.0" }
+
+**Introduction:**
+
+Everything since 1.18.27 is in this update. Signing in is one step: the client no longer asks which kind of account you have, and it keeps you signed in between launches. Tessa now asks before she clears the service map, builds or runs a Shoebox, requests a replay or changes a preference, and asks every time before she shares a Shoebox or goes to the web. A service is one platform however many instances serve it, and its nameplate says how many are live. Phantoms are drawn only once they have been judged, they show their names, and the lines to them are easier to follow. The full-range skies are back, forty of them. Spans that recorded an exception, or answered with an HTTP 5xx or 429, now count as failures, so some services may show a higher error rate than before.
+
+**New Features:**
+
+- **One Sign-In That Stays**: The Login screen no longer offers a list of account types. Press **Start** and sign in with your DeepCube account in your browser (or inside the app, if **Sign in inside the app** is on under Advanced); the browser tab then says you are signed in, and you can close it. The client remembers your session, so on the next launch it signs you straight in while that session is still valid. Signing out clears it from this machine. If you sign in inside the app, the session is not resumed, and you sign in at each launch. Sign in once after this update, with the same method you used before: signing in with Steam instead creates a separate account unless you first link Steam to your account at https://id.deepcube.ai/account. If you signed in with a Microsoft work or school account, your account, grids and subscription are unchanged. Sessions from earlier versions do not carry over.
+- **Tessa Asks First**: Before Tessa clears the service map, builds or runs a Shoebox, requests a replay or changes a preference, she asks you, showing what she wants to run (the start of it, for a long request). One yes covers that kind of action for the rest of the session: a yes to one preference change also covers her later preference changes. Sharing a Shoebox, and fetching from, posting to or searching the web, ask every time. Reading your telemetry, and opening an instance's error, never ask. A no applies to that one request only, and closing the prompt without answering counts as a no.
+- **Instances on the Nameplate**: A service's nameplate now counts its instances, for example `2 live` or `1 live, 1 quiet`. An instance is live while it has sent a span within five minutes of the service's latest one, and quiet after that; one that stays silent for an hour drops off the count. Both are measured against the service's newest span, not the clock, so a service that stops sending altogether keeps its last count. The count covers what this client has seen since it started. A service whose spans do not say which instance sent them shows `instances unknown`, and a phantom shows no count. Ask Tessa how many instances a service has and which one is failing, or ask her to open the newest error from one. If that trace has already left the grid, she takes you to the service's platform instead.
+- **Forty Skies**: The full-range HDR skies are back, and **Skybox** (Effects, in Preferences) now lists all forty by name. Night and Day keep their places at the top, so the sky you had chosen is still chosen. The new **Sky movement** setting sets how fast the clouds drift, from 0 (still) to 1000, default 300, so clouds now drift unless you set it to 0. Tessa can change both.
+- **`/node-ids`**: Type `/node-ids` in the chat for a list of every node on the grid: the identity the client filed it under, its instances (live or quiet, and when each was first and last seen) and how many of its spans the client has seen. The same list is saved as a text file in the client's `logs` folder, so you can send it with a support request. It names your services and their instances, and Demo mode does not hide them, so check it before you share it. Times are as seen by this client, so they start again after a restart.
+
+**Improvements:**
+
+- **One Platform per Service**: A service is now one platform, however many pods or instances answer for it. A deploy or a restart no longer starts a new platform with fresh history, so a grid with many replicas draws fewer platforms than before. There is no setting to go back to one platform per instance.
+- **Phantoms, Judged Before They Are Drawn**: A node is drawn as a phantom only once it has been judged one, so a service too new to judge no longer appears as a phantom and then clears itself a few minutes later. Calls to a public host name that none of your reporting services uses, such as a payment or email provider's API, and calls to databases are drawn as external dependencies, not phantoms. A service of your own that sends no telemetry and is reached by a public host name is drawn the same way. A call also counts as answered when a server's span in the same trace answers it, even if that server reports no host name. A fault that was already present when the client started may not be drawn as a phantom (see Known Issues).
+- **Strain-Lines You Can Follow**: The line from a caller to a phantom is now the same width whatever the traffic, in the phantom's own colors, and narrows toward the phantom, so it shows which end is missing even when nothing moves. A phantom draws lines to its five most recent callers and names them on its screen with a count of the rest, for example `Callers: payment-service, checkout-service, +7`. An error on that connection no longer repaints the line.
+- **More Failures Counted as Failures**: A span that recorded an exception now counts as failed even when its status was never set to error, and so does a span with an HTTP 5xx or 429 response. A service that handles and records its exceptions can now show a non-zero error rate, and turn red, where it showed clean before.
+- **Preferences, Easier to Read**: Each setting's control now sits beneath its name instead of at the far edge of the row, dropdowns show many more choices at once, and the mouse wheel moves the list much further per notch.
+- **New Defaults for Blocks and Connections**: A fresh installation, or **Reset To Defaults**, now sets **Minimum block lifetime** to 300 seconds (was 30), **Possibly-lost after** to 200 (was 30), **Lost after** to 1200 (was 60), **Keep connections for** to 160 (was 300) and **Blocks per frame** to 500 (was 200). All five are under Advanced in Preferences. On a fresh installation, or after a reset, blocks stay on the grid for at least five minutes. An existing installation keeps the values it already has; to take the new ones, use **Reset To Defaults**, which resets every other setting too, including rendering quality to **Minimum** and **Demo mode** to Off, and does not ask first.
+- **Chat Window Collapses**: Double-click the chat window's header, or use its new button, to shrink it to the header, and do the same to bring it back. The chat window and the page your browser shows after sign-in now use the DeepCube look.
+- **Tidier Log Files**: The client's log files now roll over and are capped in size, and logs older than 30 days are deleted. On the first launch after this update, the client also deletes every log file earlier versions wrote, whatever its age.
+- Security fixes to grid access and data isolation.
+
+**Bug Fixes:**
+
+- Fixed a phantom showing no name or tags. It now shows its name, that it is a phantom, what is missing (for example `no-consumer`) and the key it was inferred from.
+- Fixed queues and topics that were being consumed showing a phantom consumer. Consumer spans that arrived too late to draw were never counted; they are now.
+- Fixed one third-party API sometimes appearing as two nodes.
+- Fixed text containing angle brackets, in log lines, error messages or service names, being read as formatting and garbling rows on in-world screens such as Recent Logs.
+- Fixed the interface scaling with screen width, which drew it too large on ultrawide monitors and pushed Preferences off the screen. It now scales with screen height.
+- Fixed the camera turning while you dragged an edge of the chat window to resize it. The camera now pans only when you press on the world.
+- Fixed resizing the chat window writing to disk on every frame of the drag.
+- Fixed two copies of the client getting in each other's way when signing in at the same time.
+- Fixed Tessa offering her alert summary as a way to tell whether anyone is being notified or paged. Nothing is notified or paged: the summary is a check of the grid's current health against fixed thresholds.
+
+**Known Issues:**
+
+- The chat handles one conversation at a time. The transcript survives reopening the window, but it is not saved between sessions, so a fresh run starts a fresh conversation.
+- An open Preferences screen does not refresh when a setting changes elsewhere, for example when Tessa changes it. Close and reopen Preferences to see the current value.
+- If the preferences file cannot be written, a change still applies for the rest of the session but is gone after a restart, with no warning.
+- **Phantom after** (Advanced, in Preferences) is still listed, but changing it no longer changes when a phantom is drawn. Phantoms are now judged over a fixed window of about a minute.
+- A call nothing answers, or a queue nothing consumes, that was already happening when the client started may not be drawn as a phantom. Check that service's connections and error rate rather than waiting for one.
+- If an approval prompt from Tessa is left unanswered for a while, the request can time out, and Tessa may report that you declined it. Ask again and answer the prompt.
+- On a platform you have already visited, reloading the demo screens refreshes their rows and titles only. A change to a file's columns, or a file deleted or fixed since your visit, needs an app restart to show there.
+- The fix for being carried off a platform as you teleport does not yet apply in VR.
+- Asking Tessa to clear the service map does not remove trace blocks.
+- At the start of a conversation, a request like "a shoebox of 5 microservices calling each other" can get an answer about writing code. Remind Tessa that a Shoebox is the sandbox, and she builds it.
+- After her tools have run, Tessa's written answer can occasionally come back empty. The chat shows what ran, but the answer itself is lost; ask again.
+- Demo mode hides only the grid's name. Hosts, URLs and database names in your telemetry are shown as your services report them, with Demo mode on or off. Check what is visible before you demo or share your screen.
+- macOS support is experimental and may lack full feature parity with Windows builds.
+
 ### 1.18.27 <small>September 30, 2026</small> { id="1.18.27" }
 
 **Introduction:**

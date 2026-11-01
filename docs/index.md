@@ -83,9 +83,9 @@ social:
 
 !!! tip "Recent Highlights"
 
-    - **Skills System (3D v1.12)** - Tessa, the AI Assistant, now supports a modular skills framework for extensible diagnostics and guided workflows.
-    - **OTel Data Model (3D v1.11)** - Full adoption of the OpenTelemetry data model for traces, metrics, and logs - bringing standards-based observability to the Grid.
-    - **Live Service Graph (3D v1.10)** - Real-time animated service dependency graph rendered directly on the Grid, showing live traffic flow between services.
+    - **Sign In with Steam (3D v1.23.1)**: launching from Steam signs you in with Steam, falling back to your saved session if that does not work. [Link Steam to your DeepCube account](https://id.deepcube.ai/account) first, or you land in a separate, new account.
+    - **Tessa Asks First (3D v1.23.0)**: before she clears the service map, runs a Shoebox or changes a preference, she shows you what she wants to run.
+    - **One Platform per Service (3D v1.23.0)**: a deploy or a restart keeps the same platform, and phantoms are drawn only once they have been judged.
 
     [:octicons-arrow-right-24: See all updates](whats-new.md)
 

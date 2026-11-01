@@ -10,6 +10,24 @@ Recent updates and features across DeepCube. For complete version history, see t
 
 ## Latest Highlights
 
+### Sign In with Steam, and Tessa Asks First (3D v1.23.1, v1.23.0)
+
+On the Grid, a service is now one platform however many instances serve it, and phantoms are drawn only once they have been judged. Launching from Steam now signs you in with Steam, falling back to your saved session if that does not work, and after a browser sign-in the next launch signs you straight in while that session is still valid. Tessa asks before she clears the service map, runs a Shoebox or changes a preference. Spans that recorded an exception, or answered with an HTTP 5xx or 429, now count as failures, so some services may show a higher error rate than before.
+
+!!! warning "Before you update: link Steam to your DeepCube account"
+    **Go to [id.deepcube.ai/account](https://id.deepcube.ai/account) and link Steam first, before your next launch from Steam.** From 1.23.1, launching from Steam signs you in with Steam first, before your saved session. If Steam is not linked to your DeepCube account, you are signed in to a separate, new account, without your grids or your subscription.
+
+| Feature | Description |
+|---------|-------------|
+| **Sign In with Steam** | Launch from Steam and the client signs you in with your Steam account and goes straight to the Lobby; if Steam sign-in does not work, it uses your saved session, then the Login screen |
+| **One Sign-In That Stays** | Sign in once in your browser, and the next launch signs you straight in while that session is still valid; sessions from earlier versions do not carry over |
+| **Tessa Asks First** | Before she clears the service map, builds or runs a Shoebox, requests a replay or changes a preference, she shows you what she wants to run; one yes covers that kind of action for the session, while sharing a Shoebox and using the web ask every time |
+| **One Platform per Service** | A deploy or a restart no longer starts a new platform with fresh history, and the nameplate counts live and quiet instances |
+| **Phantoms, Judged Before They Are Drawn** | A service too new to judge no longer appears as a phantom and then clears itself; calls to a public host name that none of your reporting services uses, and to databases, are drawn as external dependencies |
+| **Forty Skies** | The full-range HDR skies are back, listed by name, and clouds now drift; set the new Sky movement setting to 0 to keep them still |
+
+See the [1.23.1](DC/3D/release-notes.md#1.23.1) and [1.23.0](DC/3D/release-notes.md#1.23.0) release notes for everything in this update.
+
 ### Immersive APM is now DeepCube
 
 The product you know as Immersive APM, or IAPM, is now **DeepCube™**, the spatial observability platform. The three surfaces are DeepCube, DeepCube Web, and DeepCube Studio.
@@ -79,6 +97,18 @@ Tessa gains extensible capabilities and the ability to analyze images.
 ---
 
 ## Recent Updates
+
+### October 2026
+
+- **3D v1.23.1**: Sign in with Steam when you launch from Steam (link Steam to your DeepCube account first), parts of the client that need you signed in now sign you in on the spot
+- **3D v1.23.0**: One sign-in that stays between launches; Tessa asks before she clears the service map, runs a Shoebox or changes a preference; one platform per service with live and quiet instance counts; phantoms judged before they are drawn; forty skies; `/node-ids`
+- **Web 3.189.0**: Snapshot page and an Around This Span tab, the grid graph keeps one node per service through restarts ([breaking change](DC/Web/release-notes.md#3.189.0) for API clients)
+- **Web 3.183.0**: Tessa counts your conversation against your energy, not her fixed instructions; invitations grant nothing until accepted; billing fixes
+
+### September 2026
+
+- **3D v1.18.27**: Preferences rebuilt, Tessa reads and changes some preferences, frame-rate prompt, Shoebox checks a diagram before it runs
+- **Studio v1.6.0**: Attached images stay in the conversation, and Tessa answers as Tessa on a model configured in the settings file
 
 ### August 2026
 

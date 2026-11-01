@@ -1,0 +1,399 @@
+/* VENDORED from the released @immersivefusion/dc-styles 0.2.2 (tokens.css, byte for byte below this header), the
+   version DeepCube Web pins. Source: IF.UX.Web packages/dc-styles. Same as immersivefusion.com
+   (src/IF.StoreFront.App/wwwroot/css/vendor/dc-tokens.css, PR 4876).
+   Why vendored, not installed: the package lives on the Immersive Fusion Azure Artifacts feed, and neither this
+   repo's GitHub CI nor the publish pipeline (IF.Charts cd-static-site) authenticates to it. Do not edit here: update
+   by re-copying a released version and changing the version above. Switch to the package (pinned exact) once the
+   pipelines authenticate to the feed. Owner of the tokens: IF.UX. */
+/*
+ * SP-081 / ADR-0007: the --if-* design tokens. Values re-tuned in A5 (PBI 3722) to the merged table of
+ * inventory 03 §3 and the prototype; every changed value is listed in 03 §3.3 (the A5 mapping table).
+ *
+ * This is the one place raw literals (hex, rgb, shadow) are allowed; stylelint ignores this folder. It is plain CSS
+ * with no Sass so the Portal can consume the same file later (DEC-5). tools/contrast-gate.mjs reads this file and
+ * gates every text pair at 4.5:1 and every control, ring, series and fill pair at 3:1, light and dark
+ * (src/design/tokens.contrast.spec.ts runs it on every test run).
+ *
+ * Tiers (03 §3.0, prefix map frozen in A5):
+ *   --if-ref-*   primitive: raw ramps. Only the semantic tier reads them.
+ *   --if-*       semantic: role tokens, light/dark pairs written light-dark(<light>, <dark>).
+ *   motif        --if-chamfer-*, --if-glow*, --if-grid-*, --if-hl-inset, --if-decor: only the emitter classes and the
+ *                components named in 03 §6.1 read them.
+ *   --dc-*       component-scoped run-time properties; never declared here.
+ *
+ * Inert outside v2: light-dark() resolves against the consuming element's color-scheme, which is set only inside
+ * [data-ui="v2"] (assets/scss/v2/v2.scss), and no v1 rule reads an --if-* property. Declaring these on :root changes
+ * nothing on a v1 screen (A5 harness: 660/660 with an empty intended-change list).
+ *
+ * Theme-dependent shadows keep one geometry per layer and switch the colour with light-dark(); a layer that exists
+ * in one theme only is transparent in the other (the light theme has no glow and no inset highlight).
+ */
+@layer tokens {
+  :root {
+    /* ==== Primitive tier ================================================================================== */
+
+    /* Graphite ramp (slice 1). Kept, not overwritten (03 §3.0); no semantic token reads it since A5 except
+       --if-ref-neutral-0 and the light unknown --if-ref-neutral-600. */
+    --if-ref-neutral-0: #ffffff;
+    --if-ref-neutral-50: #f6f7f9;
+    --if-ref-neutral-100: #eceef2;
+    --if-ref-neutral-200: #d9dce3;
+    --if-ref-neutral-400: #8a90a0;
+    --if-ref-neutral-600: #565c6b;
+    --if-ref-neutral-800: #1d2029;
+    --if-ref-neutral-850: #161922;
+    --if-ref-neutral-900: #0f1117;
+    --if-ref-neutral-950: #0a0b10;
+    --if-ref-neutral-text-dark: #e6e8ee;
+    --if-ref-neutral-text-light: #14161c;
+
+    /* Navy ramp (Shoebox surfaces, A5): the dark identity. */
+    --if-ref-navy-990: #02060a;
+    --if-ref-navy-950: #060f18;
+    --if-ref-navy-940: #070f18;
+    --if-ref-navy-925: #0a1521;
+    --if-ref-navy-900: #0b1622;
+    --if-ref-navy-890: #0d1b28;
+    --if-ref-navy-850: #12202f;
+    --if-ref-navy-820: #16293c;
+    --if-ref-navy-810: #1a2b3d;
+    --if-ref-navy-800: #1e3247;
+    --if-ref-navy-780: #20374d;
+    --if-ref-navy-750: #2b4560;
+    --if-ref-navy-500: #5f7a91;
+    --if-ref-navy-350: #8a9fb1;
+    --if-ref-navy-300: #8fa8ba;
+    --if-ref-navy-50: #e8f1f6;
+
+    /* Slate ramp (prototype light theme, A5). */
+    --if-ref-slate-25: #f8f9fb;
+    --if-ref-slate-50: #f5f6f8;
+    --if-ref-slate-75: #f0f2f5;
+    --if-ref-slate-90: #eef1f5;
+    --if-ref-slate-100: #eceff3;
+    --if-ref-slate-150: #e6eaf0;
+    --if-ref-slate-200: #e1e4ea;
+    --if-ref-slate-225: #dde2ea;
+    --if-ref-slate-275: #cfd6e0;
+    --if-ref-slate-300: #cbd1da;
+    --if-ref-slate-500: #6f7888;
+    --if-ref-slate-600: #58627a;
+    --if-ref-slate-650: #566074;
+    --if-ref-slate-950: #121722;
+
+    /* Cyan: exact brand #00E5FF (cyan-400) for fills and the dark ring; softened cyan for reading. */
+    --if-ref-cyan-300: #5df0ff;
+    --if-ref-cyan-350: #3ddcf5;
+    --if-ref-cyan-400: #00e5ff;
+    --if-ref-cyan-500: #00b8d4;
+    --if-ref-cyan-650: #0b8eac;
+    --if-ref-cyan-700: #007c8c;
+    --if-ref-cyan-750: #006a80;
+    --if-ref-cyan-800: #00626f;
+    --if-ref-cyan-975: #04212a;
+    --if-ref-teal-300: #5df2e2;
+
+    /* Violet stays in data series (DEC-2), never chrome. */
+    --if-ref-violet-300: #a58bff;
+    --if-ref-violet-400: #7c4dff;
+    --if-ref-violet-600: #5b4ad1;
+
+    /* Status. */
+    --if-ref-green-450: #3fb27f;
+    --if-ref-green-500: #2fbf71;
+    --if-ref-green-700: #17794a;
+    --if-ref-green-800: #146a43;
+    --if-ref-amber-450: #e3a83b;
+    --if-ref-amber-500: #f0a020;
+    --if-ref-amber-700: #8f5d00;
+    --if-ref-amber-800: #7f5200;
+    --if-ref-red-400: #ff6b70;
+    --if-ref-red-500: #ff5d5d;
+    --if-ref-red-650: #c9292f;
+    --if-ref-red-700: #c0262d;
+    --if-ref-red-750: #b0262c;
+
+    /* Energy canon (IF.Knowledge energy-model.md): Optimal cyan, Approaching amber, Conserving grey (blue-grey on dark;
+       neutral grey on light, owner ruling 2026-10-16, so it stays apart from light Optimal under colour-vision deficiency). */
+    --if-ref-amber-550: #b8862d;
+    --if-ref-amber-650: #a86d10;
+    --if-ref-bluegrey-300: #90a4ae;
+    --if-ref-bluegrey-400: #78909c;
+    --if-ref-grey-550: #666666;
+    --if-ref-grey-600: #5c5c5c;
+
+    /* Data series, prototype --s1..--s12 (light s5 #578f0a, 03 §3.1). */
+    --if-ref-s1-dark: #8b7cf6;
+    --if-ref-s1-light: #6d5ce8;
+    --if-ref-s2-dark: #5aa9ff;
+    --if-ref-s2-light: #2f7fe0;
+    --if-ref-s3-dark: #2fbfa8;
+    --if-ref-s3-light: #13998a;
+    --if-ref-s4-dark: #e879c9;
+    --if-ref-s4-light: #c2449f;
+    --if-ref-s5-dark: #a3d94a;
+    --if-ref-s5-light: #578f0a;
+    --if-ref-s6-dark: #94a3b8;
+    --if-ref-s6-light: #64748b;
+    --if-ref-s7-dark: #ff9f68;
+    --if-ref-s7-light: #c2570c;
+    --if-ref-s8-dark: #d6c46a;
+    --if-ref-s8-light: #8a7000;
+    --if-ref-s9-dark: #35d0ff;
+    --if-ref-s9-light: #0b7fa6;
+    --if-ref-s10-dark: #f08a7e;
+    --if-ref-s10-light: #b3463a;
+    --if-ref-s11-dark: #e2e8f0;
+    --if-ref-s11-light: #475569;
+    --if-ref-s12-dark: #59c264;
+    --if-ref-s12-light: #2a7d36;
+
+    /* ==== Semantic tier: colour ============================================================================ */
+
+    /* Surfaces. */
+    --if-bg: light-dark(var(--if-ref-slate-50), var(--if-ref-navy-950));
+    --if-surface: light-dark(var(--if-ref-neutral-0), var(--if-ref-navy-900));
+    --if-surface-raised: light-dark(var(--if-ref-slate-75), var(--if-ref-navy-850));
+    --if-surface-sunken: light-dark(var(--if-ref-slate-100), var(--if-ref-navy-940));
+    --if-surface-overlay: light-dark(var(--if-ref-neutral-0), var(--if-ref-navy-850));
+    --if-surface-inverse: light-dark(var(--if-ref-slate-950), var(--if-ref-navy-50));
+    --if-on-inverse: light-dark(var(--if-ref-neutral-0), var(--if-ref-navy-950));
+    --if-scrim: light-dark(
+      color-mix(in srgb, var(--if-ref-slate-950) 45%, transparent),
+      color-mix(in srgb, var(--if-ref-navy-990) 62%, transparent)
+    );
+
+    /* Foreground (text) colours. --if-fg* are the names from A5 (03 §3.2, H-15): --if-text-* is the type scale. */
+    --if-fg: light-dark(var(--if-ref-slate-950), var(--if-ref-navy-50));
+    --if-fg-muted: light-dark(var(--if-ref-slate-650), var(--if-ref-navy-300));
+    --if-fg-subtle: light-dark(var(--if-ref-slate-600), var(--if-ref-navy-350));
+    /* Deprecated aliases, kept until phase H; new code uses --if-fg*. */
+    --if-text: var(--if-fg);
+    --if-text-muted: var(--if-fg-muted);
+    --if-text-subtle: var(--if-fg-subtle);
+
+    /* Borders. --if-border* are decorative only (1.1 to 2:1); every control boundary uses --if-ctl (WCAG 1.4.11).
+       Stylelint bans --if-border* on input, select and button. */
+    --if-border: light-dark(var(--if-ref-slate-200), var(--if-ref-navy-800));
+    --if-border-strong: light-dark(var(--if-ref-slate-300), var(--if-ref-navy-750));
+    --if-ctl: light-dark(var(--if-ref-slate-500), var(--if-ref-navy-500));
+
+    /* Brand: exact #00E5FF for brand moments only (the primary call to action, selected chip fill), always with dark
+       ink. Never text, ring or line on light. */
+    --if-brand: var(--if-ref-cyan-400);
+    --if-on-brand: var(--if-ref-cyan-975);
+
+    /* Accent: softened cyan for reading (links, active nav text). */
+    --if-accent: light-dark(var(--if-ref-cyan-750), var(--if-ref-cyan-350));
+    --if-accent-hover: light-dark(var(--if-ref-cyan-800), var(--if-ref-cyan-300));
+    --if-accent-ink: light-dark(var(--if-ref-neutral-0), var(--if-ref-cyan-975));
+    --if-on-accent: var(--if-accent-ink);
+    --if-accent-subtle: light-dark(
+      color-mix(in srgb, var(--if-ref-cyan-750) 10%, transparent),
+      color-mix(in srgb, var(--if-ref-cyan-350) 12%, transparent)
+    );
+    /* OD-23: outline CTA, selected chip edge, hover border. .75 light, .55 dark. */
+    --if-accent-line: light-dark(
+      color-mix(in srgb, var(--if-ref-cyan-750) 75%, transparent),
+      color-mix(in srgb, var(--if-ref-cyan-350) 55%, transparent)
+    );
+
+    /* Focus: OD-14, exact brand ring on dark, #006a80 on light, always with the inner tone (two-tone ring). */
+    --if-focus-ring: light-dark(var(--if-ref-cyan-750), var(--if-ref-cyan-400));
+    --if-focus-inner: light-dark(var(--if-ref-neutral-0), var(--if-ref-cyan-975));
+
+    /* Selected, pressed, current: never tint-only (03 §2). The bar is the cue; the tint is decoration. */
+    --if-active-bar: var(--if-accent);
+    --if-selected-bg: var(--if-accent-subtle);
+
+    /* Status. "unknown" is mandatory: unknown is not the same as fine. */
+    --if-status-ok: light-dark(var(--if-ref-green-800), var(--if-ref-green-450));
+    --if-status-warn: light-dark(var(--if-ref-amber-800), var(--if-ref-amber-450));
+    --if-status-crit: light-dark(var(--if-ref-red-750), var(--if-ref-red-400));
+    --if-status-unknown: light-dark(var(--if-ref-neutral-600), var(--if-ref-navy-300));
+    --if-status-ok-subtle: light-dark(
+      color-mix(in srgb, var(--if-ref-green-800) 10%, transparent),
+      color-mix(in srgb, var(--if-ref-green-450) 14%, transparent)
+    );
+    --if-status-warn-subtle: light-dark(
+      color-mix(in srgb, var(--if-ref-amber-800) 11%, transparent),
+      color-mix(in srgb, var(--if-ref-amber-450) 15%, transparent)
+    );
+    --if-status-crit-subtle: light-dark(
+      color-mix(in srgb, var(--if-ref-red-750) 10%, transparent),
+      color-mix(in srgb, var(--if-ref-red-400) 15%, transparent)
+    );
+    --if-status-unknown-subtle: light-dark(
+      color-mix(in srgb, var(--if-ref-neutral-600) 10%, transparent),
+      color-mix(in srgb, var(--if-ref-navy-300) 14%, transparent)
+    );
+    /* Fill behind white text (destructive buttons). */
+    --if-status-crit-solid: var(--if-ref-red-650);
+    --if-on-crit-solid: var(--if-ref-neutral-0);
+    /* Ink on a crit fill; Material on-error from A6. */
+    --if-on-crit: light-dark(var(--if-ref-neutral-0), var(--if-ref-cyan-975));
+    /* The Shoebox crosshatch line: broken or failing states only, alpha at most .20 (03 §6.1 hatch). Text on a
+       hatched surface is --if-fg: the crit tone on its own hatch line is 3.6:1 at any alpha the hatch stays visible at. */
+    --if-hatch-line: color-mix(in srgb, var(--if-status-crit) 20%, transparent);
+
+    /* Third party / external. */
+    --if-external: var(--if-chart-series-1);
+
+    /* Data series. Default order for colour-vision deficiency: s2, s7, s3, s11, s12, s1, s5, s4, s9, s10, s6, s8. */
+    --if-chart-series-1: light-dark(var(--if-ref-s1-light), var(--if-ref-s1-dark));
+    --if-chart-series-2: light-dark(var(--if-ref-s2-light), var(--if-ref-s2-dark));
+    --if-chart-series-3: light-dark(var(--if-ref-s3-light), var(--if-ref-s3-dark));
+    --if-chart-series-4: light-dark(var(--if-ref-s4-light), var(--if-ref-s4-dark));
+    --if-chart-series-5: light-dark(var(--if-ref-s5-light), var(--if-ref-s5-dark));
+    --if-chart-series-6: light-dark(var(--if-ref-s6-light), var(--if-ref-s6-dark));
+    --if-chart-series-7: light-dark(var(--if-ref-s7-light), var(--if-ref-s7-dark));
+    --if-chart-series-8: light-dark(var(--if-ref-s8-light), var(--if-ref-s8-dark));
+    --if-chart-series-9: light-dark(var(--if-ref-s9-light), var(--if-ref-s9-dark));
+    --if-chart-series-10: light-dark(var(--if-ref-s10-light), var(--if-ref-s10-dark));
+    --if-chart-series-11: light-dark(var(--if-ref-s11-light), var(--if-ref-s11-dark));
+    --if-chart-series-12: light-dark(var(--if-ref-s12-light), var(--if-ref-s12-dark));
+    --if-chart-grid: var(--if-border);
+    --if-chart-axis: var(--if-fg-muted);
+
+    /* Energy (canon colours, never red) and experience. A value ramp on the bar, never text. Light values are the
+       darkest steps that clear 3:1 on every ground and on the bar track (contrast gate; 03 §3.3). */
+    --if-energy-optimal: light-dark(var(--if-ref-cyan-750), var(--if-ref-cyan-500));
+    --if-energy-optimal-hi: light-dark(var(--if-ref-cyan-700), var(--if-ref-cyan-400));
+    --if-energy-approaching: light-dark(var(--if-ref-amber-700), var(--if-ref-amber-550));
+    --if-energy-approaching-hi: light-dark(var(--if-ref-amber-650), var(--if-ref-amber-450));
+    --if-energy-conserving: light-dark(var(--if-ref-grey-600), var(--if-ref-bluegrey-400));
+    --if-energy-conserving-hi: light-dark(var(--if-ref-grey-550), var(--if-ref-bluegrey-300));
+    --if-energy-replenishing: var(--if-energy-conserving);
+    --if-xp-fill: light-dark(var(--if-ref-s1-light), var(--if-ref-s1-dark));
+    --if-xp-track: light-dark(var(--if-ref-slate-225), var(--if-ref-navy-810));
+    --if-xp-rested-alpha: 0.45;
+
+    /* Avatar (prototype .avatar; AD-27). */
+    --if-avatar-bg: var(--if-ref-violet-600);
+    --if-avatar-ink: var(--if-ref-neutral-0);
+
+    /* ==== Motif tier (03 §6.1 owners only) ================================================================== */
+    --if-decor: light-dark(var(--if-ref-cyan-750), var(--if-ref-teal-300));
+    --if-grid-line: light-dark(
+      color-mix(in srgb, var(--if-ref-cyan-750) 7%, transparent),
+      color-mix(in srgb, var(--if-ref-teal-300) 5%, transparent)
+    );
+    --if-grid-pitch: 32px;
+    --if-chamfer-wall-far: light-dark(var(--if-ref-slate-150), var(--if-ref-navy-780));
+    --if-chamfer-wall-side: light-dark(var(--if-ref-slate-225), var(--if-ref-navy-820));
+    --if-chamfer-wall-near: light-dark(var(--if-ref-slate-275), var(--if-ref-navy-890));
+    --if-chamfer-floor-top: light-dark(var(--if-ref-slate-25), var(--if-ref-navy-925));
+    --if-chamfer-floor-bottom: light-dark(var(--if-ref-slate-90), var(--if-ref-navy-940));
+    --if-chamfer-depth: 26px;
+    --if-hl-inset: 0 1px 0 light-dark(transparent, rgb(93 242 226 / 6%)) inset;
+    --if-glow-sm:
+      0 0 0 1px light-dark(transparent, rgb(0 229 255 / 35%)),
+      0 4px 14px light-dark(transparent, rgb(0 229 255 / 25%));
+    --if-glow:
+      0 0 0 1px light-dark(transparent, rgb(0 229 255 / 35%)),
+      0 6px 20px light-dark(transparent, rgb(0 229 255 / 28%));
+    --if-glow-hover:
+      0 0 0 1px light-dark(transparent, rgb(0 229 255 / 50%)),
+      0 10px 26px light-dark(transparent, rgb(0 229 255 / 38%));
+    --if-chamfer-shadow:
+      0 1px 0 light-dark(rgb(255 255 255 / 80%), rgb(93 242 226 / 10%)) inset,
+      0 34px 64px light-dark(transparent, rgb(0 0 0 / 55%)),
+      0 24px 48px light-dark(rgb(18 23 34 / 14%), transparent);
+    --if-chamfer-floor-shadow:
+      0 28px 42px -28px light-dark(transparent, rgb(0 0 0 / 90%)) inset,
+      0 -20px 32px -28px light-dark(transparent, rgb(0 0 0 / 65%)) inset,
+      24px 0 36px -28px light-dark(transparent, rgb(0 0 0 / 65%)) inset,
+      -24px 0 36px -28px light-dark(transparent, rgb(0 0 0 / 65%)) inset,
+      0 14px 24px -18px light-dark(rgb(18 23 34 / 25%), transparent) inset,
+      0 -10px 18px -16px light-dark(rgb(18 23 34 / 15%), transparent) inset;
+
+    /* ==== Semantic tier: shape, elevation, space, size ===================================================== */
+    --if-radius-sm: 4px;
+    --if-radius-md: 6px;
+    --if-radius-lg: 10px;
+    --if-radius-xl: 12px;
+    --if-radius-chamfer: 16px;
+    --if-radius-full: 9999px;
+
+    /* Elevation ladder. Surfaces are flat and bordered; only overlays cast a shadow (03 §3.2). */
+    --if-shadow-overlay: 0 12px 32px light-dark(rgb(18 23 34 / 14%), rgb(0 0 0 / 50%));
+    --if-elevation-0: none; /* page ground, dense views */
+    --if-elevation-1: var(--if-hl-inset); /* .dc-surface: inset highlight, no drop shadow */
+    --if-elevation-2: var(--if-shadow-overlay); /* menus, popovers, dialogs, toasts (CDK overlay) */
+    --if-elevation-3: var(--if-chamfer-shadow); /* hero chamfer only (Q17) */
+
+    /* Space: 4px base; prototype off-scale values (2, 5, 6, 10, 14, 18 px) map to the nearest step. */
+    --if-space-0: 0;
+    --if-space-1: 4px;
+    --if-space-2: 8px;
+    --if-space-3: 12px;
+    --if-space-4: 16px;
+    --if-space-5: 20px;
+    --if-space-6: 24px;
+    --if-space-7: 32px;
+    --if-space-8: 48px;
+
+    /* Controls: 24 px is the WCAG 2.5.8 minimum target, 32 px the default control. */
+    --if-ctl-h-sm: 24px;
+    --if-ctl-h-md: 32px;
+    --if-disabled-opacity: 0.45;
+
+    /* Z-index ladder. --if-z-overlay equals the CDK overlay container (1000): dialogs, menus, selects, popovers and
+       the palette share it; only the toast host and the skip link sit above. */
+    --if-z-base: 0;
+    --if-z-sticky: 10;
+    --if-z-chrome: 20;
+    --if-z-panel: 30;
+    --if-z-scrim: 40;
+    --if-z-overlay: 1000;
+    --if-z-toast: 1010;
+    --if-z-skip: 1100;
+
+    /* ==== Semantic tier: type ============================================================================== */
+    /* Display: wordmark and page titles, 20 px and up (OD-16). 'Josefin Sans Variable' is the family name of the
+       optional peer @fontsource-variable/josefin-sans; 'Josefin Sans' a static or system install; then Inter. */
+    --if-font-display: 'Josefin Sans Variable', 'Josefin Sans', var(--if-font-sans);
+    --if-font-sans: 'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --if-font-mono: 'JetBrains Mono Variable', ui-monospace, 'Cascadia Mono', consolas, monospace;
+    /* Type scale in rem (names kept from slice 1). 12 px floor for data text; 2xs only for uppercase eyebrows and
+       icon-adjacent counts. */
+    --if-text-2xs: 0.6875rem;
+    --if-text-2xs-lh: 1rem;
+    --if-text-xs: 0.75rem;
+    --if-text-xs-lh: 1rem;
+    --if-text-sm: 0.8125rem;
+    --if-text-sm-lh: 1.25rem;
+    --if-text-base: 0.875rem;
+    --if-text-base-lh: 1.375rem;
+    --if-text-lg: 1rem;
+    --if-text-lg-lh: 1.5rem;
+    --if-text-xl: 1.25rem;
+    --if-text-xl-lh: 1.75rem;
+    --if-text-2xl: 1.5rem;
+    --if-text-2xl-lh: 2rem;
+    --if-text-3xl: 1.625rem;
+    --if-text-3xl-lh: 1.875rem;
+    --if-weight-regular: 400;
+    --if-weight-medium: 500;
+    --if-weight-semibold: 600;
+    --if-weight-bold: 700;
+    --if-tracking-eyebrow: 0.08em;
+    --if-numeric: tabular-nums;
+
+    /* ==== Motion; every duration is zeroed under prefers-reduced-motion below ============================== */
+    --if-duration-fast: 120ms;
+    --if-duration-base: 200ms;
+    --if-duration-slow: 320ms;
+    --if-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    --if-ease-emphasized: cubic-bezier(0.3, 0, 0, 1);
+    --if-ease-exit: cubic-bezier(0.3, 0, 1, 1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --if-duration-fast: 0ms;
+      --if-duration-base: 0ms;
+      --if-duration-slow: 0ms;
+    }
+  }
+}

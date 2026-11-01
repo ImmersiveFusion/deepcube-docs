@@ -50,25 +50,22 @@ theme:
     - toc.follow
     # - toc.integrate
   palette:
-    # Dark mode first (default) - Futuristic cyberpunk theme
+    # Dark mode first (default); colours come from the dc-styles tokens via css/extra.css
     - scheme: slate
-      primary: black
-      accent: cyan
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
     # Light mode alternative
     - scheme: default
-      primary: deep purple
-      accent: deep purple
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-  font:
-    header: Josefin Sans # doesn't actually do anything, just for the record
-    #text: Josefin Sans
-    text: Roboto
-    code: Roboto Mono
+  # Fonts are self-hosted from the DeepCube design kit (css/fonts.css); false stops Material loading Google Fonts.
+  font: false
   # Shared brand icon family (sibling of immersivefusion.academy). The full
   # family (apple-touch-icon, web-app-manifest PNGs, site.webmanifest,
   # theme-color) is wired in overrides/main.html {% block extrahead %}.
@@ -485,6 +482,9 @@ extra_javascript: []
   # Removed: require.js 2.3.6 (CVE-2024-38999, CVSS 10.0) and highlight.js 10.1.1 (2 CVEs)
   # Both were vestigial - pymdownx.highlight handles syntax highlighting server-side via Pygments
 extra_css:
+  # DeepCube design kit (dc-styles): fonts, then the vendored tokens, then the site's bridge and rules.
+  - css/fonts.css
+  - css/vendor/dc-tokens.css
   - css/extra.css
 # # Page tree
 # nav:

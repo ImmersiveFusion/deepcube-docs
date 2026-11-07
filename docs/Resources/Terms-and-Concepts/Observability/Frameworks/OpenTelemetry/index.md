@@ -42,13 +42,14 @@ All you need is the OTLP endpoint and your API key:
 | Setting | Value |
 |---------|-------|
 | **Endpoint** | `https://otlp.deepcube.ai` |
-| **Protocol** | OTLP/gRPC (port 443) or OTLP/HTTP |
+| **Protocol** | OTLP/gRPC (port 443) |
 | **Auth Header** | `api-key: YOUR-API-KEY` |
 
 ```bash
 # Environment variables - works with any OTel SDK
 export OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai
 export OTEL_EXPORTER_OTLP_HEADERS="api-key=YOUR-API-KEY"
+export OTEL_EXPORTER_OTLP_PROTOCOL=grpc
 ```
 
 For per-language setup, see the [Instrumentation Guides](../../../../../Instrument/index.md).
@@ -67,12 +68,12 @@ For per-language setup, see the [Instrumentation Guides](../../../../../Instrume
 
 ### OTLP Protocol
 
-OpenTelemetry Protocol (OTLP) is the wire format DeepCube natively supports:
+OpenTelemetry Protocol (OTLP) is the wire format DeepCube natively supports. The OTLP specification defines two transports:
 
 - **gRPC** (port 4317) - Best performance, binary encoding
-- **HTTP/protobuf** (port 4318) - Firewall-friendly alternative
+- **HTTP/protobuf** (port 4318) - Not accepted by DeepCube
 
-DeepCube accepts both on port 443 with TLS.
+DeepCube accepts OTLP over gRPC only, on port 443 with TLS. OTLP over HTTP is not accepted.
 
 ### Sampling
 

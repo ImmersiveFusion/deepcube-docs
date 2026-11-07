@@ -114,7 +114,7 @@ CORS (Cross-Origin Resource Sharing) errors occur when your instrumented applica
 |---------|-------|------------|
 | `Access-Control-Allow-Origin` error in browser console | Browser-based exporter sending directly to DeepCube endpoint | Browser-based (front-end) applications should route telemetry through a backend collector or proxy rather than sending directly to the DeepCube endpoint. |
 | CORS error only in production | Different origin in production vs development | Verify that your production domain is configured correctly in your collector setup. |
-| Preflight (OPTIONS) request fails | Firewall or proxy blocking OPTIONS requests | Ensure your network infrastructure allows HTTP OPTIONS requests to the DeepCube ingestion endpoint. |
+| Preflight (OPTIONS) request fails | Browser-based exporter sending directly to DeepCube endpoint | DeepCube does not accept telemetry from the browser directly. Route it through a backend OpenTelemetry Collector. |
 
 !!! warning "Browser instrumentation"
     Sending telemetry directly from browser JavaScript to the DeepCube endpoint will trigger CORS errors. Use a backend OpenTelemetry Collector as a relay to avoid this issue.

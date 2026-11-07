@@ -270,7 +270,7 @@ The OpenTelemetry Python SDK reads these variables automatically:
 | `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
 | `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in DeepCube |
-| `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (grpc or http/protobuf) |
+| `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (must be `grpc`) |
 | `OTEL_TRACES_EXPORTER` | `otlp` | Trace exporter type |
 | `OTEL_METRICS_EXPORTER` | `otlp` | Metrics exporter type |
 | `OTEL_LOGS_EXPORTER` | `otlp` | Logs exporter type |

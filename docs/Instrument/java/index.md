@@ -22,10 +22,14 @@ curl -L -o opentelemetry-javaagent.jar \
 ```bash
 java -javaagent:opentelemetry-javaagent.jar \
   -Dotel.exporter.otlp.endpoint=https://otlp.deepcube.ai \
+  -Dotel.exporter.otlp.protocol=grpc \
   -Dotel.exporter.otlp.headers=api-key=YOUR-API-KEY \
   -Dotel.service.name=my-java-app \
   -jar your-application.jar
 ```
+
+!!! warning "Keep the protocol set to gRPC"
+    Versions 2.0 and later of the Java agent and the Spring Boot starter default to `http/protobuf`, which DeepCube does not accept. Set the protocol to `grpc` wherever you configure them.
 
 The agent automatically instruments:
 
@@ -81,6 +85,7 @@ otel:
   exporter:
     otlp:
       endpoint: https://otlp.deepcube.ai
+      protocol: grpc
       headers:
         api-key: YOUR-API-KEY
   service:
@@ -91,6 +96,7 @@ Or in `application.properties`:
 
 ```properties
 otel.exporter.otlp.endpoint=https://otlp.deepcube.ai
+otel.exporter.otlp.protocol=grpc
 otel.exporter.otlp.headers.api-key=YOUR-API-KEY
 otel.service.name=my-spring-boot-app
 ```
@@ -253,7 +259,7 @@ The Java agent and SDK autoconfigure module read these variables:
 | `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
 | `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in DeepCube |
-| `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (grpc or http/protobuf) |
+| `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (must be `grpc`) |
 | `OTEL_TRACES_EXPORTER` | `otlp` | Trace exporter type |
 | `OTEL_METRICS_EXPORTER` | `otlp` | Metrics exporter type |
 | `OTEL_LOGS_EXPORTER` | `otlp` | Logs exporter type |
@@ -263,6 +269,7 @@ You can also use JVM system properties (prefix with `-D` and replace underscores
 ```bash
 java -javaagent:opentelemetry-javaagent.jar \
   -Dotel.exporter.otlp.endpoint=https://otlp.deepcube.ai \
+  -Dotel.exporter.otlp.protocol=grpc \
   -Dotel.exporter.otlp.headers=api-key=YOUR-API-KEY \
   -Dotel.service.name=my-java-app \
   -jar your-app.jar

@@ -1,2 +1,12 @@
 arrange:
     - index.md
+    - Getting-around.md
+    - Insights.md
+    - Traces.md
+    - Logs.md
+    - Services.md
+    - Endpoints.md
+    - Metrics.md
+    - Investigations.md
+    - SLOs.md
+    - Profile-and-Energy.md

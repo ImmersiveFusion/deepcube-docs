@@ -330,6 +330,7 @@ plugins:
         # Setup/Custom-application/Instrument → Instrument (promoted to top-level)
         # Old page replaced with redirect notice pointing to new Instrument/ section
         # Per-language sub-paths redirect safely (no real files at old paths)
+        'Setup/Custom-application/Instrument-your-application/index.md': 'Instrument/index.md'
         'Setup/Custom-application/Instrument-your-application/dotnet/index.md': 'Instrument/dotnet/index.md'
         'Setup/Custom-application/Instrument-your-application/java/index.md': 'Instrument/java/index.md'
         'Setup/Custom-application/Instrument-your-application/python/index.md': 'Instrument/python/index.md'

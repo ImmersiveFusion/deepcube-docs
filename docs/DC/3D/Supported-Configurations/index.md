@@ -14,7 +14,7 @@ DeepCube runs on Windows, with experimental support for macOS. Linux support is 
 
 | Component | Minimum | Recommended |
 |-----------|---------|-------------|
-| **Operating System** | Windows 10 64-bit | Windows 11 64-bit (latest) |
+| **Operating System** | Windows 11 64-bit | Windows 11 64-bit (latest) |
 | **Processor** | 4 cores, 3.0 GHz | 6 cores, 3.5 GHz |
 | **Graphics** | DirectX 12, 3 GB VRAM | DirectX 12, 8 GB VRAM |
 | **Memory** | 8 GB RAM | 32 GB RAM |

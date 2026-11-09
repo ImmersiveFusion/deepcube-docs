@@ -30,7 +30,7 @@ each plan does.
 
 *Throughput = traces + logs per second*
 
-*Availability targets are not a service level agreement. Visualize is the one exception: its contractual commitment is 99.0%. Your subscription terms are in the [Subscription Agreement](https://immersivefusion.com/legal/){ target="_blank" }.*
+*Availability targets are not a service level agreement. Visualize is the one exception: its contractual commitment is 99.0%, with service credits. Your subscription terms are in the [Subscription Agreement](https://immersivefusion.com/legal/){ target="_blank" }.*
 
 *AI (Tessa) usage is a daily budget that scales with your monitored nodes, not an unlimited allowance. No plan is ever blocked: when a budget is spent, Tessa keeps working with lighter, faster responses until it refills.*
 
@@ -52,7 +52,7 @@ Experience application immersion with zero risk, allowing you to gain valuable i
 Enhance your application immersion capabilities with expanded availability and comprehensive support.
 
 - Shared infrastructure
-- 99% availability target; the contractual commitment is 99.0%
+- 99% availability target; the contractual commitment is 99.0%, with service credits
 - 200 traces + logs per second
 - 30 days data retention
 - 35 AI Assistant queries per day

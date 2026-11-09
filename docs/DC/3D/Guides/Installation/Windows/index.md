@@ -4,6 +4,9 @@ description: Install DeepCube&trade; on Windows, through Steam or the offline MS
 
 # Installing on Windows
 
+!!! note "Requirements"
+    Windows 11, 64-bit. See [Supported Configurations](../../../Supported-Configurations/index.md) for full details.
+
 ## Steam
 
 [Open in Steam :material-steam:](steam://store/3624760){ .md-button .md-button--primary }

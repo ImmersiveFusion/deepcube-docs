@@ -36,7 +36,7 @@ kubectl apply -f https://github.com/open-telemetry/opentelemetry-operator/releas
 
 ### Create an Instrumentation Resource
 
-Define an `Instrumentation` custom resource that tells the Operator how to configure auto-instrumentation:
+Define an `Instrumentation` custom resource that tells the Operator how to configure auto-instrumentation. This resource covers Node.js, which exports directly to DeepCube:
 
 ```yaml
 # instrumentation.yaml
@@ -57,14 +57,34 @@ spec:
         secretKeyRef:
           name: deepcube-api-key
           key: api-key
+  nodejs:
+    image: ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:latest
+```
+
+!!! warning "Use a Collector for Java, Python, .NET, and Go"
+    DeepCube accepts OTLP over gRPC only. The Operator's auto-instrumentation defaults to `http/protobuf` for Java, Python, .NET, and Go, and the Operator's Python image does not support gRPC at this time. Only Node.js defaults to gRPC. Send the other languages through a [Collector](#otel-collector-as-daemonset), which receives OTLP over HTTP on port 4318 and exports to DeepCube over gRPC.
+
+For those languages, deploy the Collector, then create a second resource that points at it. Replace `YOUR-COLLECTOR-HOST` with the DNS name of your Collector's Kubernetes Service, and make sure that Service exposes port 4318:
+
+```yaml
+# instrumentation-collector.yaml
+apiVersion: opentelemetry.io/v1alpha1
+kind: Instrumentation
+metadata:
+  name: deepcube-collector-instrumentation
+  namespace: default
+spec:
+  exporter:
+    endpoint: http://YOUR-COLLECTOR-HOST:4318
+  propagators:
+    - tracecontext
+    - baggage
   dotnet:
     image: ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:latest
   java:
     image: ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:latest
   python:
     image: ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:latest
-  nodejs:
-    image: ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:latest
   go:
     image: ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-go:latest
 ```
@@ -83,18 +103,19 @@ kubectl create secret generic deepcube-api-key \
 
 ```bash
 kubectl apply -f instrumentation.yaml
+kubectl apply -f instrumentation-collector.yaml
 ```
 
 ### Annotate Your Pods
 
-Add an annotation to your pod spec to enable auto-instrumentation for your language:
+Add an annotation to your pod spec to enable auto-instrumentation for your language. The value names the `Instrumentation` resource to use:
 
 === ".NET"
 
     ```yaml
     metadata:
       annotations:
-        instrumentation.opentelemetry.io/inject-dotnet: "true"
+        instrumentation.opentelemetry.io/inject-dotnet: "deepcube-collector-instrumentation"
     ```
 
 === "Java"
@@ -102,7 +123,7 @@ Add an annotation to your pod spec to enable auto-instrumentation for your langu
     ```yaml
     metadata:
       annotations:
-        instrumentation.opentelemetry.io/inject-java: "true"
+        instrumentation.opentelemetry.io/inject-java: "deepcube-collector-instrumentation"
     ```
 
 === "Python"
@@ -110,7 +131,7 @@ Add an annotation to your pod spec to enable auto-instrumentation for your langu
     ```yaml
     metadata:
       annotations:
-        instrumentation.opentelemetry.io/inject-python: "true"
+        instrumentation.opentelemetry.io/inject-python: "deepcube-collector-instrumentation"
     ```
 
 === "Node.js"
@@ -118,7 +139,7 @@ Add an annotation to your pod spec to enable auto-instrumentation for your langu
     ```yaml
     metadata:
       annotations:
-        instrumentation.opentelemetry.io/inject-nodejs: "true"
+        instrumentation.opentelemetry.io/inject-nodejs: "deepcube-instrumentation"
     ```
 
 === "Go"
@@ -126,7 +147,7 @@ Add an annotation to your pod spec to enable auto-instrumentation for your langu
     ```yaml
     metadata:
       annotations:
-        instrumentation.opentelemetry.io/inject-go: "true"
+        instrumentation.opentelemetry.io/inject-go: "deepcube-collector-instrumentation"
     ```
 
 Example Deployment with auto-instrumentation:
@@ -146,7 +167,7 @@ spec:
       labels:
         app: my-app
       annotations:
-        instrumentation.opentelemetry.io/inject-java: "true"
+        instrumentation.opentelemetry.io/inject-nodejs: "deepcube-instrumentation"
     spec:
       containers:
         - name: my-app
@@ -236,6 +257,8 @@ env:
         fieldPath: status.hostIP
   - name: OTEL_EXPORTER_OTLP_ENDPOINT
     value: "http://$(NODE_IP):4317"
+  - name: OTEL_EXPORTER_OTLP_PROTOCOL
+    value: grpc
   - name: OTEL_SERVICE_NAME
     value: my-app
 ```

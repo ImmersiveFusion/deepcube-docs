@@ -102,7 +102,7 @@ client: [contact support](../../../../contact.md) and say which GPU you have.
 
 !!! info "Minimum requirements"
     On Windows, the client needs at least a DirectX 12 capable GPU with 3 GB of memory,
-    on 64-bit Windows 10, and 8 GB is recommended. Below the minimum, lowering these
+    on 64-bit Windows 11, and 8 GB is recommended. Below the minimum, lowering these
     settings may not be enough. The full list, including experimental macOS support, is
     on [Supported Configurations](../../Supported-Configurations/index.md).
 

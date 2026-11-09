@@ -98,8 +98,14 @@ Tessa gains extensible capabilities and the ability to analyze images.
 
 ## Recent Updates
 
+### November 2026
+
+- **3D v1.25.1**: Click a row on Recent Errors or Recent Logs to open the Diagnostics cube on its trace; leaving the cube returns you to your platform; Tessa can take you to a service and asks before she saves to your memory; phantoms on a grid that was already running ([release notes](DC/3D/release-notes.md#1.25.1))
+
 ### October 2026
 
+- **Studio v1.8.0**: The chat follows Studio's Light, Dark or System theme
+- **Studio v1.7.0**: Sign in through your browser at id.deepcube.ai, stay signed in on Windows; 1.6.0 and earlier can no longer sign in, so update ([release notes](DC/Studio/release-notes.md#1.7.0))
 - **3D v1.23.1**: Sign in with Steam when you launch from Steam (link Steam to your DeepCube account first), parts of the client that need you signed in now sign you in on the spot
 - **3D v1.23.0**: One sign-in that stays between launches; Tessa asks before she clears the service map, runs a Shoebox or changes a preference; one platform per service with live and quiet instance counts; phantoms judged before they are drawn; forty skies; `/node-ids`
 - **Web 3.189.0**: Snapshot page and an Around This Span tab, the grid graph keeps one node per service through restarts ([breaking change](DC/Web/release-notes.md#3.189.0) for API clients)

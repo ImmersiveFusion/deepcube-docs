@@ -6,6 +6,52 @@ description: Version history for DeepCube&trade;, newest first. Entries keep the
 
 ## Version History
 
+### 1.25.1 <small>November 9, 2026</small> { id="1.25.1" }
+
+**Introduction:**
+
+Everything since 1.23.1 is in this update. Click an error or a log row to open the Diagnostics cube on its trace, and leave the cube to land back on the platform you came from. Ask Tessa to take you to a service and she is set to take you there. She is set to give shorter answers that lead with the answer, and she asks before she saves to your memory. Phantoms now appear on a grid that was already running when the client started, and a queue phantom goes when its queue is read again. The room's glow is gentler and the in-world screens are sharper.
+
+**New Features:**
+
+- **From a Row into the Diagnostics Cube**: On the Recent Errors and Recent Logs screens, click a row to open the Diagnostics cube on that row's trace. On the grid-wide screens, the **Service** and **Instance** cells still take you to that service's platform, and the other cells open the cube; on a platform's own error and log screens, any cell opens the cube. The cube can open only a trace the client still holds, which is about the last ten minutes. For an older row, or a log with no trace, the grid-wide screens take you to the service's platform and a platform's screens do nothing. A cell with no value no longer highlights and cannot be clicked.
+- **Back to Your Platform**: Leaving the Diagnostics cube through its portal now takes you back to the platform you were standing on when you went in, wherever the layout has moved it since, the same way a click on a service in a table takes you there. If you went in from somewhere other than a platform, or the platform is gone, you return to the spot you went in from. This applies however you entered the cube, including from a trace block.
+- **Take Me There**: Ask Tessa to take you to a service or a dependency, for example "take me to order service", and she is set to take you to its platform. Going there needs no approval from you. The name does not need to match exactly in case or separators, so "order service" finds `order-service`, but it must be the whole name.
+- **Tessa Asks Before She Saves to Your Memory**: When Tessa wants to save something to your memory, a **Save to your memory?** dialog shows what she wants to save, with **Allow** and **Deny**. A yes also lets her save other facts from that workspace for 24 hours without asking. One question shows at a time, and a question left unanswered is taken down. When you tell her to remember something, she is set to keep it in the conversation and to save to your memory only when you ask her to keep it for later, or for your name and what to call you. A name you have saved now reaches each new conversation.
+
+**Improvements:**
+
+- **Shorter, Straighter Answers**: Unless you ask for more, Tessa is now set to answer in at most three sentences, about 75 words: the answer with the one number that shows it, the evidence behind it, and the one thing to look at next. When the data does not answer the question, she is set to say so first. She is set to use a short list only to compare three or more things, and to give at most two places for a question about what to check first. Say "more", "details", "explain" or "why" for a longer answer.
+- **Grid Questions Stay with Tessa**: A question about your grid is answered by Tessa, with what she knows about where you are and the conversation so far. Earlier versions could hand such a question to a research helper that could see neither, and its answer was generic. A question goes to a research helper when you ask for research or name the helper.
+- **Tessa Explains a Red Platform**: When Tessa looks up a service or a dependency, she now also reads what the grid shows on its platform: whether it is red, whether it sends telemetry of its own, how many failed calls and error logs were filed on it, and which services they came from. A database whose platform is red because its callers' calls are failing is no longer called healthy.
+- **Workspace Switch from the Chat**: Changed switching workspace from the chat so that Tessa finishes her reply first and then switches. If your message named the workspace, the conversation comes with you; if not, it stays behind and the chat says so. The chat also says how many queued messages were not sent.
+- **Clearer Failure Messages**: When Tessa's service does not answer, the chat says what happened, including what the service last replied, instead of always saying it was still starting up.
+- **Room Glow and Crisp Screens**: The room's glow is gentler up close, and turning the view no longer smears the picture. In-world screens are sharper, show status colors true, no longer reflect the room, and the map screens now draw the service graph's connections. The Traces & Logs (**M**) and Services & Dependencies (**N**) views take the same look as the screens. The grid floor's tiles and lines are teal.
+- **Steam Version Check**: In a Steam installation, the new-version notice now checks the version released on Steam, not the one released for the Windows installer.
+- The Windows installer now shows version 1.6.0 of the DeepCube end user license agreement.
+- Security fixes.
+
+**Bug Fixes:**
+
+- Fixed phantoms never being drawn for a fault that was already present when the client started. After the client has watched a grid for about five minutes, a call nothing answers, or a queue nothing consumes, that keeps happening is drawn as a phantom.
+- Fixed a queue phantom staying on the grid for about five minutes after its queue was read again, or turning into a blank node. It now goes when the queue is read again.
+- Fixed clicks on things seen through glass, such as the platforms below a glass floor, doing nothing.
+- Changed a switch of workspace from the chat so that it no longer looks as if it had failed. Before, Tessa never confirmed it, the chat showed **Interrupted**, and the next message reached a conversation that knew nothing about the switch.
+- Changed saving to your memory so that a save you allow goes through. Before, every save failed and the chat said you had declined it.
+- Changed the chat so that its window opens at your **Chat size** preference instead of its default size.
+- Changed the chat so that a tool's progress stops showing "running..." once the tool has finished.
+- Changed the chat so that a reopened chat window shows the replies you saw instead of raw tool output.
+- Changed the chat so that opening it twice quickly, or after a failed open, uses one window instead of sometimes opening a second.
+- Changed dialogs, such as the one that opens a link, so that they are drawn above the other parts of the on-screen display instead of under them.
+
+**Known Issues:**
+
+- The known issues listed for [1.23.0](#1.23.0) still apply, except that a fault already present when the client started is now drawn as a phantom once it repeats (see Bug Fixes).
+- A call or a queue that fails only once, such as a Shoebox diagram run a single time, is not drawn as a phantom. Run it again to see one.
+- A queue whose consumer reads it less often than every five minutes, and that was already running when the client started, can show as a phantom until its next read.
+- A queue phantom can occasionally stay until you restart the client if the read of its queue arrives late.
+- The chat changes in this version have not yet been confirmed in the published build: saving to your memory, the chat window size, a tool's progress, a reopened chat window, a second chat window, dialogs under the on-screen display, and a workspace switch from the chat. If you still see one of these problems, tell us.
+
 ### 1.23.1 <small>October 29, 2026</small> { id="1.23.1" }
 
 !!! warning "Before you update: link Steam to your DeepCube account"

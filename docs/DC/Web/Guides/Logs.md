@@ -63,7 +63,7 @@ The search becomes a chip under the bar.
 
 ### Pick values in the facet column
 
-The column on the left lists the values seen in the range for the level, the service, the host, the instrumentation scope (its facet is titled **SpanName**) and the attributes your lines carry. Each value shows a count and a bar.
+The column on the left lists the values seen in the range for the level, the service, the host, the instrumentation scope and the attributes your lines carry. Each value shows a count and a bar.
 
 - A facet shows its 10 most common values first. Select **Show all** followed by the number of values to see the rest, and **Show fewer** to fold them again.
 - The first five facets start open. Select a facet's heading to open or fold it. A facet with a selected value always stays open and shows **Clear**.

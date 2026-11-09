@@ -50,6 +50,15 @@ With **Group by** set to **None**, **Only service** narrows the chart to one ser
 
 The metric, calculation, grouping, view and service are kept in the page's address. A reload or a shared link opens the same chart. Picking does not add browser history entries, so Back leaves the page.
 
+## Example: chart p95 latency for one service
+
+1. Open **Metrics**.
+2. In the catalog, select **HTTP server duration**.
+3. Under **Calculate**, select **p95**.
+4. Leave **Group by** at **None**, and choose the service under **Only service**.
+
+The chart's title names the calculation and the service, for example "HTTP server duration: p95 · payment-service". To compare every service instead, set **Group by** to **Service** (**Only service** is then not offered).
+
 ## Read the chart and the Series table
 
 The chart's title names your choice, for example "HTTP requests: rate per minute by route", with the unit beside it.

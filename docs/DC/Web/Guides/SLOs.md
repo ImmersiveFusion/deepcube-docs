@@ -41,12 +41,14 @@ Under **What it needs first**, it lists what an objective would need:
 
 This card lists the two indicators DeepCube measures that an objective would be built on, one for availability and one for latency. Its subtitle reads "Measured today, for the whole grid." Each indicator has **Open in the Metrics explorer**:
 
-| Indicator | **Open in the Metrics explorer** opens |
-|-----------|----------------------------------------|
-| Availability | **Metrics** with **HTTP errors (5xx)**, **Share of requests**, for the whole grid. |
-| Latency | **Metrics** with **HTTP server duration** at **p90**, for the whole grid. |
+| Indicator | What the card says it is | **Open in the Metrics explorer** opens |
+|-----------|--------------------------|----------------------------------------|
+| **Availability** | The share of HTTP requests answered with a 5xx. | **Metrics** with **HTTP errors (5xx)**, **Share of requests**, for the whole grid. |
+| **Latency** | p50, p90 and p99 of HTTP server duration. | **Metrics** with **HTTP server duration** at **p90**, for the whole grid. |
 
-To watch either measure per service, set **Group by** to **Service** in the [Metrics explorer](Metrics.md).
+Read the **Availability** figure as an error share: a higher value means more requests failed.
+
+The card also notes that an objective is set per service and that neither indicator is served per service yet. That is about this page: the SLOs page shows both measures for the whole grid only. To see either measure split by service, open it in the [Metrics explorer](Metrics.md) and set **Group by** to **Service**.
 
 !!! note "These are grid-wide figures, not SLO results"
     Both links open charts for the whole grid, with no target, no window and no error budget applied. They show the raw indicator, not whether you met an objective.

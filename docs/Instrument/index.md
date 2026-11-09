@@ -11,8 +11,10 @@ All you need is your **OTLP endpoint** and **API key**:
 | Setting | Value |
 |---------|-------|
 | **Endpoint** | `https://otlp.deepcube.ai` |
-| **Protocol** | `grpc` (default) or `http/protobuf` |
+| **Protocol** | `grpc` |
 | **API Key Header** | `api-key: YOUR-API-KEY` |
+
+DeepCube accepts OTLP over gRPC only. OTLP over HTTP (`http/protobuf`) is not accepted, and exports that use it fail.
 
 Get your API key by logging in at [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" }, then go to **Administration > Grids** and click **Instrument** on your Grid.
 
@@ -24,6 +26,7 @@ The fastest way to configure any OpenTelemetry SDK is with environment variables
 |----------|-------|-------------|
 | `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
+| `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (must be `grpc`; some SDKs default to `http/protobuf`) |
 | `OTEL_SERVICE_NAME` | `your-service-name` | Identifies your service in DeepCube |
 
 ## Quick Start by Language
@@ -64,6 +67,7 @@ Choose your language to see the minimal configuration needed to start sending te
     # Run your application with auto-instrumentation
     java -javaagent:opentelemetry-javaagent.jar \
       -Dotel.exporter.otlp.endpoint=https://otlp.deepcube.ai \
+      -Dotel.exporter.otlp.protocol=grpc \
       -Dotel.exporter.otlp.headers=api-key=YOUR-API-KEY \
       -Dotel.service.name=your-service-name \
       -jar your-app.jar

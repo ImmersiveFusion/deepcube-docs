@@ -174,7 +174,7 @@ service:
 | Exporter | Description |
 |----------|-------------|
 | `otlp` | Exports via OTLP gRPC |
-| `otlphttp` | Exports via OTLP HTTP |
+| `otlphttp` | Exports via OTLP HTTP. Not accepted by DeepCube; use `otlp` |
 | `debug` | Prints telemetry to stdout (for development) |
 
 ## Docker Compose Example
@@ -202,6 +202,7 @@ services:
     build: .
     environment:
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4317
+      - OTEL_EXPORTER_OTLP_PROTOCOL=grpc
       - OTEL_SERVICE_NAME=my-app
     depends_on:
       - otel-collector

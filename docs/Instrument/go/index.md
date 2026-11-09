@@ -293,7 +293,7 @@ The OpenTelemetry Go SDK reads these variables when using the autoconfigure opti
 | `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
 | `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in DeepCube |
-| `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (grpc or http/protobuf) |
+| `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (must be `grpc`) |
 
 !!! note "Environment variables in Go"
     Unlike some other language SDKs, the Go SDK does not automatically read `OTEL_EXPORTER_OTLP_ENDPOINT` by default. You need to either configure the exporter programmatically (as shown above) or use the `autoexport` package:
@@ -301,6 +301,8 @@ The OpenTelemetry Go SDK reads these variables when using the autoconfigure opti
     ```bash
     go get go.opentelemetry.io/contrib/exporters/autoexport
     ```
+
+    `autoexport` defaults to `http/protobuf`, so set `OTEL_EXPORTER_OTLP_PROTOCOL=grpc` when you use it.
 
 ## Verify It's Working
 

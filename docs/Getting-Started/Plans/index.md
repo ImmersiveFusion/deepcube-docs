@@ -23,12 +23,14 @@ each plan does.
 | **Data Retention** | 7 days | 30 days | 90 days | 365 days |
 | **AI (Tessa)** | 7 queries/day | 35 queries/day | Large daily budget + Code Fix | Large daily budget + Code Fix + Infra |
 | **Support** | Discord | Chat/Email | Chat/Email/Phone | Chat/Email/Phone |
-| **Uptime SLA** | - | 99% | 99.9% | 99.99% |
+| **Availability target** | None | 99% | 99.9% | 99.99% |
 | **Dedicated Success Rep** | :material-close: | :material-close: | :material-check: | :material-check: |
 | **Professional Consulting** | :material-close: | :material-close: | :material-check: | :material-check: |
 | **Early Access Features** | :material-close: | :material-close: | :material-close: | :material-check: |
 
 *Throughput = traces + logs per second*
+
+*Availability targets are not a service level agreement. Visualize is the one exception: its contractual commitment is 99.0%, with service credits. Your subscription terms are in the [Subscription Agreement](https://immersivefusion.com/legal/){ target="_blank" }.*
 
 *AI (Tessa) usage is a daily budget that scales with your monitored nodes, not an unlimited allowance. No plan is ever blocked: when a budget is spent, Tessa keeps working with lighter, faster responses until it refills.*
 
@@ -50,7 +52,7 @@ Experience application immersion with zero risk, allowing you to gain valuable i
 Enhance your application immersion capabilities with expanded availability and comprehensive support.
 
 - Shared infrastructure
-- 99% uptime SLA
+- 99% availability target; the contractual commitment is 99.0%, with service credits
 - 200 traces + logs per second
 - 30 days data retention
 - 35 AI Assistant queries per day
@@ -61,7 +63,7 @@ Enhance your application immersion capabilities with expanded availability and c
 Improve your application visualization capabilities by incorporating historical data retention and dedicated resources.
 
 - Dedicated infrastructure
-- 99.9% uptime SLA
+- 99.9% availability target
 - 1,000 traces + logs per second
 - 90 days data retention
 - Large daily AI Assistant budget + Code Fix
@@ -74,7 +76,7 @@ Improve your application visualization capabilities by incorporating historical 
 Elevate your application monitoring and management with the stability, scalability, and expertise.
 
 - Dedicated infrastructure
-- 99.99% uptime SLA
+- 99.99% availability target
 - 2,000 traces + logs per second
 - 365 days data retention
 - Large daily AI Assistant budget + Code Fix + Infra

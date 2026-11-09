@@ -16,7 +16,7 @@ DeepCube Studio is a lightweight native desktop application. It does not require
 
 | Component | Requirement |
 |-----------|-------------|
-| **Operating System** | Windows 10 64-bit or later |
+| **Operating System** | Windows 11 64-bit |
 | **Processor** | 2 cores, 2.0 GHz or faster |
 | **Memory** | 4 GB RAM |
 | **Storage** | 500 MB available |

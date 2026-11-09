@@ -10,8 +10,6 @@ The **SLOs** page in DeepCube&trade; Web explains service level objectives and l
 
 You cannot create, save or track a service level objective in DeepCube Web. DeepCube does not store objectives, so the page has no list of objectives, no status and no error budget.
 
-The page says this itself.
-
 It has no **Create** or **New** button, shows no percentages, and draws no burn-down or error budget chart.
 
 ## Find the SLOs page
@@ -39,7 +37,7 @@ Under **What it needs first**, it lists what an objective would need:
 
 ### The What an objective would read card
 
-This card lists the two indicators DeepCube measures that an objective would be built on, one for availability and one for latency. Its subtitle reads "Measured today, for the whole grid." Each indicator has **Open in the Metrics explorer**:
+This card lists the two indicators DeepCube measures that an objective would be built on, one for availability and one for latency. Its subtitle reads "Measured today, for the whole grid". Each indicator has **Open in the Metrics explorer**:
 
 | Indicator | What the card says it is | **Open in the Metrics explorer** opens |
 |-----------|--------------------------|----------------------------------------|

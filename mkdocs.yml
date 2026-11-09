@@ -404,9 +404,8 @@ extra:
   homepage: /
   annotate:
     json: [.s2]
-  analytics:
-    provider: google
-    property: #{GA.TrackingID}#
+  # No client-side analytics: Google Analytics was removed (bus #5884, founder
+  # 2026-11-09: no consent prompt). Visitor metrics come server-side instead (#7453).
 
   social:
     #  - icon: fontawesome/solid/home

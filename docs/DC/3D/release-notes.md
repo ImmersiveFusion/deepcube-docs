@@ -10,7 +10,7 @@ description: Version history for DeepCube&trade;, newest first. Entries keep the
 
 **Introduction:**
 
-Everything since 1.23.1 is in this update. Click an error or a log row to open the Diagnostics cube on its trace, and leave the cube to land back on the platform you came from. Ask Tessa to take you to a service and she is set to take you there. She is set to give shorter answers that lead with the answer, and she asks before she saves to your memory. Phantoms now appear on a grid that was already running when the client started, and a queue phantom goes when its queue is read again. The room's glow is gentler and the in-world screens are sharper.
+Everything since 1.23.1 is in this update. Click an error or a log row to open the Diagnostics cube on its trace, and leave the cube to land back on the platform you came from. Ask Tessa to take you to a service and she is set to take you there. She is set to give shorter answers that lead with the answer, and she asks before she saves to your memory. Phantoms for faults that keep happening now appear on a grid that was already running when the client started, and a queue phantom goes when its queue is read again. The room's glow is gentler and the in-world screens are sharper.
 
 **New Features:**
 

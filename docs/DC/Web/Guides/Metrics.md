@@ -40,7 +40,7 @@ The catalog on the left lists the charted metrics. Each shows its name, the Open
 - **HTTP requests** and **HTTP errors (5xx)** offer all four.
 - **Number** is offered only with **Group by** set to **None**, because it shows one value.
 
-When you pick another metric, it starts from its first calculation and grouping, and keeps your **Show as** choice when the new metric offers it.
+When you pick another metric, it starts from its first calculation and grouping, and keeps your **Show as** and **Only service** choices when the new chart accepts them.
 
 ### Narrow a chart to one service
 
@@ -55,13 +55,13 @@ The metric, calculation, grouping, view and service are kept in the page's addre
 The chart's title names your choice, for example "HTTP requests: rate per minute by route", with the unit beside it.
 
 - **A chart** draws at most the 10 busiest series (highest average first). When there are more, the chart is marked, for example, "Busiest 10 of 14 drawn", and the **Series** table lists the rest. Use **Show data as table** on the chart for the values as text.
-- **Number** shows the **Latest** value, and how the last five values compare with the first five, for example "up 12% across the range, worse". A rise reads as worse for durations and errors, better for Apdex, and neither for traffic. With fewer than ten values, no comparison is given.
+- **Number** shows the **Latest** value, and how the last five values compare with the first five, for example "up 12% across the range, worse". A rise reads as worse for durations, errors, memory and CPU, better for Apdex, and neither for traffic. With fewer than ten values, or when the first five average 0, no comparison is given.
 - **The Series table** lists each series with **Last**, **Average**, **Max** and a **Trend** line, busiest first, up to 50 rows. When there are more, a note says the table lists the 50 busiest.
 
 A series that reported nothing in the range is left out of both, and a note under the table counts them. A gap in the data is drawn as a gap, never as 0.
 
 !!! note "An empty chart means nothing was reported"
-    When no service in the grid reported the metric in the range, the chart says **Nothing to show in this range**. For the messaging, outbound HTTP, database, memory and CPU metrics it also names the instrument: these fill in only once a service reports them through the matching OpenTelemetry instrumentation. See [Instrument your application](../../../Instrument/).
+    When no service in the grid reported the metric in the range, the chart says **No data in this range** (**Nothing to show in this range** in the **Number** view). For the messaging, outbound HTTP, database, memory and CPU metrics it also names the instrument: these fill in only once a service reports them through the matching OpenTelemetry instrumentation. See [Instrument your application](../../../Instrument/).
 
 ## Not charted yet: what your services report beyond the catalog
 

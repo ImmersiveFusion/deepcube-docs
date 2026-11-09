@@ -64,11 +64,11 @@ The investigation panel shows, from top to bottom:
 
 ## Your active investigation
 
-Your active investigation is the one your rule-outs go into. Two things set it: starting an investigation, and **Pick up where it stopped**.
+Your active investigation is the one your rule-outs go into. Three things set it: starting an investigation, **Pick up where it stopped**, and ruling something out from a trace's **Rule this out** menu into an investigation you pick there (see [From a trace with Rule this out](#from-a-trace-with-rule-this-out)).
 
 When you select **Pick up where it stopped**, DeepCube Web sets the time bar to the investigation's time range and tells you what it restored, for example how many saved views and ruled-out items it has. The panel then says "You are working in this investigation. What you rule out goes into it."
 
-The active investigation is kept for the browser tab you are in, and it survives a reload of that tab. It does not follow you to another tab. Starting or resuming an investigation on another grid replaces it.
+The active investigation is kept for the browser tab you are in, and it survives a reload of that tab. A new tab starts with no active investigation. Starting or resuming an investigation on another grid replaces it.
 
 ## Rule something out
 
@@ -108,7 +108,7 @@ Rulings are recorded only for a person signed in in the browser. If your sign-in
 
 Each ruling in the panel has its own actions:
 
-| Action | Who sees it | What it does |
+| Action | Who can use it | What it does |
 |--------|-------------|--------------|
 | **Withdraw** | The person who made the ruling | Takes it back. It leaves the **Ruled out** list but stays in the history. |
 | **Reinstate** | The person who made it | Puts a withdrawn ruling back. |
@@ -116,6 +116,8 @@ Each ruling in the panel has its own actions:
 | **Correct** | Anyone who can make rulings | Records a new ruling in its place (**Ruled out** or **Confirmed cause**) and keeps the old one in the history. A confirmed cause needs a basis. |
 | **History** | Everyone who can read rulings | Lists what happened to the ruling: made, note edited, withdrawn, reinstated, corrected. |
 | **Audit trail** | Everyone who can read rulings | Lists each act on the ruling and how it was made. |
+
+If you try **Withdraw**, **Reinstate** or **Edit note** on a ruling that is not yours, the app says only the person who made it can do that, and you can still correct it.
 
 Withdrawn rulings are hidden by default. Tick **Show withdrawn** to list them.
 

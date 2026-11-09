@@ -36,7 +36,7 @@ Four cards sit under the title. Each shows the latest value in the range, a spar
 | **Latency p95** | Milliseconds (**ms**), or seconds (**s**) from 1 second up | The 95th percentile of HTTP server request duration. |
 | **Apdex** | A score from 0 to 1, labelled **T=500ms** | Requests within 500 ms count in full, those from 500 ms to 2 s count as half, and slower ones count as zero. |
 
-When a signal reported nothing, its card shows "No data", never 0.
+When there were no requests, **Requests** shows 0. The other cards show "No data" when their signal reported nothing, never 0.
 
 ### The comparison line under each card
 
@@ -72,7 +72,7 @@ When there is nothing to show, the strip reads **Nothing needs attention in this
 
 ## Throughput and Latency chart the whole range
 
-- **Throughput** shows requests per minute, split into **2xx**, **4xx** and **5xx**. If the split cannot be read, the chart shows the total and says **Not split by status**.
+- **Throughput** shows requests per minute, split by status class (**1xx** to **5xx**, each class that was reported). If the split cannot be read, the chart shows the total and says **Not split by status**.
 - **Latency** shows **p50**, **p95** and **p99** in milliseconds.
 
 When a chart has more than one series, it shows a legend: select a series in it to hide or show that series. Drag across either chart to set the time range to that stretch; **Reset zoom** in the app bar goes back. To do it from the keyboard, focus the chart, hold Shift with the arrow keys and press Enter.
@@ -89,7 +89,7 @@ When a chart has more than one series, it shows a legend: select a series in it 
 
 The app remembers your choice in this browser. The charts match by time, not by position, so the line lands on the same moment in both.
 
-From the keyboard, focus a chart and use the Left and Right arrow keys to step through the points, Home and End for the first and last, and Esc to stop. The other chart follows.
+From the keyboard, focus a chart and use the Left and Right arrow keys to step through the points, Home and End for the first and last, and Esc to stop. The other chart follows as it does for the pointer, so with **Hover across charts** set to **Off** it does not.
 
 ### vs last week
 
@@ -97,8 +97,7 @@ Select **vs last week** to draw last week as a dashed line: **Requests last week
 
 When last week cannot be drawn, the chart says why instead of drawing a guess:
 
-- **Last week is outside this grid's retention**: the grid no longer keeps data that old.
-- **Nothing was reported last week**: the same window 7 days earlier has no data.
+- **Nothing was reported last week**: the same window 7 days earlier has no data (it may be outside the grid's retention).
 - **Last week could not be loaded**: the comparison failed to load; the chart shows this window only.
 
 ### Deploy markers are labelled "(inferred)"
@@ -116,7 +115,7 @@ Markers come from the same diagnostics as What needs attention, so they cover at
 
 ## Top endpoints ranks five routes
 
-**Top endpoints** lists five routes, ranked across every route the grid served in the range. The line beside the heading says how many of how many, and the order, for example "5 of 8 routes in range, sorted by errors". The default order is by errors.
+**Top endpoints** lists five routes, ranked across every route the grid served in the range. The line beside the heading says how many of how many, for example "5 of 8 routes in range, sorted by errors". The default order is by errors.
 
 | Column | What it shows |
 |--------|---------------|
@@ -138,7 +137,7 @@ When no server spans were reported in the range, the table says so instead of sh
 
 ## When part of the page cannot load
 
-Each card, chart and table loads on its own. If one fails, it says it could not load and offers to try again; the rest of the page is not affected. A KPI card with no data reads "No data" on its own card.
+Each card, chart and table loads on its own. If one fails, it says it could not load and offers to try again; the rest of the page is not affected. A KPI card whose signal reported nothing, or failed to load, reads "No data" on its own card (**Requests** shows 0 when there were no requests).
 
 At the bottom of the page, a note appears when no producer, consumer or dependency traffic was reported in the window. Those signals show up once your services report messaging or outbound HTTP spans.
 

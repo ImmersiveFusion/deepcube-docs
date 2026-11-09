@@ -69,13 +69,13 @@ Each node is a service, dependency or messaging destination:
 - **The badge and colour** show health: a check for healthy, a triangle for degraded, a cross for failing, a dash for no data.
 - **A dashed node** is not a service that reports for itself: a dependency or messaging destination the grid inferred from the calls into it.
 
-Each arrow is a call from one node to another seen in the window. An arrow into a failing node is drawn as failing, and an arrow into a node with no data is drawn as no data. Arrows carry no figures: figures per call between two services are not served yet.
+Each arrow is a call from one node to another seen in the window. Arrows carry no figures.
 
 To work with the map:
 
 - **Select a node** (click it, or focus it and press Enter) to open its service panel and scope the map to it. Its callers and callees stay bright and everything else dims; the selected node's arrows animate for five seconds, unless your system asks for reduced motion. The toolbar then says **Near** and the service name.
 - **Show everything** clears the selection.
-- **Show as table** replaces the drawing with two tables: the services on the map (**Service**, **Kind**, **Health**, **Req/min**, **Errors**, **p99**, **Calls**) and the calls between them (**From**, **To**, **State**). **State** reads **OK**, **Failing** or **No data**, from the health of the service being called.
+- **Show as table** replaces the drawing with two tables: the services on the map (**Service**, **Kind**, **Health**, **Req/min**, **Errors**, **p99**, **Calls**) and the calls between them (**From**, **To**, **State**).
 - **Zoom out**, **Fit** and **Zoom in** change the drawing's size.
 
 ## Limits on what the list and the map cover
@@ -108,14 +108,14 @@ The panel has four tabs. The tab you are on is kept in the link.
 - **Time spent in downstream calls:** the services this one calls, most total time first (up to 10), with **Calls**, **Avg** and **Total**. This is approximate: a call whose spans fall outside the window or the span cap is not counted, and parallel calls count in full, so the total can exceed the time the caller waited.
 
 !!! note "Where each Overview figure comes from"
-    **Req/min**, **Errors** and **p99** come from the grid graph (the last hour of the range at most). **p95** comes from diagnostics: a sample of up to 1,000 of the service's requests, in the last hour of the range at most. **Apdex** (T = 500 ms) is the latest value in the range from the metrics workspace. Because the Services list reads **p95** and **Apdex** from the metrics workspace, the panel's **p95** can differ from the list's. The charts cover the whole range. A dependency has no charts of its own: its calls are measured by the services that use it.
+    **Req/min**, **Errors** and **p99** come from the grid graph (the last hour of the range at most). **p95** comes from diagnostics: a sample of up to 1,000 of the service's requests, in the last hour of the range at most. **Apdex** (T = 500 ms) is the latest value in the range from the metrics workspace. The charts cover the whole range. A dependency has no charts of its own: its calls are measured by the services that use it.
 
 ### Endpoints
 
 The service's busiest routes (up to 10), from diagnostics: **Endpoint**, **Req/min**, **Errors**, **p95**, **p99**, **DB calls / req** and **Ext. calls / req**. Hover an **Errors** value to see how many requests failed. Select a row to open its endpoint panel for this service only; see [Endpoints](Endpoints.md).
 
 - **p95** and **p99** are estimated from a sample of up to 1,000 requests per route.
-- **DB calls / req** and **Ext. calls / req** are approximate, from the spans diagnostics read. A blank value with "Not counted" means the read hit the span cap and found none, which cannot be told apart from zero.
+- **DB calls / req** and **Ext. calls / req** are approximate, from the spans diagnostics read. **No data** in one of these columns, with the hover reason "Not counted: this read hit the span cap and found none.", cannot be told apart from zero.
 
 ### Deployments
 
@@ -129,7 +129,7 @@ Every version the service ran in the range, newest first. A deployment is a new 
 | **p95 before → after** | The same comparison for p95. |
 | (state) | **errors rose** when errors rose near the time this version was first seen. This is judged from diagnostics, so only a version first seen in the last hour of the range can carry it. |
 
-Above the table, "Same service since" gives the time the oldest version in the range was first seen. When the service's spans carry no `service.version`, the tab says **No versions seen in this range**.
+When the oldest version in the range was first seen inside the range, "Same service since" above the table gives that time. When the service's spans carry no `service.version`, the tab says **No versions seen in this range**.
 
 ### Errors
 

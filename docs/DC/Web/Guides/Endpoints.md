@@ -17,7 +17,7 @@ The list reads every server span in the range, not only the last hour, and group
 | Column | What it shows |
 |--------|---------------|
 | **Endpoint** | The HTTP method and the route, with the service that served it underneath. |
-| **Req/min** | Requests over the range, divided by the range's length in whole minutes. |
+| **Req/min** | Requests over the range, divided by the range's length in minutes, rounded to the nearest whole minute (at least 1). |
 | **Share** | This route's share of the requests of the routes loaded so far, with a bar scaled to the busiest loaded route. |
 | **Errors** | The share of requests that failed, with a warning icon at 2 % or more and an error icon at 5 % or more. |
 | **p95** | The 95th percentile duration, estimated by the store. |
@@ -46,18 +46,17 @@ The panel shows, from top to bottom:
 1. **Four figures:** **Req/min**, **Errors**, **p95** and **p99**. p95 and p99 are estimated from a sample of up to 1,000 requests of the route.
 2. **Most failures return** a status code, when the route's errors are at 5 % or more. It names the failing status code (4xx or 5xx) most of the failed requests returned, and its share, from the metrics workspace.
 3. **Latency and errors:** **Latency, p99 and p90** and **Share of requests that failed (5xx)**, over the whole range, from the request metrics of the route. p95 over time is not charted yet.
-4. **Slowest traces** and **Recent errors:** up to five traces each whose spans name this route, from the trace list for the range. Each shows the time, the trace ID, its stage and its duration. Select one to open its trace; see [Traces](Traces.md).
+4. **Slowest traces** and **Recent errors:** up to five traces each whose root span is this route, picked from the newest 100 traces in the range that mention the route. Each shows the time, the trace ID, its stage and its duration. Select one to open its trace; see [Traces](Traces.md).
 
 !!! warning "The four figures cover at most the last hour"
     The figures at the top read diagnostics, which cover at most the last hour of the range. When your range is longer, the panel says **Clamped to the last hour:** and the window it covered. The charts and the trace lists cover the whole range. So the panel's figures can differ from the route's row in the list, which covers the whole range.
 
 ### Things that change what the panel shows
 
-- **Opened from the Endpoints list**, the panel's figures and charts are for the route across every service that serves it.
 - **Opened from a service panel's Endpoints tab**, the panel says "Figures for this route in" followed by the service name, and its figures and charts are for that service only. See [Services](Services.md).
 - **The charts filter by method.** Only GET, POST, PUT, PATCH, DELETE, HEAD and OPTIONS routes are charted. For any other method the panel says **Not served yet**.
 - **The two error measures differ.** The **Errors** figure counts requests whose span failed or recorded an exception. The errors chart counts 5xx responses. The two can disagree.
-- **The trace lists can be capped.** When the trace list for the range was capped, the panel says older traces through the route are not listed.
+- **The trace lists can be capped.** When more than 100 traces in the range mention the route, the panel says older traces through the route are not listed.
 - **No requests in the window.** When diagnostics read no requests through the route in the last hour of the range, the figures say **No requests through this route in this window**, and its traces are still listed below.
 
 ## Related

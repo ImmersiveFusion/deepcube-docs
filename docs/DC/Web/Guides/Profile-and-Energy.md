@@ -71,7 +71,7 @@ You can also reach this page from the **Assistant** energy bar at the top of the
 
 | Figure | What it shows |
 |--------|---------------|
-| **Requests today** | Your Assistant requests today. |
+| **Requests today** | Your Assistant requests today (the current calendar day in UTC). |
 | **Requests this month** | Your Assistant requests this month. |
 | **Next recharge** | How long until your energy recharges, for example "3h 12m". If DeepCube did not say, the figure explains that instead of showing a time. |
 
@@ -84,9 +84,9 @@ Each row is one grid:
 | Column | What it shows |
 |--------|---------------|
 | **Grid** | The grid's name and environment. The grid you last opened is marked **active**. |
-| **Energy** | A bar and a percentage: how much energy the grid has left. A grid with no energy limit shows no bar, only a note that it has no limit. |
+| **Energy** | A bar and a percentage: how much energy the grid has left. |
 | **State** | The state's name and what it means for the Assistant (see the next section). |
-| **Today** | Your requests on that grid today. |
+| **Today** | Your requests on that grid today (the current calendar day in UTC). |
 
 If you have no grid with the Assistant yet, the table says so.
 
@@ -96,12 +96,12 @@ The state is always written out, never shown by colour alone.
 
 | State | When | What it means |
 |-------|------|---------------|
-| **Optimal** | The grid has energy left. | The Assistant works normally. |
+| **Optimal** | The grid has 20% or more of its energy left. | The Assistant has its full energy. |
 | **Approaching Conserving** | The grid has less than 20% of its energy left. | Assistant energy is getting low. |
 | **Conserving** | The energy is spent. | Simpler responses until it recharges. The Assistant still works. |
 | **Replenishing** | The free allowance for this window is spent. | The Assistant does not answer until the window recharges. |
 
-Energy is counted in 6-hour windows. When a window ends, the energy recharges.
+Energy is counted in 6-hour windows that start at 00:00, 06:00, 12:00 and 18:00 UTC. When a window ends, the energy recharges.
 
 When the active grid is **Conserving**, a note under the table names the grid, says how long until it recharges when that is known, and links to a way to get more energy.
 
@@ -114,7 +114,7 @@ The **Requests by day** chart shows your Assistant requests on each of the last 
 
 ## Tenant owners: energy per grid in Utilization
 
-If you own a tenant, **Administration** has a **Utilization** page under **Billing & usage**. On its **Tessa (AI)** view, the **Assistant energy** card shows each grid's shared energy for the current 6-hour window. Grids without a shared pool are listed as per person: each person sees their own energy on their **Energy** page.
+If you own a tenant, **Settings** has a **Utilization** page under **Billing & usage**. On its **Tessa (AI)** view, the **Assistant energy** card shows each grid's shared energy for the current 6-hour window. Grids without a shared pool are listed as per person: each person sees their own energy on their **Energy** page.
 
 ## Related
 

@@ -18,10 +18,10 @@ From left to right, the app bar shows:
 | **Environment** and **Grid** | The environment and grid you are looking at. Select either one to choose another grid. See [Choose a grid](#grid). |
 | "You are here" | Where you are: the grid, the page and, when panels are open, the top panel. See [The "You are here" label](#you-are-here). |
 | Time control | The time range every page reads. See [Set the time range](#time-range). |
-| **Search or jump to…** | Opens the command palette. See [Search and jump](#search). |
+| Search button | The magnifier, labelled **Search or jump to…** on wide screens. Opens the command palette. See [Search and jump](#search). |
 | **Assistant** | The Assistant energy bar. See [The Assistant energy bar](#assistant-energy). |
-| Bell | Notifications. See [Notifications and help](#notifications-and-help). |
-| **Help** | Support chat and Discord. See [Notifications and help](#notifications-and-help). |
+| Bell | Notifications. |
+| **Help** | Support chat and Discord. See [Get help](#help). |
 | Avatar | Your name and email, **Profile**, **Theme** and **Sign out**. See [The avatar menu](#account-menu). |
 
 On a narrower window the bar drops some text to fit: the **Environment** and **Grid** words beside the names, the shortcut hint on the search button, and below 1400 pixels wide the "You are here" label. The values stay, and the page title and the highlighted item in the navigation still say where you are.
@@ -47,7 +47,7 @@ Choosing a grid opens that grid's Home.
 2. Otherwise, the grid you last chose in this browser opens.
 3. On a first visit with no grid, the **Welcome to DeepCube** dialog offers **Choose a grid**, **Explore the demo** and **Quick start**. After that first visit, the app opens **Choose a grid** instead.
 
-With no grid chosen, the app bar shows **Select a grid** and the navigation holds only **Profile** and **Administration**.
+With no grid chosen, the app bar shows **Select a grid** and the navigation holds only **Profile** and **Settings**.
 
 ## The "You are here" label { #you-are-here }
 
@@ -57,7 +57,7 @@ Beside the grid, the app bar names where you are, outermost first, for example "
 
 The time control sets the window that every page in the grid reads. A link to a page carries its range, so whoever opens the link sees the same window.
 
-The control shows the range ("Last 45 minutes", or a start and end time for a fixed range), its length ("45 min") and the time zone. Times are in your browser's time zone, and the zone label (for example "UTC" or "GMT+3") says which one. When a link names no range, the app uses the last 45 minutes.
+The control shows the range ("Last 45 minutes", or a start and end time for a fixed range), its length ("45 min", hidden when the window is narrower than 1100 pixels) and the time zone. Times are in your browser's time zone, and the zone label (for example "UTC" or "GMT+3") says which one. When a link names no range, the app uses the last 45 minutes.
 
 The buttons around the range:
 
@@ -68,6 +68,8 @@ The buttons around the range:
 | **Zoom in** | Halves the range around its middle, down to 1 minute. |
 | **Zoom out** | Doubles the range, never past now. |
 | **Reset zoom** | Appears after you drag across a chart to zoom. It goes back to the range you had before the drag. |
+
+**Earlier window**, **Later window**, **Zoom in** and **Zoom out** turn a relative range such as "Last 45 minutes" into a fixed one, with a start and end time.
 
 You can also drag across a time chart to set the range to that stretch, or focus the chart, hold Shift with the arrow keys and press Enter. A stretch shorter than a minute is refused.
 
@@ -80,14 +82,12 @@ Select the range itself to open **Choose time range**. It has four parts:
 - **Recent**: the last four ranges you used in this browser tab.
 - **Absolute, to the second**: a **From** and **To** time, then **Apply**. An absolute range stays fixed.
 
-The **Window** row repeats **Earlier**, **Later**, **Zoom in**, **Zoom out** and, after a chart zoom, **Reset zoom**.
-
 !!! note "Range limits"
-    A range is at least 1 minute and at most 30 days long, and it cannot end in the future. The popover says which rule a typed range breaks.
+    A range you type or pick is at most 30 days long and cannot end in the future. A length you type is at least 1 minute. The popover says which rule a typed range breaks.
 
 ## Search and jump with the command palette { #search }
 
-Select **Search or jump to…** in the app bar, or press **Ctrl+K** (Windows and Linux) or **Cmd+K** (macOS) from anywhere, to open the command palette. Press the shortcut again, or Esc, to close it. Type to filter, use the arrow keys to move, and press Enter to run the highlighted command.
+Select the search button in the app bar (the magnifier, labelled **Search or jump to…** on wide screens), or press **Ctrl+K** (Windows and Linux) or **Cmd+K** (macOS) from anywhere, to open the command palette. Press the shortcut again, or Esc, to close it. Type to filter, use the arrow keys to move, and press Enter to run the highlighted command.
 
 The palette groups its commands:
 
@@ -95,27 +95,20 @@ The palette groups its commands:
 |-------|----------|
 | **Recent** | The last five commands you ran in this browser. Shown only while the field is empty. |
 | **Go to** | Every page in the navigation that you can open. |
-| **Environment and grid** | **Switch environment or grid…** (opens **Choose a grid**), then every grid you can see as "Environment / Grid". |
-| **Time** | **Last 15 minutes**, **Last 45 minutes**, **Last 1 hour**, **Last 6 hours**, **Last 24 hours** and **Last 7 days**. Shown on grid pages only. |
+| **Environment and grid** | **Switch environment or grid…** (opens **Choose a grid**; not shown in Profile and the settings area), then every grid you can see as "Environment / Grid". |
+| **Time** | **Last 15 minutes**, **Last 45 minutes**, **Last 1 hour**, **Last 6 hours**, **Last 24 hours** and **Last 7 days**. Not shown in Profile and the settings area. |
 | **Theme** | **Theme: System**, **Theme: Light** and **Theme: Dark**. |
 | **Help** | **Chat with support**. |
 
-!!! note "Palette times are fixed ranges"
-    A **Time** command in the palette sets a fixed range that ends when you run it. It does not follow the clock afterwards. To get a range that follows the clock, use a **Relative** choice in [Choose time range](#time-range).
-
 ## The Assistant energy bar { #assistant-energy }
 
-Once a grid is chosen, the app bar shows the **Assistant** energy bar: the word **Assistant**, a short state (**Optimal**, **Low**, **Conserving** or **Recharging**) and a bar for the energy level. Hover over it or focus it for the state in full, the level as a percentage, and when it recharges. Select it to open your energy page in Profile.
+Once a grid is chosen, the app bar shows the **Assistant** energy bar: the word **Assistant**, a short word for the Assistant's energy state and a bar for the energy level. Hover over it or focus it for the state in full and the level as a percentage. Select it to open your energy page in Profile.
 
-[Profile and Energy](Profile-and-Energy.md) explains what the states mean.
+[Profile and Energy](Profile-and-Energy.md) explains the energy states and what each one means.
 
-## Notifications and help { #notifications-and-help }
+## Get help { #help }
 
-- **Notifications** (the bell) opens a short list. Today it holds one item, **Check achievements**, which opens your achievements in Profile.
-- **Help** opens **Chat with support** and **Discord**. Discord opens in a new tab.
-
-!!! note "The bell always shows 1"
-    The bell's badge counts its items, and the list has one fixed item, so the badge shows 1 whether or not you have opened it.
+**Help** opens **Chat with support** and **Discord**. Discord opens in a new tab.
 
 ## The avatar menu { #account-menu }
 
@@ -135,7 +128,7 @@ The rail on the left lists the grid's pages in groups:
 | **Signals** | **Services**, **Endpoints**, **Traces**, **Logs**, **Metrics** |
 | **Investigate** | **Snapshot**, **Investigations** |
 | **Reliability** | **SLOs** |
-| (bottom) | **Profile**, **Administration**, **Collapse** |
+| (bottom) | **Profile**, **Settings**, **Collapse** |
 
 The page you are on is highlighted. **Collapse** shrinks the rail to icons, with each page's name as a tooltip, and the app remembers the choice in this browser. Select it again to expand the rail.
 
@@ -167,13 +160,13 @@ Trace, log and snapshot panels have **Open as page** and **New window**. Both as
 
 ### Links reopen the panels
 
-The address holds the page, its filters, its time range and every open panel in order. Copy it to share exactly what you see: opening the link restores the page and stacks the same panels. A link made before a kind of panel existed opens what it can.
+The address holds the page, its filters, its time range and every open panel in order. Copy it to share exactly what you see: opening the link restores the page and stacks the same panels. If a link names a panel this version cannot open, the rest still opens.
 
 ## Home is each grid's starting page { #home }
 
 Choosing a grid opens its **Home**, and **Home** at the top of the navigation returns to it. What Home shows depends on the grid:
 
-- **No grid chosen**: **Choose a grid to start** lists grids you can open, with **All grids** and **Quick start**. If you have no grids, **Create your first grid** offers **Quick start** and, when available, **Enter the demo**.
+- **No grid chosen**: **Choose a grid to start** lists grids you can open, with **Quick start**, and **All grids** when you have more grids than the list shows. If you have no grids, **Create your first grid** offers **Quick start** and, when available, **Enter the demo**.
 - **A grid with no telemetry yet**: **Get started with DeepCube** shows the steps to instrument your application and checks for incoming telemetry while the page is open.
 - **A grid with telemetry**: the grid's name, the figures **Services**, **Requests/s**, **Error rate** and **Alerts**, a **Needs attention** list with **Open Insights**, and **Busiest services** with **All services**. Select a service to open its panel.
 

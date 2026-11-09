@@ -6,6 +6,79 @@ description: Version history for DeepCube&trade; Web, newest first.
 
 ## Version History
 
+### 4.0.19 <small>November 8, 2026</small> { id="4.0.19" }
+
+**Introduction:**
+
+A major release that rolls up everything since 3.189.0. DeepCube&trade; Web is redesigned from end to end and now lives at **web.deepcube.ai**, which also serves the Platform API; you sign in at **id.deepcube.ai**. If you call the Platform API from a script or tool, read **Breaking Changes** first. The [Guides](Guides/index.md) walk through every screen.
+
+**Breaking Changes:**
+
+- **The Platform API Moved to web.deepcube.ai**: The Platform API is now served from `https://web.deepcube.ai`, with the same paths. Since October 29, 2026, `api-azure.deepcube.ai` and `api-my.deepcube.ai` no longer answer, so a client still using them fails to connect. Point your clients at `https://web.deepcube.ai`, and update any firewall allow-list that names the old hosts. If the client also sends a Microsoft Entra ID token, see the next item.
+- **Microsoft Entra ID Tokens Are Refused**: The Platform API no longer accepts access tokens issued by Microsoft Entra ID or Azure AD B2C; a request that sends one gets `401`. Use a personal access token instead.
+- **Scopes Replace `member`**: A personal access token now carries one or more of `read`, `write`, `manage` and `credentials`. A grid's telemetry key carries `otlp`, as before. The scopes are independent, so `manage` does not include `read`. A token without the scope an action needs gets `403` with the code `INSUFFICIENT_SCOPE`.
+- **Tokens That Carry Only `member` Stop Working**: The old `member` scope grants nothing and can no longer be requested, so a token that carries only `member` reaches no endpoint. Create a new token with the scopes it needs.
+- **DeepCube User IDs Only**: The Platform API no longer returns or accepts the user ID from your sign-in provider. User IDs in permission lists are DeepCube's own, and in `GET /users/authorized-users` the `externalId` field is now `secondaryId`.
+- **Deleting a Grid with Investigations Needs Confirmation**: `DELETE /grids/{gridSecondaryId}` on a grid that has investigations returns `409` with the code `GRID_HAS_INVESTIGATIONS` and their counts. Send it again with `?confirm=deleteInvestigations` to delete them with the grid. Deleting an environment follows the same rule.
+- **`totalCount` on Traces and Logs Counts Every Match**: In `POST /apm/traces/{gridSecondaryId}` and `POST /apm/logs/{gridSecondaryId}`, `totalCount` is now the number of every match, not of the items returned. To know whether more remain, check for `nextLink`.
+- **`403` for a Grid You Can See**: When you have a role on a grid but not one high enough for an action, the Platform API now answers `403` instead of `404`. A grid you have no role on still answers `404`.
+- **Rotating a Grid Key Returns No Key**: `POST /grids/{gridSecondaryId}/encryption-key/rotation` now answers `204` with no response body; the new key is not returned. If your script read the key from the response, remove that step. The DeepCube apps receive the grid's current keys when they open the grid, so they need no change.
+- **Metric Storage Responses No Longer Return `password`**: The list (`GET /storages/metrics`) and the responses to creating, editing and deleting a metric storage no longer include `password`. `GET /storages/metrics/{metricStorageSecondaryId}` returns it only to an owner of the storage signed in interactively; a personal access token gets the record without it. Remove any code that reads `password` from these responses.
+
+**The Redesigned App:**
+
+- **Header, Menu and Command Palette**: Every page sits in a new frame. The header holds the environment and grid switchers, the time range, the energy bar, notifications, help and your account menu, where you choose System, Light or Dark. The menu groups pages under Signals, Investigate and Reliability. Press Ctrl+K (Cmd+K on a Mac) to jump to a page or switch grids. See [Getting around](Guides/Getting-around.md).
+- **Time Range**: Type a range such as `3h` or `today`, pick a preset or set exact times, and drag across any time chart to zoom into that span.
+- **Home**: A grid opens on Home. Before telemetry arrives it walks you through instrumenting your application; after, it shows the grid's busiest services.
+- **Insights**: Requests, errors, latency and Apdex compared with the previous period, what needs attention, and the top endpoints. See [Insights](Guides/Insights.md).
+- **Services and Endpoints**: **Services** lists every service with its health, current version and key figures, or shows them as a map. **Endpoints** lists every route over the whole range. A service or endpoint opens a panel with its charts, routes, deployments and errors. See [Services](Guides/Services.md) and [Endpoints](Guides/Endpoints.md).
+- **Traces and Logs**: A filter column, an **Errors only** switch, and lists that keep loading as you scroll, with the real total. **Lines over time** on Logs now counts the whole range. A trace is listed by its root span, so a trace whose root span falls outside the range is not shown. See [Traces](Guides/Traces.md) and [Logs](Guides/Logs.md).
+- **Detail Panels**: Opening a trace, span, log, service or endpoint adds a panel beside the list. Panels stack, and Back or Esc closes the top one. A trace's **Snapshot** tab shows the services around it, and replaces Around This Span and Around This Log.
+- **Metrics**: Pick a chart from a fixed catalog (HTTP, messaging, database, memory and CPU), choose how it is calculated and grouped, and show it as a line, area, bars or a number. Metrics your services report that no chart covers yet are listed. See [Metrics](Guides/Metrics.md).
+- **Investigations**: Save what you are looking at as a clip in an investigation, and rule services out as you go, with the full history of each ruling. See [Investigations](Guides/Investigations.md).
+- **Settings and Profile**: Every Settings page has been redesigned, with an Overview, Utilization of Tessa by tenant, grid and person, and a grid's energy on Utilization. Profile has Account, Energy (now with requests by day), Achievements and Preferences. See [Profile and energy](Guides/Profile-and-Energy.md).
+- **Clearer States**: Every chart and widget says whether it is loading, empty, failed or partial, and a missing value shows as missing rather than as 0. An error gives one plain sentence and an ID you can copy for support.
+
+**Sign-In and Addresses:**
+
+- **One Address**: DeepCube Web is at **web.deepcube.ai**. my.deepcube.ai, azure.deepcube.ai and portal.deepcube.ai redirect there with the same path and query, so existing links keep working.
+- **Sign-In at id.deepcube.ai**: The sign-in page is a single card. The first time you sign in with the Microsoft account you used before, you land on your existing DeepCube account with its grids and roles. Accounts are never matched by email address.
+- **Back to Where You Were**: Signing out and back in returns you to the page you were on.
+
+**API Keys and Personal Access Tokens:**
+
+- **One Token Page**: Create and manage personal access tokens on **Settings > Access > Personal access tokens**. **Profile > Account** links there.
+- **Choose What a Token Can Do**: Pick View (the default), Investigate or Manage, add credentials separately if the token must create keys, give it a name, and choose 7, 30 or 90 days. The token is shown once.
+- **List and Revoke**: The page lists your tokens with their scopes, dates, when each was last used, and its status. **Revoke** stops a token on its next request. In the Platform API, `GET /tokens/personal-access` lists your tokens and `POST /tokens/personal-access/{tokenSecondaryId}/actions/revoke` revokes one.
+- **Grid API Keys**: A grid's Instrument page masks the stored telemetry key until you choose **Show**, and asks before rotating it.
+- **New Token Issuer**: New personal access tokens are issued by `https://web.deepcube.ai/pat`. Tokens issued by `https://id.deepcube.ai` are still accepted.
+
+**Platform API:**
+
+- **New Endpoints**: Rulings and proposals (`/apm/grids/{gridSecondaryId}/rulings`, `/proposals`, `/assertion-audits`), saved positions (`/users/me/positions`), every route (`/apm/grids/{gridSecondaryId}/endpoints`), every version a service ran (`/service-versions`), the metrics a grid reported (`/apm/grids/{gridSecondaryId}/metrics`), a log histogram (`POST /apm/logs/{gridSecondaryId}/histogram`) and your own record (`GET /users/me`).
+- **Paging Traces and Logs**: `POST /apm/traces/{gridSecondaryId}` and `POST /apm/logs/{gridSecondaryId}` take `cursor` and `limit` and return `nextLink`.
+- **Additions**: Responses that describe a service carry its `nodeId`. Service detail adds p95, per-route errors and downstream calls. Chat accepts `toolChoice` (`auto`, `none` or `required`). These are additions.
+- **Rate Limits per Person**: Rate limits for personal access tokens and signed-in callers are counted per person instead of per IP address.
+
+**Bug Fixes:**
+
+- Security fixes.
+- Fixed creating a personal access token failing with `400`.
+- Fixed node billing recording 0 nodes for some billing cycles, and the grid list showing 0 nodes for every grid.
+- Fixed deleting a grid that had tracks or sessions failing with `500`.
+- Fixed reloading a page with a detail panel open showing an error instead of the page.
+- Fixed a shared link for a range such as Last 3 hours reopening as 45 minutes.
+- Fixed Tessa's voice being refused while the energy bar still showed energy left.
+- Fixed one busy caller of the endpoints that need no sign-in using up the rate limit for everyone.
+
+**Known Issues:**
+
+- The **SLOs** page cannot set up objectives yet. It describes what an objective will show and what it needs.
+- Tokens created before the token list existed are not listed and cannot be revoked. They stay valid until they expire.
+- The Moment API's figure tiles are not populated yet: every tile names a reason instead of a value.
+- **Profile > Account** shows **Member since** November 7, 2026 for accounts created before that date.
+- Time travel, replaying a grid over a period, remains unavailable. Snapshot shows the services at a single time.
+
 ### 3.189.0 <small>October 13, 2026</small> { id="3.189.0" }
 
 **Introduction:**

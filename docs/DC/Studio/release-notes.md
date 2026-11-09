@@ -9,6 +9,39 @@ description: Version history for DeepCube&trade; Studio, which is in early acces
 
 ## Version History
 
+### 1.8.0 <small>October 30, 2026</small> { id="1.8.0" }
+
+**Introduction:**
+
+A refreshed look for your conversations with Tessa. The chat is rebuilt on the DeepCube design system, and it now follows Studio's theme, so it is light when Studio is light instead of always dark.
+
+**Improvements:**
+
+- **Chat Follows Your Theme**: The chat transcript now matches Studio's Light, Dark or System theme. Before this release the chat was always dark.
+- **Refreshed Chat Design**: Messages, Tessa's thinking and tool cards, side-by-side file changes and the welcome screen are restyled on the DeepCube design system. Two behaviours are unchanged: your latest prompt still stays pinned at the top while Tessa answers, and long tool results still start collapsed.
+- **Refreshed Signed-In Page**: After you sign in, the browser tab shows a DeepCube-styled confirmation that tells you to return to DeepCube Studio. You can close that tab.
+
+### 1.7.0 <small>October 29, 2026</small> { id="1.7.0" }
+
+**Introduction:**
+
+This alpha changes how you sign in. DeepCube Studio now signs you in through the DeepCube sign-in page at `id.deepcube.ai` in your browser, and on Windows keeps you signed in between launches, so opening Studio again takes you straight back in. Earlier versions of Studio can no longer sign in to DeepCube services, so update to this version.
+
+**Breaking Changes:**
+
+- **Update required**: Studio 1.6.0 and earlier sign in with the previous sign-in service, and the Platform API no longer accepts those sign-ins. Install 1.7.0 or later, then select **Sign In** and finish signing in in your browser. You normally do this once; after that, Studio remembers you. If you used a Microsoft account before, signing in with that same account takes you to your existing DeepCube account.
+
+**Improvements:**
+
+- **One Sign-In Button**: The cloud environment picker is gone from the sign-in screen. Select **Sign In** and Studio opens the DeepCube sign-in page in your default browser. When you finish there, the browser hands you back to Studio, which continues on its own.
+- **Stay Signed In**: On Windows, Studio keeps your session protected by Windows data protection and resumes it automatically when you reopen the app, so you no longer sign in on every launch.
+- **New Service Addresses**: By default, Studio now connects to DeepCube services at `web.deepcube.ai` and signs in at `id.deepcube.ai`. If your network restricts outbound traffic, both are covered by the existing `*.deepcube.ai` rule in [Supported Configurations](Supported-Configurations/index.md#firewall-configuration). Sign-in finishes by returning your browser to Studio on your own computer (`127.0.0.1`), so software that blocks local connections can stop sign-in from completing. If sign-in does not finish, allow connections to your own computer (`127.0.0.1`) and try again.
+
+**Bug Fixes:**
+
+- Fixed `/logout` replying "[Auth not configured]" instead of signing you out. It now clears your stored session, and Studio asks you to sign in the next time you start it.
+- Security fixes.
+
 ### 1.6.0 <small>September 30, 2026</small> { id="1.6.0" }
 
 **Introduction:**

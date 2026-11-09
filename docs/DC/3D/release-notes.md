@@ -50,7 +50,6 @@ Everything since 1.23.1 is in this update. Click an error or a log row to open t
 - A call or a queue that fails only once, such as a Shoebox diagram run a single time, is not drawn as a phantom. Run it again to see one.
 - A queue whose consumer reads it less often than every five minutes, and that was already running when the client started, can show as a phantom until its next read.
 - A queue phantom can occasionally stay until you restart the client if the read of its queue arrives late.
-- The chat changes in this version have not yet been confirmed in the published build: saving to your memory, the chat window size, a tool's progress, a reopened chat window, a second chat window, dialogs under the on-screen display, and a workspace switch from the chat. If you still see one of these problems, tell us.
 
 ### 1.23.1 <small>October 29, 2026</small> { id="1.23.1" }
 

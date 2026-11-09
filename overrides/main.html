@@ -6,8 +6,6 @@
   {% block extrahead %}
     <!-- <link rel="stylesheet" href="{{ 'assets/stylesheets/custom.00c04c01.min.css' | url }}"> -->
 
-    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=b33c5a1c-bfe2-432b-84ae-613f7eb1d2b6" defer></script>
-
     {# Shared brand icon family (sibling of immersivefusion.academy). Material's
        theme.favicon emits the primary <link rel="icon">; the rest of the family
        is declared here, keeping the product-docs tab/PWA icons in lockstep with
@@ -45,5 +43,40 @@
   {% endblock %}
   {% block scripts %}
     {{ super() }}
+    {# Support chat loads only when a visitor asks for it (bus #5884): no request
+       goes to Zendesk until the Help button is selected. The widget then brings
+       its own launcher, so this button removes itself once the chat opens. #}
+    <button type="button" class="dc-help-launcher" id="dc-help-launcher" aria-label="Open support chat">
+      <span class="twemoji">{% include ".icons/material/chat-question.svg" %}</span>
+      <span class="dc-help-launcher__label">Help</span>
+    </button>
+    <script>
+      (function () {
+        var btn = document.getElementById("dc-help-launcher");
+        if (!btn) return;
+        var label = btn.querySelector(".dc-help-launcher__label");
+        btn.addEventListener("click", function () {
+          btn.disabled = true;
+          label.textContent = "Loading…";
+          var s = document.createElement("script");
+          s.id = "ze-snippet";
+          s.src = "https://static.zdassets.com/ekr/snippet.js?key=b33c5a1c-bfe2-432b-84ae-613f7eb1d2b6";
+          s.async = true;
+          s.onload = function () {
+            if (typeof window.zE !== "function") { s.onerror(); return; }
+            /* Messaging and the classic Web Widget use different open calls; try both. */
+            try { window.zE("messenger", "open"); } catch (e) {}
+            try { window.zE("webWidget", "open"); } catch (e) {}
+            btn.remove();
+          };
+          s.onerror = function () {
+            btn.disabled = false;
+            label.textContent = "Help unavailable, try again";
+            s.remove();
+          };
+          document.body.appendChild(s);
+        });
+      })();
+    </script>
     <!-- <script src="{{ 'assets/javascripts/custom.fe17d8dd.min.js' | url }}"></script> -->
   {% endblock %}

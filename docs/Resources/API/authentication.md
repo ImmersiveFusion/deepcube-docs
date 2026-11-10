@@ -1,182 +1,126 @@
+---
+description: "Authenticate to the DeepCube&trade; Platform API with a personal access token: create one, send it as a Bearer token, choose its scopes, and read 401 and 403 errors."
+---
+
 # Authentication
 
 {!template/subscription-required.mdp!}
 
-The DeepCube API supports two authentication methods: OAuth 2.0 via Azure AD for user-context access, and API Keys for server-to-server integration.
+Scripts and tools call the DeepCube&trade; Platform API with a **personal access token**. Create the token in DeepCube Web and send it in the `Authorization` header of every request.
 
-!!! warning "Microsoft Entra ID tokens are no longer accepted"
-    The Platform API no longer accepts access tokens issued by Microsoft Entra ID (Azure AD) or Azure AD B2C: a request that sends one gets `401`. Use a personal access token or an API key, described under [API Key Authentication](#api-key-authentication). The flows below are kept for reference until this page is rewritten.
+!!! warning "Microsoft Entra ID tokens are refused"
+    The Platform API no longer accepts tokens issued by Microsoft Entra ID (Azure AD) or Azure AD B2C. A request that sends one gets `401`. Replace them with a personal access token.
 
-## OAuth 2.0 (Azure AD)
+## Create a personal access token
 
-OAuth 2.0 is the recommended authentication method for applications acting on behalf of a user. DeepCube uses Azure Active Directory as the identity provider.
+1. Sign in to DeepCube Web at [web.deepcube.ai](https://web.deepcube.ai){ target="_blank" }.
+2. Go to **Settings > Access > Personal access tokens**.
+3. Choose what the token can do. Each level grants these [scopes](#scopes):
 
-### Authorization Flow
+    | Level | Scopes |
+    |-------|--------|
+    | **View** (the default) | `read` |
+    | **Investigate** | `read`, `write` |
+    | **Manage** | `read`, `write`, `manage` |
 
-DeepCube uses the **Authorization Code flow with PKCE** for interactive applications and the **Client Credentials flow** for service-to-service communication.
+    Add `credentials` separately, only if the script must create tokens or keys.
 
-#### Authorization Code Flow (Interactive)
+4. Give the token a name and choose how long it lasts: 7, 30 (the default) or 90 days.
+5. Copy the token. It is shown once.
 
-```mermaid
-sequenceDiagram
-    participant App as Your Application
-    participant Azure as Azure AD
-    participant API as DeepCube API
+The same page lists your tokens with their scopes and when each was last used. **Revoke** stops a token on its next request.
 
-    App->>Azure: 1. Redirect to /authorize
-    Azure->>App: 2. Authorization code
-    App->>Azure: 3. Exchange code for token
-    Azure->>App: 4. Access token + refresh token
-    App->>API: 5. Request with Bearer token
-    API->>App: 6. API response
-```
+!!! warning "Keep tokens secret"
+    A token acts as you. Do not commit it to source control; keep it in an environment variable or a secrets manager. Give each script its own token with only the scopes it needs, and revoke a token as soon as it may have leaked.
 
-#### Step 1 - Request Authorization
+## Send the token
 
-Direct the user to the Azure AD authorization endpoint:
-
-```
-https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize
-  ?client_id=YOUR_CLIENT_ID
-  &response_type=code
-  &redirect_uri=https://your-app.com/callback
-  &scope=api://iapm-api/.default
-  &code_challenge=YOUR_PKCE_CHALLENGE
-  &code_challenge_method=S256
-```
-
-#### Step 2 - Exchange Code for Token
-
-```bash
-curl -X POST "https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token" \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "client_id=YOUR_CLIENT_ID" \
-  -d "grant_type=authorization_code" \
-  -d "code=AUTHORIZATION_CODE" \
-  -d "redirect_uri=https://your-app.com/callback" \
-  -d "code_verifier=YOUR_PKCE_VERIFIER"
-```
-
-**Response:**
-
-```json
-{
-  "access_token": "YOUR_ACCESS_TOKEN",
-  "token_type": "Bearer",
-  "expires_in": 3600,
-  "refresh_token": "YOUR_REFRESH_TOKEN",
-  "scope": "api://iapm-api/.default"
-}
-```
-
-#### Step 3 - Use the Access Token
-
-Include the access token in the `Authorization` header:
+Send the token as a Bearer token in the `Authorization` header:
 
 ```bash
 curl -X GET "https://web.deepcube.ai/apm/diagnostics/{gridSecondaryId}/health?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
-### Client Credentials Flow (Service-to-Service)
-
-For automated scripts and backend services that don't act on behalf of a user:
+A request with a body sends the same header. This trace query needs `read`:
 
 ```bash
-curl -X POST "https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token" \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "client_id=YOUR_CLIENT_ID" \
-  -d "client_secret=YOUR_CLIENT_SECRET" \
-  -d "grant_type=client_credentials" \
-  -d "scope=api://iapm-api/.default"
+curl -X POST "https://web.deepcube.ai/apm/traces/{gridSecondaryId}?api-version=2.0" \
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{ "rangeStart": "2026-04-02T00:00:00Z", "rangeEnd": "2026-04-03T00:00:00Z" }'
 ```
 
-### Token Refresh
+See [Traces](traces.md) for the full query body.
 
-Access tokens expire after the duration specified in `expires_in` (typically 3600 seconds). Use the refresh token to obtain a new access token without user interaction:
+The Platform API reads no other header for authentication.
 
-```bash
-curl -X POST "https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token" \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "client_id=YOUR_CLIENT_ID" \
-  -d "grant_type=refresh_token" \
-  -d "refresh_token=YOUR_REFRESH_TOKEN"
-```
+## Scopes
 
-!!! tip "Token Caching"
-    Cache access tokens and refresh them proactively before expiry. Avoid requesting a new token for every API call.
+A token carries one or more scopes. Each endpoint needs one of them; a few, such as token introspection, accept any valid token.
 
-### Scopes
+| Scope | What it allows |
+|-------|----------------|
+| `read` | Read telemetry and configuration: every `GET`, and the trace and log queries sent as `POST`. |
+| `write` | Create investigative work, such as clips, tracks, preferences and chat with Tessa. |
+| `manage` | Change and delete resources such as grids, environments and invitations. |
+| `credentials` | Create credentials: personal access tokens and grid API keys. Only you can grant it, while signed in to DeepCube Web. |
 
-| Scope | Description |
-|-------|-------------|
-| `api://iapm-api/.default` | Full API access based on user's role permissions |
+The scopes are independent: `manage` does not include `read`. A script that reads data and then changes a grid needs both.
 
-## API Key Authentication
+Scopes limit a token; they never extend your access. A token reaches only the grids you have a role on, and only what your role allows.
 
-API Keys provide a simpler authentication method for server-to-server integrations, automation scripts, and CI/CD pipelines.
+### Scope by API page
 
-### Getting Your API Key
+| Page | Scope |
+|------|-------|
+| [Traces](traces.md), [Logs](logs.md), [Diagnostics](diagnostics.md), [Charts & Dashboards](charts.md) | `read` for every endpoint |
+| [AI Assistant](assistant.md) | `write` for chat, `manage` to change limits, `read` for everything else |
 
-1. Log in at [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" }
-2. Navigate to **Administration - Grids**
-3. Click the **Instrument** button (:material-cog:) on your Grid
-4. Copy the API key from the configuration wizard
+A token that carries only the retired `member` scope reaches no endpoint. Create a new token with the scopes it needs.
 
-See [API Keys](../../Getting-Started/Api-Key/index.md) for detailed instructions.
+## Grid API keys
 
-### Using Your API Key
+A grid API key sends telemetry from your applications to one grid. It is not a Platform API credential: it reaches no data endpoint. To get one and configure your OpenTelemetry exporter, see [API Keys](../../Getting-Started/Api-Key/index.md).
 
-Include the API key in the `api-key` header:
-
-```bash
-curl -X GET "https://web.deepcube.ai/apm/diagnostics/{gridSecondaryId}/health?api-version=2.0" \
-  -H "api-key: a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-```
-
-!!! warning "API Key Security"
-    - Never commit API keys to source control
-    - Use environment variables or a secrets manager
-    - Rotate keys periodically and immediately if compromised
-    - Each Grid has its own API key - do not share keys across Grids
-
-## Error Responses
+## Errors
 
 ### 401 Unauthorized
 
-Returned when authentication is missing or the token/key is invalid.
-
-```json
-{
-  "type": "https://tools.ietf.org/html/rfc7807",
-  "title": "Unauthorized",
-  "status": 401,
-  "detail": "The access token has expired or is invalid."
-}
-```
+The request has no valid token.
 
 **Common causes:**
 
-- Missing `Authorization` or `api-key` header
-- Expired access token - refresh it and retry
-- Malformed token string
-- Revoked or regenerated API key
+- No `Authorization` header, or a value that does not start with `Bearer `
+- The token has expired or was revoked
+- A Microsoft Entra ID or Azure AD B2C token
+- A token copied incompletely
 
 ### 403 Forbidden
 
-Returned when the authenticated identity lacks permission for the requested operation.
+The token is valid but cannot do this.
+
+When the token lacks the scope the endpoint needs, the response names it. The body includes:
 
 ```json
 {
-  "type": "https://tools.ietf.org/html/rfc7807",
   "title": "Forbidden",
   "status": 403,
-  "detail": "Owner role is required for this operation."
+  "detail": "This token does not hold the 'read' scope this operation needs.",
+  "code": "INSUFFICIENT_SCOPE",
+  "requiredScope": "read"
 }
 ```
 
-**Common causes:**
+Create a token that carries `requiredScope`.
 
-- Attempting to modify Grid limits without the Owner role
-- Accessing a Grid the user is not a member of
-- Client credentials without the required application permission
+Other `403` responses:
+
+- `INTERACTIVE_SIGN_IN_REQUIRED`: only a person signed in to DeepCube Web can do this, never a token. Creating a token that carries `credentials` is one such action.
+- No `code`: your role on the grid is not high enough for the action, or the token is limited to a different grid. Ask the grid's owner for a higher role, or use a token for that grid.
+
+Most grid endpoints answer `404`, not `403`, for a grid you have no role on, so they do not reveal that it exists.
+
+### 429 Too Many Requests
+
+You sent too many requests. The response has the code `RATE_LIMITED` and a `Retry-After` header: wait as long as it says, then retry. Rate limits for personal access tokens are counted per person, not per token or IP address.

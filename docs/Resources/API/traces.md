@@ -5,7 +5,7 @@
 The Traces API provides access to distributed tracing data collected by your instrumented applications. Search traces, inspect individual spans, retrieve correlated logs and errors, and explore span metadata.
 
 !!! info "Authentication Required"
-    All endpoints require a valid `Authorization: Bearer {token}` or `api-key: {key}` header. See [Authentication](authentication.md).
+    Every endpoint on this page needs a personal access token with the `read` scope, sent as `Authorization: Bearer {token}`. See [Authentication](authentication.md).
 
 ---
 
@@ -45,7 +45,7 @@ POST /apm/traces/{gridSecondaryId}
 
 ```bash
 curl -X POST "https://web.deepcube.ai/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
     "rangeStart": "2026-04-02T00:00:00Z",
@@ -100,7 +100,7 @@ GET /apm/traces/{gridSecondaryId}/details/{spanId}
 
 ```bash
 curl -X GET "https://web.deepcube.ai/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/details/span-001?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
 ### Example Response
@@ -148,7 +148,7 @@ GET /apm/traces/{gridSecondaryId}/filters
 
 ```bash
 curl -X GET "https://web.deepcube.ai/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/filters?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
 ### Example Response
@@ -196,7 +196,7 @@ GET /apm/traces/{gridSecondaryId}/correlations/{traceId}/spans
 
 ```bash
 curl -X GET "https://web.deepcube.ai/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/correlations/abc123def456789012345678/spans?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
 ### Example Response
@@ -261,7 +261,7 @@ GET /apm/traces/{gridSecondaryId}/correlations/{traceId}/logs
 
 ```bash
 curl -X GET "https://web.deepcube.ai/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/correlations/abc123def456789012345678/logs?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
 ### Example Response
@@ -307,7 +307,7 @@ GET /apm/traces/{gridSecondaryId}/correlations/{traceId}/errors
 
 ```bash
 curl -X GET "https://web.deepcube.ai/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/correlations/abc123def456789012345678/errors?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
 ### Example Response
@@ -353,7 +353,7 @@ GET /apm/traces/{gridSecondaryId}/spans/{spanId}/tags
 
 ```bash
 curl -X GET "https://web.deepcube.ai/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/spans/span-001/tags?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
 ### Example Response
@@ -396,7 +396,7 @@ GET /apm/traces/{gridSecondaryId}/spans/{spanId}/events
 
 ```bash
 curl -X GET "https://web.deepcube.ai/apm/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6/spans/span-001/events?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
 ### Example Response

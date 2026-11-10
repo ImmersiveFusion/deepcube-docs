@@ -11,14 +11,9 @@ This page covers common issues you may encounter with DeepCube and how to resolv
 | App won't install via Steam | Insufficient disk space or Steam client out of date | Ensure at least 4 GB of free disk space. Update Steam to the latest version via **Steam > Check for Steam Client Updates**. |
 | App crashes on launch | Missing or outdated GPU drivers | Update your GPU drivers to the latest version from [NVIDIA](https://www.nvidia.com/drivers){target="_blank"}, [AMD](https://www.amd.com/en/support){target="_blank"}, or [Intel](https://www.intel.com/content/www/us/en/download-center){target="_blank"}. |
 | "Unsupported GPU" error | GPU does not meet minimum requirements (DirectX 11 / Vulkan 1.1) | Check [Supported Configurations](../Supported-Configurations/index.md) for minimum GPU requirements. Integrated graphics are not supported. |
-<!-- SP-074: the Steam path, settings folder, and Player.log paths on this page still say the currently-shipping name.
-     Per R-DOCS-005, docs that quote a shipping string stay on the old
-     string until the code ships the new one. Do not "fix" these to
-     DeepCube ahead of the build. -->
-
-| Antivirus blocking installation | Security software flagging the Unity runtime or installer | Add the DeepCube installation directory to your antivirus exclusion list. The default Steam path is `C:\Program Files (x86)\Steam\steamapps\common\IAPM`, which still carries the old folder name until the Steam depot is renamed, so use it exactly as written. |
+| Antivirus blocking installation | Security software flagging the Unity runtime or installer | Add the DeepCube installation folder to your antivirus exclusion list. To find it in Steam, right-click **DeepCube** in your library and choose **Manage > Browse local files**. |
 | Offline installer fails | Corrupted or incomplete download | Re-download the installer and verify the file hash, then run it again. |
-| App crashes immediately after splash screen | Corrupted local settings or cache | Delete the settings folder at `%APPDATA%\..\LocalLow\Immersive Fusion\IAPM` and relaunch the application. |
+| App crashes immediately after splash screen | Corrupted local settings or cache | On Windows, delete the local data folder at `%APPDATA%\..\LocalLow\Immersive Fusion\DC` and relaunch DeepCube. On macOS, send us your Player.log (see [Collecting Diagnostic Information](#collecting-diagnostic-information)). |
 
 ---
 
@@ -72,9 +67,9 @@ VR is not actively maintained right now. If you already run a headset, the issue
 
 | Symptom | Cause | Resolution |
 |---------|-------|------------|
-| Login loop / can't authenticate | Browser cookie or cache issue preventing OAuth completion | Clear your browser cache and cookies for `portal.deepcube.ai`. Try using a different default browser. Ensure pop-ups are not blocked for the authentication domain. |
+| Login loop / can't authenticate | Browser cookie or cache issue preventing OAuth completion | Clear your browser cache and cookies for `id.deepcube.ai`. Try using a different default browser. Ensure pop-ups are not blocked for the authentication domain. |
 | Session expired frequently | System clock out of sync or unstable network connection | Verify your system clock is accurate and set to auto-sync. Check that your network connection is stable - frequent disconnects will invalidate sessions. |
-| Browser-based auth not opening | Default browser not configured or blocked by security policy | Set a default browser in your OS settings. If in a corporate environment, confirm that `portal.deepcube.ai` is not blocked by your organization's web filter. Try launching the auth URL manually from the login screen. |
+| Browser-based auth not opening | Default browser not configured or blocked by security policy | Set a default browser in your OS settings. If in a corporate environment, confirm that `id.deepcube.ai` is not blocked by your organization's web filter. Try launching the auth URL manually from the login screen. |
 
 ---
 
@@ -95,15 +90,16 @@ DeepCube requires outbound HTTPS access to the following endpoints. Ensure these
 
 ---
 
+<!-- Folder names on this page come from the app's Unity productName, not the brand: DC since tag 1.14.6 (IF.APM.App.Unity.HDRP commit fdb48dab2), checked at tag 1.25.1 in ProjectSettings.asset. The Steam install folder is set in Steamworks, so the page sends users to Browse local files instead of naming it. Re-check both before changing a path. -->
+
 ## Collecting Diagnostic Information
 
 When contacting support, include the following to speed up resolution:
 
 1. **Application version** - found in **Settings > About**
 2. **Player.log file** - located at:
-    - Windows: `%APPDATA%\..\LocalLow\Immersive Fusion\IAPM\Player.log`
-    - macOS: `~/Library/Logs/Immersive Fusion/IAPM/Player.log`
-    - Linux: `~/.config/unity3d/Immersive Fusion/IAPM/Player.log`
+    - Windows: `%APPDATA%\..\LocalLow\Immersive Fusion\DC\Player.log`
+    - macOS: `~/Library/Logs/Immersive Fusion/DC/Player.log`
 3. **System specs** - OS version, GPU model, driver version, RAM
 4. **Steps to reproduce** - what you were doing when the issue occurred
 

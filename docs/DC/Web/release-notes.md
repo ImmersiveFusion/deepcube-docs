@@ -73,7 +73,7 @@ A major release that rolls up everything since 3.189.0. DeepCube&trade; Web is r
 
 **Known Issues:**
 
-- The **SLOs** page cannot set up objectives yet. It describes what an objective will show and what it needs.
+- **SLOs** is coming soon.
 - Tokens created before the token list existed are not listed and cannot be revoked. They stay valid until they expire.
 - The Moment API's figure tiles are not populated yet: every tile names a reason instead of a value.
 - **Profile > Account** shows **Member since** November 7, 2026 for accounts created before that date.

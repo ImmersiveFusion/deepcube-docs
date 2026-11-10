@@ -148,5 +148,4 @@ At the bottom of the page, a note appears when no producer, consumer or dependen
 - [Services](Services.md)
 - [Traces](Traces.md)
 - [Metrics](Metrics.md)
-- [SLOs](SLOs.md)
 - [Instrument your application](../../../Instrument/)

@@ -86,5 +86,4 @@ Under **Not charted yet**, the catalog lists the metrics your services reported 
 - [Getting around](Getting-around.md)
 - [Insights](Insights.md)
 - [Services](Services.md)
-- [SLOs](SLOs.md)
 - [Instrument your application](../../../Instrument/)

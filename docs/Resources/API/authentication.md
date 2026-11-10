@@ -4,6 +4,9 @@
 
 The DeepCube API supports two authentication methods: OAuth 2.0 via Azure AD for user-context access, and API Keys for server-to-server integration.
 
+!!! warning "Microsoft Entra ID tokens are no longer accepted"
+    The Platform API no longer accepts access tokens issued by Microsoft Entra ID (Azure AD) or Azure AD B2C: a request that sends one gets `401`. Use a personal access token or an API key, described under [API Key Authentication](#api-key-authentication). The flows below are kept for reference until this page is rewritten.
+
 ## OAuth 2.0 (Azure AD)
 
 OAuth 2.0 is the recommended authentication method for applications acting on behalf of a user. DeepCube uses Azure Active Directory as the identity provider.
@@ -71,7 +74,7 @@ curl -X POST "https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token" \
 Include the access token in the `Authorization` header:
 
 ```bash
-curl -X GET "https://api-azure.deepcube.ai/apm/diagnostics/{gridSecondaryId}/health?api-version=2.0" \
+curl -X GET "https://web.deepcube.ai/apm/diagnostics/{gridSecondaryId}/health?api-version=2.0" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -127,7 +130,7 @@ See [API Keys](../../Getting-Started/Api-Key/index.md) for detailed instructions
 Include the API key in the `api-key` header:
 
 ```bash
-curl -X GET "https://api-azure.deepcube.ai/apm/diagnostics/{gridSecondaryId}/health?api-version=2.0" \
+curl -X GET "https://web.deepcube.ai/apm/diagnostics/{gridSecondaryId}/health?api-version=2.0" \
   -H "api-key: a1b2c3d4-e5f6-7890-abcd-ef1234567890"
 ```
 

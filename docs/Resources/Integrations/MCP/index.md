@@ -67,7 +67,8 @@ Add the server to your workspace's `.vscode/mcp.json`. This example prompts for 
         "${workspaceFolder}/IF.APM.App.MCP.Server/IF.APM.App.MCP.Server.csproj"
       ],
       "env": {
-        "IF_ApiKey": "${input:if-key}"
+        "IF_ApiKey": "${input:if-key}",
+        "IF_BaseUrl": "https://web.deepcube.ai"
       }
     }
   }
@@ -83,7 +84,7 @@ The server reads its configuration from environment variables prefixed with `IF_
 | Variable | Required | Purpose |
 |----------|----------|---------|
 | `IF_ApiKey` | Yes | Your DeepCube Grid API key. The server exchanges it for an access token and reads the grid it belongs to. |
-| `IF_BaseUrl` | No | The API endpoint. Defaults to `https://api-azure.deepcube.ai`. |
+| `IF_BaseUrl` | Yes, for now | The API endpoint. Set it to `https://web.deepcube.ai`. Server releases up to 0.2.1 default to `https://api-azure.deepcube.ai`, which no longer answers. |
 
 The transport is **stdio**: the client launches the server as a subprocess and exchanges MCP messages over standard input and output. The API key identifies which grid the agent can see, so an agent only ever reads the data that key is authorized for.
 

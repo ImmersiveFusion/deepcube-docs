@@ -5,7 +5,7 @@
 The AI Assistant API provides programmatic access to Tessa - DeepCube's purpose-built AI for application diagnostics. Send chat prompts, convert text to speech, recognize spoken audio, track usage, and manage Grid-level limits.
 
 !!! info "Authentication Required"
-    All endpoints require a valid `Authorization: Bearer {token}` or `api-key: {key}` header. See [Authentication](authentication.md).
+    Every endpoint on this page needs a personal access token, sent as `Authorization: Bearer {token}`. Chat needs the `write` scope, changing limits (`PUT`) needs `manage`, and every other endpoint here needs `read`. See [Authentication](authentication.md).
 
 ## Instance Identifiers
 
@@ -41,7 +41,7 @@ POST /assistant/chat/{instanceSecondaryId}
 
 ```bash
 curl -X POST "https://web.deepcube.ai/assistant/chat/a1b2c3d4-e5f6-7890-abcd-ef1234567890?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
     "prompt": "Why is the payment service returning errors?",
@@ -107,7 +107,7 @@ POST /assistant/speech/{instanceSecondaryId}/synthesize
 
 ```bash
 curl -X POST "https://web.deepcube.ai/assistant/speech/a1b2c3d4-e5f6-7890-abcd-ef1234567890/synthesize?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
     "text": "The payment service error rate has returned to normal levels.",
@@ -156,7 +156,7 @@ Multipart form data with an audio file.
 
 ```bash
 curl -X POST "https://web.deepcube.ai/assistant/speech/a1b2c3d4-e5f6-7890-abcd-ef1234567890/recognize?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN" \
   -F "audio=@recording.wav"
 ```
 
@@ -192,7 +192,7 @@ GET /assistant/usage/energy
 
 ```bash
 curl -X GET "https://web.deepcube.ai/assistant/usage/energy?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
 #### Example Response
@@ -228,7 +228,7 @@ GET /assistant/usage/{gridSecondaryId}/status
 
 ```bash
 curl -X GET "https://web.deepcube.ai/assistant/usage/3fa85f64-5717-4562-b3fc-2c963f66afa6/status?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
 #### Example Response
@@ -266,7 +266,7 @@ GET /assistant/usage/{gridSecondaryId}/summary
 
 ```bash
 curl -X GET "https://web.deepcube.ai/assistant/usage/3fa85f64-5717-4562-b3fc-2c963f66afa6/summary?from=2026-03-01T00:00:00Z&to=2026-04-01T00:00:00Z&api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
 #### Example Response
@@ -307,7 +307,7 @@ GET /assistant/usage/me
 
 ```bash
 curl -X GET "https://web.deepcube.ai/assistant/usage/me?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
 #### Example Response
@@ -356,7 +356,7 @@ GET /assistant/limits/{gridSecondaryId}
 
 ```bash
 curl -X GET "https://web.deepcube.ai/assistant/limits/3fa85f64-5717-4562-b3fc-2c963f66afa6?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
 #### Example Response
@@ -405,7 +405,7 @@ PUT /assistant/limits/{gridSecondaryId}
 
 ```bash
 curl -X PUT "https://web.deepcube.ai/assistant/limits/3fa85f64-5717-4562-b3fc-2c963f66afa6?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
     "dailyPromptLimit": 150,

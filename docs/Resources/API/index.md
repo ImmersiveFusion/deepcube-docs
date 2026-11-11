@@ -9,7 +9,7 @@ The DeepCube REST API provides programmatic access to your observability data - 
 All API requests are made to:
 
 ```
-https://api-azure.deepcube.ai
+https://web.deepcube.ai
 ```
 
 ## API Versioning
@@ -33,14 +33,9 @@ The current API version is **2.0**. You must specify the version on every reques
 
 ## Authentication
 
-The API supports two authentication methods:
+Every request carries a personal access token in the `Authorization: Bearer {token}` header. Create one in DeepCube Web under **Settings > Access > Personal access tokens**.
 
-| Method | Header | Use Case |
-|--------|--------|----------|
-| **OAuth 2.0** | `Authorization: Bearer {token}` | User-context access, interactive apps |
-| **API Key** | `api-key: {key}` | Server-to-server, automation scripts |
-
-See the [Authentication Guide](authentication.md) for setup instructions, token acquisition, and scopes.
+See [Authentication](authentication.md) for scopes and errors.
 
 ## Common Parameters
 
@@ -103,11 +98,11 @@ Content-Type: application/problem+json
 
 ## Quick Start
 
-1. [Get your API key](../../Getting-Started/Api-Key/index.md) or [set up OAuth 2.0](authentication.md)
+1. [Create a personal access token](authentication.md#create-a-personal-access-token)
 2. Pick an endpoint group from the table above
 3. Make your first request:
 
 ```bash
-curl -X GET "https://api-azure.deepcube.ai/apm/diagnostics/{gridSecondaryId}/health?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+curl -X GET "https://web.deepcube.ai/apm/diagnostics/{gridSecondaryId}/health?api-version=2.0" \
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```

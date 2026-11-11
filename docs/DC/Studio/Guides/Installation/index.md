@@ -27,7 +27,7 @@ A subscription is required to use DeepCube Studio.
 5. Select a grid to connect to
 
 !!! note "Requirements"
-    Windows 10 or later (64-bit). See [Supported Configurations](../../Supported-Configurations/index.md) for full details.
+    Windows 11 (64-bit). See [Supported Configurations](../../Supported-Configurations/index.md) for full details.
 
 ## macOS
 

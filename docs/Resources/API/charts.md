@@ -5,7 +5,7 @@
 The Charts and Dashboards API provides access to chart metadata, rendered chart images, chart data for custom rendering, and dashboard layouts.
 
 !!! info "Authentication Required"
-    All endpoints require a valid `Authorization: Bearer {token}` or `api-key: {key}` header. See [Authentication](authentication.md).
+    Every endpoint on this page needs a personal access token with the `read` scope, sent as `Authorization: Bearer {token}`. See [Authentication](authentication.md).
 
 ---
 
@@ -28,8 +28,8 @@ GET /apm/charts/{gridSecondaryId}/charts/{chartSecondaryId}
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.deepcube.ai/apm/charts/3fa85f64-5717-4562-b3fc-2c963f66afa6/charts/b2c74a11-1234-4abc-9def-567890abcdef?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+curl -X GET "https://web.deepcube.ai/apm/charts/3fa85f64-5717-4562-b3fc-2c963f66afa6/charts/b2c74a11-1234-4abc-9def-567890abcdef?api-version=2.0" \
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
 ### Example Response
@@ -71,8 +71,8 @@ GET /apm/charts/{gridSecondaryId}/charts/{chartId}/render
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.deepcube.ai/apm/charts/3fa85f64-5717-4562-b3fc-2c963f66afa6/charts/b2c74a11-1234-4abc-9def-567890abcdef/render?width=1200&height=600&theme=dark&api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+curl -X GET "https://web.deepcube.ai/apm/charts/3fa85f64-5717-4562-b3fc-2c963f66afa6/charts/b2c74a11-1234-4abc-9def-567890abcdef/render?width=1200&height=600&theme=dark&api-version=2.0" \
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN" \
   --output chart.png
 ```
 
@@ -111,8 +111,8 @@ GET /apm/charts/{gridSecondaryId}/charts/{chartId}/range-data
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.deepcube.ai/apm/charts/3fa85f64-5717-4562-b3fc-2c963f66afa6/charts/b2c74a11-1234-4abc-9def-567890abcdef/range-data?rangeStart=2026-04-03T08:00:00Z&rangeEnd=2026-04-03T10:00:00Z&api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+curl -X GET "https://web.deepcube.ai/apm/charts/3fa85f64-5717-4562-b3fc-2c963f66afa6/charts/b2c74a11-1234-4abc-9def-567890abcdef/range-data?rangeStart=2026-04-03T08:00:00Z&rangeEnd=2026-04-03T10:00:00Z&api-version=2.0" \
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
 ### Example Response
@@ -163,8 +163,8 @@ GET /apm/dashboards/{gridSecondaryId}/dashboards/{dashboardSecondaryId}
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.deepcube.ai/apm/dashboards/3fa85f64-5717-4562-b3fc-2c963f66afa6/dashboards/c3d85b22-2345-4bcd-aeef-678901bcdef0?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+curl -X GET "https://web.deepcube.ai/apm/dashboards/3fa85f64-5717-4562-b3fc-2c963f66afa6/dashboards/c3d85b22-2345-4bcd-aeef-678901bcdef0?api-version=2.0" \
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
 ### Example Response

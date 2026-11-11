@@ -5,7 +5,7 @@
 The Logs API provides access to structured log data collected from your instrumented applications. Search logs with filters, retrieve individual log entries, and discover available filter options.
 
 !!! info "Authentication Required"
-    All endpoints require a valid `Authorization: Bearer {token}` or `api-key: {key}` header. See [Authentication](authentication.md).
+    Every endpoint on this page needs a personal access token with the `read` scope, sent as `Authorization: Bearer {token}`. See [Authentication](authentication.md).
 
 ---
 
@@ -44,8 +44,8 @@ POST /apm/logs/{gridSecondaryId}
 ### Example Request
 
 ```bash
-curl -X POST "https://api-azure.deepcube.ai/apm/logs/3fa85f64-5717-4562-b3fc-2c963f66afa6?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+curl -X POST "https://web.deepcube.ai/apm/logs/3fa85f64-5717-4562-b3fc-2c963f66afa6?api-version=2.0" \
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
     "rangeStart": "2026-04-02T12:00:00Z",
@@ -115,8 +115,8 @@ GET /apm/logs/{gridSecondaryId}/details/{spanId}
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.deepcube.ai/apm/logs/3fa85f64-5717-4562-b3fc-2c963f66afa6/details/span-017?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+curl -X GET "https://web.deepcube.ai/apm/logs/3fa85f64-5717-4562-b3fc-2c963f66afa6/details/span-017?api-version=2.0" \
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
 ### Example Response
@@ -167,8 +167,8 @@ GET /apm/logs/{gridSecondaryId}/filters
 ### Example Request
 
 ```bash
-curl -X GET "https://api-azure.deepcube.ai/apm/logs/3fa85f64-5717-4562-b3fc-2c963f66afa6/filters?api-version=2.0" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+curl -X GET "https://web.deepcube.ai/apm/logs/3fa85f64-5717-4562-b3fc-2c963f66afa6/filters?api-version=2.0" \
+  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
 ```
 
 ### Example Response

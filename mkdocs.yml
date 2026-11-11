@@ -330,6 +330,7 @@ plugins:
         # Setup/Custom-application/Instrument → Instrument (promoted to top-level)
         # Old page replaced with redirect notice pointing to new Instrument/ section
         # Per-language sub-paths redirect safely (no real files at old paths)
+        'Setup/Custom-application/Instrument-your-application/index.md': 'Instrument/index.md'
         'Setup/Custom-application/Instrument-your-application/dotnet/index.md': 'Instrument/dotnet/index.md'
         'Setup/Custom-application/Instrument-your-application/java/index.md': 'Instrument/java/index.md'
         'Setup/Custom-application/Instrument-your-application/python/index.md': 'Instrument/python/index.md'
@@ -403,9 +404,8 @@ extra:
   homepage: /
   annotate:
     json: [.s2]
-  analytics:
-    provider: google
-    property: #{GA.TrackingID}#
+  # No client-side analytics: Google Analytics was removed (bus #5884, founder
+  # 2026-11-09: no consent prompt). Visitor metrics come server-side instead (#7453).
 
   social:
     #  - icon: fontawesome/solid/home

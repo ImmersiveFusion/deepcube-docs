@@ -246,7 +246,7 @@ The OpenTelemetry Node.js SDK reads these variables automatically:
 | `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
 | `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in DeepCube |
-| `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (grpc or http/protobuf) |
+| `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (must be `grpc`) |
 | `OTEL_TRACES_EXPORTER` | `otlp` | Trace exporter type |
 | `OTEL_METRICS_EXPORTER` | `otlp` | Metrics exporter type |
 | `OTEL_LOG_LEVEL` | `info` | SDK diagnostic log level |
@@ -295,15 +295,7 @@ const sdk = new NodeSDK({
 ### gRPC connection errors
 
 - Ensure `@grpc/grpc-js` is installed: `npm install @grpc/grpc-js`.
-- If behind a corporate proxy, you may need to use the HTTP/protobuf exporter instead:
-
-    ```bash
-    npm install @opentelemetry/exporter-trace-otlp-proto
-    ```
-
-    ```javascript
-    const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-proto');
-    ```
+- If you are behind a corporate proxy, make sure it allows gRPC (HTTP/2) traffic to `otlp.deepcube.ai:443`. DeepCube does not accept OTLP over HTTP, so switching to an HTTP exporter does not help.
 
 ### ES Modules (import/export) compatibility
 

@@ -98,8 +98,9 @@ The state is always written out, never shown by colour alone.
 |-------|------|---------------|
 | **Optimal** | The grid has 20% or more of its energy left. | The Assistant has its full energy. |
 | **Approaching Conserving** | The grid has less than 20% of its energy left. | Assistant energy is getting low. |
-| **Conserving** | The energy is spent. | Simpler responses until it recharges. The Assistant still works. |
-| **Replenishing** | The free allowance for this window is spent. | The Assistant does not answer until the window recharges. |
+| **Conserving** | The energy is spent. | Simpler responses until it recharges. On a free grid, the Assistant does not answer until then. |
+
+<!-- Maintainers: the Replenishing row is held back. In Web 4.0.19 this table cannot show it; a spent free grid reads Conserving. Restore the row ("The free allowance for this window is spent." / "The Assistant does not answer until the window recharges.") with the release that ships the fix (App.Http PR 5489). -->
 
 Energy is counted in 6-hour windows that start at 00:00, 06:00, 12:00 and 18:00 UTC. When a window ends, the energy recharges.
 

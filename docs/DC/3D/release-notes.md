@@ -6,6 +6,18 @@ description: Version history for DeepCube&trade;, newest first. Entries keep the
 
 ## Version History
 
+### X.Y.Z <small>DATE</small> { id="X.Y.Z" }
+
+<!-- STAGED by Lovelace 2026-11-14. Publish with the first DeepCube tag that contains HDRP PR 5587 (Bug 4173). Replace X.Y.Z and DATE at that tag, and merge with the other entries of that release. HDRP #8253: the 1.23.0 known issue "Tessa's written answer can occasionally come back empty" is very likely this bug (the transport has dropped the tool choice since at least 1.12.0). Retire it ONLY after the dev /tessa-check on 5587 shows zero empty turns (#8028). Also in 5587 (Haugen F-1 to F-3): if a turn still ends empty, Tessa says she has no conclusion, or that she checked nothing, instead of "No response received"; add that line once its exact wording is read from the merged code. -->
+
+**Bug Fixes:**
+
+- Fixed Tessa sometimes stopping after she ran a tool, without writing an answer. The chat showed "Ran 1 tool, then stopped before writing a reply." She now writes her answer after her tools have run.
+
+**Known Issues:**
+
+- The known issues listed for [1.25.1](#1.25.1) still apply.
+
 ### 1.25.1 <small>November 9, 2026</small> { id="1.25.1" }
 
 **Introduction:**

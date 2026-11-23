@@ -10,6 +10,20 @@ Recent updates and features across DeepCube. For complete version history, see t
 
 ## Latest Highlights
 
+### Status You Can Read Without Color (3D v1.26.0)
+
+Status on the grid no longer rests on color alone. Every trace, span and log block, and every service, now shows its state with a pattern and a symbol as well as a color, so you can tell Failed from Processed without telling red from green.
+
+| Feature | Description |
+|---------|-------------|
+| **Pattern and Symbol, Not Color Alone** | Processed traces wear stripes and a check, Failed a crosshatch and an X, In flight dots and a ring, Lost diagonal stripes and a slashed ring; log levels have their own patterns and symbols too |
+| **Every Service Shows Its Status** | Each service and dependency has a status block on its platform: Failed, Processed, Idle (grey, after five minutes with no call) or No data (grey with a slashed ring) |
+| **Calmer Colors** | Lost traces and Warning logs are amber at every distance, and Info logs are blue |
+| **Tessa Names Her Scope** | Before she says nothing is wrong, she is set to say how much she checked, and a turn that ends without an answer now says so |
+| **Counts That Read Right** | 1,000 shows as 1K and 20,000,000 as 20M |
+
+See the [1.26.0 release notes](DC/3D/release-notes.md#1.26.0) for everything in this update.
+
 ### Sign In with Steam, and Tessa Asks First (3D v1.23.1, v1.23.0)
 
 On the Grid, a service is now one platform however many instances serve it, and phantoms are drawn only once they have been judged. Launching from Steam now signs you in with Steam, falling back to your saved session if that does not work, and after a browser sign-in the next launch signs you straight in while that session is still valid. Tessa asks before she clears the service map, runs a Shoebox or changes a preference. Spans that recorded an exception, or answered with an HTTP 5xx or 429, now count as failures, so some services may show a higher error rate than before.
@@ -100,6 +114,7 @@ Tessa gains extensible capabilities and the ability to analyze images.
 
 ### November 2026
 
+- **3D v1.26.0**: Status shown by pattern and symbol as well as color, on every block and every service; Idle after five minutes with its own look; amber Lost and Warning, blue Info; Tessa names how much she checked; operation counts read right in K, M and B ([release notes](DC/3D/release-notes.md#1.26.0))
 - **3D v1.25.1**: Click a row on Recent Errors or Recent Logs to open the Diagnostics cube on its trace; leaving the cube returns you to your platform; Tessa can take you to a service and asks before she saves to your memory; phantoms on a grid that was already running ([release notes](DC/3D/release-notes.md#1.25.1))
 
 ### October 2026

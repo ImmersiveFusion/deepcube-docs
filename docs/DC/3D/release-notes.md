@@ -6,6 +6,56 @@ description: Version history for DeepCube&trade;, newest first. Entries keep the
 
 ## Version History
 
+### 1.26.0 <small>November 23, 2026</small> { id="1.26.0" }
+
+**Introduction:**
+
+Everything since 1.25.1 is in this update. Status on the grid no longer rests on color alone. Every trace, span and log block, and every service, now shows its state with a pattern and a symbol as well as a color, so you can tell Failed from Processed without telling red from green. Lost traces and Warning logs are now amber, and Info logs are blue. A service with no call for five minutes is Idle, with a look of its own. Before Tessa says nothing is wrong, she is set to say how far she looked. When a turn of hers ends without an answer, she says so. Operation counts read correctly in thousands, millions and billions.
+
+**New Features:**
+
+- **Status in Pattern and Symbol, Not Color Alone**: Every block now carries its state three ways: a color, a pattern on its sides and a symbol on its ends. The pattern tiles at a fixed size, so it does not stretch on a tall block. The symbol shows on the two faces across the block's longest side: the top and bottom of a pillar, or the ends of a bar. The same patterns and symbols are on the span and log bars in the Diagnostics cube.
+
+    | Block | State | Pattern | Symbol |
+    |-------|-------|---------|--------|
+    | Trace | Processed | Stripes | Check |
+    | Trace | Failed | Crosshatch | X |
+    | Trace | In flight | Dots | Ring |
+    | Trace | Lost (amber) | Diagonal stripes | Slashed ring |
+    | Log | Error | Zigzag | X |
+    | Log | Warning (amber) | Chevrons | Triangle |
+    | Log | Info (blue), Debug, Verbose | Small squares | Dot |
+
+- **Every Service Shows Its Status**: Each service and dependency now has a status block on its platform, in the same patterns and symbols as a trace. A service in error, or a dependency whose callers' calls are failing, shows the Failed look. A healthy service shows the Processed look. A service with no call for five minutes shows the Processed pattern and check in grey, which means Idle. A dependency that sends no telemetry of its own is plain grey with the slashed ring, which means No data.
+- **Idle After Five Minutes, With a Look of Its Own**: A service is Idle once it has had no call for five minutes. Before, it went idle after 30 or 60 seconds and wore the In flight look. Idle and No data now look different from each other and from In flight.
+
+**Improvements:**
+
+- **One In Flight Look**: A trace that has been received and one that has been published now look the same, as In flight. Hover over the block, and its details still say which.
+- **A Trace Is In Flight While Any Span Is**: A trace looks In flight from every distance while any of its spans is still in flight. Up close and from far away, a trace now shows the same state.
+- **Amber for Lost and Warning, Blue for Info**: Lost traces are amber at every distance. From far away, they used to be near black. Warning logs are amber at every distance, where they used to be red-orange from far away. Info logs are blue, where up close they used to be bright white. Debug and Verbose stay grey.
+- **Status Blocks from Above**: Seen from above, status blocks now sit at 45 degrees.
+- **Tessa Names Her Scope**: When nothing looks wrong, Tessa is now set to say how much she checked, for example "Nothing looks wrong across the 40 services on this grid." If she cannot place you on a service, she is set to say she has not checked anything. For a service that has gone missing, she is set to say when it was last seen, and to call it down only when its callers in view are failing. If your access does not cover what you asked about, she is set to say so, instead of saying there is nothing there.
+- **Tessa Says When She Could Not Finish**: A turn that ends without an answer now says so. If her tools ran but she stopped before writing an answer, she says so, and their results stay in the cards above. If she got no reply at all, she says she has not checked anything yet and asks you to try again. If her service times out, the chat says "Tessa can't answer right now. Try again in a minute." A Stop you press yourself stays silent.
+- **Shorter Grid Walk-Throughs**: Ask Tessa to walk you through the health of your grid, and she is now set to keep it under about 120 words. She is set to give the verdict first, then only the services that matter, and to count the healthy services instead of naming every one.
+- **Phantoms on a Grid That Was Already Running**: On a grid that was already running when the client started, a queue that nothing has read while the client watched it is described as unread for 60 seconds, rather than as never read. Whether anything read it before the client connected is not known, and Tessa says so.
+- **Thin Scrollbars, Calmer Scrolling**: Every dialog, including Help and Preferences, now shows a thin scrollbar that matches DeepCube Web. Scrolling Help and Preferences is faster. The grid picker stops at the end of its list instead of springing back.
+- **Links in the Chat**: Only full web addresses become links. A file name such as `main.py`, or a bare `example.com`, stays plain text.
+- Security fixes, including one that stops Tessa answering from what is on screen when the server has refused the request.
+
+**Bug Fixes:**
+
+- Fixed operation counts. 1,000 now shows as 1K, and 20,000,000 as 20M. Before, 1,000 showed as 1000, and 20,000,000 showed as 2M. The fix covers the "N/m (from callers)" label, the tables and the tooltip.
+- Fixed a service that a caller named before the service sent its first span. It could show as a node that was not instrumented, and Tessa then reported it as not instrumented while it was serving traffic. It is now one node, and it becomes the instrumented service when its own spans arrive.
+- Fixed every Tessa answer starting with three or four blank lines.
+- Fixed the **Thinking** row staying in the chat after Tessa's turn had ended. This happened when a tool's effect was the whole answer, when her reply had nothing to show, or when the turn timed out.
+- Fixed the chat offering `/tessa-check`, a developer test, to customers. It is no longer offered to customers by default.
+
+**Known Issues:**
+
+- The known issues listed for [1.25.1](#1.25.1) still apply, except that phantoms on a grid that was already running when the client started now use 60 seconds of watching in place of the earlier timings.
+- A dependency's numbers and error state can differ between DeepCube and DeepCube Web.
+
 ### 1.25.1 <small>November 9, 2026</small> { id="1.25.1" }
 
 **Introduction:**

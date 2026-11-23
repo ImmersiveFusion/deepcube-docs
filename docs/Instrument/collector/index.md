@@ -1,7 +1,5 @@
 # OpenTelemetry Collector
 
-{!template/subscription-required.mdp!}
-
 The OpenTelemetry Collector is a vendor-agnostic proxy that receives, processes, and exports telemetry data. This guide covers when to use a Collector, how to configure it for DeepCube, and deployment options for Docker and Kubernetes.
 
 [:octicons-arrow-left-24: Back to Instrument Overview](../index.md)

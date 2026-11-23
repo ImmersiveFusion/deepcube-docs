@@ -1,7 +1,5 @@
 # Java Instrumentation
 
-{!template/subscription-required.mdp!}
-
 Instrument your Java applications with OpenTelemetry to send traces, metrics, and logs to DeepCube. This guide covers the Java agent for auto-instrumentation, Spring Boot setup, and manual SDK usage.
 
 [:octicons-arrow-left-24: Back to Instrument Overview](../index.md)

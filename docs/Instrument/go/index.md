@@ -1,7 +1,5 @@
 # Go Instrumentation
 
-{!template/subscription-required.mdp!}
-
 Instrument your Go applications with OpenTelemetry to send traces, metrics, and logs to DeepCube. This guide covers net/http, gRPC, manual span creation, and SDK configuration.
 
 [:octicons-arrow-left-24: Back to Instrument Overview](../index.md)

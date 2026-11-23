@@ -1,7 +1,5 @@
 # .NET Instrumentation
 
-{!template/subscription-required.mdp!}
-
 Instrument your .NET applications with OpenTelemetry to send traces, metrics, and logs to DeepCube. This guide covers ASP.NET Core, console applications, and worker services.
 
 [:octicons-arrow-left-24: Back to Instrument Overview](../index.md)

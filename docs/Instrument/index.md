@@ -1,7 +1,5 @@
 # Instrument Your Application
 
-{!template/subscription-required.mdp!}
-
 Send traces, metrics, and logs from your application to DeepCube using standard [OpenTelemetry](https://opentelemetry.io/){ target="_blank" }. No proprietary SDKs required - use the same open-source libraries the industry relies on.
 
 ## Quick Configuration

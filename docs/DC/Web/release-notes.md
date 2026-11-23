@@ -6,9 +6,7 @@ description: Version history for DeepCube&trade; Web, newest first.
 
 ## Version History
 
-### X.Y.Z <small>DATE</small> { id="X.Y.Z" }
-
-<!-- Lovelace 2026-11-15: publish with the first DeepCube Web tag that contains App.Http f768100cf (PR 5566), e3df771a6 (PR 5567) and 858a6cbf5 (PR 5634). Replace X.Y.Z and DATE at that tag. -->
+### 4.0.20 <small>November 15, 2026</small> { id="4.0.20" }
 
 **Introduction:**
 

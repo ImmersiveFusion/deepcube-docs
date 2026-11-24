@@ -6,8 +6,7 @@ description: Version history for DeepCube&trade;, newest first. Entries keep the
 
 ## Version History
 
-<!-- Lovelace 2026-11-24: hold until 1.26.1 is on stable and Steam. Then set DATE to the stable publish date. -->
-### 1.26.1 <small>DATE</small> { id="1.26.1" }
+### 1.26.1 <small>November 24, 2026</small> { id="1.26.1" }
 
 **Introduction:**
 

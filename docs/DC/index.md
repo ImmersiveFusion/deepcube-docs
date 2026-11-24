@@ -34,7 +34,7 @@ The full immersive experience. A native application with 3D visualization and AI
 
 ## DeepCube Web
 
-Browser-based access to your telemetry data. Manage your account, configure alerts, and view traces from any device.
+Browser-based access to your telemetry data. Manage your account and view traces from any device.
 
 [Web :material-web:](Web/index.md){ .md-button }
 
@@ -42,7 +42,6 @@ Browser-based access to your telemetry data. Manage your account, configure aler
 |----------|-----|
 | Quick status checks | Instant access from any browser |
 | Account management | Subscriptions, API keys, team settings |
-| Alert configuration | Set up and manage notifications |
 | Mobile monitoring | Access from phone or tablet |
 
 ## DeepCube Studio

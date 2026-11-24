@@ -4,6 +4,11 @@ Instrument your Go applications with OpenTelemetry to send traces, metrics, and 
 
 [:octicons-arrow-left-24: Back to Instrument Overview](../index.md)
 
+!!! warning "DeepCube accepts OTLP over gRPC only"
+    Send to `https://otlp.deepcube.ai:443` over gRPC. DeepCube does not accept OTLP over HTTP (`http/protobuf`): there is no `/v1/traces` path and no port 4318. An exporter left on HTTP sends nothing that arrives, and the only sign is an export error, usually a 404, in your application's own log. Use the `otlptracegrpc` and `otlpmetricgrpc` packages with `WithEndpoint("otlp.deepcube.ai:443")`, not `otlptracehttp`. If you use `autoexport`, set `OTEL_EXPORTER_OTLP_PROTOCOL=grpc`.
+
+    Nothing arriving? See [Nothing arriving?](../index.md#nothing-arriving).
+
 ## Go Modules
 
 Add the required OpenTelemetry modules to your project:
@@ -288,7 +293,7 @@ The OpenTelemetry Go SDK reads these variables when using the autoconfigure opti
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai` | OTLP collector endpoint |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai:443` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
 | `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in DeepCube |
 | `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (must be `grpc`) |
@@ -322,6 +327,7 @@ The OpenTelemetry Go SDK reads these variables when using the autoconfigure opti
 
 ### No data appearing in DeepCube
 
+- **Check the protocol first.** It must be gRPC. Work through [Nothing arriving?](../index.md#nothing-arriving).
 - Verify the API key by copying a fresh one from [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } under **Administration > Grids > Instrument**.
 - Ensure `cleanup()` (or `tracerProvider.Shutdown()`) is called before the process exits - without it, buffered spans may be lost.
 - Check that TLS credentials are configured: `otlptracegrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, ""))`.

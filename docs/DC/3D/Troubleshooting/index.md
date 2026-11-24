@@ -21,7 +21,7 @@ This page covers common issues you may encounter with DeepCube and how to resolv
 
 | Symptom | Cause | Resolution |
 |---------|-------|------------|
-| No telemetry data appearing | Application not connected to the DeepCube backend, or no instrumented services sending data | Verify your connection to `otlp.deepcube.ai` on port 443. Confirm your instrumented applications are configured to send OpenTelemetry data to the correct endpoint. See [Network Requirements](#network-requirements) below. |
+| No telemetry data appearing | Application not connected to the DeepCube backend, or no instrumented services sending data | Verify your connection to `otlp.deepcube.ai` on port 443. Confirm your instrumented applications send OpenTelemetry data to `https://otlp.deepcube.ai:443` over gRPC: DeepCube does not accept OTLP over HTTP or port 4318. Work through [Nothing arriving?](../../../Instrument/index.md#nothing-arriving). See [Network Requirements](#network-requirements) below. |
 | "Connection failed" error | Firewall or proxy blocking outbound HTTPS traffic | Ensure ports 443/TCP are open for all endpoints listed in [Network Requirements](#network-requirements). If behind a corporate proxy, configure the proxy settings in your system environment variables. |
 | Data stops updating after a while | Network interruption or session timeout | Check your network connection. The application will automatically reconnect when connectivity is restored. If the issue persists, restart the application. |
 | Demo telemetry not loading | Demo mode not enabled or backend unreachable | Open **Settings > Data Source** and confirm Demo Telemetry is selected. Verify you have an active internet connection to `web.deepcube.ai`. |
@@ -79,7 +79,7 @@ DeepCube requires outbound HTTPS access to the following endpoints. Ensure these
 
 | Endpoint | Port | Protocol | Purpose |
 |----------|------|----------|---------|
-| `otlp.deepcube.ai` | 443 | TCP (HTTPS) | Telemetry ingestion - receives OpenTelemetry data from your instrumented applications |
+| `otlp.deepcube.ai` | 443 | TCP (OTLP over gRPC, TLS) | Telemetry ingestion - receives OpenTelemetry data from your instrumented applications |
 | `web.deepcube.ai` | 443 | TCP (HTTPS) | Platform API - powers Tessa and application data |
 | `id.deepcube.ai` | 443 | TCP (HTTPS) | Sign-in |
 | `*.steamcontent.com` | 443 | TCP (HTTPS) | Steam CDN - application downloads and updates (Steam installs only) |

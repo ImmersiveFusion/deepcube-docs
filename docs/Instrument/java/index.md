@@ -4,6 +4,11 @@ Instrument your Java applications with OpenTelemetry to send traces, metrics, an
 
 [:octicons-arrow-left-24: Back to Instrument Overview](../index.md)
 
+!!! warning "DeepCube accepts OTLP over gRPC only"
+    Send to `https://otlp.deepcube.ai:443` over gRPC. DeepCube does not accept OTLP over HTTP (`http/protobuf`): there is no `/v1/traces` path and no port 4318. An exporter left on HTTP sends nothing that arrives, and the only sign is an export error, usually a 404, in your application's own log. Versions 2.0 and later of the Java agent and the Spring Boot starter default to `http/protobuf`, so set `-Dotel.exporter.otlp.protocol=grpc` (or `OTEL_EXPORTER_OTLP_PROTOCOL=grpc`). In SDK code, build `OtlpGrpcSpanExporter`, not `OtlpHttpSpanExporter`.
+
+    Nothing arriving? See [Nothing arriving?](../index.md#nothing-arriving).
+
 ## Approach 1: Java Agent (Recommended)
 
 The OpenTelemetry Java agent provides automatic instrumentation for most popular frameworks and libraries with zero code changes.
@@ -19,7 +24,7 @@ curl -L -o opentelemetry-javaagent.jar \
 
 ```bash
 java -javaagent:opentelemetry-javaagent.jar \
-  -Dotel.exporter.otlp.endpoint=https://otlp.deepcube.ai \
+  -Dotel.exporter.otlp.endpoint=https://otlp.deepcube.ai:443 \
   -Dotel.exporter.otlp.protocol=grpc \
   -Dotel.exporter.otlp.headers=api-key=YOUR-API-KEY \
   -Dotel.service.name=my-java-app \
@@ -82,7 +87,7 @@ Configure in `application.yml`:
 otel:
   exporter:
     otlp:
-      endpoint: https://otlp.deepcube.ai
+      endpoint: https://otlp.deepcube.ai:443
       protocol: grpc
       headers:
         api-key: YOUR-API-KEY
@@ -93,7 +98,7 @@ otel:
 Or in `application.properties`:
 
 ```properties
-otel.exporter.otlp.endpoint=https://otlp.deepcube.ai
+otel.exporter.otlp.endpoint=https://otlp.deepcube.ai:443
 otel.exporter.otlp.protocol=grpc
 otel.exporter.otlp.headers.api-key=YOUR-API-KEY
 otel.service.name=my-spring-boot-app
@@ -174,7 +179,7 @@ public class OtelConfig {
 
         // Trace exporter
         OtlpGrpcSpanExporter spanExporter = OtlpGrpcSpanExporter.builder()
-            .setEndpoint("https://otlp.deepcube.ai")
+            .setEndpoint("https://otlp.deepcube.ai:443")
             .addHeader("api-key", "YOUR-API-KEY")
             .build();
 
@@ -185,7 +190,7 @@ public class OtelConfig {
 
         // Metric exporter
         OtlpGrpcMetricExporter metricExporter = OtlpGrpcMetricExporter.builder()
-            .setEndpoint("https://otlp.deepcube.ai")
+            .setEndpoint("https://otlp.deepcube.ai:443")
             .addHeader("api-key", "YOUR-API-KEY")
             .build();
 
@@ -254,7 +259,7 @@ The Java agent and SDK autoconfigure module read these variables:
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai` | OTLP collector endpoint |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai:443` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
 | `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in DeepCube |
 | `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (must be `grpc`) |
@@ -266,7 +271,7 @@ You can also use JVM system properties (prefix with `-D` and replace underscores
 
 ```bash
 java -javaagent:opentelemetry-javaagent.jar \
-  -Dotel.exporter.otlp.endpoint=https://otlp.deepcube.ai \
+  -Dotel.exporter.otlp.endpoint=https://otlp.deepcube.ai:443 \
   -Dotel.exporter.otlp.protocol=grpc \
   -Dotel.exporter.otlp.headers=api-key=YOUR-API-KEY \
   -Dotel.service.name=my-java-app \
@@ -293,8 +298,9 @@ java -javaagent:opentelemetry-javaagent.jar \
 
 ### No data appearing in DeepCube
 
+- **Check the protocol first.** It must be gRPC. Work through [Nothing arriving?](../index.md#nothing-arriving).
 - Verify the API key by copying a fresh one from [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } under **Administration > Grids > Instrument**.
-- Check network connectivity: `curl -v https://otlp.deepcube.ai`.
+- Check network connectivity: `curl -v https://otlp.deepcube.ai:443`.
 - Look for OpenTelemetry warnings in your application logs.
 
 ### Spring Boot starter conflicts

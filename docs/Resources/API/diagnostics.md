@@ -73,7 +73,14 @@ curl -X GET "https://web.deepcube.ai/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c9
 
 ## Alert Status
 
-Retrieve active alerts triggered by threshold rules configured for your Grid.
+Check the grid against fixed thresholds over a time window. This is a check run when you call it, not a standing watch: nothing monitors between calls, and nothing notifies anyone. The thresholds are fixed and cannot be configured. The window is at most one hour: a longer range keeps its end and is shortened to the hour before it.
+
+| Severity | Scope | Condition |
+|----------|-------|-----------|
+| `CRITICAL` | A service | Error rate above 10% |
+| `WARNING` | A service | Error rate above 1% |
+| `DEGRADED` | `system` | Apdex below 0.7 |
+| `SERVICE_DOWN` | A service | Zero requests in the window |
 
 ```
 GET /apm/diagnostics/{gridSecondaryId}/alerts
@@ -84,6 +91,8 @@ GET /apm/diagnostics/{gridSecondaryId}/alerts
 | Name | In | Type | Required | Description |
 |------|-----|------|----------|-------------|
 | `gridSecondaryId` | path | `string` (UUID) | Yes | Grid identifier |
+| `rangeStart` | query | `string` (date-time) | No | Start of the window. Defaults to 15 minutes ago |
+| `rangeEnd` | query | `string` (date-time) | No | End of the window. Defaults to now. A window longer than one hour is shortened to the hour ending here |
 | `api-version` | query | `string` | Yes | API version - `2.0` |
 
 ### Example Request
@@ -97,30 +106,34 @@ curl -X GET "https://web.deepcube.ai/apm/diagnostics/3fa85f64-5717-4562-b3fc-2c9
 
 ```json
 {
+  "totalAlerts": 1,
+  "criticalCount": 1,
+  "warningCount": 0,
+  "systemStatus": "critical",
   "alerts": [
     {
-      "id": "alert-001",
-      "ruleName": "High Error Rate",
-      "severity": "critical",
-      "serviceName": "payment-service",
-      "condition": "error_rate > 5%",
-      "currentValue": 8.5,
-      "triggeredAt": "2026-04-03T09:45:12Z",
-      "status": "firing"
-    },
-    {
-      "id": "alert-002",
-      "ruleName": "Elevated Latency",
-      "severity": "warning",
-      "serviceName": "payment-service",
-      "condition": "p95_latency > 2000ms",
-      "currentValue": 2340,
-      "triggeredAt": "2026-04-03T09:47:30Z",
-      "status": "firing"
+      "severity": "CRITICAL",
+      "scope": "payment-service",
+      "condition": "Error rate 14.2% exceeds 10% threshold"
     }
-  ]
+  ],
+  "note": "1 service threshold breach(es) in this window. This is a check run now, not a standing watch -- nothing is monitoring between calls.",
+  "since": "2026-04-03T09:30:00Z",
+  "overflow": false,
+  "spansAnalyzed": 18240
 }
 ```
+
+| Field | Description |
+|-------|-------------|
+| `totalAlerts` | Number of threshold breaches in the window |
+| `criticalCount`, `warningCount` | Breaches with severity `CRITICAL` and `WARNING` |
+| `systemStatus` | `no_data` when no telemetry arrived in the window; `healthy` when no span failed; `critical` when any service's error rate is above 10%; otherwise `degraded` |
+| `alerts` | One entry per breach: `severity`, `scope` (a service name, or `system`), and `condition` in words |
+| `note` | States that this is a check run now, not a standing watch |
+| `since` | Start of the window checked |
+| `overflow` | `true` when the window held more spans than one check reads, so the result covers only part of it |
+| `spansAnalyzed` | Number of spans the check read |
 
 ---
 

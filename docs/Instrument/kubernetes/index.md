@@ -4,6 +4,11 @@ Deploy OpenTelemetry on Kubernetes to automatically instrument your workloads an
 
 [:octicons-arrow-left-24: Back to Instrument Overview](../index.md)
 
+!!! warning "DeepCube accepts OTLP over gRPC only"
+    Send to `https://otlp.deepcube.ai:443` over gRPC. DeepCube does not accept OTLP over HTTP (`http/protobuf`): there is no `/v1/traces` path and no port 4318. An exporter left on HTTP sends nothing that arrives, and the only sign is an export error, usually a 404, in your application's own log. The Operator's auto-instrumentation defaults to `http/protobuf` for Java, Python, .NET and Go, so send those through a Collector, as described below. For Node.js, set `OTEL_EXPORTER_OTLP_PROTOCOL` to `grpc` in the resource's `spec.env`. A Collector's exporter to DeepCube is `otlp` to `otlp.deepcube.ai:443`.
+
+    Nothing arriving? See [Nothing arriving?](../index.md#nothing-arriving).
+
 ## Overview
 
 There are two main strategies for Kubernetes instrumentation:
@@ -45,11 +50,13 @@ metadata:
   namespace: default
 spec:
   exporter:
-    endpoint: https://otlp.deepcube.ai
+    endpoint: https://otlp.deepcube.ai:443
   propagators:
     - tracecontext
     - baggage
   env:
+    - name: OTEL_EXPORTER_OTLP_PROTOCOL
+      value: grpc
     - name: OTEL_EXPORTER_OTLP_HEADERS
       valueFrom:
         secretKeyRef:
@@ -60,7 +67,7 @@ spec:
 ```
 
 !!! warning "Use a Collector for Java, Python, .NET, and Go"
-    DeepCube accepts OTLP over gRPC only. The Operator's auto-instrumentation defaults to `http/protobuf` for Java, Python, .NET, and Go, and the Operator's Python image does not support gRPC at this time. Only Node.js defaults to gRPC. Send the other languages through a [Collector](#otel-collector-as-daemonset), which receives OTLP over HTTP on port 4318 and exports to DeepCube over gRPC.
+    DeepCube accepts OTLP over gRPC only. The Operator's auto-instrumentation defaults to `http/protobuf` for Java, Python, .NET, and Go, and the Operator's Python image does not support gRPC at this time. For Node.js, the resource above sets `OTEL_EXPORTER_OTLP_PROTOCOL` to `grpc` explicitly, so it does not depend on the image's default. Each language's default is in the [Operator's auto-instrumentation documentation](https://opentelemetry.io/docs/platforms/kubernetes/operator/automatic/){ target="_blank" }; check it against the Operator version you run. Send the other languages through a [Collector](#otel-collector-as-daemonset), which receives OTLP over HTTP on port 4318 and exports to DeepCube over gRPC.
 
 For those languages, deploy the Collector, then create a second resource that points at it. Replace `YOUR-COLLECTOR-HOST` with the DNS name of your Collector's Kubernetes Service, and make sure that Service exposes port 4318:
 

@@ -4,6 +4,11 @@ Instrument your Python applications with OpenTelemetry to send traces, metrics, 
 
 [:octicons-arrow-left-24: Back to Instrument Overview](../index.md)
 
+!!! warning "DeepCube accepts OTLP over gRPC only"
+    Send to `https://otlp.deepcube.ai:443` over gRPC. DeepCube does not accept OTLP over HTTP (`http/protobuf`): there is no `/v1/traces` path and no port 4318. An exporter left on HTTP sends nothing that arrives, and the only sign is an export error, usually a 404, in your application's own log. Set `OTEL_EXPORTER_OTLP_PROTOCOL=grpc` for `opentelemetry-instrument`. In code, import the exporter from `opentelemetry.exporter.otlp.proto.grpc`, not `opentelemetry.exporter.otlp.proto.http`.
+
+    Nothing arriving? See [Nothing arriving?](../index.md#nothing-arriving).
+
 ## Install Packages
 
 Install the core OpenTelemetry packages:
@@ -44,7 +49,8 @@ Then install auto-instrumentation libraries for your framework:
 The `opentelemetry-instrument` command wraps your application and automatically instruments supported libraries:
 
 ```bash
-OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai \
+OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai:443 \
+OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
 OTEL_EXPORTER_OTLP_HEADERS="api-key=YOUR-API-KEY" \
 OTEL_SERVICE_NAME=my-python-app \
 opentelemetry-instrument python your_app.py
@@ -55,7 +61,8 @@ For framework-specific entry points:
 === "Django"
 
     ```bash
-    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai \
+    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai:443 \
+    OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
     OTEL_EXPORTER_OTLP_HEADERS="api-key=YOUR-API-KEY" \
     OTEL_SERVICE_NAME=my-django-app \
     opentelemetry-instrument python manage.py runserver
@@ -64,7 +71,8 @@ For framework-specific entry points:
 === "Flask"
 
     ```bash
-    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai \
+    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai:443 \
+    OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
     OTEL_EXPORTER_OTLP_HEADERS="api-key=YOUR-API-KEY" \
     OTEL_SERVICE_NAME=my-flask-app \
     opentelemetry-instrument flask run
@@ -73,7 +81,8 @@ For framework-specific entry points:
 === "FastAPI"
 
     ```bash
-    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai \
+    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai:443 \
+    OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
     OTEL_EXPORTER_OTLP_HEADERS="api-key=YOUR-API-KEY" \
     OTEL_SERVICE_NAME=my-fastapi-app \
     opentelemetry-instrument uvicorn main:app
@@ -82,7 +91,8 @@ For framework-specific entry points:
 === "Gunicorn"
 
     ```bash
-    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai \
+    OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai:443 \
+    OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
     OTEL_EXPORTER_OTLP_HEADERS="api-key=YOUR-API-KEY" \
     OTEL_SERVICE_NAME=my-app \
     opentelemetry-instrument gunicorn myapp.wsgi:application
@@ -109,7 +119,7 @@ def configure_opentelemetry():
     provider = TracerProvider(resource=resource)
 
     exporter = OTLPSpanExporter(
-        endpoint="https://otlp.deepcube.ai",
+        endpoint="https://otlp.deepcube.ai:443",
         headers={"api-key": "YOUR-API-KEY"},
     )
     provider.add_span_processor(BatchSpanProcessor(exporter))
@@ -150,7 +160,7 @@ from opentelemetry.instrumentation.flask import FlaskInstrumentor
 resource = Resource.create({SERVICE_NAME: "my-flask-app"})
 provider = TracerProvider(resource=resource)
 exporter = OTLPSpanExporter(
-    endpoint="https://otlp.deepcube.ai",
+    endpoint="https://otlp.deepcube.ai:443",
     headers={"api-key": "YOUR-API-KEY"},
 )
 provider.add_span_processor(BatchSpanProcessor(exporter))
@@ -183,7 +193,7 @@ from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
 resource = Resource.create({SERVICE_NAME: "my-fastapi-app"})
 provider = TracerProvider(resource=resource)
 exporter = OTLPSpanExporter(
-    endpoint="https://otlp.deepcube.ai",
+    endpoint="https://otlp.deepcube.ai:443",
     headers={"api-key": "YOUR-API-KEY"},
 )
 provider.add_span_processor(BatchSpanProcessor(exporter))
@@ -265,7 +275,7 @@ The OpenTelemetry Python SDK reads these variables automatically:
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai` | OTLP collector endpoint |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai:443` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
 | `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in DeepCube |
 | `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (must be `grpc`) |
@@ -298,8 +308,9 @@ The OpenTelemetry Python SDK reads these variables automatically:
 
 ### No data appearing in DeepCube
 
+- **Check the protocol first.** It must be gRPC. Work through [Nothing arriving?](../index.md#nothing-arriving).
 - Verify the API key by copying a fresh one from [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } under **Administration > Grids > Instrument**.
-- Check network connectivity: `python -c "import urllib.request; urllib.request.urlopen('https://otlp.deepcube.ai')"`.
+- Check network connectivity: `python -c "import urllib.request; urllib.request.urlopen('https://otlp.deepcube.ai:443')"`.
 - Ensure `grpcio` is installed: `pip install grpcio`. The gRPC exporter requires it.
 
 ### Auto-instrumentation not working

@@ -6,11 +6,12 @@ description: Version history for DeepCube&trade;, newest first. Entries keep the
 
 ## Version History
 
-### 1.26.1 <small>November 24, 2026</small> { id="1.26.1" }
+<!-- Lovelace 2026-11-24: hold until 1.26.1 is on stable and Steam. Then set DATE to the stable publish date. -->
+### 1.26.1 <small>DATE</small> { id="1.26.1" }
 
 **Introduction:**
 
-1.26.1 is on the alpha channel only. It is not yet on the beta or stable channel, or on Steam. On a healthy grid, Mosey now tours your services instead of standing still. If a grid refuses you entry, DeepCube now says so instead of leaving you in an empty grid.
+Everything since 1.26.0 is in this update. On a healthy grid, Mosey now tours your services instead of standing still. If a grid refuses you entry, DeepCube now says so instead of leaving you in an empty grid.
 
 **Improvements:**
 

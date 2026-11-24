@@ -30,7 +30,7 @@ When you are ready to bring in your **own** telemetry, subscribe and provision a
 Signing up is self-serve end to end: you choose how to sign in, name your account, pick a plan, and land in the product. New accounts start on the free **Start** plan.
 
 !!! info "Free to start, but sending your own data needs a subscription"
-    Exploring the demo grids needs a free account. No subscription, no payment details, no sales call. Sending your **own** telemetry is different: it requires an active subscription and a provisioned grid. The **Start** plan is free, but provisioning a grid requires a valid credit card even on Start. See [Plans & Pricing](https://immersivefusion.com/pricing){ target="_blank" } for all options.
+    Exploring the demo grids needs a free account. No subscription, no payment details, no sales call. Sending your **own** telemetry is different: it requires an active subscription and a provisioned grid. The **Start** plan is free, and on its own it needs no card. A paid plan or a paid add-on, such as Tessa, needs a valid card. See [Plans & Pricing](https://immersivefusion.com/pricing){ target="_blank" } for all options.
 
 ### Choose how you sign in
 
@@ -56,7 +56,7 @@ The first time you sign in, a short Quick Start wizard walks you through three s
 |------|--------------|
 | **1. Account** | Name your tenant (the label for your subscription, environment, and grid). One field; the rest is filled in for you. |
 | **2. Subscription** | Choose a plan. Pick a Grid tier, optionally add Tessa and support add-ons, all in one cart. Some higher tiers show **Coming soon** while capacity is brought online; the tiers you can pick today are the ones ready to serve you. Start on an available tier now and upgrade when the higher tiers open. |
-| **3. Final checks** | Choose where your data is stored, accept the terms, and add a payment method. Metered items are billed on what you use at the end of the cycle, not charged up front. |
+| **3. Final checks** | Choose where your data is stored and accept the terms. If anything in your cart costs money, add a card; with Start alone, the wizard says no card is needed. Metered items are billed on what you use at the end of the cycle, not charged up front. |
 
 When the wizard finishes it provisions your subscription, environment, and grid, and drops you on the product hub.
 

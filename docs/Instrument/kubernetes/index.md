@@ -1,7 +1,5 @@
 # Kubernetes Instrumentation
 
-{!template/subscription-required.mdp!}
-
 Deploy OpenTelemetry on Kubernetes to automatically instrument your workloads and collect cluster-wide telemetry. This guide covers the OpenTelemetry Operator, the OTel Collector as a DaemonSet or sidecar, and Helm-based configuration.
 
 [:octicons-arrow-left-24: Back to Instrument Overview](../index.md)

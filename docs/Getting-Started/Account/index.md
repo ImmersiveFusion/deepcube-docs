@@ -26,7 +26,7 @@ graph TD
 |------|--------|-------------|
 | 1 | [Choose a plan](https://www.immersivefusion.com/pricing){ target="_blank" } | Select the subscription tier that fits your needs |
 | 2 | Create a tenant | Set up your organizational unit |
-| 3 | Add billing profile | Configure payment method |
+| 3 | Add billing profile | Add a card (only if your plan or an add-on costs money; Start alone needs none) |
 | 4 | Activate subscription | Start your plan |
 
 ### All Customers
@@ -54,7 +54,7 @@ An organizational unit within your account. Use tenants to separate:
 
 Payment configuration for a tenant:
 
-- Payment method (credit card, invoice)
+- Payment method (credit card, invoice), not needed for Start alone
 - Billing address
 - Tax information
 

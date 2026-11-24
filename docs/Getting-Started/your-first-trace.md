@@ -19,7 +19,7 @@ You are not instrumenting your own application yet. That comes next, and it is e
 
 ## Prerequisites
 
-- **A subscription and your own grid.** Sending your own telemetry requires an active subscription (the free Start plan works) with a provisioned grid. Provisioning a grid requires a valid credit card, even on Start. If you have not done this yet, complete [Getting Started](index.md) first. (Just want to look around? The [demo grids](Sandbox/index.md) need no subscription.)
+- **A subscription and your own grid.** Sending your own telemetry requires an active subscription (the free Start plan works) with a provisioned grid. Start on its own needs no card; a paid plan or a paid add-on does. If you have not done this yet, complete [Getting Started](index.md) first. (Just want to look around? The [demo grids](Sandbox/index.md) need no subscription.)
 - The grid's API key. You will copy this in Step 1.
 - [Go](https://go.dev/dl/){ target="_blank" } 1.21 or later installed, so you can run the generator with a single command. (No Go knowledge is needed; you are only running a tool written in it.)
 

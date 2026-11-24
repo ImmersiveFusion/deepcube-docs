@@ -6,6 +6,25 @@ description: Version history for DeepCube&trade; Web, newest first.
 
 ## Version History
 
+### 4.0.20 <small>November 15, 2026</small> { id="4.0.20" }
+
+**Introduction:**
+
+The free Start plan no longer asks for a card. A card that expires this month now counts as valid until the month ends. The Platform API's service map reports p95 latency for each service.
+
+**Improvements:**
+
+- **Start Needs No Card**: The Quick Start wizard no longer asks for a card when your cart holds only the free Start plan; it says no card is needed. A paid plan or a paid add-on, such as Tessa, still needs a valid card, and so does moving from Start to a paid plan later. If you change to a paid plan in **Settings** and the billing profile has no valid card, the form says to add a card first, and nothing is saved. A subscription already on a paid plan is not checked again.
+- **p95 on the Service Map (Platform API)**: `GET /apm/diagnostics/{gridSecondaryId}/services` now returns `p95LatencyMs` for each service, in milliseconds, next to p99. It comes from the same sample as p99, at most 1,000 of the service's spans, so it is never higher than p99. The Moment API (`GET /apm/grids/{gridSecondaryId}/moment`) declares a `p95LatencyMs` tile; like its other figure tiles, it is not populated yet. This is an addition.
+
+**Bug Fixes:**
+
+- Fixed a card being treated as expired from the first day of its expiry month. It is now valid through the last day of that month.
+
+**Known Issues:**
+
+- The service map in the app still offers **Duration p99**, not p95.
+
 ### 4.0.19 <small>November 8, 2026</small> { id="4.0.19" }
 
 **Introduction:**

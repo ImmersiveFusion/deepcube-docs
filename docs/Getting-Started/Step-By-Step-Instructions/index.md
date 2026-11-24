@@ -16,7 +16,7 @@ Both hosts are the same application on the same backend; the address differs onl
 
 [Sign in to DeepCube :material-rocket-launch:](https://portal.deepcube.ai){ .md-button .md-button--primary target="_blank" }
 
-The link opens **portal.deepcube.ai**, the sign-in chooser. Pick a method, and it forwards you into the web app. A short Quick Start wizard then names your account, has you choose a plan, and provisions your first grid. Sending your own telemetry requires an active subscription and a provisioned grid: the **Start** plan is free, but provisioning a grid requires a valid credit card even on Start. (Exploring the [demo grids](../Sandbox/index.md) needs none of this, no subscription and no payment.)
+The link opens **portal.deepcube.ai**, the sign-in chooser. Pick a method, and it forwards you into the web app. A short Quick Start wizard then names your account, has you choose a plan, and provisions your first grid. Sending your own telemetry requires an active subscription and a provisioned grid: the **Start** plan is free, and on its own it needs no card. A paid plan or a paid add-on, such as Tessa, needs a valid card, and so does moving from Start to a paid plan. (Exploring the [demo grids](../Sandbox/index.md) needs none of this, no subscription and no payment.)
 
 ## Step 2: Get your API key
 

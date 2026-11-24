@@ -10,19 +10,20 @@ Recent updates and features across DeepCube. For complete version history, see t
 
 ## Latest Highlights
 
-### Status You Can Read Without Color (3D v1.26.0)
+### Status in Pattern and Symbol (3D v1.26.0; v1.26.1 on alpha)
 
-Status on the grid no longer rests on color alone. Every trace, span and log block, and every service, now shows its state with a pattern and a symbol as well as a color, so you can tell Failed from Processed without telling red from green.
+Every trace, span and log block, and every service, now shows its state with a pattern and a symbol as well as a color, so you can tell Failed from Processed without telling red from green. In 1.26.1, on the alpha channel only, Mosey tours a healthy grid instead of standing still, and a grid that refuses you entry says so.
 
 | Feature | Description |
 |---------|-------------|
-| **Pattern and Symbol, Not Color Alone** | Processed traces wear stripes and a check, Failed a crosshatch and an X, In flight dots and a ring, Lost diagonal stripes and a slashed ring; log levels have their own patterns and symbols too |
+| **Pattern and Symbol** | Processed traces wear stripes and a check, Failed a crosshatch and an X, In flight dots and a ring, Lost diagonal stripes and a slashed ring; log levels have their own patterns and symbols too |
 | **Every Service Shows Its Status** | Each service and dependency has a status block on its platform: Failed, Processed, Idle (grey, after five minutes with no call) or No data (grey with a slashed ring) |
 | **Calmer Colors** | Lost traces and Warning logs are amber at every distance, and Info logs are blue |
 | **Tessa Names Her Scope** | Before she says nothing is wrong, she is set to say how much she checked, and a turn that ends without an answer now says so |
 | **Counts That Read Right** | 1,000 shows as 1K and 20,000,000 as 20M |
+| **Mosey Tours a Healthy Grid (1.26.1, alpha)** | With nothing in trouble, he visits every service and pauses at each one, instead of standing still |
 
-See the [1.26.0 release notes](DC/3D/release-notes.md#1.26.0) for everything in this update.
+See the [1.26.1](DC/3D/release-notes.md#1.26.1) and [1.26.0](DC/3D/release-notes.md#1.26.0) release notes for everything in these updates.
 
 ### Sign In with Steam, and Tessa Asks First (3D v1.23.1, v1.23.0)
 
@@ -114,6 +115,7 @@ Tessa gains extensible capabilities and the ability to analyze images.
 
 ### November 2026
 
+- **3D v1.26.1** (alpha): Mosey tours a healthy grid instead of standing still; a grid that refuses you entry says so and reopens the grid picker ([release notes](DC/3D/release-notes.md#1.26.1))
 - **3D v1.26.0**: Status shown by pattern and symbol as well as color, on every block and every service; Idle after five minutes with its own look; amber Lost and Warning, blue Info; Tessa names how much she checked; operation counts read right in K, M and B ([release notes](DC/3D/release-notes.md#1.26.0))
 - **3D v1.25.1**: Click a row on Recent Errors or Recent Logs to open the Diagnostics cube on its trace; leaving the cube returns you to your platform; Tessa can take you to a service and asks before she saves to your memory; phantoms on a grid that was already running ([release notes](DC/3D/release-notes.md#1.25.1))
 

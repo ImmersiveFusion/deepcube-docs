@@ -6,15 +6,33 @@ description: Version history for DeepCube&trade;, newest first. Entries keep the
 
 ## Version History
 
+### 1.26.1 <small>November 24, 2026</small> { id="1.26.1" }
+
+**Introduction:**
+
+1.26.1 is on the alpha channel only. It is not yet on the beta or stable channel, or on Steam. On a healthy grid, Mosey now tours your services instead of standing still. If a grid refuses you entry, DeepCube now says so instead of leaving you in an empty grid.
+
+**Improvements:**
+
+- **Mosey Tours a Healthy Grid**: When Mosey roams a grid where nothing is failing, erroring or slow, he now visits every service, starting with the services that send their own telemetry and then the busiest, and pauses for three seconds at each one, facing it. Before, he visited only services in trouble, so on a healthy grid he stood still. Trouble still comes first: if a service starts failing during the tour, he leaves the tour for it at his next stop.
+
+**Bug Fixes:**
+
+- Fixed entering a grid you can no longer open leaving you in an empty grid. If the grid is no longer available to you, DeepCube now says "This grid is no longer available to you." and reopens the grid picker. If your sign-in has expired, it says "Your sign-in has expired. Sign in again to open this grid." and takes you to sign in.
+
+**Known Issues:**
+
+- The known issues listed for [1.26.0](#1.26.0) still apply.
+
 ### 1.26.0 <small>November 23, 2026</small> { id="1.26.0" }
 
 **Introduction:**
 
-Everything since 1.25.1 is in this update. Status on the grid no longer rests on color alone. Every trace, span and log block, and every service, now shows its state with a pattern and a symbol as well as a color, so you can tell Failed from Processed without telling red from green. Lost traces and Warning logs are now amber, and Info logs are blue. A service with no call for five minutes is Idle, with a look of its own. Before Tessa says nothing is wrong, she is set to say how far she looked. When a turn of hers ends without an answer, she says so. Operation counts read correctly in thousands, millions and billions.
+Everything since 1.25.1 is in this update. Every trace, span and log block, and every service, now shows its state with a pattern and a symbol as well as a color, so you can tell Failed from Processed without telling red from green. Lost traces and Warning logs are now amber, and Info logs are blue. A service with no call for five minutes is Idle, with a look of its own. Before Tessa says nothing is wrong, she is set to say how far she looked. When a turn of hers ends without an answer, she says so. Operation counts read correctly in thousands, millions and billions.
 
 **New Features:**
 
-- **Status in Pattern and Symbol, Not Color Alone**: Every block now carries its state three ways: a color, a pattern on its sides and a symbol on its ends. The pattern tiles at a fixed size, so it does not stretch on a tall block. The symbol shows on the two faces across the block's longest side: the top and bottom of a pillar, or the ends of a bar. The same patterns and symbols are on the span and log bars in the Diagnostics cube.
+- **Status in Pattern and Symbol**: Every block now carries its state three ways: a color, a pattern on its sides and a symbol on its ends. The pattern tiles at a fixed size, so it does not stretch on a tall block. The symbol shows on the two faces across the block's longest side: the top and bottom of a pillar, or the ends of a bar. The same patterns and symbols are on the span and log bars in the Diagnostics cube.
 
     | Block | State | Pattern | Symbol |
     |-------|-------|---------|--------|

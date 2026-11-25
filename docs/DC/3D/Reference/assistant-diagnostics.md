@@ -32,12 +32,11 @@ Get an instant overview of your system's current state. Tessa reports overall sy
 
 ### Alert Summary
 
-See the current alert status derived from your system health thresholds. Tessa pulls active and recent alerts and explains what they mean.
+Check whether any service crossed a fixed threshold in a recent window: error rate above 10% or 1%, Apdex below 0.7, or no requests. Tessa runs the check when you ask and explains what it found. It is a check, not a watch: nothing monitors between checks, and nothing notifies anyone.
 
 !!! example "Try asking"
-    - "Are there any active alerts?"
-    - "What alerts fired in the last 24 hours?"
-    - "Has anything triggered a warning today?"
+    - "Did any service cross its thresholds in the last 15 minutes?"
+    - "Is any service over its error threshold right now?"
 
 ---
 

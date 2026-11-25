@@ -70,7 +70,7 @@ This uses a ready-made trace generator, a single command-line tool you run local
 
 ## Instrument your own application
 
-When you are ready for your real system, add OpenTelemetry to it and point it at DeepCube. Grab your grid's API key from **Administration → Grids** in the web app, point your OTLP exporter at DeepCube, and deploy; services appear in the Grid within a couple of minutes. The [instrumentation guide](../Instrument/index.md) has the per-language setup and the exact endpoint.
+When you are ready for your real system, add OpenTelemetry to it and point it at DeepCube. Grab your grid's API key from **Administration → Grids** in the web app, point your OTLP exporter at DeepCube over gRPC (DeepCube does not accept OTLP over HTTP), and deploy; services appear in the Grid within a couple of minutes. The [instrumentation guide](../Instrument/index.md) has the per-language setup and the exact endpoint.
 
 [Instrument your application :material-code-tags:](../Instrument/index.md){ .md-button .md-button--primary }
 

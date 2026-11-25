@@ -4,6 +4,11 @@ Instrument your .NET applications with OpenTelemetry to send traces, metrics, an
 
 [:octicons-arrow-left-24: Back to Instrument Overview](../index.md)
 
+!!! warning "DeepCube accepts OTLP over gRPC only"
+    Send to `https://otlp.deepcube.ai:443` over gRPC. DeepCube does not accept OTLP over HTTP (`http/protobuf`): there is no `/v1/traces` path and no port 4318. An exporter left on HTTP sends nothing that arrives, and the only sign is an export error, usually a 404, in your application's own log. The .NET OTLP exporter uses gRPC unless you change it. Leave `Protocol` at `OtlpExportProtocol.Grpc`, and do not set `OTEL_EXPORTER_OTLP_PROTOCOL` to `http/protobuf`. The .NET automatic instrumentation agent is different: it defaults to `http/protobuf`. If you run that agent yourself and it exports straight to DeepCube, set `OTEL_EXPORTER_OTLP_PROTOCOL=grpc`. Under the Kubernetes Operator, .NET goes through a Collector instead; see [Kubernetes](../kubernetes/index.md).
+
+    Nothing arriving? See [Nothing arriving?](../index.md#nothing-arriving).
+
 ## NuGet Packages
 
 Install the required packages for your project:
@@ -56,7 +61,7 @@ builder.Services.AddOpenTelemetry()
         .AddEntityFrameworkCoreInstrumentation()
         .AddOtlpExporter(options =>
         {
-            options.Endpoint = new Uri("https://otlp.deepcube.ai");
+            options.Endpoint = new Uri("https://otlp.deepcube.ai:443");
             options.Headers = "api-key=YOUR-API-KEY";
         }))
     .WithMetrics(metrics => metrics
@@ -65,7 +70,7 @@ builder.Services.AddOpenTelemetry()
         .AddRuntimeInstrumentation()
         .AddOtlpExporter(options =>
         {
-            options.Endpoint = new Uri("https://otlp.deepcube.ai");
+            options.Endpoint = new Uri("https://otlp.deepcube.ai:443");
             options.Headers = "api-key=YOUR-API-KEY";
         }));
 
@@ -76,7 +81,7 @@ builder.Logging.AddOpenTelemetry(logging =>
     logging.IncludeScopes = true;
     logging.AddOtlpExporter(options =>
     {
-        options.Endpoint = new Uri("https://otlp.deepcube.ai");
+        options.Endpoint = new Uri("https://otlp.deepcube.ai:443");
         options.Headers = "api-key=YOUR-API-KEY";
     });
 });
@@ -102,7 +107,7 @@ using var tracerProvider = Sdk.CreateTracerProviderBuilder()
     .AddHttpClientInstrumentation()
     .AddOtlpExporter(options =>
     {
-        options.Endpoint = new Uri("https://otlp.deepcube.ai");
+        options.Endpoint = new Uri("https://otlp.deepcube.ai:443");
         options.Headers = "api-key=YOUR-API-KEY";
     })
     .Build();
@@ -113,7 +118,7 @@ using var meterProvider = Sdk.CreateMeterProviderBuilder()
         .AddService("my-console-app"))
     .AddOtlpExporter(options =>
     {
-        options.Endpoint = new Uri("https://otlp.deepcube.ai");
+        options.Endpoint = new Uri("https://otlp.deepcube.ai:443");
         options.Headers = "api-key=YOUR-API-KEY";
     })
     .Build();
@@ -146,14 +151,14 @@ builder.Services.AddOpenTelemetry()
         .AddHttpClientInstrumentation()
         .AddOtlpExporter(options =>
         {
-            options.Endpoint = new Uri("https://otlp.deepcube.ai");
+            options.Endpoint = new Uri("https://otlp.deepcube.ai:443");
             options.Headers = "api-key=YOUR-API-KEY";
         }))
     .WithMetrics(metrics => metrics
         .AddRuntimeInstrumentation()
         .AddOtlpExporter(options =>
         {
-            options.Endpoint = new Uri("https://otlp.deepcube.ai");
+            options.Endpoint = new Uri("https://otlp.deepcube.ai:443");
             options.Headers = "api-key=YOUR-API-KEY";
         }));
 
@@ -169,7 +174,7 @@ Instead of hardcoding values, use environment variables. The OpenTelemetry .NET 
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai` | OTLP collector endpoint |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai:443` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
 | `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in DeepCube |
 | `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (must be `grpc`) |
@@ -196,7 +201,7 @@ Set the variables in your launch profile, Docker configuration, or deployment en
       "profiles": {
         "MyApp": {
           "environmentVariables": {
-            "OTEL_EXPORTER_OTLP_ENDPOINT": "https://otlp.deepcube.ai",
+            "OTEL_EXPORTER_OTLP_ENDPOINT": "https://otlp.deepcube.ai:443",
             "OTEL_EXPORTER_OTLP_HEADERS": "api-key=YOUR-API-KEY",
             "OTEL_SERVICE_NAME": "my-app"
           }
@@ -208,7 +213,7 @@ Set the variables in your launch profile, Docker configuration, or deployment en
 === "Dockerfile"
 
     ```dockerfile
-    ENV OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai
+    ENV OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai:443
     ENV OTEL_EXPORTER_OTLP_HEADERS=api-key=YOUR-API-KEY
     ENV OTEL_SERVICE_NAME=my-app
     ```
@@ -219,7 +224,7 @@ Set the variables in your launch profile, Docker configuration, or deployment en
     {
       "Otel": {
         "ServiceName": "my-app",
-        "Endpoint": "https://otlp.deepcube.ai",
+        "Endpoint": "https://otlp.deepcube.ai:443",
         "ApiKey": "YOUR-API-KEY"
       }
     }
@@ -386,7 +391,8 @@ public class OrderController : ControllerBase
 
 ### No data appearing in DeepCube
 
-- **Check the endpoint**: Ensure `https://otlp.deepcube.ai` is reachable from your application. Test with `curl https://otlp.deepcube.ai`.
+- **Check the protocol first.** It must be gRPC. Work through [Nothing arriving?](../index.md#nothing-arriving).
+- **Check the endpoint**: Ensure `https://otlp.deepcube.ai:443` is reachable from your application. Test with `curl https://otlp.deepcube.ai:443`.
 - **Verify the API key**: Copy a fresh key from [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } under **Administration > Grids > Instrument**.
 - **Check for package version conflicts**: Ensure all `OpenTelemetry.*` packages are the same version.
 

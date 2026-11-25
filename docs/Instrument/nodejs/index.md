@@ -4,6 +4,11 @@ Instrument your Node.js applications with OpenTelemetry to send traces, metrics,
 
 [:octicons-arrow-left-24: Back to Instrument Overview](../index.md)
 
+!!! warning "DeepCube accepts OTLP over gRPC only"
+    Send to `https://otlp.deepcube.ai:443` over gRPC. DeepCube does not accept OTLP over HTTP (`http/protobuf`): there is no `/v1/traces` path and no port 4318. An exporter left on HTTP sends nothing that arrives, and the only sign is an export error, usually a 404, in your application's own log. Use `@opentelemetry/exporter-trace-otlp-grpc` and `@opentelemetry/exporter-metrics-otlp-grpc`, not the `-otlp-http` or `-otlp-proto` packages. If you configure the SDK from environment variables, set `OTEL_EXPORTER_OTLP_PROTOCOL=grpc`.
+
+    Nothing arriving? See [Nothing arriving?](../index.md#nothing-arriving).
+
 ## Install Packages
 
 Install the core OpenTelemetry packages:
@@ -52,12 +57,12 @@ const sdk = new NodeSDK({
     [ATTR_SERVICE_VERSION]: '1.0.0',
   }),
   traceExporter: new OTLPTraceExporter({
-    url: 'https://otlp.deepcube.ai',
+    url: 'https://otlp.deepcube.ai:443',
     headers: { 'api-key': 'YOUR-API-KEY' },
   }),
   metricReader: new PeriodicExportingMetricReader({
     exporter: new OTLPMetricExporter({
-      url: 'https://otlp.deepcube.ai',
+      url: 'https://otlp.deepcube.ai:443',
       headers: { 'api-key': 'YOUR-API-KEY' },
     }),
   }),
@@ -146,7 +151,7 @@ const sdk = new NodeSDK({
     [ATTR_SERVICE_NAME]: 'my-nestjs-app',
   }),
   traceExporter: new OTLPTraceExporter({
-    url: 'https://otlp.deepcube.ai',
+    url: 'https://otlp.deepcube.ai:443',
     headers: { 'api-key': 'YOUR-API-KEY' },
   }),
   instrumentations: [getNodeAutoInstrumentations()],
@@ -241,7 +246,7 @@ The OpenTelemetry Node.js SDK reads these variables automatically:
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai` | OTLP collector endpoint |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | `https://otlp.deepcube.ai:443` | OTLP collector endpoint |
 | `OTEL_EXPORTER_OTLP_HEADERS` | `api-key=YOUR-API-KEY` | Authentication header |
 | `OTEL_SERVICE_NAME` | `your-service-name` | Service name shown in DeepCube |
 | `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` | Protocol (must be `grpc`) |
@@ -286,9 +291,10 @@ const sdk = new NodeSDK({
 
 ### No data appearing in DeepCube
 
+- **Check the protocol first.** It must be gRPC. Work through [Nothing arriving?](../index.md#nothing-arriving).
 - Verify that `tracing.js` is loaded **before** your application code. Use `node -r ./tracing.js` or `NODE_OPTIONS="--require ./tracing.js"`.
 - Verify the API key by copying a fresh one from [portal.deepcube.ai](https://portal.deepcube.ai){ target="_blank" } under **Administration > Grids > Instrument**.
-- Check network connectivity: `curl -v https://otlp.deepcube.ai`.
+- Check network connectivity: `curl -v https://otlp.deepcube.ai:443`.
 
 ### gRPC connection errors
 

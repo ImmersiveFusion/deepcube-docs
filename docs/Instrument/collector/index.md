@@ -4,6 +4,11 @@ The OpenTelemetry Collector is a vendor-agnostic proxy that receives, processes,
 
 [:octicons-arrow-left-24: Back to Instrument Overview](../index.md)
 
+!!! warning "DeepCube accepts OTLP over gRPC only"
+    Send to `https://otlp.deepcube.ai:443` over gRPC. DeepCube does not accept OTLP over HTTP (`http/protobuf`): there is no `/v1/traces` path and no port 4318. An exporter left on HTTP sends nothing that arrives, and the only sign is an export error, usually a 404, in your application's own log. Export with the `otlp` exporter to `otlp.deepcube.ai:443`, not the `otlphttp` exporter. The Collector can still receive from your applications over HTTP on port 4318 and forward over gRPC.
+
+    Nothing arriving? See [Nothing arriving?](../index.md#nothing-arriving).
+
 ## When to Use a Collector
 
 You can export telemetry directly from your application to DeepCube, or route it through a Collector first. Here is when each approach makes sense:
@@ -385,7 +390,7 @@ data:
 - Check that the Collector can reach `otlp.deepcube.ai:443`. Test from within the container:
 
     ```bash
-    docker exec <container> wget -q -O- https://otlp.deepcube.ai
+    docker exec <container> wget -q -O- https://otlp.deepcube.ai:443
     ```
 
 - Enable the `debug` exporter to see what the Collector is receiving:

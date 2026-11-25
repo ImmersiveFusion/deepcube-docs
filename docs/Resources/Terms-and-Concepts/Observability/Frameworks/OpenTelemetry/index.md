@@ -41,13 +41,13 @@ All you need is the OTLP endpoint and your API key:
 
 | Setting | Value |
 |---------|-------|
-| **Endpoint** | `https://otlp.deepcube.ai` |
+| **Endpoint** | `https://otlp.deepcube.ai:443` |
 | **Protocol** | OTLP/gRPC (port 443) |
 | **Auth Header** | `api-key: YOUR-API-KEY` |
 
 ```bash
 # Environment variables - works with any OTel SDK
-export OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai
+export OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.deepcube.ai:443
 export OTEL_EXPORTER_OTLP_HEADERS="api-key=YOUR-API-KEY"
 export OTEL_EXPORTER_OTLP_PROTOCOL=grpc
 ```

@@ -18,8 +18,8 @@ Start here when you open DeepCube and want a quick picture of your system.
 |--------|-----------------|
 | "How is my system doing?" | Runs a full health check across all services |
 | "Is anything unhealthy right now?" | Highlights services with active issues |
-| "Are there any active alerts?" | Pulls current and recent alert activity |
-| "Give me a status report" | Summarizes health, alerts, and any notable trends |
+| "Did any service cross its thresholds in the last 15 minutes?" | Checks the grid against fixed thresholds now. Nothing is watching between checks |
+| "Give me a status report" | Summarizes health, threshold breaches, and any notable trends |
 | "Is there pressure building anywhere?" | Detects services approaching failure thresholds |
 
 ## Troubleshooting

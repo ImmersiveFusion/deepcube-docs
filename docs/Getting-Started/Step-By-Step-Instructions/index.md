@@ -48,7 +48,7 @@ Point your OpenTelemetry OTLP exporter at DeepCube. The endpoint is `otlp.deepcu
     The official [Language APIs and SDKs](https://opentelemetry.io/docs/languages/){ target="_blank" } cover instrumentation for your programming language.
 
 !!! warning "Nothing showing up?"
-    If you sent telemetry but no services appear after a couple of minutes, the cause is almost always the key or the endpoint. Check that the endpoint is exactly `otlp.deepcube.ai:443`, that the `api-key` header holds the key for the same grid you are viewing, and that your exporter uses gRPC over TLS. Still stuck? Reach [support](../../contact.md).
+    If you sent telemetry but no services appear after a couple of minutes, the cause is almost always the key or the endpoint. Check that the endpoint is exactly `otlp.deepcube.ai:443`, that the `api-key` header holds the key for the same grid you are viewing, and that your exporter uses gRPC over TLS: many SDKs default to OTLP over HTTP, which DeepCube does not accept. The [Nothing arriving?](../../Instrument/index.md#nothing-arriving) check walks through it. Still stuck? Reach [support](../../contact.md).
 
 ## Step 4: Explore your system
 
